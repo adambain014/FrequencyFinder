@@ -65,7 +65,7 @@
     .peak-card .value { font-size: 28px; font-weight: 500; }
     .peak-card .unit  { font-size: 14px; font-weight: 400; color: #888780; margin-left: 2px; }
 
-    .freq-card { background: #fff; border: 0.5px solid #e0ddd6; overflow: hidden; margin-bottom: 2rem; }
+    .freq-card { background: #fff; border: 0.5px solid #e0ddd6; overflow: scroll; margin-bottom: 2rem; }
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
     thead th {
       background: #f5f5f3; padding: 10px 16px; text-align: left;
@@ -113,6 +113,7 @@
     .day-tabs {
       display: flex;
       gap: 4px;
+      overflow: scroll;
     }
     .day-tab {
       padding: 5px 10px;
@@ -129,7 +130,7 @@
       color: #fff;
       border-color: transparent;
     }
-    
+
     .dir-btn {
       padding: 5px 14px;
       font-size: 12px;
@@ -201,7 +202,7 @@
       align-items: center;
       justify-content: center;
       padding: 0 1rem;
-      height: 60px;
+      min-height: 65px;
       border-bottom: 1px solid #ddd;
       z-index: 30;
       background: #f4f4f0;
@@ -227,7 +228,6 @@
       display: block;
       font-size: 1.2rem;
       color: #999;
-      white-space: nowrap;
       margin: 0;
       line-height: 1.1;
       max-width: 100%;
@@ -307,7 +307,7 @@
         <button class="day-tab" data-day="7">Sun</button>
       </div>
     </div>
-    
+
     <div class="map-controls" id="direction-controls">
       <button class="dir-btn active" id="dir-btn-0" data-dir="0">—</button>
       <button class="dir-btn" id="dir-btn-1" data-dir="1">—</button>
@@ -364,6 +364,16 @@ const GAP_COLOUR = {
 };
 const NO_SERVICE_COLOUR = '#cccccc';
 
+// ─── Cached summary ───────────────────────────────────────────────────────────
+
+let summaryCache = null;
+
+function loadSummary() {
+  return fetch(`${FOLDER}/summary.json`)
+    .then(r => { if (!r.ok) throw new Error('summary.json not found'); return r.json(); })
+    .then(data => { summaryCache = data; return data; });
+}
+
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function freqStyle(mins) {
@@ -397,8 +407,8 @@ function minsToTimeStr(m) {
   return `${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`;
 }
 
-// slider index (0-47) → snapshot_m value (0, 30, 60, … 1410)
-function sliderToSnapshot(idx) { return idx * 30; }
+// slider index (0-47) → snapshot_m value (30, 60, … 1440)
+function sliderToSnapshot(idx) { return (idx + 1) * 30; }
 
 // ─── Legend ──────────────────────────────────────────────────────────────────
 
@@ -412,39 +422,24 @@ function buildLegend() {
 }
 
 // ─── Span chart ──────────────────────────────────────────────────────────────
+const DAY_NAMES = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 
 let spanChart = null;
-
 function buildSpanChart(spanStats, routeColour) {
   const DAY_ORDER  = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
   const DAY_LABELS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-
   const sorted = DAY_ORDER.map(d => spanStats.find(r => r.day === d)).filter(Boolean);
-
-  const spanData             = sorted.map(r => [r.span_start / 60, r.span_end / 60]);
-  const coverageData         = sorted.map(r => [r.full_coverage_start / 60, r.full_coverage_end / 60]);
-  const midnightSpanData     = sorted.map(r =>
-    r.midnight_span_start != null ? [r.midnight_span_start / 60, r.midnight_span_end / 60] : null
-  );
-  const midnightCoverageData = sorted.map(r =>
-    r.full_coverage_midnight_start != null
-      ? [r.full_coverage_midnight_start / 60, r.full_coverage_midnight_end / 60]
-      : null
-  );
-
-
+  const spanData     = sorted.map(r => [r.span_start / 60, r.span_end / 60]);
+  const coverageData = sorted.map(r => [r.full_coverage_start / 60, r.full_coverage_end / 60]);
   if (spanChart) spanChart.destroy();
-
   const ctx = document.getElementById('span-chart').getContext('2d');
   spanChart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: DAY_LABELS,
       datasets: [
-        { label: 'Full Span (Early Morning)',      data: midnightSpanData,     backgroundColor: routeColour + '80', barPercentage: 1, categoryPercentage: 0.6 },
-        { label: 'All Stops Served (Early Morning)',data: midnightCoverageData, backgroundColor: routeColour,        barPercentage: 1, categoryPercentage: 0.6 },
-        { label: 'Full Span (Main)',                data: spanData,             backgroundColor: routeColour + '80', barPercentage: 1, categoryPercentage: 0.6 },
-        { label: 'All Stops Served (Main)',         data: coverageData,         backgroundColor: routeColour,        barPercentage: 1, categoryPercentage: 0.6 },
+        { label: 'Full Span',        data: spanData,     backgroundColor: routeColour + '80', barPercentage: 1, categoryPercentage: 0.6 },
+        { label: 'All Stops Served', data: coverageData, backgroundColor: routeColour,        barPercentage: 1, categoryPercentage: 0.6 },
       ]
     },
     options: {
@@ -454,66 +449,108 @@ function buildSpanChart(spanStats, routeColour) {
       plugins: {
         legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 12 }, color: '#5F5E5A' } },
         tooltip: {
-          callbacks: {
-            label: ctx => {
-              if (!ctx.raw) return null;
-              const [start, end] = ctx.raw;
-              const fmt = m => { const h = Math.floor(m % 24); const min = Math.round((m - Math.floor(m)) * 60); return `${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`; };
-              return `${ctx.dataset.label}: ${fmt(start)} – ${fmt(end)}`;
-            }
-          }
-        }
+  callbacks: {
+  label: ctx => {
+    if (!ctx.raw) return null;
+    const [start, end] = ctx.raw;
+    const fmt = (h, dataIndex) => {
+      const hh  = Math.floor(h) % 24;
+      const min = Math.round((h - Math.floor(h)) * 60);
+      const time = `${String(hh).padStart(2,'0')}:${String(min).padStart(2,'0')}`;
+      if (h >= 24) {
+        // dataIndex is 0=Mon, 1=Tue... wrap around Sunday→Monday
+        const nextDay = DAY_NAMES[(dataIndex + 1) % 7];
+        return `${time} (${nextDay})`;
+      }
+      return time;
+    };
+    const i = ctx.dataIndex;
+    return `${ctx.dataset.label}: ${fmt(start, i)} – ${fmt(end, i)}`;
+  }
+}
+}
       },
       scales: {
         x: {
-          min: 0, max: 24,
-          ticks: { stepSize: 4, callback: v => `${String(v % 24).padStart(2,'0')}:00`, color: '#888780', font: { size: 11 } },
+          min: 3, max: 27,
+          ticks: {
+            stepSize: 3,
+            callback: v => `${String(Math.floor(v) % 24).padStart(2,'0')}:00`,
+            color: '#888780',
+            font: { size: 11 }
+          },
           grid: { color: '#f0ede6' }
+        },
+        x2: {
+          type: 'linear',
+          position: 'bottom',
+          min: 3, max: 27,
+          offset: false,
+          ticks: {
+            callback: v => v === 24 ? '← today    tomorrow →' : '',
+            color: '#888780',
+            font: { size: 10 },
+          },
+          grid: {
+            color: ctx => ctx.tick.value === 24 ? '#c8c5be' : 'transparent',
+            lineWidth: ctx => ctx.tick.value === 24 ? 1.5 : 0,
+            drawTicks: false,
+          },
+          border: { display: false },
         },
         y: { ticks: { color: '#1a1a18', font: { size: 12 } }, grid: { display: false } }
       }
     }
   });
 }
-
 // ─── Interactive map ─────────────────────────────────────────────────────────
 
 let leafletMap      = null;
-let mapPolylines    = [];   // [{pairId, layer}]
-let currentMapData  = null; // the parsed interactive array
+let mapPolylines    = [];
+let currentMapData  = null;
 let currentDay      = 1;
-let currentSnapshot = 390;  // default ~06:30
+let currentSnapshot = 390;
 let currentDirection = 0;
 
 /**
- * Parse columnar data arrays into a lookup:
- *   pairLookup[stop_pair_id][day][snapshot_m] = gap_group (number or null)
+ * Parse nested data structure into a lookup:
+ *   pairLookup[stop_pair_id].byDaySnapshot[day][snapshot_m][direction] = { gg, gap }
+ *
+ * Input data shape per item:
+ *   item.data[direction_id][day] = { gap: [...], gap_group: [...] }
+ *   snapshot_m is reconstructed as (index + 1) * 30
  */
+
 function buildPairLookup(interactive) {
   const lookup = {};
+
   for (const item of interactive) {
     const id = item.stop_pair_id;
     if (!id || !item.geometry || item.geometry.type !== 'LineString') continue;
 
-    const { day, snapshot_m, gap_group, direction_id } = item.data;
-    if (!Array.isArray(day)) continue;
-
     lookup[id] = { geometry: item.geometry, byDaySnapshot: {} };
 
-    for (let i = 0; i < day.length; i++) {
-      const d   = day[i];
-      const sm  = snapshot_m[i];
-      const gg  = gap_group[i];
-      const g   = item.data.gap[i];
-      const dir = direction_id[i];
-      const val    = (gg === 'NA' || gg == null) ? null : Number(gg);
-      const valGap = (g  === 'NA' || g  == null) ? null : Number(g);
+    for (const [dir, dayObj] of Object.entries(item.data)) {
+      const dirNum = parseInt(dir);
+      if (isNaN(dirNum)) continue; // skip NA direction keys
 
-      if (!lookup[id].byDaySnapshot[d])       lookup[id].byDaySnapshot[d] = {};
-      if (!lookup[id].byDaySnapshot[d][sm])   lookup[id].byDaySnapshot[d][sm] = {};
-      lookup[id].byDaySnapshot[d][sm][dir] = { gg: val, gap: valGap };
+      for (const [day, arrays] of Object.entries(dayObj)) {
+        const dayNum = parseInt(day);
+        const { gap, gap_group } = arrays;
+
+        for (let i = 0; i < gap.length; i++) {
+          const sm  = (i + 1) * 30; // reconstruct snapshot_m from index
+          const gg  = (gap_group[i] == null) ? null : Number(gap_group[i]);
+          const g   = (gap[i]       == null) ? null : Number(gap[i]);
+
+          if (!lookup[id].byDaySnapshot[dayNum])      lookup[id].byDaySnapshot[dayNum] = {};
+          if (!lookup[id].byDaySnapshot[dayNum][sm])  lookup[id].byDaySnapshot[dayNum][sm] = {};
+          lookup[id].byDaySnapshot[dayNum][sm][dirNum] = { gg, gap: g };
+        }
+      }
     }
   }
+
   return lookup;
 }
 
@@ -523,7 +560,6 @@ function gapColour(gapGroup) {
 }
 
 function gapWeight(gapGroup) {
-  // thicker line for more frequent service
   if (gapGroup == null)  return 2;
   if (gapGroup <= 10)    return 6;
   if (gapGroup <= 15)    return 5;
@@ -557,8 +593,16 @@ function initMap(centre) {
 function getGG(entry, day, snapshot, direction) {
   return entry?.byDaySnapshot?.[day]?.[snapshot]?.[direction]?.gg ?? null;
 }
+
 function getGap(entry, day, snapshot, direction) {
   return entry?.byDaySnapshot?.[day]?.[snapshot]?.[direction]?.gap ?? null;
+}
+
+// Returns true if this pair has any data for the given direction on the given day
+function hasDirection(entry, day, direction) {
+  const dayData = entry?.byDaySnapshot?.[day];
+  if (!dayData) return false;
+  return Object.values(dayData).some(snap => direction in snap);
 }
 
 function drawPairLookup(pairLookup, day, snapshot, direction) {
@@ -567,6 +611,9 @@ function drawPairLookup(pairLookup, day, snapshot, direction) {
   const bounds = [];
 
   for (const [id, entry] of Object.entries(pairLookup)) {
+    // Skip pairs that don't belong to this direction on this day
+    if (!hasDirection(entry, day, direction)) continue;
+
     const coords = entry.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
     bounds.push(...coords);
 
@@ -578,8 +625,8 @@ function drawPairLookup(pairLookup, day, snapshot, direction) {
       weight:    gapWeight(gg),
       opacity:   gg == null ? 0.35 : 0.85,
       dashArray: gapDash(gg),
-      lineJoin: 'round',
-      lineCap:  'round',
+      lineJoin:  'round',
+      lineCap:   'round',
     });
 
     layer.bindTooltip(
@@ -589,6 +636,7 @@ function drawPairLookup(pairLookup, day, snapshot, direction) {
     layer.addTo(leafletMap);
     mapPolylines.push({ id, layer });
   }
+
   return bounds;
 }
 
@@ -610,10 +658,15 @@ function updateMapColours(pairLookup, day, snapshot, direction) {
   }
 }
 
-
-function refreshMap() {
+// fullRedraw = true when the set of visible polylines may change (direction or day switch)
+// fullRedraw = false for time slider (only colours/weights change, same set of lines)
+function refreshMap(fullRedraw = false) {
   if (!currentMapData) return;
-  updateMapColours(currentMapData, currentDay, currentSnapshot, currentDirection);
+  if (fullRedraw) {
+    drawPairLookup(currentMapData, currentDay, currentSnapshot, currentDirection);
+  } else {
+    updateMapColours(currentMapData, currentDay, currentSnapshot, currentDirection);
+  }
 }
 
 function buildMap(interactive) {
@@ -635,6 +688,8 @@ function buildMap(interactive) {
   }
 }
 
+// ─── Controls ────────────────────────────────────────────────────────────────
+
 document.getElementById('direction-controls').addEventListener('click', e => {
   const btn = e.target.closest('.dir-btn');
   if (!btn) return;
@@ -648,16 +703,14 @@ document.getElementById('direction-controls').addEventListener('click', e => {
     .getPropertyValue('--route-colour').trim();
   btn.style.color = '#fff';
   currentDirection = parseInt(btn.dataset.dir);
-  refreshMap();
+  refreshMap(true); // full redraw — different set of pairs for this direction
 });
-
-// ─── Slider + day tab wiring ──────────────────────────────────────────────────
 
 document.getElementById('time-slider').addEventListener('input', e => {
   const idx = parseInt(e.target.value);
   currentSnapshot = sliderToSnapshot(idx);
   document.getElementById('time-display').textContent = minsToTimeStr(currentSnapshot);
-  refreshMap();
+  refreshMap(false); // colours only — same set of pairs
 });
 
 document.getElementById('day-tabs').addEventListener('click', e => {
@@ -665,7 +718,7 @@ document.getElementById('day-tabs').addEventListener('click', e => {
   if (!tab) return;
   document.querySelectorAll('.day-tab').forEach(t => {
     t.classList.remove('active');
-    t.style.background = '';  // ← clear inline style on all tabs
+    t.style.background = '';
     t.style.color = '';
   });
   tab.classList.add('active');
@@ -673,7 +726,7 @@ document.getElementById('day-tabs').addEventListener('click', e => {
     .getPropertyValue('--route-colour').trim();
   tab.style.color = '#fff';
   currentDay = parseInt(tab.dataset.day);
-  refreshMap();
+  refreshMap(true); // full redraw — direction availability can differ by day
 });
 
 // ─── Main render ─────────────────────────────────────────────────────────────
@@ -682,7 +735,6 @@ function render(data) {
   const colour  = normaliseColor(data.route_colour);
   const textCol = contrastText(colour);
 
-  // Update CSS variable for accent colours
   document.documentElement.style.setProperty('--route-colour', colour);
 
   const badge = document.getElementById('route-badge');
@@ -722,26 +774,25 @@ function render(data) {
 
   if (data.span_stats?.length) buildSpanChart(data.span_stats, colour);
 
-  // Style day tabs with route colour
+  // Style active day tab with route colour
   document.querySelectorAll('.day-tab.active').forEach(t => {
     t.style.background = colour;
   });
-  
-  // Set direction button labels
-document.getElementById('dir-btn-0').textContent = data.route_destination_0 ?? 'Direction 0';
-document.getElementById('dir-btn-1').textContent = data.route_destination_1 ?? 'Direction 1';
 
-// Reset direction state and button styles
-currentDirection = 0;
-document.querySelectorAll('.dir-btn').forEach((b, i) => {
-  b.classList.toggle('active', i === 0);
-  b.style.background = i === 0 ? colour : '';
-  b.style.color      = i === 0 ? '#fff' : '';
-});
+  // Set direction button labels
+  document.getElementById('dir-btn-0').textContent = data.route_destination_0 ?? 'Direction 0';
+  document.getElementById('dir-btn-1').textContent = data.route_destination_1 ?? 'Direction 1';
+
+  // Reset direction state and button styles
+  currentDirection = 0;
+  document.querySelectorAll('.dir-btn').forEach((b, i) => {
+    b.classList.toggle('active', i === 0);
+    b.style.background = i === 0 ? colour : '';
+    b.style.color      = i === 0 ? '#fff' : '';
+  });
 
   // Build interactive map
   if (data.interactive?.length) {
-    // small delay to let the DOM settle before Leaflet measures the container
     setTimeout(() => buildMap(data.interactive), 50);
   }
 
@@ -754,7 +805,11 @@ document.querySelectorAll('.dir-btn').forEach((b, i) => {
 function loadRoute(num) {
   fetch(`${FOLDER}/${num}.json`)
     .then(r => { if (!r.ok) throw new Error(`${num}.json not found`); return r.json(); })
-    .then(render)
+    .then(interactive => {
+      const routeSummary = summaryCache[num];
+      if (!routeSummary) throw new Error(`Route ${num} not found in summary.json`);
+      render({ ...routeSummary, ...interactive });
+    })
     .catch(err => {
       document.getElementById('placeholder').style.display = 'block';
       document.getElementById('placeholder').innerHTML =
@@ -785,17 +840,25 @@ document.getElementById('route-select').addEventListener('change', e => {
     currentSnapshot = 390;
     document.getElementById('time-slider').value = 13;
     document.getElementById('time-display').textContent = minsToTimeStr(390);
-    document.querySelectorAll('.day-tab').forEach((t,i) => t.classList.toggle('active', i === 0));
+    document.querySelectorAll('.day-tab').forEach((t, i) => {
+      t.classList.toggle('active', i === 0);
+      t.style.background = '';
+      t.style.color = '';
+    });
     loadRoute(e.target.value);
   }
 });
 
-fetch(`${FOLDER}/manifest.json`)
-  .then(r => r.ok ? r.json() : Promise.reject())
-  .then(manifest => populateSelect(manifest.routes))
+// ─── Startup: load manifest + summary in parallel ────────────────────────────
+
+Promise.all([
+  fetch(`${FOLDER}/manifest.json`).then(r => r.ok ? r.json() : Promise.reject('manifest')),
+  loadSummary()
+])
+  .then(([manifest]) => populateSelect(manifest.routes))
   .catch(() => {
     document.getElementById('placeholder').innerHTML =
-      `<div class="error">Could not load <code>route_jsons/manifest.json</code>.</div>`;
+      `<div class="error">Could not load <code>route_jsons/manifest.json</code> or <code>summary.json</code>.</div>`;
   });
 </script>
 
