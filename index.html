@@ -819,10 +819,10 @@ function render(data) {
   // Hide the direction buttons when there's only one direction
   if (!data.route_destination_0 || !data.route_destination_1) {
     document.getElementById('direction-controls').style.height = "0px";
-    document.getElementById('direction-controls').style.visibility = "hidden";
+    document.getElementById('direction-controls').style.visibility = "collapse";
   } else {
     document.getElementById('direction-controls').style.height = "unset";
-    document.getElementById('direction-controls').style.visibility = "collapse";
+    document.getElementById('direction-controls').style.visibility = "visible";
   }
 
   // Reset direction state and button styles
