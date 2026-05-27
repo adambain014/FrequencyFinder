@@ -810,9 +810,20 @@ function render(data) {
     t.style.background = colour;
   });
 
+  
+
   // Set direction button labels
   document.getElementById('dir-btn-0').textContent = data.route_destination_0 ?? 'Direction 0';
   document.getElementById('dir-btn-1').textContent = data.route_destination_1 ?? 'Direction 1';
+
+  //hide the direction buttons when there's only one direction
+  if (!data.route.route_destination_0 || !data.route.route_destination_1) {
+    document.getElementById('direction-controls').style.height = "0px";
+    document.getElementById('direction-controls').style.visibility = "hidden";
+  } else {
+    document.getElementById('direction-controls').style.height = "unset";
+    document.getElementById('direction-controls').style.visibility = "collapse";
+  }
 
   // Reset direction state and button styles
   currentDirection = 0;
