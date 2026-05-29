@@ -1,0 +1,1684 @@
+{
+  "interactive": [
+    {
+      "stop_pair_id": "28057-7679-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 554, 554, 554],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "7": {
+            "gap": [554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0922, -37.6001],
+          [145.0967, -37.6007]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "28062-46381-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0887, -37.6002],
+          [145.0878, -37.6029]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "43388-28057-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 38, 22, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 56, 38, 38, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 60, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 550, 550, 550],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "7": {
+            "gap": [550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0891, -37.5986],
+          [145.0922, -37.6001]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "43388-28062-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 1019, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 421, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0891, -37.5986],
+          [145.0887, -37.6002]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "43416-51702-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1168, -37.5885],
+          [145.104, -37.5872]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "43416-51702-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 504, 504, 504],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1168, -37.5885],
+          [145.104, -37.5872]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "46381-7679-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 1020, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 420, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0878, -37.6029],
+          [145.0967, -37.6007]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "46599-51104-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.129, -37.5867],
+          [145.1261, -37.587]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "46599-51104-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.129, -37.5867],
+          [145.1261, -37.587]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51034-51716-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.108, -37.602],
+          [145.1148, -37.6027]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51034-51716-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 505, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 554, 554, 554, 554],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 554, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.108, -37.602],
+          [145.1148, -37.6027]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51043-51045-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 551, 551, 551],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "7": {
+            "gap": [551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0959, -37.5862],
+          [145.0864, -37.5868]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51045-51047-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 42, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 42, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 42, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 42, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 42, 55, 38, 38, 38, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 550, 550, 550],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "7": {
+            "gap": [550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0864, -37.5868],
+          [145.0873, -37.5885]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51047-51049-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 21, 18, 19, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 41, 56, 38, 38, 38, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 550, 550, 550],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "7": {
+            "gap": [550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0873, -37.5885],
+          [145.0887, -37.5919]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51049-51707-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 19, 18, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 17, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 550, 550, 550],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "7": {
+            "gap": [550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 550, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0887, -37.5919],
+          [145.0907, -37.5942]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51082-43416-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1223, -37.5872],
+          [145.1168, -37.5885]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51082-43416-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 504, 504, 504],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1223, -37.5872],
+          [145.1168, -37.5885]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51083-46599-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1312, -37.5886],
+          [145.129, -37.5867]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51083-46599-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1312, -37.5886],
+          [145.129, -37.5867]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51086-51083-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1319, -37.5938],
+          [145.1312, -37.5886]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51086-51083-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 38, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1319, -37.5938],
+          [145.1312, -37.5886]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51088-51086-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1324, -37.5981],
+          [145.1319, -37.5938]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51088-51086-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 505, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1324, -37.5981],
+          [145.1319, -37.5938]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51090-51088-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1292, -37.5998],
+          [145.1324, -37.5981]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51090-51088-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 505, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1292, -37.5998],
+          [145.1324, -37.5981]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51104-51082-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1261, -37.587],
+          [145.1223, -37.5872]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51104-51082-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 21, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 41, 56, 56, 38, 38, 38, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 30, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1261, -37.587],
+          [145.1223, -37.5872]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51702-51043-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 21, 18, 20, 17, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 21, 20, 20, 20, 20, 20, 42, 55, 55, 38, 38, 38, 504, 504, 504],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 30, 20, 20, 20, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 504, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.104, -37.5872],
+          [145.0959, -37.5862]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51707-43388-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 19, 18, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 18, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 41, 41, 56, 38, 38, 38, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 20, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 549, 549, 549],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "7": {
+            "gap": [549, 549, 549, 549, 549, 549, 549, 549, 549, 549, 549, 549, 549, 549, 549, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 41, 41, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0907, -37.5942],
+          [145.0891, -37.5986]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51711-51090-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1242, -37.5987],
+          [145.1292, -37.5998]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51711-51090-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 24, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 41, 56, 56, 38, 38, 505, 505, 505, 505],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "6": {
+            "gap": [505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 505, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 553, 553, 553, 553],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1242, -37.5987],
+          [145.1292, -37.5998]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51712-51711-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1235, -37.6013],
+          [145.1242, -37.5987]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51712-51711-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 506, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1235, -37.6013],
+          [145.1242, -37.5987]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51714-51712-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1201, -37.6034],
+          [145.1235, -37.6013]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51714-51712-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 506, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 552, 552, 552, 552],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 552, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1201, -37.6034],
+          [145.1235, -37.6013]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51716-51714-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1148, -37.6027],
+          [145.1201, -37.6034]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51716-51714-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 20, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, 20, 19, 20, 20, 20, 42, 55, 55, 38, 38, 506, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 553, 553, 553, 553],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1148, -37.6027],
+          [145.1201, -37.6034]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51733-51034-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1014, -37.6021],
+          [145.108, -37.602]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "51733-51034-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 21, 19, 21, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 42, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 21, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 42, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 21, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 42, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 21, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 42, 42, 55, 55, 38, 38, 447, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 21, 19, 21, 21, 17, 23, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 20, 20, 21, 20, 20, 19, 20, 20, 42, 42, 55, 55, 38, 38, 506, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, 20, 30, 20, 30, 30, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 20, 20, 30, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 553, 553, 553, 553],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          },
+          "7": {
+            "gap": [553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 553, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1014, -37.6021],
+          [145.108, -37.602]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "7679-51733-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 20, 20, 19, 21, 21, 19, 15, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 22, 20, 20, 20, 20, 19, 20, 20, 20, 40, 57, 57, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 15, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 30, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "2": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 15, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 22, 20, 20, 20, 20, 19, 20, 20, 20, 40, 57, 57, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 15, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 30, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "3": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 15, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 22, 20, 20, 20, 20, 19, 20, 20, 20, 40, 57, 57, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 15, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 30, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "4": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 15, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 22, 20, 20, 20, 20, 19, 20, 20, 20, 40, 57, 57, 38, 38, 447, 447, 447],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 15, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 30, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "5": {
+            "gap": [447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 447, 20, 20, 19, 21, 21, 19, 15, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 22, 20, 20, 20, 20, 19, 20, 20, 20, 40, 57, 57, 38, 38, 506, 506, 506],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 20, 20, 20, 30, 30, 20, 15, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 30, 20, 20, 20, 20, 20, 20, 20, 20, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "6": {
+            "gap": [506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 506, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 551, 551, 551],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          },
+          "7": {
+            "gap": [551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 551, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 46, 46, 41, 9513, 9513, 9513],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.0967, -37.6007],
+          [145.1014, -37.6021]
+        ]
+      }
+    }
+  ]
+}

@@ -4,13 +4,14 @@ output: html_document
 date: "2026-05-23"
 ---
 
+
 # Setup
 
 ## Clean Environment
 
 ```{r}
 # List of items, mostly large things that are annoying to reinitialise
-keep <- c("gtfs_tram") 
+keep <- c("gtfs_bus", "gtfs_tram") 
 # Remove everything that is not in the keep list
 rm(list = setdiff(ls(), keep))
 # Get rid of everything if needed
@@ -29,6 +30,9 @@ library(jsonlite)
 library(gtfstools)
 library(vicgtfstools) # My own repo https://github.com/adambain014/vicgtfstools 
 library(tictoc) # For my own benchmarking enjoyment
+
+
+shift <- data.table::shift # For the actual last time can people try and not name functions the same across dplyr and data.table
 ```
 
 ## Initialise the GTFS
@@ -43,35 +47,116 @@ if(!dir.exists("Temps/gtfs")){
 if(!exists("gtfs_tram")){
   gtfs_tram <- open_vic_gtfs("Temps/gtfs", "Metro_Tram")
 }
+
+# Open the tram GTFS
+if(!exists("gtfs_bus")){
+  gtfs_bus <- open_vic_gtfs("Temps/gtfs", "Metro_Bus")
+}
 ```
 
 ## Create a stop times sorted by day and route
 ```{r}
 refine_stop_times <- function(gtfs, target_day, target_route){
 
-  # Find all service_ids active on the target day
-  possible_service_ids <- gtfs$calendar[get(target_day) == 1, service_id]
 
-  # Pick the service_id with the MOST trips for this route on this day
-  # (more reliable than fewest calendar_dates exceptions)
   route_ids <- gtfs$routes[route_short_name == target_route, route_id]
   
-  candidate_trips <- gtfs$trips[
-    route_id %chin% route_ids & service_id %chin% possible_service_ids
+  possible_service_ids <- gtfs$trips[route_id %chin% route_ids, service_id]
+  
+  calendar <- gtfs$calendar
+  
+  start_date <- min(calendar$start_date)
+  end_date <- max(calendar$end_date)
+  
+  date_list <- data.table(target_date = seq(from = start_date, to = end_date)
+                          )[tolower(weekdays(target_date)) == target_day]
+  
+  get_date_service_ids <- function(target_date, gtfs){
+    
+    base_service_ids <- calendar[
+      start_date <= target_date &
+      end_date >= target_date &
+      get(target_day) == 1,
+      service_id
+    ]
+    
+    exception_1_service_ids <- gtfs$calendar_dates[
+      date == target_date & exception_type == 1,
+      service_id
+    ]
+    
+    exception_2_service_ids<- gtfs$calendar_dates[
+      date == target_date & exception_type == 2,
+      service_id
+    ]
+    
+#work around for buses - I am not happy with it but due to bizarre errors in the VIC GTFS I'm going to have to do it. Didnt work
+    if(gtfs$levels$mode_number[1] == 0){
+      
+      target_day_code <- fifelse(target_day == "sunday", "Su", fifelse(target_day == "saturday", "Sa", "MF"))
+      
+      calendar[,day_code := substring(service_id, 1, 2)]
+      
+      exception_2_service_ids <- calendar[day_code != target_day_code]$service_id
+    }
+    
+    
+    final_service_ids <- setdiff(union(base_service_ids, exception_1_service_ids), exception_2_service_ids)
+    
+    intersect(final_service_ids, possible_service_ids)
+    
+  }
+  
+  date_list[
+    ,
+    service_ids := lapply(
+      target_date,
+      get_date_service_ids,
+      gtfs = gtfs
+    )
   ]
   
-  if(nrow(candidate_trips) == 0L)
-    stop("No trips found for route ", target_route, " on ", target_day)
+  service_ids_list <- date_list[
+  ,
+    .(service_signature = vapply(
+      service_ids,
+      function(x) paste(sort(x), collapse = "|"),
+      character(1)
+    ),
+    service_ids)
+  ][    service_ids != "character(0)"
+    ]
   
-  service_ids <- candidate_trips[, .N, by = service_id][order(-N)][1, service_id]
-  # Get route_id(s) for the target route_short_name
-  route_ids <- gtfs$routes[route_short_name == target_route, route_id]
+  best_service_signature <- service_ids_list[, .N,
+    by = service_signature
+  ][order(-N)][1]$service_signature
 
-  # Get trip_ids for that route + canonical service_id
+  # Just take the first one if its buses because buses are fucked in the GTFS service calendar if you look too far forward
+    if(gtfs$levels$mode_number[1] == 4){
+    best_service_signature <- service_ids_list[1]$service_signature
+  }
+
+  list_of_valid_service_ids <- service_ids_list[
+      service_signature == best_service_signature
+    ]$service_ids |> unlist() |> unique()
+    
   trip_ids <- gtfs$trips[
-    route_id %chin% route_ids & service_id %chin% service_ids,
+    route_id %chin% route_ids & service_id %chin% list_of_valid_service_ids,
     trip_id
   ]
+  
+  # No service on this day
+  if (length(trip_ids) == 0L) {
+    return(data.table(
+      trip_id = NA_character_,
+      departure_time = NA_character_,
+      stop_id = NA_character_,
+      stop_sequence = NA_integer_,
+      shape_dist_traveled = NA_real_,
+      direction_id = NA_integer_,
+      departure_time_m = NA_real_
+    )[0])
+  }
 
   #  Filter stop_times by the trip_ids
   stop_times <- gtfs$stop_times[trip_id %chin% trip_ids]
@@ -99,9 +184,23 @@ refine_stop_times <- function(gtfs, target_day, target_route){
   }
 
   stop_times <- departure_times_to_minutes(stop_times)
-
+  
+  # remove dupes
+  stop_times <- stop_times[, .SD[1], by = .(stop_id, departure_time_m, direction_id, shape_dist_traveled)]
+  
   return(stop_times)
 }
+
+
+test <- gtfs_bus$trips[,.(trip_id, service_id)][gtfs_bus$stop_times[trip_id %chin% gtfs_bus$trips[route_id %chin% gtfs_bus$routes[route_short_name == "742"]$route_id]$trip_id][,.SD[1], by = .(departure_time, stop_id)][order(departure_time)][stop_id == 15643], on = "trip_id"] |> setcolorder("service_id", 1)
+
+#19-742--1-MF11-32
+
+test <- gtfs_bus$calendar[service_id %chin% gtfs_bus$trips[route_id %chin% gtfs_bus$routes[route_short_name == "742"]$route_id]$service_id]
+
+test <- refine_stop_times(gtfs_bus, "monday", 742)[stop_id == 15643][order(departure_time_m)]
+
+print(test)
 ```
 
 # Summary Stats
@@ -156,9 +255,9 @@ freq_at_3_windows <- function(waits){
   }
 
 # Test usage
-stop_times_monday   <- refine_stop_times(gtfs_tram, "monday", "19")
-stop_times_saturday <- refine_stop_times(gtfs_tram, "saturday", "19")
-stop_times_sunday   <- refine_stop_times(gtfs_tram, "sunday", "19")
+stop_times_monday   <- refine_stop_times(gtfs_bus, "monday", "742")
+stop_times_saturday <- refine_stop_times(gtfs_bus, "saturday", "742")
+stop_times_sunday   <- refine_stop_times(gtfs_bus, "sunday", "742")
 
 waits_monday   <- time_until_next_service(stop_times_monday)
 waits_saturday <- time_until_next_service(stop_times_saturday)
@@ -206,7 +305,7 @@ take_peak_medians <- function(waits){
 }
 
 # Test usage
-stop_times_monday   <- refine_stop_times(gtfs_tram, "monday", "19")
+stop_times_monday   <- refine_stop_times(gtfs_bus, "monday", "907")
 waits_monday        <- time_until_next_service(stop_times_monday)
 peak_medians        <- take_peak_medians(waits_monday)
 ```
@@ -246,24 +345,32 @@ unified_stop_times <- function(gtfs, target_route){
 }
 
 
+    # Guard against infinites caused by missing days
+  safe_max <- function(x) if (length(x) == 0 || all(is.na(x))) NA_real_ else max(x, na.rm = TRUE)
+  safe_min <- function(x) if (length(x) == 0 || all(is.na(x))) NA_real_ else min(x, na.rm = TRUE)
 
 # Function to break one day into spans
 one_day_span <- function(unified_stop_times_o, target_day_number){
   
   day_stop_times <- unified_stop_times_o[day == target_day_number]
+ 
+  # Remove terminus stops from consideration due to multiple bays/platofrms being randomly used 
+ # day_stop_times <- day_stop_times[, .SD[-c(1, .N)], by = trip_id]
   
-  valid_stops <- day_stop_times[,.N, by = "stop_id"][,pc_max := N / max(N)][pc_max > 0.1]$stop_id
+  valid_stops <- day_stop_times[,.N, by = "stop_id"][,pc_max := N / safe_max(N)][pc_max > 0.2]$stop_id
   
   day_stop_times <- day_stop_times[stop_id %chin% valid_stops]
   
   day_stop_times_arranged <- day_stop_times[order(departure_time_m),.(departure_time_m, stop_id)]
   day_stop_times_arranged <- unique(day_stop_times_arranged)
   
-  span_start <- min(day_stop_times_arranged$departure_time_m)
-  span_end   <- max(day_stop_times_arranged$departure_time_m)
+  span_start <- safe_min(day_stop_times_arranged$departure_time_m)
+  span_end   <- safe_max(day_stop_times_arranged$departure_time_m)
   
-  full_coverage_start <- day_stop_times_arranged[, .(first_service = min(departure_time_m)), by = stop_id][, max(first_service)]
-  full_coverage_end   <- day_stop_times_arranged[, .(last_service  = max(departure_time_m)), by = stop_id][, min(last_service)]
+  full_coverage_start <- day_stop_times_arranged[, .(first_service = safe_min(departure_time_m)), by = stop_id
+                                                 ][, safe_max(first_service)]
+  full_coverage_end   <- day_stop_times_arranged[, .(last_service  = safe_max(departure_time_m)), by = stop_id
+                                                 ][, safe_min(last_service)]
   
     out <- data.table(
     day = target_day_number,
@@ -309,12 +416,18 @@ span_across_week <- function(unified_stop_times_o){
   
   out[ends_night_network == TRUE, span_end := 27 * 60]
   out[ends_night_network == TRUE, full_coverage_end := 27 * 60]
+    
+  # Simplify it a bit
+  out <- out[,.(day, span_start, span_end, full_coverage_start, full_coverage_end)]
+  
+  
   return(out)
+  
 }
   
 # Test
 
-week_stop_times <- unified_stop_times(gtfs_tram, "75")
+week_stop_times <- unified_stop_times(gtfs_bus, "150")
 test <- one_day_span(week_stop_times, 7)
 span_summary <- span_across_week(week_stop_times)
 ```
@@ -330,8 +443,6 @@ plot_week_spans <- function(spans) {
     end   = c(span_end, full_coverage_end)
   ), by = day]
   
-  # Drop NA rows
-  segments <- segments[!is.na(start)]
   
   # Convert to hours
   segments[, start_h := start / 60]
@@ -375,7 +486,7 @@ plot_week_spans <- function(spans) {
 }
 
 # Usage
-week_stop_times <- unified_stop_times(gtfs_tram, "75")
+week_stop_times <- unified_stop_times(gtfs_bus, "150")
 span_summary <- span_across_week(week_stop_times)
 plot_week_spans(span_summary)
 ```
@@ -386,6 +497,22 @@ Split days into 30 min chunks across 7 days of the week, and assign a frequency 
 First lets make duplet sfs
 
 ```{r}
+next_stop_id <- function(stop_times){
+  stop_times <- as.data.table(stop_times)
+  setorder(stop_times, day, trip_id, stop_sequence)
+  stop_times <- stop_times[, next_stop_id := shift(stop_id, 1L, type = "lead"), by = .(trip_id, day)
+                              ][, next_shape_dist_traveled := shift(shape_dist_traveled, 1L, type = "lead"), 
+                                by = .(trip_id, day)
+                              ][, stop_pair_id := paste0(stop_id, "-", next_stop_id, "-", direction_id)
+                              ][!is.na(next_stop_id)
+                              ]
+  
+  unique(stop_times, by = c("stop_pair_id", "day", "departure_time_m"))
+}
+
+stop_times_week <- unified_stop_times(gtfs_tram, 1)
+stop_times_pairs  <- next_stop_id(stop_times_week)
+
 build_stop_pair_shapes <- function(stop_times, gtfs) {
   
   # Get unique stop pairs with their two stop IDs
@@ -417,16 +544,11 @@ build_stop_pair_shapes <- function(stop_times, gtfs) {
 
 
 
-stop_times_week <- unified_stop_times(gtfs_tram, 1)
-stop_times <- stop_times_week[, next_stop_id := shift(stop_id, 1L, type = "lead"), by = .(trip_id)
-                              ][, next_shape_dist_traveled := shift(shape_dist_traveled, 1L, type = "lead"), 
-                                by = .(trip_id)
-                              ][, stop_pair_id := paste0(stop_id, "-", next_stop_id)
-                              ][order(trip_id, stop_sequence)
-                              ][!is.na(next_stop_id)
-                              ]
+stop_times_week <- unified_stop_times(gtfs_bus, 273)
+stop_times_pairs  <- next_stop_id(stop_times_week)
+stop_pair_shapes <- build_stop_pair_shapes(stop_times_pairs, gtfs_bus)
 
-stop_pair_shapes <- build_stop_pair_shapes(stop_times, gtfs_tram)
+plot(stop_pair_shapes)
 ```
 
 Find out current wait period for each first stop of each duplet - at every 30 minute intervals 7 days a week
@@ -441,9 +563,20 @@ get_30_minute_gap_snapshots_per_stop_id <- function(stop_times){
   # explode into week minutes
   stop_times_i[, week_time := departure_time_m + (day - 1L) * 24 * 60] 
   
-  stop_times_wrap_around <- stop_times_i[week_time >= (7 * 24 * 60) - 30][, week_time := week_time - (7 * 24 * 60)]
+  # Fix the circular week problem by adding buffers
+  first_buffer <- stop_times_i[
+      , .SD[1], by = stop_pair_id
+    ][
+      , week_time := week_time - 7 * 1440
+    ]
+
+  last_buffer <- stop_times_i[
+      , .SD[.N], by = stop_pair_id
+    ][
+      , week_time := week_time + 7 * 1440
+    ]
   
-  stop_times_i <- rbind(stop_times_i, stop_times_wrap_around)
+  stop_times_i <- rbind(stop_times_i, first_buffer, last_buffer)
   
   # Order chronologically within each stop pair
   setorder(stop_times_i, stop_pair_id, week_time)
@@ -520,24 +653,18 @@ get_30_minute_gap_snapshots_per_stop_id <- function(stop_times){
         gap_group
       )
     ]
-}
+            }
 
 
 # test
 
-
-stop_times_week <- unified_stop_times(gtfs_tram, 30)
-stop_times <- stop_times_week[, next_stop_id := shift(stop_id, 1L, type = "lead"), by = .(trip_id)
-                              ][, next_shape_dist_traveled := shift(shape_dist_traveled, 1L, type = "lead"), 
-                                by = .(trip_id)
-                              ][, stop_pair_id := paste0(stop_id, "-", next_stop_id, "-", direction_id)
-                              ][order(trip_id, stop_sequence)
-                              ][!is.na(next_stop_id)
-                              ]
-
+stop_times_week <- unified_stop_times(gtfs_tram, 35)
+stop_times_pairs  <- next_stop_id(stop_times_week)
+stop_pair_shapes <- build_stop_pair_shapes(stop_times_pairs, gtfs_tram)
 
  
-snapshots_waits <- get_30_minute_gap_snapshots_per_stop_id(stop_times)
+snapshots_waits <- get_30_minute_gap_snapshots_per_stop_id(stop_times_pairs)
+
 snapshots_waits <- snapshots_waits[!is.na(direction_id)]
 
 
@@ -554,8 +681,6 @@ final_int <- snapshots_waits[
 ]
 
 # Join geometry back as sf object
-
-stop_pair_shapes <- build_stop_pair_shapes(stop_times, gtfs_tram)
 geom_lookup <- data.frame(
   stop_pair_id = stop_pair_shapes$stop_pair_id,
   geometry     = st_geometry(stop_pair_shapes)
@@ -579,14 +704,16 @@ JS renders maps + charts
 ```{r}
 make_pre_json <- function(gtfs, route_number){
   
+  mode_type <- gtfs$levels$mode_number[1]
+  
   # Get Colour
   colour <- gtfs$routes[route_short_name == route_number]$route_color[1]
   
   # Get destinations for directions
-  route_destination_1 <- gtfs$trips[route_id %chin% gtfs$routes[route_short_name == route_number]
+  route_destination_1 <- gtfs$trips[route_id %chin% gtfs$routes[route_short_name == route_number]$route_id
                                     ][direction_id == 1][,.N, by = "trip_headsign"][order(-N)
                                                                                     ][1]$trip_headsign
-  route_destination_0 <- gtfs$trips[route_id %chin% gtfs$routes[route_short_name == route_number]
+  route_destination_0 <- gtfs$trips[route_id %chin% gtfs$routes[route_short_name == route_number]$route_id
                                     ][direction_id == 0][,.N, by = "trip_headsign"][order(-N)
                                                                                     ][1]$trip_headsign
 
@@ -614,17 +741,11 @@ make_pre_json <- function(gtfs, route_number){
   span_summary <- span_across_week(week_stop_times)
   
   # Interactive
-  stop_times <- week_stop_times[, next_stop_id := shift(stop_id, 1L, type = "lead"), by = .(trip_id)
-                                ][, next_shape_dist_traveled := shift(shape_dist_traveled, 1L, type = "lead"), 
-                                  by = .(trip_id)
-                                ][, stop_pair_id := paste0(stop_id, "-", next_stop_id, "-", direction_id)
-                                ][order(trip_id, stop_sequence)
-                                ][!is.na(next_stop_id)
-                                ]
+  stop_times_pairs  <- next_stop_id(week_stop_times)
+    
+    
   
-  
-  
-  snapshots_waits <- get_30_minute_gap_snapshots_per_stop_id(stop_times)
+  snapshots_waits <- get_30_minute_gap_snapshots_per_stop_id(stop_times_pairs)
   snapshots_waits <- snapshots_waits[!is.na(direction_id)]
   
   
@@ -642,7 +763,7 @@ make_pre_json <- function(gtfs, route_number){
   
   # Join geometry back as sf object
   
-  stop_pair_shapes <- build_stop_pair_shapes(stop_times, gtfs)
+  stop_pair_shapes <- build_stop_pair_shapes(stop_times_pairs, gtfs)
   geom_lookup <- data.frame(
     stop_pair_id = stop_pair_shapes$stop_pair_id,
     geometry     = st_geometry(stop_pair_shapes)
@@ -651,7 +772,7 @@ make_pre_json <- function(gtfs, route_number){
   final_int <- st_as_sf(final_int)
       
         
-    
+
 
   # FINAL STRUCTURE 
   interactive_out <- list(
@@ -659,6 +780,7 @@ make_pre_json <- function(gtfs, route_number){
   )
   
   summary_out <- list(
+    mode_type           = as.character(mode_type),
     route_number        = as.character(route_number),
     route_colour        = as.character(colour),
     route_destination_1 = as.character(route_destination_1),
@@ -696,11 +818,18 @@ export_json <- function(gtfs, route_number){
 ```
 
 ```{r}
+valid_tram_routes <- unique(gtfs_tram$routes$route_short_name)
 
-valid_routes <- unique(gtfs_tram$routes$route_short_name)
+valid_bus_routes <- unique(gtfs_bus$routes[nchar(route_short_name) == 3]$route_short_name)
+#valid_bus_routes <- c("742", "903", "273", "907", "150")
+
 # Export interactives and collect summaries
-all_summaries <- lapply(valid_routes, function(r) export_json(gtfs_tram, r))
-names(all_summaries) <- valid_routes
+all_summaries <- c(
+  lapply(valid_tram_routes, function(r) export_json(gtfs_tram, r))
+  ,lapply(valid_bus_routes,  function(r) export_json(gtfs_bus,  r))
+)
+names(all_summaries) <- c(valid_tram_routes, valid_bus_routes
+                          )
 
 # Write single combined summary JSON
 jsonlite::write_json(
@@ -720,4 +849,6 @@ jsonlite::write_json(
   "route_jsons/manifest.json",
   auto_unbox = TRUE
 )
+
+valid_bus_routes
 ```

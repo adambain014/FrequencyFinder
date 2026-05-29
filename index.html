@@ -267,17 +267,25 @@
 <div class="top-bar">
   <div class="top-bar-center">
     <h1>FrequencyFinder</h1>
-    <span class="subtitle">Unofficial - Current as of May 2026 - by Adam Bain - TRAMS ONLY FOR NOW</span>
+    <span class="subtitle">Unofficial - Current as of May 2026 - by Adam Bain - TRAMS + BUSES ONLY FOR NOW</span>
   </div>
 </div>
 
 <div class="page">
 
   <div class="route-selector">
-    <label for="route-select">Select route</label>
-    <select id="route-select">
-      <option value="">— choose a route —</option>
-    </select>
+    <label for="route-search">Select route</label>
+    <div style="position:relative; min-width:220px;">
+      <input type="text" id="route-search" placeholder="Search tram or bus route"
+        autocomplete="off"
+        style="width:100%; padding:8px 12px; border:0.5px solid #c8c5be; border-radius:8px;
+               background:#fff; font-size:14px; color:#1a1a18; cursor:text;">
+      <div id="route-dropdown"
+        style="display:none; position:absolute; top:calc(100% + 4px); left:0; right:0;
+               background:#fff; border:0.5px solid #c8c5be; border-radius:8px;
+               max-height:260px; overflow-y:auto; z-index:999; box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+      </div>
+    </div>
   </div>
 
   <div id="placeholder" class="placeholder">
@@ -366,7 +374,7 @@
     </div>
     
 <a href="https://ptmapmelb.com" target="_blank" rel="noopener" class="promo-link">
-  Want more? Check out my Melbourne-wide Frequency Map at ptmapmelb.com
+  Want more? Click <span style="text-decoration:underline">here</span> to check out my Melbourne-wide frequency map at ptmapmelb.com
 </a>
   </div><!-- /#content -->
 
@@ -730,9 +738,10 @@ document.getElementById('direction-controls').addEventListener('click', e => {
     b.style.color = '';
   });
   btn.classList.add('active');
+  const colour = getComputedStyle(document.documentElement).getPropertyValue('--route-colour').trim();
   btn.style.background = getComputedStyle(document.documentElement)
     .getPropertyValue('--route-colour').trim();
-  btn.style.color = '#fff';
+  btn.style.color = contrastText(colour);
   currentDirection = parseInt(btn.dataset.dir);
   refreshMap(true); // full redraw — different set of pairs for this direction
 });
@@ -753,9 +762,10 @@ document.getElementById('day-tabs').addEventListener('click', e => {
     t.style.color = '';
   });
   tab.classList.add('active');
+  const colour = getComputedStyle(document.documentElement).getPropertyValue('--route-colour').trim();
   tab.style.background = getComputedStyle(document.documentElement)
     .getPropertyValue('--route-colour').trim();
-  tab.style.color = '#fff';
+  tab.style.color = contrastText(colour);
   currentDay = parseInt(tab.dataset.day);
   refreshMap(true); // full redraw — direction availability can differ by day
 });
@@ -773,7 +783,8 @@ function render(data) {
   badge.style.background = colour;
   badge.style.color = textCol;
 
-  document.getElementById('route-title').textContent = `Route ${data.route_number}`;
+  const modeName = modeLabel(data.route_number);
+  document.getElementById('route-title').textContent = `${modeName} ${data.route_number}`;
 
   const peak   = data.peak_medians?.[0] ?? {};
   const amVal  = peak['Median AM Peak Wait'];
@@ -808,6 +819,7 @@ function render(data) {
   // Style active day tab with route colour
   document.querySelectorAll('.day-tab.active').forEach(t => {
     t.style.background = colour;
+    t.style.color = contrastText(colour);
   });
 
   
@@ -819,10 +831,10 @@ function render(data) {
   // Hide the direction buttons when there's only one direction
   if (!data.route_destination_0 || !data.route_destination_1) {
     document.getElementById('direction-controls').style.height = "0px";
-    document.getElementById('direction-controls').style.visibility = "hidden";
+    document.getElementById('direction-controls').style.visibility = "collapse";
   } else {
     document.getElementById('direction-controls').style.height = "unset";
-    document.getElementById('direction-controls').style.visibility = "collapse";
+    document.getElementById('direction-controls').style.visibility = "visible";
   }
 
   // Reset direction state and button styles
@@ -830,7 +842,7 @@ function render(data) {
   document.querySelectorAll('.dir-btn').forEach((b, i) => {
     b.classList.toggle('active', i === 0);
     b.style.background = i === 0 ? colour : '';
-    b.style.color      = i === 0 ? '#fff' : '';
+    b.style.color      = i === 0 ? contrastText(colour) : '';
   });
 
   // Build interactive map
@@ -860,36 +872,93 @@ function loadRoute(num) {
     });
 }
 
+// ─── Mode label helper ────────────────────────────────────────────────────────
+
+function modeLabel(routeNum) {
+  const mode = summaryCache?.[routeNum]?.mode_type;
+  if (mode == '3' || mode === 3) return 'Tram';
+  if (mode == '4' || mode === 4) return 'Bus';
+  return 'Route';
+}
+
+// ─── Search / dropdown ────────────────────────────────────────────────────────
+
+let allRoutes = [];
+
+function buildDropdownItem(r) {
+  const label = ` ${r} - ${modeLabel(r)}`;
+  const el = document.createElement('div');
+  el.textContent = label;
+  el.dataset.route = r;
+  el.style.cssText = 'padding:9px 14px; font-size:14px; color:#1a1a18; cursor:pointer;';
+  el.addEventListener('mouseenter', () => el.style.background = '#f5f5f3');
+  el.addEventListener('mouseleave', () => el.style.background = '');
+  el.addEventListener('mousedown', () => {
+    selectRoute(r, label);
+  });
+  return el;
+}
+
+function filterDropdown(query) {
+  const dd = document.getElementById('route-dropdown');
+  dd.innerHTML = '';
+  const q = query.trim().toLowerCase();
+  const filtered = q
+    ? allRoutes.filter(r => {
+        const label = `${modeLabel(r)} ${r}`.toLowerCase();
+        return label.startsWith(q) || r.toLowerCase().startsWith(q);
+      })
+    : allRoutes;
+  if (!filtered.length) {
+    dd.innerHTML = '<div style="padding:9px 14px;font-size:13px;color:#888780;">No routes found</div>';
+  } else {
+    filtered.forEach(r => dd.appendChild(buildDropdownItem(r)));
+  }
+  dd.style.display = 'block';
+}
+
+function selectRoute(routeNum, label) {
+  document.getElementById('route-search').value = label;
+  document.getElementById('route-dropdown').style.display = 'none';
+
+  // Reset controls
+  currentDay = 1;
+  currentSnapshot = 390;
+  document.getElementById('time-slider').value = 13;
+  document.getElementById('time-display').textContent = minsToTimeStr(390);
+  document.querySelectorAll('.day-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === 0);
+    t.style.background = '';
+    t.style.color = '';
+  });
+  loadRoute(routeNum);
+}
+
 function populateSelect(routes) {
-  const sel = document.getElementById('route-select');
   routes.sort((a, b) => {
+    // Sort trams first, then buses; within each group sort numerically
+    const mA = summaryCache?.[a]?.mode_type;
+    const mB = summaryCache?.[b]?.mode_type;
+    if (mA !== mB) return (mA == 3 ? 0 : 1) - (mB == 3 ? 0 : 1);
     const na = parseInt(a), nb = parseInt(b);
     if (!isNaN(na) && !isNaN(nb)) return na - nb;
     return a.localeCompare(b);
   });
-  routes.forEach(r => {
-    const opt = document.createElement('option');
-    opt.value = r;
-    opt.textContent = `Route ${r}`;
-    sel.appendChild(opt);
+  allRoutes = routes;
+
+  const input = document.getElementById('route-search');
+  const dd    = document.getElementById('route-dropdown');
+
+  input.addEventListener('focus', () => {
+    input.value = '';
+    filterDropdown('');
+  });
+  input.addEventListener('input', () => filterDropdown(input.value));
+  input.addEventListener('blur',  () => {
+    // small delay so mousedown on an item fires first
+    setTimeout(() => { dd.style.display = 'none'; }, 150);
   });
 }
-
-document.getElementById('route-select').addEventListener('change', e => {
-  if (e.target.value) {
-    // Reset controls
-    currentDay = 1;
-    currentSnapshot = 390;
-    document.getElementById('time-slider').value = 13;
-    document.getElementById('time-display').textContent = minsToTimeStr(390);
-    document.querySelectorAll('.day-tab').forEach((t, i) => {
-      t.classList.toggle('active', i === 0);
-      t.style.background = '';
-      t.style.color = '';
-    });
-    loadRoute(e.target.value);
-  }
-});
 
 // ─── Startup: load manifest + summary in parallel ────────────────────────────
 
