@@ -370,11 +370,11 @@
       <div class="map-legend-item"><div class="map-legend-line" style="background:#642d91"></div><span>≤ 20 min</span></div>
       <div class="map-legend-item"><div class="map-legend-line" style="background:#2c8ab8"></div><span>≤ 30 min</span></div>
       <div class="map-legend-item"><div class="map-legend-line" style="background:#5d9a9d"></div><span>≤ 60 min</span></div>
-      <div class="map-legend-item"><div class="map-legend-line" style="background:#ccc; border: 1px dashed #999"></div><span>No regular service</span></div>
+      <div class="map-legend-item"><div class="map-legend-line" style="background:#666; border: 1px dashed #999"></div><span>No regular service</span></div>
     </div>
     
 <a href="https://ptmapmelb.com" target="_blank" rel="noopener" class="promo-link">
-  Want more? Click <span style="text-decoration:underline">here</span> to check out my Melbourne-wide frequency map at ptmapmelb.com
+  Want more? Click hereCheck out my Melbourne-wide frequency map at ptmapmelb.com
 </a>
   </div><!-- /#content -->
 
@@ -401,7 +401,7 @@ const GAP_COLOUR = {
   30:  '#2c8ab8',
   60:  '#5d9a9d',
 };
-const NO_SERVICE_COLOUR = '#cccccc';
+const NO_SERVICE_COLOUR = '#666666';
 
 // ─── Cached summary ───────────────────────────────────────────────────────────
 
@@ -663,7 +663,6 @@ function drawPairLookup(pairLookup, day, snapshot, direction) {
       color:     gapColour(gg),
       weight:    gapWeight(gg),
       opacity:   gg == null ? 0.35 : 0.85,
-      dashArray: gapDash(gg),
       lineJoin:  'round',
       lineCap:   'round',
     });
@@ -687,8 +686,7 @@ function updateMapColours(pairLookup, day, snapshot, direction) {
     layer.setStyle({
       color:     gapColour(gg),
       weight:    gapWeight(gg),
-      opacity:   gg == null ? 0.35 : 0.85,
-      dashArray: gapDash(gg),
+      opacity:   gg == null ? 0.35 : 0.85
     });
     layer.bindTooltip(
       gg == null ? 'No service' : `${gap} min wait`,
