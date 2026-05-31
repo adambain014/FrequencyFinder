@@ -11,7 +11,7 @@ date: "2026-05-23"
 
 ```{r}
 # List of items, mostly large things that are annoying to reinitialise
-keep <- c("gtfs_bus", "gtfs_tram") 
+keep <- c("gtfs_bus", "gtfs_tram", "gtfs_train") 
 # Remove everything that is not in the keep list
 rm(list = setdiff(ls(), keep))
 # Get rid of everything if needed
@@ -48,9 +48,14 @@ if(!exists("gtfs_tram")){
   gtfs_tram <- open_vic_gtfs("Temps/gtfs", "Metro_Tram")
 }
 
-# Open the tram GTFS
+# Open the bus GTFS
 if(!exists("gtfs_bus")){
   gtfs_bus <- open_vic_gtfs("Temps/gtfs", "Metro_Bus")
+}
+
+# Open the train GTFS
+if(!exists("gtfs_train")){
+  gtfs_train <- open_vic_gtfs("Temps/gtfs", "Metro_Train")
 }
 ```
 
@@ -818,6 +823,8 @@ export_json <- function(gtfs, route_number){
 ```
 
 ```{r}
+valid_train_routes <- unique(gtfs_train$routes$route_short_name)
+
 valid_tram_routes <- unique(gtfs_tram$routes$route_short_name)
 
 valid_bus_routes <- unique(gtfs_bus$routes[nchar(route_short_name) == 3]$route_short_name)
@@ -825,10 +832,13 @@ valid_bus_routes <- unique(gtfs_bus$routes[nchar(route_short_name) == 3]$route_s
 
 # Export interactives and collect summaries
 all_summaries <- c(
+    #lapply(valid_train_routes,  function(r) export_json(gtfs_train,  r)),
   lapply(valid_tram_routes, function(r) export_json(gtfs_tram, r))
   ,lapply(valid_bus_routes,  function(r) export_json(gtfs_bus,  r))
 )
-names(all_summaries) <- c(valid_tram_routes, valid_bus_routes
+names(all_summaries) <- c(#valid_train_routes,
+                          valid_tram_routes, 
+                          valid_bus_routes
                           )
 
 # Write single combined summary JSON
