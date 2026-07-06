@@ -267,7 +267,7 @@
 <div class="top-bar">
   <div class="top-bar-center">
     <h1>FrequencyFinder</h1>
-    <span class="subtitle">Unofficial - Current as of May 2026 - by Adam Bain - TRAMS + BUSES ONLY FOR NOW</span>
+    <span class="subtitle">Unofficial - Current as of July 2026 - by Adam Bain - Trams and Buses - Trains in Future</span>
   </div>
 </div>
 
@@ -422,10 +422,7 @@ function freqStyle(mins) {
 
 function pill(val) {
   if (val == null) return '<span style="color:#888">—</span>';
-    const s = freqStyle(Number(val));
-  if (typeof val === 'string' && isNaN(Number(val))) {
-    return `<span class="freq-pill" style="background:${s.bg};color:#fff">${val}</span>`;
-  }
+  const s = freqStyle(val);
   return `<span class="freq-pill" style="background:${s.bg};color:#fff">${val} min</span>`;
 }
 
@@ -959,16 +956,6 @@ function populateSelect(routes) {
     filterDropdown('');
   });
   input.addEventListener('input', () => filterDropdown(input.value));
-  input.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    const first = document.querySelector('#route-dropdown div');
-    if (first) {
-      const r = first.dataset.route;
-      const label = first.textContent;
-      selectRoute(r, label);
-    }
-  }
-});
   input.addEventListener('blur',  () => {
     // small delay so mousedown on an item fires first
     setTimeout(() => { dd.style.display = 'none'; }, 150);
