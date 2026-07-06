@@ -422,7 +422,10 @@ function freqStyle(mins) {
 
 function pill(val) {
   if (val == null) return '<span style="color:#888">—</span>';
-  const s = freqStyle(val);
+    const s = freqStyle(Number(val));
+  if (typeof val === 'string' && isNaN(Number(val))) {
+    return `<span class="freq-pill" style="background:${s.bg};color:#fff">${val}</span>`;
+  }
   return `<span class="freq-pill" style="background:${s.bg};color:#fff">${val} min</span>`;
 }
 
@@ -956,6 +959,16 @@ function populateSelect(routes) {
     filterDropdown('');
   });
   input.addEventListener('input', () => filterDropdown(input.value));
+  input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const first = document.querySelector('#route-dropdown div');
+    if (first) {
+      const r = first.dataset.route;
+      const label = first.textContent;
+      selectRoute(r, label);
+    }
+  }
+});
   input.addEventListener('blur',  () => {
     // small delay so mousedown on an item fires first
     setTimeout(() => { dd.style.display = 'none'; }, 150);
