@@ -195,17 +195,6 @@ refine_stop_times <- function(gtfs, target_day, target_route){
   
   return(stop_times)
 }
-
-
-test <- gtfs_bus$trips[,.(trip_id, service_id)][gtfs_bus$stop_times[trip_id %chin% gtfs_bus$trips[route_id %chin% gtfs_bus$routes[route_short_name == "742"]$route_id]$trip_id][,.SD[1], by = .(departure_time, stop_id)][order(departure_time)][stop_id == 15643], on = "trip_id"] |> setcolorder("service_id", 1)
-
-#19-742--1-MF11-32
-
-test <- gtfs_bus$calendar[service_id %chin% gtfs_bus$trips[route_id %chin% gtfs_bus$routes[route_short_name == "742"]$route_id]$service_id]
-
-test <- refine_stop_times(gtfs_bus, "monday", 742)[stop_id == 15643][order(departure_time_m)]
-
-print(test)
 ```
 
 # Summary Stats
@@ -225,7 +214,7 @@ time_until_next_service <- function(stop_times){
   ]
   
   # Drop last departure per group (no next service) — NAs now land correctly
-  waits <- waits[!is.na(next_time_m)]
+
   
   waits[, wait_m := next_time_m - departure_time_m]
   
@@ -235,16 +224,24 @@ time_until_next_service <- function(stop_times){
 freq_at_window <- function(waits, start_min, end_min) {
   window_waits <- waits[departure_time_m >= start_min & departure_time_m < end_min]
   
+  # cap at 2 hours
+  window_waits[wait_m >= 120, wait_m := NA]
+  
   if (nrow(window_waits) == 0) return(NA_real_)
   
   # Mean wait per stop+direction, then average across all stop+direction combos
-  mean_wait <- window_waits[, .(mean_wait = mean(wait_m)), 
-                              by = .(stop_id, direction_id)][, mean(mean_wait)]
+  mean_wait <- window_waits[, .(mean_wait = mean(wait_m, na.rm = TRUE)), 
+                              by = .(stop_id, direction_id)][, mean(mean_wait, na.rm = TRUE)]
   
-  # Round to nearest 0.5
-  mean_wait <- round(mean_wait*2)/2
+    if (is.na(mean_wait)) {
+    # NaN means all waits were capped to NA — check if any departures exist in window
+      has_departures <- waits[departure_time_m >= start_min & departure_time_m < end_min, .N] > 0
+      return(if (has_departures) "No Next Service" else NA_character_)
+    }
+    
+    # Round to nearest 0.5 and return as character for consistent column type
+    mean_wait <- round(mean_wait * 2) / 2
   
-  return(mean_wait)
 }
 
 # Function to derive wait times
@@ -260,9 +257,9 @@ freq_at_3_windows <- function(waits){
   }
 
 # Test usage
-stop_times_monday   <- refine_stop_times(gtfs_bus, "monday", "742")
-stop_times_saturday <- refine_stop_times(gtfs_bus, "saturday", "742")
-stop_times_sunday   <- refine_stop_times(gtfs_bus, "sunday", "742")
+stop_times_monday   <- refine_stop_times(gtfs_bus, "monday", "542")
+stop_times_saturday <- refine_stop_times(gtfs_bus, "saturday", "542")
+stop_times_sunday   <- refine_stop_times(gtfs_bus, "sunday", "542")
 
 waits_monday   <- time_until_next_service(stop_times_monday)
 waits_saturday <- time_until_next_service(stop_times_saturday)
@@ -298,7 +295,7 @@ peak_median <- function(waits, AMPM) {
   
   if (nrow(window) == 0) return(NA_real_)
   
-  median(window$wait_m)
+  median(window$wait_m, na.rm = TRUE)
 }
 
 take_peak_medians <- function(waits){
@@ -818,11 +815,42 @@ export_json <- function(gtfs, route_number){
   
   invisible(out$summary)
 }
-
-
 ```
 
+# Test Block
 ```{r}
+test_routes <- unique(gtfs_tram$routes$route_short_name)
+test_gtfs <- gtfs_tram
+
+
+all_summaries <- c(
+  lapply(test_routes, function(r) export_json(test_gtfs, r))
+)
+
+names(all_summaries) <- test_routes
+
+# Write single combined summary JSON
+jsonlite::write_json(
+  all_summaries,
+  path       = "route_jsons/summary.json",
+  auto_unbox = TRUE,
+  pretty     = TRUE,
+  na         = "null"
+)
+
+# Manifest
+routes <- tools::file_path_sans_ext(
+  list.files("route_jsons", pattern = "\\.json$")
+)
+jsonlite::write_json(
+  list(routes = setdiff(routes, c("manifest", "summary"))),
+  "route_jsons/manifest.json",
+  auto_unbox = TRUE
+)
+```
+
+
+``{r}
 valid_train_routes <- unique(gtfs_train$routes$route_short_name)
 
 valid_tram_routes <- unique(gtfs_tram$routes$route_short_name)
@@ -859,6 +887,4 @@ jsonlite::write_json(
   "route_jsons/manifest.json",
   auto_unbox = TRUE
 )
-
-valid_bus_routes
 ```
