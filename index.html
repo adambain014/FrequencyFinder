@@ -919,6 +919,10 @@ function selectRoute(routeNum, label) {
   document.getElementById('route-search').value = label;
   document.getElementById('route-dropdown').style.display = 'none';
 
+  const url = new URL(window.location);
+  url.searchParams.set('route', routeNum);
+  window.history.replaceState({}, '', url);
+
   // Reset controls
   currentDay = 1;
   currentSnapshot = 390;
@@ -964,7 +968,15 @@ Promise.all([
   fetch(`${FOLDER}/manifest.json`).then(r => r.ok ? r.json() : Promise.reject('manifest')),
   loadSummary()
 ])
-  .then(([manifest]) => populateSelect(manifest.routes))
+  .then(([manifest]) => {
+    populateSelect(manifest.routes);
+    const urlParams = new URLSearchParams(window.location.search);
+    const routeParam = urlParams.get('route');
+    if (routeParam && manifest.routes.includes(routeParam)) {
+      const label = ` ${routeParam} - ${modeLabel(routeParam)}`;
+      selectRoute(routeParam, label);
+    }
+  })
   .catch(() => {
     document.getElementById('placeholder').innerHTML =
       `<div class="error">Could not load <code>route_jsons/manifest.json</code> or <code>summary.json</code>.</div>`;
