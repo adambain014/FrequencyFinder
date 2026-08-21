@@ -9551,32 +9551,32 @@
     "route_display": "426/456",
     "is_combined_corridor": true,
     "route_colour": "FF8200",
-    "route_destination_1": "Sunshine Station/Dickson St",
-    "route_destination_0": "Rockbank Middle Rd/Westwood Dr",
+    "route_destination_1": "Rockbank Middle Rd/Westwood Dr",
+    "route_destination_0": "Sunshine Station/Dickson St",
     "frequency_summary": [
       {
-        "morning": 25.5,
-        "daytime": 39.5,
-        "evening": 37.5,
+        "morning": 12,
+        "daytime": 20,
+        "evening": 18.5,
         "day": "Monday"
       },
       {
-        "morning": 40,
-        "daytime": 39.5,
-        "evening": 59,
+        "morning": 19,
+        "daytime": 21,
+        "evening": 29,
         "day": "Saturday"
       },
       {
-        "morning": 39.5,
-        "daytime": 40,
-        "evening": 58.5,
+        "morning": 38,
+        "daytime": 20.5,
+        "evening": 28,
         "day": "Sunday"
       }
     ],
     "peak_medians": [
       {
-        "Median AM Peak Wait": 27,
-        "Median PM Peak Wait": 30
+        "Median AM Peak Wait": 13,
+        "Median PM Peak Wait": 14
       }
     ],
     "span_stats": [
