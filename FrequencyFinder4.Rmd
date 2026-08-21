@@ -1,0 +1,1094 @@
+---
+title: "FrequencyFinder4"
+output: html_document
+date: "2026-08-16"
+---
+
+# Setup
+
+## Clean Environment
+
+```{r}
+# List of items, mostly large things that are annoying to reinitialise
+keep <- c("gtfs") 
+# Remove everything that is not in the keep list
+rm(list = setdiff(ls(), keep))
+# Get rid of everything if needed
+#rm(list = ls())
+```
+
+## Load Libraries
+
+```{r}
+library(data.table)
+library(sf)
+library(jsonlite)
+library(gtfstools)
+library(vicgtfstools) # My own repo https://github.com/adambain014/vicgtfstools 
+library(tictoc) # For my own benchmarking enjoyment
+library(ggplot2) # For diagnostics
+```
+
+## Initialise the GTFS Datasets
+
+```{r}
+# Create a temps folder
+if(!dir.exists("Temps")){
+  dir.create("Temps")
+  }
+
+# Download the latest vic gtfs feed
+if(!dir.exists("Temps/gtfs")){
+  download_latest_vic_gtfs("Temps/gtfs")
+}
+
+# Open the tram GTFS
+if(!exists("gtfs")){
+  gtfs <- open_and_join_all_vic_gtfs("Temps/gtfs")
+}
+```
+
+## Select the modes I will be working on - it will be expanded
+Challenge: inconsistent naming system
+
+```{r}
+select_modes <- c(2,3,4) # Metro train, tram and bus
+```
+
+# Data processing 
+
+## Create a representative stop times of a 1 week period - this will be unforuntatley large 
+```{r}
+# Open the calendar file
+calendar <- gtfs$calendar[mode_number %in% select_modes]
+
+# Extract entries that are within the first full week
+first_date <- min(calendar[weekdays(start_date) == "Monday" & start_date > min(gtfs$calendar$start_date) + 7]$start_date)
+last_date <- first_date + 6
+calendar_first_full_week <- calendar[start_date <= last_date & end_date >= first_date]
+
+
+# Melt into long format
+calendar_first_full_week_long <- melt(
+  calendar_first_full_week,
+  id.vars = c(1, 9:12),
+  measure.vars = 2:8,
+  variable.name = "day",
+  value.name = "bool"
+)
+
+# Add day number (0 for monday etc)
+calendar_first_full_week_long[
+  , day_number :=
+      fifelse(day == "monday", 0,
+      fifelse(day == "tuesday", 1,
+      fifelse(day == "wednesday", 2,
+      fifelse(day == "thursday", 3,
+      fifelse(day == "friday", 4,
+      fifelse(day == "saturday", 5,
+      fifelse(day == "sunday", 6, NA_integer_)))))))]
+
+# Add date entry
+calendar_first_full_week_long[, date := first_date + day_number]
+
+# Deal with calendar dates
+calendar_dates <- gtfs$calendar_dates[mode_number %in% select_modes]
+
+calendar_first_full_week_long[
+  , exception_type := calendar_dates[.SD, on = .(date, service_id, mode_number), exception_type]
+]
+
+calendar_first_full_week_long[
+  , bool := fifelse(date < start_date | date > end_date, 0L, bool)
+]
+
+# exception_type meanings:
+# 1 = added service, does not exist in VIC GTFS
+# 2 = removed service
+# NA = no exception
+
+calendar_first_full_week_long[!is.na(exception_type)
+  , bool := fifelse(exception_type == 2, 0,
+           fifelse(exception_type == 1, 1, bool))
+]
+
+# Simplify the calendar, remove service_ids from days that are not needed.
+calendar_refined <- calendar_first_full_week_long[bool == 1, .(service_id, day_number, mode_number)]
+
+# Attach this information to trips
+trips <- gtfs$trips[mode_number %in% select_modes]
+trips <- trips[calendar_refined, on = .(mode_number, service_id), nomatch = 0L, allow.cartesian = TRUE]
+
+# Clean up calendar intermediaries
+rm(calendar_first_full_week, calendar_first_full_week_long, calendar_refined)
+
+# Add route_short_name from routes
+routes <- gtfs$routes[mode_number %in% select_modes]
+# Pick off replacement buses and regional myki buses - maybe temporary
+routes_refined <- routes[
+  route_short_name != "Replacement Bus" & 
+  !(mode_number == 4 & !nchar(route_short_name) %in% c(3, 4)),
+  .(route_id, mode_number, route_short_name, route_color)
+]
+
+# Add to trips
+trips <- trips[route_id %chin% routes_refined$route_id]
+trips <- routes_refined[trips, on = .(mode_number, route_id)]
+
+# Condense trips
+trips_refined <- trips[, .(trip_id, route_short_name, day_number, mode_number, direction_id)]
+
+# Clean up intermediaries
+rm(routes_refined)
+
+# Open stop_times
+stop_times <- gtfs$stop_times[mode_number %in% select_modes]
+
+# Keep only needed columns
+cols_to_keep <- c(
+  "trip_id",
+  "departure_time",
+  "stop_id",
+  "stop_sequence",
+  "shape_dist_traveled",
+  "mode_number"
+)
+stop_times <- stop_times[, ..cols_to_keep]
+rm(cols_to_keep)
+
+stop_times <- stop_times[trip_id %chin% trips$trip_id]
+
+# Join onto stop_times
+stop_times <- trips[,.(trip_id, route_short_name, day_number, mode_number, direction_id)
+                    ][stop_times, on = .(trip_id, mode_number), allow.cartesian = TRUE]
+
+rm(trips_refined)
+# remove dupes
+stop_times <- unique(stop_times, by = 
+                           c("stop_id", "departure_time", "direction_id", "route_short_name", "shape_dist_traveled", "day_number", "mode_number"))
+
+# Turn departure times into seconds
+stop_times[, c("h","m","s") := tstrsplit(departure_time, ":", type.convert = TRUE)]
+stop_times[, departure_time_m := round(h*60 + m + s/60)]
+stop_times <- stop_times[, !c("h","m","s")]
+
+# Mark for past midnight
+stop_times <- stop_times[,past_midnight := departure_time_m >= 24 * 60]
+
+stops <- gtfs$stops[mode_number %in% select_modes]
+
+# Add station code to deal with multi-platform train stations
+parent_lookup <- unique(
+  stops[mode_number == 2 & !is.na(parent_station) & parent_station != "",
+        .(stop_id, mode_number, parent_station)]
+)
+
+stop_times <- parent_lookup[stop_times, on = c("stop_id", "mode_number")]
+stop_times[!is.na(parent_station), stop_id := parent_station]
+stop_times <- stop_times[, -"parent_station"]
+
+rm(parent_lookup)
+
+# Fix 790 inconsistent direction_id by flipping it
+stop_times[route_short_name == 790, direction_id := fifelse(direction_id == 0, 1, 0)]
+
+```
+
+## Add combined corridors
+```{r}
+corridor_defs <- list(
+  # Train
+  "Belgrave-Lilydale"     = c("Belgrave", "Lilydale"),
+  "Cranbourne-Pakenham"   = c("Cranbourne", "Pakenham"),
+  "Hurstbridge-Mernda"    = c("Hurstbridge", "Mernda"),
+  "Werribee-Williamstown" = c("Werribee", "Williamstown"),
+
+  # Tram
+  "1-6"                 = c("1", "6"),
+  "1-3-5-6-16-64-67-72" = c("1", "3", "5", "6", "16", "64", "67", "72"),
+  "5-64"                = c("5", "64"),
+  "12-109"              = c("12", "109"),
+
+  # Bus
+  "200-207" = c("200", "207"),
+  "250-251" = c("250", "251"),
+  "281-293" = c("281", "293"),
+  "302-304" = c("302", "304"),
+  "303-302-304-305-309-318-350-905-906-907" =
+    c("302", "303", "304", "305", "309", "318", "350", "905", "906", "907"),
+  "386-387" = c("386", "387"),
+  "411-412" = c("411", "412"),
+  "426-456" = c("426", "456"),
+  "478-479" = c("478", "479"),
+  "513-514" = c("513", "514"),
+  "782-783" = c("782", "783"),
+  "781-784-785" = c("781", "784", "785"),
+  "789-790-791" = c("789", "790", "791"),
+  "802-804-862" = c("802", "804", "862"),
+  "811-812" = c("811", "812"),
+  "814-848" = c("814", "848"),
+  "843-845" = c("843", "845"),
+  "600-922-923" = c("600", "922", "923")
+)
+
+
+
+
+combine_corridors <- function(st, corridor_defs){
+  # corridor_defs: named list, e.g. list("1/6" = c("1","6"), "3/64/67" = c("3","64","67"))
+  # name = new combined route_short_name, value = character vector of routes to merge
+  
+  setkey(st, route_short_name)  # enables fast binary-search subsetting below instead of full scans
+  
+  # Remove existing combined corridors
+  st <- st[!route_short_name %chin% names(corridor_defs)]
+  
+  combined_list <- lapply(names(corridor_defs), function(new_name){
+    routes <- corridor_defs[[new_name]]
+    
+    # One binary-search subset per route (fast, keyed lookup rather than vector scan)
+    subsets <- lapply(routes, function(r) st[.(r)])
+    
+    # Stops common to every route in the group - the shared corridor segment
+    shared_stops <- Reduce(intersect, lapply(subsets, function(x) x$stop_id))
+    
+    combined <- rbindlist(lapply(subsets, function(x) x[stop_id %chin% shared_stops]))
+    combined[, route_short_name := new_name]
+    combined
+  })
+  
+  # Single rbind at the end, not one per corridor - avoids repeatedly copying the growing table
+  rbind(st, rbindlist(combined_list))
+}
+
+
+stop_times <- combine_corridors(stop_times, corridor_defs)
+```
+
+# Function for inspection (in progress)
+```{r, eval=FALSE}
+plot_stop_times <- function(filtered_st, stop_order) {
+  
+  plot_dt <- filtered_st[!is.na(departure_time_m)]
+  
+  ggplot(plot_dt, aes(x = departure_time_m, y = label, group = trip_id)) +
+    geom_line(alpha = 0.4, colour = "steelblue") +
+    geom_point(size = 0.8, alpha = 0.6, colour = "steelblue") +
+    scale_y_discrete(limits = rev(levels(plot_dt$label))) +  # top stop at top
+    scale_x_continuous(
+      breaks = seq(0, 1440, by = 60),
+      labels = function(m) sprintf("%02d:%02d", m %/% 60, m %% 60)
+    ) +
+    labs(x = "Time", y = NULL, title = "Trip diagram") +
+    theme_minimal() +
+    theme(panel.grid.minor = element_blank())
+}
+
+inspect_stop_times <- function(st, rsn, dn, did, plot = FALSE){
+  
+  filtered_st <- gtfs$stops[,.(stop_id, stop_name)][
+      st[route_short_name == rsn & day_number == dn & direction_id == did],
+      on = "stop_id"
+  ]
+  
+  # find the most common stop_id sequence among trips
+    trip_patterns <- filtered_st[order(stop_sequence),
+      .(pattern = paste(stop_id, collapse = "|"),
+        n_stops = .N), by = trip_id]
+  
+  pattern_summary <- trip_patterns[, .(n_stops = n_stops[1], n_trips = .N), by = pattern]
+  longest_pattern <- pattern_summary[order(-n_stops, -n_trips)]$pattern[1]
+  template_trip <- trip_patterns[pattern == longest_pattern, trip_id][1]
+  
+  base_order <- filtered_st[
+      trip_id == template_trip
+  ][order(stop_sequence), .(stop_id, base_rank = .I)]
+  
+  # median departure time per stop, used to place non-base stops
+  stop_time <- filtered_st[
+      , .(med_dep = median(departure_time_m, na.rm = TRUE)), by = .(stop_id, stop_name)
+  ]
+  
+  stop_order <- base_order[stop_time, on = "stop_id"]
+  
+  # insert stops missing from the template between their nearest base neighbours by time
+  base_times <- stop_order[!is.na(base_rank)][order(base_rank), .(base_rank, med_dep)]
+  stop_order[is.na(base_rank), base_rank := sapply(med_dep, function(t) {
+      idx <- which.min(abs(base_times$med_dep - t))
+      base_times$base_rank[idx] + ifelse(t < base_times$med_dep[idx], -0.5, 0.5)
+  })]
+  
+  stop_order <- stop_order[order(base_rank, med_dep)]
+  stop_order[, label := paste0(sprintf("%03d", .I), " ", stop_name)]
+  
+  filtered_st[stop_order, on = "stop_id", label := i.label]
+  filtered_st[, label := factor(label, levels = stop_order$label)]
+  
+    if (plot) {
+    print(plot_stop_times(filtered_st, stop_order))
+  }
+  
+  trip_start <- filtered_st[
+      , .(trip_first_dep = min(departure_time_m, na.rm = TRUE)), by = trip_id
+  ][order(trip_first_dep)]
+  
+  out <- dcast(filtered_st, label ~ trip_id, value.var = "departure_time",
+               fun.aggregate = function(x) x[1])
+  
+  setcolorder(out, c("label", as.character(trip_start$trip_id)))
+  out
+}
+
+
+inspect_stop_times(stop_times[
+          departure_time_m > 7 * 60 & departure_time_m <= 8 * 60], "303/302/304/305/309/318/350/905/906/907", 0, 0, plot = T)
+```
+
+# Summary Stats
+Average Frequency for Morning, Daytime, and Evening across Monday, Saturday and Sunday
+```{r}
+
+# Add minutes until next service in same direction at same stop
+waits <- copy(stop_times)
+
+# Sort to ensure correct order
+setorder(waits, mode_number, day_number, route_short_name,  direction_id, stop_id, departure_time_m)
+
+# Find next service
+waits[,
+  next_time_m := shift(departure_time_m, 1L, type = "lead"),
+  by = .(stop_id, direction_id, day_number, mode_number, route_short_name)
+]
+
+# Get rid of last services
+waits <- waits[!is.na(next_time_m)]
+
+waits[, wait_m := next_time_m - departure_time_m]
+
+test <- stops[, .(stop_id, stop_name)][
+  waits[route_short_name == "Sandringham" & day_number == 0 & direction_id == 1 & 
+          departure_time_m > 7 * 60 & departure_time_m <= 8 * 60],
+  on = "stop_id"
+][order(trip_id, stop_sequence)]
+```
+
+```{r}
+# --------------------------------------------------------------------------
+# Build per-route frequency summary across a set of day/time windows
+# --------------------------------------------------------------------------
+
+# Skeleton table of every route present in `waits` - final results get
+# left-joined onto this so routes with no service in a window still appear
+# (with NA rather than being dropped from the output entirely)
+routes_list <- data.table(route_short_name = unique(waits$route_short_name))
+
+# Computes average headway (mean wait between consecutive services) for one
+# route, over one day_number, within one clock-time window.
+#
+# Method: mean-of-means, not a single pooled mean.
+#   1. Average wait_m separately for every (route, stop_id, direction_id)
+#      combo in the window - this is one "headway estimate" per stop+direction.
+#   2. Average those stop-level means up to a single route-level figure.
+# This gives every stop along the route equal weight regardless of how many
+# individual departures pass through it, so busy interchange stops don't
+# dominate the route's headway figure. Deliberate choice - note this in any
+# write-up, since it differs from simply averaging every wait_m row directly.
+freq_at_window_dt <- function(waits, target_day, start_min, end_min, cap_min = 120) {
+  
+  # Filter to the target day and clock-time window.
+  # NB: departure_time_m is in MINUTES since midnight, not seconds - start_min/
+  # end_min must be too (see windows table below, uses `* 60`).
+  window_waits <- waits[
+    day_number == target_day &
+    departure_time_m >= start_min &
+    departure_time_m <  end_min
+  ]
+  
+  # No services at all in this window/day -> return an empty (typed) table
+  # rather than NULL, so rbindlist() downstream doesn't choke on missing cols
+  if (nrow(window_waits) == 0) {
+    return(data.table(route_short_name = character(), mean_wait = numeric()))
+  }
+  
+  # Cap absurdly long waits (e.g. last service of the day, or gaps from
+  # low-frequency weekend running) so they don't blow out the route average.
+  # Anything >= cap_min (default 2 hrs) is treated as missing rather than
+  # included as a genuine "wait".
+  window_waits[wait_m >= cap_min, wait_m := NA]
+  
+  out <- window_waits[
+    # Step 1: mean wait per stop+direction (one headway estimate per stop)
+    , .(mean_wait = mean(wait_m, na.rm = TRUE)),
+    by = .(route_short_name, stop_id, direction_id)
+  ][
+    # Step 2: average those stop-level means up to one figure per route
+    , .(mean_wait = mean(mean_wait, na.rm = TRUE)),
+    by = route_short_name
+  ]
+
+  # Round to nearest half-minute for a cleaner, less falsely-precise output
+  out[, mean_wait := round(mean_wait * 2) / 2]
+  out[]
+}
+
+# Reference windows: three time-of-day slices (AM peak / midday / evening)
+# across three representative days (Monday = weekday, Saturday, Sunday).
+# day_number: 0 = Monday ... 6 = Sunday (see day_number derivation earlier
+# in the script). start_min/end_min are minutes-since-midnight (7*60 = 7am).
+windows <- data.table(
+  window_name = c("mon_7_8", "mon_12_13", "mon_19_20", 
+                  "sat_7_8", "sat_12_13", "sat_19_20",
+                  "sun_7_8", "sun_12_13", "sun_19_20"),
+  day_number  = c(0,        0,        0,        5,        5,        5,        6,        6,        6),
+  start_min   = c(7*60,     12*60,    19*60,    7*60,     12*60,    19*60,    7*60,     12*60,    19*60),
+  end_min     = c(8*60,     13*60,    20*60,    8*60,     13*60,    20*60,    8*60,     13*60,    20*60)
+)
+
+# Run freq_at_window_dt once per window, tag each result with its window_name,
+# and stack into one long-format table (route_short_name x window_name x mean_wait)
+freq_results <- rbindlist(lapply(seq_len(nrow(windows)), function(i) {
+  w   <- windows[i]
+  res <- freq_at_window_dt(waits, w$day_number, w$start_min, w$end_min)
+  if (nrow(res) > 0) res[, window_name := w$window_name]
+  res
+}))
+
+# Pivot long -> wide: one row per route, one column per window
+freq_wide <- dcast(freq_results, route_short_name ~ window_name, value.var = "mean_wait")
+
+# Form for JSON formation
+freq_wide[, frequency_summary := Map(
+  function(m7, m12, m19, s7, s12, s19, su7, su12, su19) {
+    list(
+      list(morning = m7,  daytime = m12, evening = m19, day = "Monday"),
+      list(morning = s7,  daytime = s12, evening = s19, day = "Saturday"),
+      list(morning = su7, daytime = su12, evening = su19, day = "Sunday")
+    )
+  },
+  mon_7_8, mon_12_13, mon_19_20,
+  sat_7_8, sat_12_13, sat_19_20,
+  sun_7_8, sun_12_13, sun_19_20
+)]
+
+
+# Clean existing routes
+to_remove <- windows$window_name[windows$window_name %chin% names(routes_list)]
+routes_list[,(to_remove) := NULL]
+rm(to_remove)
+
+# Left-join onto the full route list so every route appears in the final
+# output even if it had no service (and therefore no result row) in every window
+routes_list <- merge(routes_list, freq_wide, by = "route_short_name", all.x = TRUE)
+```
+
+# Diagnostic chart
+
+```{r, eval=FALSE}
+freq_histo <- function(rl, # routes_list
+                       period,
+                       sub){
+  ggplot(
+    routes_list[!routes_list$route_short_name %chin% names(corridor_defs) & !is.na(get(period))],
+    aes(x = get(period))
+  ) +
+    geom_histogram(
+      binwidth = 1,
+      fill = "grey40",
+      color = "white",
+      alpha = 0.9
+    ) +
+    scale_y_continuous(limits = c(0, 110)) +
+    labs(
+      x = "Average Wait (minutes)",
+      y = "Number of Routes",
+      title = "Distribution of Average Wait Times",
+      subtitle = sub,
+      caption = "Chart by Adam Bain, Data from DTP 2026"
+    ) +
+    theme_minimal(base_size = 14) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+}
+
+freq_histo(routes_list, "mon_7_8", "Monday Peak (7am-8am)")
+freq_histo(routes_list, "mon_12_13", "Monday Daytime (12pm-1pm)")
+freq_histo(routes_list, "sat_12_13", "Saturday Daytime (12pm-1pm)")
+freq_histo(routes_list, "sun_12_13", "Sunday Daytime (12pm-1pm)")
+
+```
+
+## Peak Medians
+```{r}
+median_in_window_dt <- function(waits, target_day, start_min, end_min, cap_min = 120) {
+  
+  # Filter to the target day and clock-time window.
+  # NB: departure_time_m is in MINUTES since midnight, not seconds - start_min/
+  # end_min must be too (see windows table below, uses `* 60`).
+  window_waits <- waits[
+    day_number == target_day &
+    departure_time_m >= start_min &
+    departure_time_m <  end_min
+  ]
+  
+  # No services at all in this window/day -> return an empty (typed) table
+  # rather than NULL, so rbindlist() downstream doesn't choke on missing cols
+  if (nrow(window_waits) == 0) {
+    return(data.table(route_short_name = character(), mean_wait = numeric()))
+  }
+  
+  # Cap absurdly long waits (e.g. last service of the day, or gaps from
+  # low-frequency weekend running) so they don't blow out the route average.
+  # Anything >= cap_min (default 2 hrs) is treated as missing rather than
+  # included as a genuine "wait".
+  window_waits[wait_m >= cap_min, wait_m := NA]
+  
+  out <- window_waits[
+    # Median
+    , .(median_wait = median(wait_m, na.rm = TRUE)),
+    by = .(route_short_name)
+  ]
+  out[]
+}
+
+# Reference windows: AM and PM peak - 7am to 9am and 4pm to 7pm
+windows <- data.table(
+  window_name = c("am_peak", "pm_peak"),
+  day_number  = c(0,        0), 
+  start_min   = c(7*60,     16*60),
+  end_min     = c(9*60,     19*60)  
+)
+
+# Run median_in_window_dt once per window, tag each result with its window_name,
+# and stack into one long-format table (route_short_name x window_name x mean_wait)
+freq_results <- rbindlist(lapply(seq_len(nrow(windows)), function(i) {
+  w   <- windows[i]
+  res <- median_in_window_dt(waits, w$day_number, w$start_min, w$end_min)
+  if (nrow(res) > 0) res[, window_name := w$window_name]
+  res
+}))
+
+# Pivot long -> wide: one row per route, one column per window
+freq_wide <- dcast(freq_results, route_short_name ~ window_name, value.var = "median_wait")
+
+
+# Form for JSON formation
+freq_wide[, peak_medians := Map(
+  function(am, pm) {
+    list(
+      list(
+        "Median AM Peak Wait" = am,
+        "Median PM Peak Wait" = pm
+      )
+    )
+  },
+  am_peak,
+  pm_peak
+)]
+
+
+# Clean existing routes
+to_remove <- windows$window_name[windows$window_name %chin% names(routes_list)]
+routes_list[,(to_remove) := NULL]
+rm(to_remove)
+
+# Left-join onto the full route list so every route appears in the final
+# output even if it had no service (and therefore no result row) in every window
+routes_list <- merge(routes_list, freq_wide, by = "route_short_name", all.x = TRUE)
+```
+
+## Span chart
+```{r}
+  # Guard against infinites caused by missing days
+safe_max <- function(x) if (length(x) == 0 || all(is.na(x))) NA_real_ else max(x, na.rm = TRUE)
+safe_min <- function(x) if (length(x) == 0 || all(is.na(x))) NA_real_ else min(x, na.rm = TRUE)
+  
+## Span stats (vectorised, whole-table version)
+# Same logic as FF3's one_day_span/span_across_week, but computed once
+# across every route+day simultaneously via grouped data.table operations,
+# consistent with FF4's whole-network approach rather than per-route calls.
+
+# --- Step 1: valid stops per route+day ------------------------------------
+# Drop stops served by <20% of that route+day's peak stop-visit count
+# (depot-only/rare terminus variants), same threshold as FF3, but computed
+# for every route+day combo at once.
+stop_counts <- stop_times[, .N, by = .(route_short_name, day_number, stop_id)]
+stop_counts[, pc_max := N / max(N), by = .(route_short_name, day_number)]
+valid_stops <- stop_counts[pc_max > 0.2, .(route_short_name, day_number, stop_id)]
+
+# Semi-join stop_times down to only valid stops, per route+day
+stop_times_valid <- stop_times[valid_stops, on = .(route_short_name, day_number, stop_id), nomatch = 0L]
+
+# --- Step 2: span_start/span_end per route+day -----------------------------
+span_tbl <- stop_times_valid[
+  , .(span_start = safe_min(departure_time_m),
+      span_end   = safe_max(departure_time_m)),
+  by = .(route_short_name, day_number)
+]
+
+# --- Step 3: full coverage window per route+day -----------------------------
+# First/last service per stop, then the tightest common window across stops
+cov_by_stop <- stop_times_valid[
+  , .(first_service = safe_min(departure_time_m),
+      last_service  = safe_max(departure_time_m)),
+  by = .(route_short_name, day_number, stop_id)
+]
+
+cov_tbl <- cov_by_stop[
+  , .(full_coverage_start = safe_max(first_service),
+      full_coverage_end   = safe_min(last_service)),
+  by = .(route_short_name, day_number)
+]
+
+# --- Step 4: assemble, including route+day combos with zero service --------
+# CJ gives the full grid so routes with no service on a given day still get
+# a row (with NA), matching FF3's explicit per-day handling
+all_combos <- CJ(route_short_name = unique(stop_times$route_short_name), day_number = 0:6)
+
+span_summary <- span_tbl[cov_tbl, on = .(route_short_name, day_number)]
+span_summary <- all_combos[span_summary, on = .(route_short_name, day_number)]  # ensure full grid even if either side was missing combos
+
+# --- Step 5: night network detection, vectorised per route -----------------
+# For each route, rotate day_number 0-6 so Sunday's late running can connect
+# to Monday's early start (c(.N,1:(.N-1)) / c(2:.N,1) tricks from FF3, now
+# applied per-group across the whole table via `by`)
+setorder(span_summary, route_short_name, day_number)
+
+span_summary[, span_end_n := span_end - 24 * 60]
+
+span_summary[
+  , prior_span_end_n := span_end_n[c(.N, 1:(.N - 1))],
+  by = route_short_name
+]
+
+span_summary[, span_diff            := prior_span_end_n - span_start]
+span_summary[, begins_night_network := span_diff >= 30]
+
+span_summary[
+  , ends_night_network := begins_night_network[c(2:.N, 1)],
+  by = route_short_name
+]
+
+span_summary[begins_night_network == TRUE, span_start := 3 * 60]
+span_summary[begins_night_network == TRUE, full_coverage_start := 3 * 60]
+
+span_summary[ends_night_network == TRUE, span_end := 27 * 60]
+span_summary[ends_night_network == TRUE, full_coverage_end := 27 * 60]
+
+# --- Step 6: tidy up ---------------------------------------------------------
+day_names <- c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+span_summary[, day := day_names[day_number + 1]]
+
+span_summary <- span_summary[, .(route_short_name, day, day_number, span_start, span_end,
+                                  full_coverage_start, full_coverage_end)]
+setorder(span_summary, route_short_name, day_number)
+
+
+## Contort span_summary into pre-JSON nested form, join to routes_list
+
+day_names_lower <- c("monday","tuesday","wednesday","thursday","friday","saturday","sunday")
+
+# Build one row per route_short_name, with a list-of-7-lists column
+# (one list per day, in Monday->Sunday order) matching the frequency_summary/
+# peak_medians nesting pattern already used above
+span_nested <- span_summary[
+  , .(span_stats = list(
+      lapply(0:6, function(d){
+        row <- .SD[day_number == d]
+        list(
+          day                  = day_names_lower[d + 1],
+          span_start           = row$span_start,
+          span_end             = row$span_end,
+          full_coverage_start  = row$full_coverage_start,
+          full_coverage_end    = row$full_coverage_end
+        )
+      })
+    )),
+  by = route_short_name
+]
+
+# Left-join onto routes_list, same convention as frequency_summary/peak_medians
+routes_list <- merge(routes_list, span_nested, by = "route_short_name", all.x = TRUE)
+
+# Clean up intermediaries
+rm(stop_counts, valid_stops, stop_times_valid, span_tbl, cov_by_stop, cov_tbl, all_combos)
+```
+
+## Add metadata for each route and export summary
+
+```{r}
+combined_corridors <- names(corridor_defs)
+
+summary <- routes_list[,.(route_short_name, frequency_summary, peak_medians, span_stats)]
+
+# Add mode number
+summary <- unique(waits[,.(route_short_name, mode_number)])[summary, on = "route_short_name"]
+# Create fake reference route_short_name for the combined corridors
+summary[, route_number := route_short_name]
+summary[route_short_name %chin% combined_corridors, 
+        route_short_name := sapply(route_number, function(x) corridor_defs[[x]][1])]
+
+# Add colour and mode
+summary <- unique(routes[,.(route_short_name, route_color, mode_number)
+                   ])[summary, on = .(route_short_name, mode_number)]
+
+# Get destinations for directions
+get_destinations <- function(dir_id) {
+
+  # --- Singles: most common trip_headsign per route ---
+  singles <- trips[
+    direction_id == dir_id,
+    .N,
+    by = .(route_short_name, trip_headsign)
+  ][
+    order(route_short_name, -N)
+  ][
+    , .(most_common_hs = trip_headsign[1]),
+    by = route_short_name
+  ]
+
+  # --- Combined corridors: final stop name per route ---
+  combined <- stops[
+    , .(stop_id, stop_name)
+  ][
+    stop_times[route_short_name %chin% combined_corridors],
+    on = "stop_id"
+  ][
+    direction_id == dir_id,
+    .(final = last(stop_name)),
+    by = .(route_short_name, trip_id)
+  ][
+    , .N,
+    by = .(route_short_name, final)
+  ][
+    order(route_short_name, -N)
+  ][
+    , .(most_common_hs = final[1]),
+    by = route_short_name
+  ]
+
+  # --- Combine and rename ---
+  out <- rbind(singles, combined)
+  out[, most_common_hs := gsub("Railway Station", "Station", most_common_hs)]
+  
+  setnames(
+    out,
+    c("route_short_name", "most_common_hs"),
+    c("route_number", paste0("route_destination_", dir_id))
+  )
+
+  out[]
+}
+
+
+
+# Add direction destinations
+rd1 <- get_destinations(1)
+rd0 <- get_destinations(0)
+summary <- rd1[rd0, on = "route_number"][summary, on = "route_number"]
+
+# Fix order + rename to match FF3's output field names
+summary[, "route_short_name" := NULL]
+setnames(summary, c("mode_number", "route_color"), c("mode_type", "route_colour"))
+summary[, mode_type := as.character(mode_type)]
+# Add marker for combined corridor
+summary[, is_combined_corridor := fifelse(route_number %chin% combined_corridors, TRUE, FALSE)]
+summary[, route_display := gsub("-", "/", route_number)]   
+
+setcolorder(
+  summary,
+  c(
+    "mode_type",
+    "route_number",
+    "route_display",
+    "is_combined_corridor",
+    "route_colour",
+    "route_destination_1",
+    "route_destination_0",
+    "frequency_summary",
+    "peak_medians",
+    "span_stats"
+  )
+)
+setkey(summary, route_number)
+
+# Build a NAMED list keyed by route_number (object form, not array).
+# Each list-column already holds one list per row, so pull [[1]] out of it
+# explicitly rather than letting as.list() leave it double-wrapped.
+summary_list <- lapply(
+  split(summary, by = "route_number", keep.by = TRUE),
+  function(dt) {
+    l <- as.list(dt[1])
+    l$frequency_summary <- l$frequency_summary[[1]]
+    l$peak_medians      <- l$peak_medians[[1]]
+    l$span_stats        <- l$span_stats[[1]]
+    l
+  }
+)
+
+
+if (!dir.exists("route_jsons")) dir.create("route_jsons")
+
+# Write single combined summary JSON, keyed by route_number
+jsonlite::write_json(
+  summary_list,
+  path       = "route_jsons/summary.json",
+  auto_unbox = TRUE,
+  pretty     = TRUE,
+  na         = "null"
+)
+
+# Manifest
+manifest <- list(routes = names(summary_list))
+jsonlite::write_json(
+  manifest,
+  "route_jsons/manifest.json",
+  auto_unbox = TRUE,
+  pretty     = TRUE
+)
+```
+
+## Create shape files for each route
+```{r}
+# Add the unshared parts of combined corridors
+combine_corridors <- function(st, corridor_defs){
+  # corridor_defs: named list, e.g. list("1/6" = c("1","6"), "3/64/67" = c("3","64","67"))
+  # name = new combined route_short_name, value = character vector of routes to merge
+  
+  setkey(st, route_short_name)  # enables fast binary-search subsetting below instead of full scans
+  
+  # Remove existing combined corridors
+  st <- st[!route_short_name %chin% names(corridor_defs)]
+  
+  combined_list <- lapply(names(corridor_defs), function(new_name){
+  routes <- corridor_defs[[new_name]]
+  subsets <- lapply(routes, function(r) st[.(r)])
+  
+  stop_id_lists <- lapply(subsets, function(x) x$stop_id)
+  shared_stops <- Reduce(intersect, stop_id_lists)
+  
+  combined <- rbindlist(subsets)  # keep ALL stops from every route, not just shared
+  combined[, route_short_name := new_name]
+  combined
+  })
+  
+  # Single rbind at the end, not one per corridor - avoids repeatedly copying the growing table
+  rbind(st, rbindlist(combined_list))
+}
+
+
+stop_times <- combine_corridors(stop_times, corridor_defs)
+
+
+
+next_stop_id <- function(stop_times){
+  stop_times <- copy(stop_times)
+  setorder(stop_times, route_short_name, day_number, trip_id, stop_sequence)
+  stop_times <- stop_times[
+      , next_stop_id := shift(stop_id, 1L, type = "lead"), by = .(route_short_name, trip_id, day_number)
+    ][, next_shape_dist_traveled := shift(shape_dist_traveled, 1L, type = "lead"),
+        by = .(route_short_name, trip_id, day_number)
+    ][, stop_pair_id := paste0(stop_id, "-", next_stop_id, "-", direction_id)
+    ][!is.na(next_stop_id)]
+
+  unique(stop_times, by = c("route_short_name", "stop_pair_id", "day_number", "departure_time_m"))
+}
+
+stop_times_pairs  <- next_stop_id(stop_times)
+
+build_stop_pair_shapes <- function(stop_times, stops) {
+  
+  # Get unique stop pairs with their two stop IDs
+  duplets <- stop_times[, .SD[1], by = "stop_pair_id"][, .(stop_pair_id, stop_id, next_stop_id, mode_number)]
+  
+  # Join coordinates for each stop - note averaging means to deal with multiple train stations
+  stop_coords <-   stops[, .(stop_lat = mean(stop_lat), stop_lon = mean(stop_lon)), by = .(stop_id, mode_number)]
+  
+  duplets <- duplets[stop_coords, on = "stop_id", nomatch = 0]
+  setnames(duplets, c("stop_lat", "stop_lon"), c("lat1", "lon1"))
+  
+  duplets <- duplets[stop_coords, on = c("next_stop_id" = "stop_id"), nomatch = 0]
+  setnames(duplets, c("stop_lat", "stop_lon"), c("lat2", "lon2"))
+  
+  # Build straight-line geometries
+  duplets_sf <- st_sf(
+    stop_pair_id = duplets$stop_pair_id,
+    geometry = st_sfc(
+      mapply(function(lon1, lat1, lon2, lat2) {
+        st_linestring(rbind(c(lon1, lat1), c(lon2, lat2)))
+      }, duplets$lon1, duplets$lat1, duplets$lon2, duplets$lat2,
+      SIMPLIFY = FALSE),
+      crs = 4326
+    )
+  )
+  
+  return(duplets_sf)
+}
+
+stop_pair_shapes <- build_stop_pair_shapes(stop_times_pairs, stops)
+
+# Diagnostic
+stop_pairs_plot <- function(rsn){
+  select_stop_pairs <- stop_times_pairs[route_short_name == rsn]$stop_pair_id
+  ggplot(stop_pair_shapes[stop_pair_shapes$stop_pair_id %in% select_stop_pairs, ]) +
+    geom_sf() +
+    theme_minimal() +
+    theme(axis.text = element_blank()) 
+
+}
+
+#stop_pairs_plot("742")
+#stop_pairs_plot("Hurstbridge/Mernda")
+
+## Function to get the gap value that :00 or :30 falls on, whole-network, per route+stop_pair
+get_30_minute_gap_snapshots <- function(stop_times_pairs){
+  st <- copy(stop_times_pairs)
+  
+  # explode into week minutes (day_number is already 0-6, Monday = 0 - no -1 offset needed)
+  st[, week_time := departure_time_m + day_number * 24 * 60]
+  
+  # Group key MUST include route_short_name: stop_pair_id alone can be shared
+  # by multiple routes (overlapping corridors, or a combined-corridor row sitting
+  # next to its source route's row) - pooling those would corrupt the gap calc
+  key_cols <- c("route_short_name", "stop_pair_id")
+  
+  # Fix the circular week problem by adding buffers, per route+stop_pair group.
+  # Explicit which.min/which.max on week_time - .SD[1]/.SD[.N] would silently
+  # grab the wrong row here since st is still ordered by trip_id/stop_sequence.
+  first_buffer <- st[, .SD[which.min(week_time)], by = key_cols][, week_time := week_time - 7 * 1440]
+  last_buffer  <- st[, .SD[which.max(week_time)], by = key_cols][, week_time := week_time + 7 * 1440]
+  
+  st <- rbind(st, first_buffer, last_buffer)
+  
+  setorder(st, route_short_name, stop_pair_id, week_time)
+  
+  # Next departure from same route+stop_pair
+  st[, next_week_time := shift(week_time, type = "lead"), by = key_cols]
+  st <- st[!is.na(next_week_time)]
+  st[, gap := next_week_time - week_time]
+  
+  # Snapshots every 30 min for the whole week, once per route+stop_pair group
+  groups <- unique(st[, ..key_cols])
+  snapshots <- groups[, CJ(snapshot_week_time = seq(0, 7 * 1440 - 30, by = 30)), by = key_cols]
+  
+  # Non-equi join, now keyed by route_short_name + stop_pair_id + the time window
+  result <- st[
+    snapshots,
+    on = c(key_cols, "week_time <= snapshot_week_time", "next_week_time > snapshot_week_time"),
+    .(route_short_name, stop_pair_id, direction_id, mode_number, gap,
+      snapshot_week_time = i.snapshot_week_time)
+  ]
+  
+  result[, `:=`(
+    day_number = snapshot_week_time %/% 1440,   # 0-6, Monday = 0
+    snapshot_m = snapshot_week_time %% 1440
+  )]
+  
+  result[, gap_group := fcase(
+    gap <= 10, 10,
+    gap <= 15, 15,
+    gap <= 20, 20,
+    gap <= 30, 30,
+    gap <= 60, 60,
+    default = NA_real_
+  )]
+  
+  result[, .(route_short_name, stop_pair_id, direction_id, mode_number,
+             day_number, snapshot_m, gap, gap_group)]
+}
+
+
+snapshots_waits <- get_30_minute_gap_snapshots(stop_times_pairs)
+snapshots_waits <- snapshots_waits[!is.na(direction_id)]
+
+
+# Nest gap/gap_group into direction -> day structure, per route_short_name + stop_pair_id
+# Nest gap/gap_group into day -> direction structure,
+# per route_short_name + stop_pair_id
+nested <- snapshots_waits[
+  , {
+      sp <- split(.SD, by = c("direction_id", "day_number"), keep.by = FALSE)
+
+      # Split names are "direction.day", e.g. "1.0"
+      split_names <- names(sp)
+
+      # Build direction -> day
+      out <- list()
+
+      for (i in seq_along(sp)) {
+
+        parts <- strsplit(split_names[i], ".", fixed = TRUE)[[1]]
+
+        direction <- parts[1]
+        day <- as.integer(parts[2]) + 1L
+
+        if (is.null(out[[direction]])) {
+          out[[direction]] <- vector("list", 7)
+          names(out[[direction]]) <- as.character(1:7)
+        }
+
+        x <- sp[[i]]
+
+        out[[direction]][[day]] <- list(
+          gap = x$gap,
+          gap_group = x$gap_group
+        )
+      }
+
+      # Give the direction lists their names
+      direction_ids <- names(out)
+      names(out) <- direction_ids
+
+      # Fill missing days
+      for (dir in direction_ids) {
+        for (d in 1:7) {
+          if (is.null(out[[dir]][[d]])) {
+            out[[dir]][[d]] <- list(
+              gap = rep(10080, 48),
+              gap_group = rep(NA_real_, 48)
+            )
+          }
+        }
+      }
+
+      list(data = list(out))
+    },
+  by = .(route_short_name, stop_pair_id)
+]
+
+
+# Join geometry back - built once for the whole network via build_stop_pair_shapes()
+geom_lookup <- data.table(
+  stop_pair_id = stop_pair_shapes$stop_pair_id,
+  geometry     = st_geometry(stop_pair_shapes)
+)
+nested <- merge(nested, geom_lookup, by = "stop_pair_id", all.x = TRUE)
+nested <- st_as_sf(nested)
+
+
+for (r in unique(nested$route_short_name)) {
+  route_out <- list(interactive = (nested[nested$route_short_name == r, c("stop_pair_id", "data", "geometry")]))
+  
+  safe_name <- gsub("/", "-", r, fixed = TRUE)  # "513/514" -> "513-514"
+  
+  jsonlite::write_json(
+    route_out,
+    path       = file.path("route_jsons", paste0(safe_name, ".json")),
+    auto_unbox = TRUE,
+    pretty     = TRUE,
+    na         = "null"
+  )
+}
+```
+
+## Export Date range
+```{r}
+date_range <- c(first_date, last_date)
+jsonlite::write_json(date_range, path = "date_range.json")
+
+
+```
+
+
+

@@ -1,0 +1,760 @@
+{
+  "interactive": [
+    {
+      "stop_pair_id": "vic:rail:BIT-vic:rail:HST-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 88, 88, 88, 89, 89, 89, 555, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 95, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 98, 140, 140, 140, 140, 100, 100, 100, 100, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 100, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.178, -38.3374],
+          [145.186, -38.3057]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:BIT-vic:rail:MRO-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 103, 103, 103, 89, 89, 89, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 140, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 140, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.178, -38.3374],
+          [145.1896, -38.354]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:BXR-vic:rail:LWA-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 88, 88, 88, 89, 89, 555, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 100, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 140, 140, 140, 140, 140, 100, 100, 100, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 160, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1605, -38.194],
+          [145.1395, -38.152]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:BXR-vic:rail:SVE-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 103, 103, 103, 103, 89, 89, 89, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 100, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 140, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 140, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1605, -38.194],
+          [145.1762, -38.2253]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:CPT-vic:rail:MRO-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 88, 88, 88, 89, 89, 89, 555, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 100, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 140, 140, 140, 140, 140, 100, 100, 100, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.204, -38.3661],
+          [145.1896, -38.354]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:CPT-vic:rail:STY-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 103, 103, 103, 89, 89, 89, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 140, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 140, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.204, -38.3661],
+          [145.2218, -38.3742]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:FKN-vic:rail:LWA-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 103, 103, 103, 89, 89, 89, 542, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 140, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 140, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1262, -38.143],
+          [145.1395, -38.152]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:HST-vic:rail:BIT-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 103, 103, 103, 89, 89, 89, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 100, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 100, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 130, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.186, -38.3057],
+          [145.178, -38.3374]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:HST-vic:rail:TAB-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 88, 88, 88, 89, 89, 89, 555, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 98, 140, 140, 140, 140, 100, 100, 100, 100, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 100, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.186, -38.3057],
+          [145.1864, -38.2598]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:LWA-vic:rail:BXR-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 103, 103, 103, 89, 89, 89, 542, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 140, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 140, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1395, -38.152],
+          [145.1605, -38.194]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:LWA-vic:rail:FKN-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 88, 88, 88, 89, 89, 89, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 100, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 140, 140, 140, 140, 140, 100, 100, 100, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1395, -38.152],
+          [145.1262, -38.143]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:MRO-vic:rail:BIT-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 101, 111, 111, 111, 100, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 142, 142, 142, 142, 142, 88, 88, 88, 89, 89, 89, 555, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 100, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 140, 140, 140, 140, 140, 100, 100, 100, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1896, -38.354],
+          [145.178, -38.3374]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:MRO-vic:rail:CPT-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 107, 107, 107, 107, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 103, 103, 103, 89, 89, 89, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 140, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 140, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1896, -38.354],
+          [145.204, -38.3661]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:STY-vic:rail:CPT-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 40, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 142, 88, 88, 88, 89, 89, 89, 555, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 100, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 140, 140, 140, 140, 140, 100, 100, 100, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.2218, -38.3742],
+          [145.204, -38.3661]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:SVE-vic:rail:BXR-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 88, 88, 88, 89, 89, 89, 555, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 100, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 140, 140, 140, 140, 140, 100, 100, 100, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 160, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1762, -38.2253],
+          [145.1605, -38.194]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:SVE-vic:rail:TAB-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 28, 103, 103, 103, 103, 89, 89, 89, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 30, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 100, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 140, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 140, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1762, -38.2253],
+          [145.1864, -38.2598]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:TAB-vic:rail:HST-0",
+      "data": {
+        "0": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 742, 104, 104, 104, 104, 107, 107, 107, 140, 140, 140, 140, 140, 100, 100, 100, 100, 100, 100, 100, 119, 119, 119, 119, 103, 103, 103, 103, 89, 89, 89, 542, 542, 542],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 542, 99, 99, 99, 100, 100, 100, 100, 100, 100, 100, 130, 130, 130, 130, 90, 90, 90, 100, 100, 100, 100, 140, 140, 140, 140, 705, 705, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 110, 110, 110, 120, 120, 120, 120, 130, 130, 130, 130, 130, 140, 140, 140, 140, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1864, -38.2598],
+          [145.186, -38.3057]
+        ]
+      }
+    },
+    {
+      "stop_pair_id": "vic:rail:TAB-vic:rail:SVE-1",
+      "data": {
+        "1": {
+          "1": {
+            "gap": [10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 10080, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "2": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "3": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "4": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 599, 599, 599, 599, 599, 599, 599, 599],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "5": {
+            "gap": [599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 599, 38, 38, 101, 101, 101, 111, 111, 111, 111, 100, 100, 100, 40, 100, 100, 100, 100, 100, 100, 100, 109, 109, 109, 109, 142, 142, 142, 142, 88, 88, 88, 89, 89, 89, 555, 555],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, 60, 60, null, null, null, null, null, null, null, null, null, null, 60, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "6": {
+            "gap": [555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 555, 95, 95, 95, 100, 100, 100, 100, 100, 100, 100, 122, 122, 122, 122, 98, 98, 98, 140, 140, 140, 140, 140, 100, 100, 100, 705, 705, 705, 705, 705, 705],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          },
+          "7": {
+            "gap": [705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 705, 115, 115, 115, 115, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 160, 160, 160, 160, 160, 160, 100, 100, 100, 10080, 10080, 10080, 10080, 10080, 10080],
+            "gap_group": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [145.1864, -38.2598],
+          [145.1762, -38.2253]
+        ]
+      }
+    }
+  ]
+}

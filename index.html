@@ -56,15 +56,21 @@
 
     header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
     .route-badge {
-      width: 56px; height: 56px;
+      min-width: 56px;  
+      height: 56px;
+      padding: 0 1rem;   
       border-radius: 20px;
       background: #185FA5;
       color: #fff;
       font-size: 22px;
       font-weight: 500;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+      white-space: nowrap;    
     }
+
     header h1 { font-size: 22px; font-weight: 500; }
     header p  { font-size: 14px; color: #5F5E5A; margin-top: 2px; }
 
@@ -239,11 +245,12 @@
       margin: 0;
     }
     .top-bar .subtitle {
+      text-align: center;
       display: block;
       font-size: 1.2rem;
       color: #999;
       margin: 0;
-      line-height: 1.1;
+      line-height: 1.4;
       max-width: 100%;
     }
     .promo-link {
@@ -267,7 +274,7 @@
 <div class="top-bar">
   <div class="top-bar-center">
     <h1>FrequencyFinder</h1>
-    <span class="subtitle">Unofficial - Current as of July 2026 - by Adam Bain - Trams and Buses - Trains in Future</span>
+        <span class="subtitle">Loading date range…</span>
   </div>
 </div>
 
@@ -301,10 +308,10 @@
       <div class="route-badge" id="route-badge">—</div>
       <div>
         <h1 id="route-title">Route —</h1>
-        <p>Frequency Summary</p>
+        <p id="route-subtitle">Frequency Summary</p>
       </div>
     </header>
-
+    
     <p class="section-label">Average Frequency by Time of Day</p>
     <div class="legend" id="freq-legend"></div>
     <div class="freq-card">
@@ -668,7 +675,7 @@ function drawPairLookup(pairLookup, day, snapshot, direction) {
     });
 
     layer.bindTooltip(
-      gg == null ? 'No service' : `${gap} min wait`,
+      gg == null ? 'No regular service' : `${gap} min wait`,
       { sticky: true, className: 'freq-tooltip' }
     );
     layer.addTo(leafletMap);
@@ -689,7 +696,7 @@ function updateMapColours(pairLookup, day, snapshot, direction) {
       opacity:   gg == null ? 0.35 : 0.85
     });
     layer.bindTooltip(
-      gg == null ? 'No service' : `${gap} min wait`,
+      gg == null ? 'No regular service' : `${gap} min wait`,
       { sticky: true, className: 'freq-tooltip' }
     );
   }
@@ -769,20 +776,34 @@ document.getElementById('day-tabs').addEventListener('click', e => {
 });
 
 // ─── Main render ─────────────────────────────────────────────────────────────
+function displayNumber(data) {
+  return data.route_display ?? data.route_number;  
+}
 
 function render(data) {
+  
+  
   const colour  = normaliseColor(data.route_colour);
   const textCol = contrastText(colour);
 
   document.documentElement.style.setProperty('--route-colour', colour);
 
   const badge = document.getElementById('route-badge');
-  badge.textContent = data.route_number;
+  badge.textContent = data.route_display;
   badge.style.background = colour;
   badge.style.color = textCol;
 
   const modeName = modeLabel(data.route_number);
-  document.getElementById('route-title').textContent = `${modeName} ${data.route_number}`;
+    const shown = displayNumber(data);
+    badge.textContent = shown;
+    document.getElementById('route-title').textContent = `${shown} (${modeName})`;
+    
+    const subtitleEl = document.getElementById('route-subtitle');
+    if (data.is_combined_corridor) {
+      subtitleEl.textContent = `Combined Corridor`;
+    } else {
+      subtitleEl.textContent = 'Frequency Summary';
+    }
 
   const peak   = data.peak_medians?.[0] ?? {};
   const amVal  = peak['Median AM Peak Wait'];
@@ -876,6 +897,7 @@ function modeLabel(routeNum) {
   const mode = summaryCache?.[routeNum]?.mode_type;
   if (mode == '3' || mode === 3) return 'Tram';
   if (mode == '4' || mode === 4) return 'Bus';
+  if (mode == '2' || mode === 2) return 'Train';
   return 'Route';
 }
 
@@ -884,7 +906,8 @@ function modeLabel(routeNum) {
 let allRoutes = [];
 
 function buildDropdownItem(r) {
-  const label = ` ${r} - ${modeLabel(r)}`;
+  const shown = summaryCache?.[r]?.route_display ?? r;
+  const label = ` ${shown} (${modeLabel(r)})`;
   const el = document.createElement('div');
   el.textContent = label;
   el.dataset.route = r;
@@ -981,6 +1004,31 @@ Promise.all([
     document.getElementById('placeholder').innerHTML =
       `<div class="error">Could not load <code>route_jsons/manifest.json</code> or <code>summary.json</code>.</div>`;
   });
+  
+// Load date range
+
+
+function fmt(d) {
+  return new Date(d).toLocaleDateString("en-AU", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+}
+
+
+fetch("date_range.json")
+  .then(r => r.json())
+  .then(range => {
+    const [firstDate, lastDate] = range;
+
+    const subtitleEl = document.querySelector(".subtitle");
+
+    subtitleEl.innerHTML =
+  `DTP GTFS data from the week starting on ${fmt(firstDate)} - Metro Trains, Trams and Buses<br>Unofficial - by Adam Bain`;
+
+  });
+
 </script>
 
 <style>
