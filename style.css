@@ -1,0 +1,259 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  background: #f5f5f8;
+  color: #1a1a18;
+  padding: 2rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.page { max-width: 720px; margin: 0 auto; }
+
+.route-selector {
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.route-selector label { font-size: 13px; color: #5F5E5A; font-weight: 500; white-space: nowrap; }
+.route-selector select {
+  padding: 8px 12px;
+  border: 0.5px solid #c8c5be;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  color: #1a1a18;
+  cursor: pointer;
+  min-width: 180px;
+}
+.route-selector select:focus { outline: none; border-color: #185FA5; box-shadow: 0 0 0 3px rgba(24,95,165,0.12); }
+
+header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.route-badge {
+  min-width: 56px;
+  height: 56px;
+  padding: 0 1rem;
+  border-radius: 20px;
+  background: #185FA5;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+header h1 { font-size: 22px; font-weight: 500; }
+header p  { font-size: 14px; color: #5F5E5A; margin-top: 2px; }
+
+.section-label {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #888780; margin: 0 0 0.75rem;
+}
+
+.peak-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2rem; }
+.peak-card { background: #fff; border: 0.5px solid #e0ddd6; padding: 1rem 1.25rem; }
+.peak-card .label { font-size: 13px; color: #5F5E5A; margin-bottom: 6px; }
+.peak-card .value { font-size: 28px; font-weight: 500; }
+.peak-card .unit  { font-size: 14px; font-weight: 400; color: #888780; margin-left: 2px; }
+
+.freq-card { background: #fff; border: 0.5px solid #e0ddd6; overflow: scroll; margin-bottom: 2rem; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+thead th {
+  background: #f5f5f3; padding: 10px 16px; text-align: left;
+  font-weight: 500; font-size: 13px; color: #5F5E5A; border-bottom: 0.5px solid #e0ddd6;
+}
+thead th:not(:first-child) { text-align: center; }
+tbody tr { border-bottom: 0.5px solid #f0ede6; }
+tbody tr:last-child { border-bottom: none; }
+tbody td { padding: 12px 16px; color: #1a1a18; }
+tbody td:not(:first-child) { text-align: center; }
+.day-label { font-weight: 500; }
+
+.freq-pill {
+  display: inline-block; padding: 3px 10px; border-radius: 20px;
+  font-size: 13px; font-weight: 500; min-width: 52px; text-align: center;
+}
+
+#content { display: none; }
+.placeholder { text-align: center; padding: 4rem 2rem; color: #888780; font-size: 15px; }
+.placeholder svg { margin-bottom: 1rem; opacity: 0.35; }
+.error { padding: 1.5rem; background: #FCEBEB; border-radius: 12px; color: #A32D2D; font-size: 14px; }
+
+.legend {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 0.75rem;
+}
+.legend-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: #5F5E5A;
+}
+.legend-swatch {
+  width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0;
+}
+
+#span-chart { width: 100% !important; }
+
+/* ── Interactive map section ── */
+.map-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.day-tabs {
+  display: flex;
+  gap: 4px;
+  overflow: scroll;
+}
+.day-tab {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 0.5px solid #c8c5be;
+  background: #fff;
+  color: #5F5E5A;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.day-tab.active {
+  background: var(--route-colour, #185FA5);
+  color: #fff;
+  border-color: transparent;
+}
+
+.dir-btn {
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 0.5px solid #c8c5be;
+  background: #fff;
+  color: #5F5E5A;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.dir-btn.active {
+  background: var(--route-colour, #185FA5);
+  color: #fff;
+  border-color: transparent;
+}
+
+.time-slider-wrap {
+  flex: 1;
+  min-width: 200px;
+}
+.time-slider-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a18;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.time-display {
+  font-variant-numeric: tabular-nums;
+  color: #1F1F1F;
+}
+input[type=range].time-slider {
+  width: 100%;
+  accent-color: var(--route-colour, #185FA5);
+  cursor: pointer;
+}
+
+#interactive-map {
+  width: 100%;
+  height: 420px;
+  border-radius: 0;
+  border: none;
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.75rem;
+}
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #5F5E5A;
+}
+.map-legend-line {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.top-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  min-height: 65px;
+  border-bottom: 1px solid #ddd;
+  z-index: 30;
+  background: #f5f5f8;
+  position: relative;
+}
+.top-bar-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform: translateY(-20px);
+}
+.top-bar h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  margin: 0;
+}
+.top-bar .subtitle {
+  text-align: center;
+  display: block;
+  font-size: 1.2rem;
+  color: #999;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 100%;
+}
+.promo-link {
+  display: block;
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 0.5px solid #e0ddd6;
+  color: #1a1a18;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.promo-link:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ── Leaflet tooltip overrides ── */
+.leaflet-container { font-family: inherit; }
+.freq-tooltip {
+  background: #1a1a18;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.freq-tooltip::before { display: none; }

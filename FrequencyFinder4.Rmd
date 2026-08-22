@@ -215,8 +215,8 @@ corridor_defs <- list(
   "250-251" = c("250", "251"),
   "281-293" = c("281", "293"),
   "302-304" = c("302", "304"),
-  "303-302-304-305-309-318-350-905-906-907" =
-    c("302", "303", "304", "305", "309", "318", "350", "905", "906", "907"),
+  "303-302-304-305-309-318-350-905-906-907-908" =
+    c("302", "303", "304", "305", "309", "318", "350", "905", "906", "907", "908"),
   "386-387" = c("386", "387"),
   "411-412" = c("411", "412"),
   "426-456" = c("426", "456"),
@@ -342,7 +342,7 @@ inspect_stop_times <- function(st, rsn, dn, did, plot = FALSE){
 
 
 inspect_stop_times(stop_times[
-          departure_time_m > 7 * 60 & departure_time_m <= 8 * 60], "303/302/304/305/309/318/350/905/906/907", 0, 0, plot = T)
+          departure_time_m > 7 * 60 & departure_time_m <= 8 * 60], "303/302/304/305/309/318/350/905/906/907/908", 0, 0, plot = T)
 ```
 
 # Summary Stats
@@ -795,7 +795,87 @@ setnames(summary, c("mode_number", "route_color"), c("mode_type", "route_colour"
 summary[, mode_type := as.character(mode_type)]
 # Add marker for combined corridor
 summary[, is_combined_corridor := fifelse(route_number %chin% combined_corridors, TRUE, FALSE)]
-summary[, route_display := gsub("-", "/", route_number)]   
+# Display name
+summary[, route_display := gsub("-", "/", route_number)] 
+
+# Lookup table for specific display name changes
+route_display_changes <- c("1-3-5-6-16-64-67-72" = "Swanston/St Kilda Corridor",
+                              "303-302-304-305-309-318-350-905-906-907-908" = "Eastern Freeway Corridor")
+
+summary[route_number %chin% names(route_display_changes),
+        route_display := route_display_changes[route_number]]
+
+rm(route_display_changes)
+# Short bullet name
+summary[, route_bullet_code := route_display]
+
+# Lookup table
+route_bullet_changes <- c(
+  # Large corridors
+  "Swanston/St Kilda Corridor" = "Sw/StK",
+  "Eastern Freeway Corridor"   = "M3",
+  # Bus pairs / groups
+  "200/207" = "200/7",
+  "250/251" = "250/1",
+  "281/293" = "281/93",
+  "302/304" = "302/4",
+  "386/387" = "386/7",
+  "411/412" = "411/2",
+  "426/456" = "426/56",
+  "478/479" = "478/9",
+  "513/514" = "513/4",
+  "600/922/923" = "600/922/3",
+  "781/784/785" = "781/4/5",
+  "782/783" = "782/3",
+  "789/790/791" = "789/90/1",
+  "802/804/862" = "802/4/62",
+  "811/812" = "811/2",
+  "814/848" = "814/48",
+  "843/845" = "843/5",
+  # Rail lines (standard codes)
+  "Alamein"              = "ALM",
+  "Belgrave"             = "BEL",
+  "Belgrave/Lilydale"    = "BEL/LIL",
+  "Craigieburn"          = "CGB",
+  "Cranbourne"           = "CBE",
+  "Cranbourne/Pakenham"  = "CBE/PKM",
+  "Frankston"            = "FKN",
+  "Glen Waverley"        = "GWY",
+  "Hurstbridge"          = "HBE",
+  "Hurstbridge/Mernda"   = "HBE/MDD",
+  "Lilydale"             = "LIL",
+  "Pakenham"             = "PKM",
+  "Sandringham"          = "SHM",
+  "Stony Point"          = "STY",
+  "Sunbury"              = "SUN",
+  "Upfield"              = "UPF",
+  "Werribee"             = "WER",
+  "Werribee/Williamstown"= "WER/WIL",
+  "Williamstown"         = "WIL"
+)
+
+
+summary[route_display %chin% names(route_bullet_changes),
+        route_bullet_code := route_bullet_changes[route_display]]
+
+rm(route_bullet_changes)
+
+# Add title name with route etc
+summary[, route_title_display := route_display]
+summary[!is_combined_corridor & mode_type %in% c(2), 
+        route_title_display := paste(route_title_display, "Line")]
+
+summary[is_combined_corridor & mode_type %in% c(2), 
+        route_title_display := paste(route_title_display, "Lines")]
+
+summary[!is_combined_corridor & mode_type %in% c(3,4), 
+        route_title_display := paste("Route", route_title_display)]
+
+summary[is_combined_corridor & mode_type %in% c(3,4), 
+        route_title_display := paste("Routes", route_title_display, "")]
+
+summary[grep("Corridor", route_display), 
+        route_title_display := route_display]
 
 setcolorder(
   summary,
@@ -803,6 +883,8 @@ setcolorder(
     "mode_type",
     "route_number",
     "route_display",
+    "route_bullet_code",
+    "route_title_display",
     "is_combined_corridor",
     "route_colour",
     "route_destination_1",
@@ -836,7 +918,7 @@ jsonlite::write_json(
   summary_list,
   path       = "route_jsons/summary.json",
   auto_unbox = TRUE,
-  pretty     = TRUE,
+  pretty     = FALSE,
   na         = "null"
 )
 
@@ -846,7 +928,7 @@ jsonlite::write_json(
   manifest,
   "route_jsons/manifest.json",
   auto_unbox = TRUE,
-  pretty     = TRUE
+  pretty     = FALSE
 )
 ```
 
@@ -1077,7 +1159,7 @@ for (r in unique(nested$route_short_name)) {
     route_out,
     path       = file.path("route_jsons", paste0(safe_name, ".json")),
     auto_unbox = TRUE,
-    pretty     = TRUE,
+    pretty     = FALSE,
     na         = "null"
   )
 }
@@ -1087,8 +1169,6 @@ for (r in unique(nested$route_short_name)) {
 ```{r}
 date_range <- c(first_date, last_date)
 jsonlite::write_json(date_range, path = "date_range.json")
-
-
 ```
 
 
