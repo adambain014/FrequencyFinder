@@ -84,6 +84,9 @@
     <p class="section-label">Weekday Peak Frequencies</p>
     <div class="peak-grid" id="peak-grid"></div>
 
+    <p class="section-label">Weekly Totals</p>
+    <div class="peak-grid four-col" id="weekly-grid"></div>
+
     <p class="section-label">Service Span</p>
     <div class="freq-card" style="padding: 1rem 1.25rem;">
       <canvas id="span-chart" height="220"></canvas>
@@ -131,8 +134,9 @@
       <div class="map-legend-item"><div class="map-legend-line" style="background:#5d9a9d"></div><span>≤ 60 min</span></div>
       <div class="map-legend-item"><div class="map-legend-line" style="background:#666; border: 1px dashed #999"></div><span>No regular service</span></div>
     </div>
-        <p id="corridor-note" style="display:none; font-size:12px; color:#888780; margin-top:0.75rem;">
-      This is a combined corridor. Unlike the summary above, this interactive map includes branches that diverge from the shared route.
+
+    <p id="corridor-note" style="display:none; font-size:12px; color:#888780; margin-top:0.75rem;">
+      This is a combined corridor — the map above also includes branches that diverge from the shared route.
     </p>
 
     <a href="https://ptmapmelb.com" target="_blank" rel="noopener" class="promo-link">

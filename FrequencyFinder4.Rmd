@@ -716,12 +716,67 @@ routes_list <- merge(routes_list, span_nested, by = "route_short_name", all.x = 
 rm(stop_counts, valid_stops, stop_times_valid, span_tbl, cov_by_stop, cov_tbl, all_combos)
 ```
 
+## Add route data - weekly km, hours, trips and avg speed
+```{r}
+weekly_route_data <- function(stop_times) {
+  st <- copy(stop_times)
+  setorder(st, trip_id, day_number, stop_sequence)
+
+  st_by_trip_day <- st[, .(
+    trip_length_m = shape_dist_traveled[.N] - shape_dist_traveled[1],
+    trip_time_min = departure_time_m[.N] - departure_time_m[1]
+  ), by = .(trip_id, day_number, route_short_name)]
+
+  st_by_rsn_weekly <- st_by_trip_day[, .(
+    trip_count = .N,
+    length_km  = round(sum(trip_length_m) / 1000),
+    time_hr    = round(sum(trip_time_min) / 60)
+  ), by = route_short_name]
+
+  st_by_rsn_weekly[, avg_speed_kmhr := fifelse(time_hr > 0, round(length_km / time_hr, 2), NA_real_)]
+  st_by_rsn_weekly[]
+}
+
+weekly_dt <- weekly_route_data(stop_times)
+
+weekly_dt[, weekly_stats := Map(
+  function(tc, km, hr, sp) {
+    list(
+      list(
+        "Weekly Trip Count"      = tc,
+        "Weekly Distance (km)"   = km,
+        "Weekly Time (hr)"       = hr,
+        "Average Speed (km/hr)"  = sp
+      )
+    )
+  },
+  trip_count,
+  length_km,
+  time_hr,
+  avg_speed_kmhr
+)]
+
+# Clean existing routes
+to_remove <- setdiff(names(weekly_dt), "route_short_name")
+routes_list[,(to_remove) := NULL]
+rm(to_remove)
+
+
+routes_list <- merge(routes_list, weekly_dt[,.(route_short_name, weekly_stats)], 
+                     by = "route_short_name", all.x = TRUE)
+```
+
+
 ## Add metadata for each route and export summary
 
 ```{r}
 combined_corridors <- names(corridor_defs)
 
-summary <- routes_list[,.(route_short_name, frequency_summary, peak_medians, span_stats)]
+summary <- routes_list[,.(route_short_name,
+                          frequency_summary,
+                          peak_medians,
+                          span_stats,
+                          weekly_stats)]
 
 # Add mode number
 summary <- unique(waits[,.(route_short_name, mode_number)])[summary, on = "route_short_name"]
@@ -906,6 +961,7 @@ summary_list <- lapply(
     l$frequency_summary <- l$frequency_summary[[1]]
     l$peak_medians      <- l$peak_medians[[1]]
     l$span_stats        <- l$span_stats[[1]]
+    l$weekly_stats      <- l$weekly_stats[[1]]
     l
   }
 )

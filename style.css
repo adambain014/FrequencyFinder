@@ -56,6 +56,10 @@ header p  { font-size: 14px; color: #5F5E5A; margin-top: 2px; }
 }
 
 .peak-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2rem; }
+.peak-grid.four-col { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 520px) {
+  .peak-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+}
 .peak-card { background: #fff; border: 0.5px solid #e0ddd6; padding: 1rem 1.25rem; }
 .peak-card .label { font-size: 13px; color: #5F5E5A; margin-bottom: 6px; }
 .peak-card .value { font-size: 28px; font-weight: 500; }

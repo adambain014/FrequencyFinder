@@ -387,7 +387,7 @@ document.getElementById('day-tabs').addEventListener('click', e => {
 
 // ─── Main render ─────────────────────────────────────────────────────────────
 function displayNumber(data) {
-  return data.route_title_display ?? data.route_display ?? data.route_number;
+  return data.route_display ?? data.route_number;
 }
 
 function render(data) {
@@ -410,9 +410,9 @@ function render(data) {
   subtitleEl.textContent = data.is_combined_corridor
     ? 'Frequency Summary (Combined Corridor)'
     : 'Frequency Summary';
-    
- document.getElementById('corridor-note').style.display =
-  data.is_combined_corridor ? 'block' : 'none';
+
+  document.getElementById('corridor-note').style.display =
+    data.is_combined_corridor ? 'block' : 'none';
 
   const peak   = data.peak_medians?.[0] ?? {};
   const amVal  = peak['Median AM Peak Wait'];
@@ -431,6 +431,22 @@ function render(data) {
       <div class="value" style="color:${pmStyle ? pmStyle.bg : colour}">${pmVal ?? '—'}<span class="unit">min</span></div>
       <div style="font-size:12px;color:#888780;margin-top:4px">4:00 – 7:00 pm</div>
     </div>`;
+
+  const weekly = data.weekly_stats?.[0] ?? {};
+  const weeklyFields = [
+    { key: 'Weekly Trip Count',     label: 'Total Services',   unit: '' },
+    { key: 'Weekly Distance (km)',  label: 'Distance Traveled', unit: 'km' },
+    { key: 'Weekly Time (hr)',      label: 'Service Hours ',    unit: 'hr' },
+    { key: 'Average Speed (km/hr)', label: 'Avg Speed',      unit: 'km/h' },
+  ];
+  document.getElementById('weekly-grid').innerHTML = weeklyFields.map(f => {
+    const val = weekly[f.key];
+    return `
+    <div class="peak-card">
+      <div class="label">${f.label}</div>
+      <div class="value" style="color:#5F5E5A">${val ?? '—'}<span class="unit">${f.unit}</span></div>
+    </div>`;
+  }).join('');
 
   document.getElementById('freq-body').innerHTML = (data.frequency_summary ?? []).map(row => `
     <tr>
