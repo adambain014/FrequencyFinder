@@ -193,6 +193,8 @@ rm(parent_lookup)
 stop_times[route_short_name == 790, direction_id := fifelse(direction_id == 0, 1, 0)]
 # and 426
 stop_times[route_short_name == 426, direction_id := fifelse(direction_id == 0, 1, 0)]
+# and 283
+stop_times[route_short_name == 283, direction_id := fifelse(direction_id == 0, 1, 0)]
 ```
 
 ## Add combined corridors

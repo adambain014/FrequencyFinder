@@ -1,0 +1,700 @@
+<!-- metrics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FrequencyFinder - Metrics Table</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+  .wide-page { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+  .back-link { font-size: 14px; color: #185FA5; text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+
+  .filter-bar { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+  .filter-bar label { font-size: 13px; color: #5F5E5A; }
+
+  .table-scroll { max-height: 65vh; overflow: auto; border: 0.5px solid #e0ddd6; margin-bottom: 2rem; }
+
+  /* separate (not collapse) is required for sticky left-column headers/cells to work at all */
+  table.metrics { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+
+  table.metrics th {
+    background: #f5f5f3; padding: 6px 10px; text-align: left;
+    font-weight: 500; color: #5F5E5A; border-bottom: 0.5px solid #e0ddd6;
+    white-space: nowrap; position: sticky; z-index: 4;
+  }
+/* Major metric-group dividers */
+#metrics-head-cols th:nth-child(10),
+#metrics-head-cols th:nth-child(12) {
+  border-left: 1px solid #d6d3cb;
+}
+
+table.metrics td.group-divider {
+  border-left: 1px solid #d6d3cb;
+}
+
+/* Frequency day dividers */
+#metrics-head-cols th:nth-child(4),
+#metrics-head-cols th:nth-child(7) {
+  border-left: 1px solid #e0ddd6;
+}
+
+table.metrics td.day-divider {
+  border-left: 1px solid #e0ddd6;
+    text-align: center;
+}
+
+/* Day row */
+#metrics-head-days th:nth-child(2),
+#metrics-head-days th:nth-child(3) {
+  border-left: 1px solid #e0ddd6;
+}
+
+  /* Major vertical dividers between metric groups */
+table.metrics th.group-label {
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-left: 1px solid #d6d3cb;
+}
+}
+
+/* Vertical divider at the start of each major metric group */
+  table.metrics th[data-col="mon_morning"],
+  table.metrics th[data-col="am_peak"],
+  table.metrics th[data-col="weekly_trips"] {
+    border-left: 1px solid #d6d3cb;
+  }
+  
+  /* Vertical divider between frequency days */
+  table.metrics th[data-col="sat_morning"],
+  table.metrics th[data-col="sun_morning"] {
+    border-left: 1px solid #e0ddd6;
+  }
+  
+  /* Matching dividers in the body */
+  table.metrics td:nth-child(3),
+  table.metrics td:nth-child(6),
+  table.metrics td:nth-child(9),
+  table.metrics td:nth-child(12) {
+    border-left: 1px solid #e6e3db;
+  } 
+
+  table.metrics th.sortable { cursor: pointer; }
+  table.metrics th.active-sort { color: #185FA5; }
+  table.metrics th .arrow { font-size: 10px; margin-left: 2px; }
+
+  table.metrics td { padding: 8px 10px; border-bottom: 0.5px solid #f0ede6; white-space: nowrap; }
+  
+  #metrics-head-groups th.col-route {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 20;
+
+  background: #f5f5f3 !important;
+
+  box-shadow:
+    2px 0 4px -2px rgba(0,0,0,0.15);
+}
+
+
+/*
+   Frozen Mode header.
+*/
+
+#metrics-head-groups th.col-mode {
+  position: sticky;
+  left: 140px;
+  top: 0;
+  z-index: 20;
+
+  background: #f5f5f3 !important;
+}
+
+
+  /* Body cells in the route column: sticky left only, background matches the row (zebra/highlight) */
+  .col-route {
+    position: sticky; left: 0; z-index: 2;
+    background-color: inherit;
+    width: 140px; min-width: 140px;
+    box-shadow: 2px 0 4px -2px rgba(0,0,0,0.12); /* divider - border-collapse:separate no longer draws one */
+  }
+  /* Header route cell: sticky both top AND left, needs an explicit (non-inherited) background */
+th.col-route {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-color: #f5f5f3 !important;
+  box-shadow: 2px 0 4px -2px rgba(0,0,0,0.15);
+}
+
+  tbody tr { background-color: #fff; }
+  tbody tr:nth-child(even) { background-color: #faf9f7; }
+  tbody tr.highlight { background-color: #FFF6DE !important; }
+
+  .stats-panel { border: 0.5px solid #e0ddd6; padding: 1.5rem; }
+  .stats-panel-head { display: flex; align-items: center; gap: 12px; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .stats-panel-head select { padding: 8px 12px; border: 0.5px solid #c8c5be; border-radius: 8px; font-size: 14px; }
+
+  .stats-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+  .stat-card { background: #f5f5f3; padding: 0.75rem 1rem; }
+  .stat-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #888780; margin-bottom: 4px; }
+  .stat-card .value { font-size: 18px; font-weight: 600; color: #1a1a18; }
+  .stat-card .sub { font-size: 11px; color: #888780; margin-top: 3px; }
+
+  .stats-cols { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 1.5rem; }
+  .rank-list { list-style: none; }
+  .rank-list li {
+    display: flex; justify-content: space-between; padding: 5px 0;
+    border-bottom: 0.5px solid #f0ede6; font-size: 13px;
+  }
+  .rank-list li:last-child { border-bottom: none; }
+  .rank-list .rank-num { color: #888780; width: 20px; flex-shrink: 0; }
+  .rank-list .rank-route { flex: 1; }
+  .rank-list .rank-value { font-weight: 500; }
+  .stats-cols h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #888780; margin-bottom: 0.5rem; }
+  #stats-histogram { max-height: 220px; }
+  
+  /* Subtle divider between Monday / Saturday / Sunday */
+table.metrics .day-divider {
+  border-left: 1px solid #e0ddd6;
+}
+
+/* Stronger divider between major metric groups */
+table.metrics .group-divider {
+  border-left: 1px solid #d6d3cb;
+}
+
+
+  @media (max-width: 900px) {
+    .stats-cols { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-center">
+    <h1>FrequencyFinder - Metrics Table</h1>
+    <span class="subtitle" id="data-subtitle">Loading data range…</span>
+  </div>
+</div>
+
+<div class="wide-page">
+  <div style="margin: 1rem 0;">
+    <a class="back-link" href="index.html">&larr; Back to route lookup</a>
+  </div>
+
+  <div class="filter-bar">
+    <label>Mode
+      <select id="mode-filter">
+        <option value="all">All</option>
+        <option value="2">Train</option>
+        <option value="3">Tram</option>
+        <option value="4">Bus</option>
+      </select>
+    </label>
+    <label><input type="checkbox" id="corridor-filter"> Include combined corridors</label>
+    <div style="position:relative; min-width:220px;">
+      <input type="text" id="jump-search" placeholder="Jump to route..." autocomplete="off"
+        style="padding:8px 12px; border:0.5px solid #c8c5be; border-radius:8px; width:100%;">
+      <div id="jump-dropdown" style="display:none; position:absolute; top:calc(100% + 4px); left:0; right:0;
+        background:#fff; border:0.5px solid #c8c5be; border-radius:8px; max-height:240px; overflow-y:auto; z-index:999;"></div>
+    </div>
+  </div>
+
+  <div class="table-scroll">
+    <table class="metrics" id="metrics-table">
+      <thead>
+        <tr id="metrics-head-groups"></tr>
+        <tr id="metrics-head-days"></tr>
+        <tr id="metrics-head-cols"></tr>
+      </thead>
+      <tbody id="metrics-body"></tbody>
+    </table>
+  </div>
+
+  <div class="stats-panel">
+    <div class="stats-panel-head">
+      <label for="stats-metric" style="font-size:13px; color:#5F5E5A;">Stats Summary for</label>
+      <select id="stats-metric"></select>
+
+      <label style="font-size:13px; color:#5F5E5A; margin-left:16px;">Mode
+        <select id="stats-mode-filter">
+          <option value="all">All</option>
+          <option value="2">Train</option>
+          <option value="3">Tram</option>
+          <option value="4">Bus</option>
+        </select>
+      </label>
+      <label style="font-size:13px; color:#5F5E5A;">
+        <input type="checkbox" id="stats-corridor-filter"> Include combined corridors
+      </label>
+    </div>
+
+    <div class="stats-summary" id="stats-summary"></div>
+
+    <div class="stats-cols">
+      <div>
+        <h4>Top 10</h4>
+        <ul class="rank-list" id="stats-top10"></ul>
+      </div>
+      <div>
+        <h4>Bottom 10</h4>
+        <ul class="rank-list" id="stats-bottom10"></ul>
+      </div>
+      <div>
+        <h4>Distribution</h4>
+        <canvas id="stats-histogram" height="180"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const FOLDER = 'route_jsons';
+
+// group: null => ungrouped, spans both header rows (Route, Mode)
+// group: 'freq'|'peak'|'weekly' => sits under a shared super-heading, defined in GROUPS below
+const GROUPS = {
+  freq:   'Average Frequency (min)',
+  peak:   'Peak Median Wait (min)',
+  weekly: 'Weekly Totals',
+};
+
+const COLUMNS = [
+  { id: 'route',       label: 'Route', group: null, sortable: false, coloured: false,
+    get: d => d.route_display ?? d.route_number },
+  { id: 'mode',        label: 'Mode',  group: null, sortable: false, coloured: false,
+    get: d => modeLabel(d) },
+
+  { id: 'mon_morning', label: 'Mon Morning',  group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Monday')?.morning },
+  { id: 'mon_daytime', label: 'Mon Daytime', group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Monday')?.daytime },
+  { id: 'mon_evening', label: 'Mon Evening', group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Monday')?.evening },
+  { id: 'sat_morning', label: 'Sat Morning',  group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Saturday')?.morning },
+  { id: 'sat_daytime', label: 'Sat Daytime', group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Saturday')?.daytime },
+  { id: 'sat_evening', label: 'Sat Evening', group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Saturday')?.evening },
+  { id: 'sun_morning', label: 'Sun Morning',  group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Sunday')?.morning },
+  { id: 'sun_daytime', label: 'Sun Daytime', group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Sunday')?.daytime },
+  { id: 'sun_evening', label: 'Sun Evening', group: 'freq', sortable: true, coloured: true, unit: 'min',
+    get: d => d.frequency_summary?.find(r => r.day === 'Sunday')?.evening },
+
+  { id: 'am_peak', label: 'AM Peak', group: 'peak', sortable: true, coloured: true, unit: 'min',
+    get: d => d.peak_medians?.[0]?.['Median AM Peak Wait'] },
+  { id: 'pm_peak', label: 'PM Peak', group: 'peak', sortable: true, coloured: true, unit: 'min',
+    get: d => d.peak_medians?.[0]?.['Median PM Peak Wait'] },
+
+  { id: 'weekly_trips', label: 'Total Services', group: 'weekly', sortable: true, coloured: false, unit: '',
+    get: d => d.weekly_stats?.[0]?.['Weekly Trip Count'] },
+  { id: 'weekly_dist',  label: 'Distance (km)',   group: 'weekly', sortable: true, coloured: false, unit: 'km',
+    get: d => d.weekly_stats?.[0]?.['Weekly Distance (km)'] },
+  { id: 'weekly_time',  label: 'Service Hrs',     group: 'weekly', sortable: true, coloured: false, unit: 'hr',
+    get: d => d.weekly_stats?.[0]?.['Weekly Time (hr)'] },
+  { id: 'avg_speed',    label: 'Avg Speed',       group: 'weekly', sortable: true, coloured: false, unit: 'km/h',
+    get: d => d.weekly_stats?.[0]?.['Average Speed (km/hr)'] },
+];
+
+function modeLabel(d) {
+  const m = d.mode_type;
+  if (m == '3' || m === 3) return 'Tram';
+  if (m == '4' || m === 4) return 'Bus';
+  if (m == '2' || m === 2) return 'Train';
+  return 'Route';
+}
+
+const FREQ_SCALE = [
+  { max: 10, bg: '#671415' }, { max: 15, bg: '#a62624' }, { max: 20, bg: '#642d91' },
+  { max: 30, bg: '#2c8ab8' }, { max: 60, bg: '#5d9a9d' }, { max: Infinity, bg: '#8d6f32' },
+];
+function pillColour(v) {
+  if (v == null) return null;
+  return (FREQ_SCALE.find(s => v <= s.max) ?? FREQ_SCALE.at(-1)).bg;
+}
+
+let summaryCache = {};
+let currentSort = { col: null, dir: null };
+let currentRows = [];
+let histChart = null;
+
+function loadData() {
+  return Promise.all([
+    fetch(`${FOLDER}/manifest.json`).then(r => r.json()),
+    fetch(`${FOLDER}/summary.json`).then(r => r.json())
+  ]).then(([manifest, summary]) => {
+    summaryCache = summary;
+    return manifest.routes;
+  });
+}
+
+function filterRows(allKeys, modeElId, corridorElId) {
+  const mode = document.getElementById(modeElId).value;
+  const includeCorridors = document.getElementById(corridorElId).checked;
+  return allKeys
+    .map(key => summaryCache[key])
+    .filter(d => d)
+    .filter(d => mode === 'all' || String(d.mode_type) === mode)
+    .filter(d => includeCorridors || !d.is_combined_corridor);
+}
+
+function sortRows(rows) {
+  if (!currentSort.col) return rows;
+  const col = COLUMNS.find(c => c.id === currentSort.col);
+  const dir = currentSort.dir === 'asc' ? 1 : -1;
+  return [...rows].sort((a, b) => {
+    const va = col.get(a), vb = col.get(b);
+    if (va == null && vb == null) return 0;
+    if (va == null) return 1;
+    if (vb == null) return -1;
+    if (typeof va === 'string') return va.localeCompare(vb) * dir;
+    return (va - vb) * dir;
+  });
+}
+
+function cycleSort(colId) {
+  if (currentSort.col !== colId) currentSort = { col: colId, dir: 'asc' };
+  else if (currentSort.dir === 'asc') currentSort = { col: colId, dir: 'desc' };
+  else currentSort = { col: null, dir: null };
+  renderTable();
+}
+
+
+
+// Builds the two-row header: group super-labels on top, individual sortable
+// columns below. Ungrouped columns (Route, Mode) span both rows via rowspan.
+function renderHead() {
+  const groupRow = document.getElementById('metrics-head-groups');
+  const dayRow   = document.getElementById('metrics-head-days');
+  const colRow   = document.getElementById('metrics-head-cols');
+
+  // ── Top row: major metric groups ──────────────────────────────
+
+  groupRow.innerHTML = `
+    <th rowspan="3" class="col-route">Route</th>
+    <th rowspan="3">Mode</th>
+    <th colspan="9" class="group-label">Average Frequency (min)</th>
+    <th colspan="2" class="group-label">Peak Median Wait (min)</th>
+    <th colspan="4" class="group-label">Weekly Totals</th>
+  `;
+
+  // ── Middle row: days / subgroups ──────────────────────────────
+
+  dayRow.innerHTML = `
+    <th colspan="3">Monday</th>
+    <th colspan="3">Saturday</th>
+    <th colspan="3">Sunday</th>
+    <th colspan="2">Peak Period</th>
+    <th colspan="4">Weekly Service</th>
+  `;
+
+  // ── Bottom row: individual metrics ────────────────────────────
+
+  const colCells = COLUMNS
+    .filter(c => c.group)
+    .map(c => {
+      const active = c.id === currentSort.col;
+      const arrow = active
+        ? (currentSort.dir === 'asc' ? '&#9650;' : '&#9660;')
+        : '';
+
+      return `
+        <th class="${c.sortable ? 'sortable' : ''} ${active ? 'active-sort' : ''}"
+            data-col="${c.id}">
+          ${c.label}<span class="arrow">${arrow}</span>
+        </th>
+      `;
+    });
+
+  colRow.innerHTML = colCells.join('');
+
+  colRow.querySelectorAll('th.sortable').forEach(th =>
+    th.addEventListener('click', () => cycleSort(th.dataset.col))
+  );
+}
+
+function renderBody(rows) {
+  const tbody = document.getElementById('metrics-body');
+  tbody.innerHTML = rows.map(d => {
+    const key = d.route_number;
+    const cells = COLUMNS.map(c => {
+      const v = c.get(d);
+      const classes = [
+          c.id === 'route' ? 'col-route' : '',
+          c.group ? `group-${c.group}` : '',
+          c.id === 'sat_morning' || c.id === 'sun_morning' ? 'day-divider' : '',
+          c.id === 'am_peak' || c.id === 'weekly_trips' ? 'group-divider' : ''
+        ].filter(Boolean).join(' ');
+      if (!c.coloured) return `<td class="${classes}">${v ?? '—'}</td>`;
+      const bg = pillColour(v);
+      return `<td class="${classes}">${v != null ? `<span style="color:${bg}; font-weight:500">${v}</span>` : '—'}</td>`;
+    }).join('');
+    return `<tr data-key="${key}">${cells}</tr>`;
+  }).join('');
+}
+
+function renderTable() {
+  const filtered = filterRows(Object.keys(summaryCache), 'mode-filter', 'corridor-filter');
+  currentRows = sortRows(filtered);
+  renderHead();
+  renderBody(currentRows);
+}
+
+function jumpToRoute(key) {
+  const row = document.querySelector(`tr[data-key="${key}"]`);
+  if (!row) return;
+  row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  row.classList.add('highlight');
+  setTimeout(() => row.classList.remove('highlight'), 1200);
+}
+
+function setupSearch() {
+  const input = document.getElementById('jump-search');
+  const dd = document.getElementById('jump-dropdown');
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    const matches = currentRows.filter(d => (d.route_display ?? d.route_number).toLowerCase().startsWith(q)).slice(0, 15);
+    dd.innerHTML = matches.map(d =>
+      `<div data-key="${d.route_number}" style="padding:8px 12px; cursor:pointer;">${d.route_display ?? d.route_number} (${modeLabel(d)})</div>`
+    ).join('');
+    dd.style.display = matches.length ? 'block' : 'none';
+  });
+  dd.addEventListener('mousedown', e => {
+    const el = e.target.closest('[data-key]');
+    if (!el) return;
+    jumpToRoute(el.dataset.key);
+    dd.style.display = 'none';
+    input.value = '';
+  });
+  input.addEventListener('blur', () => setTimeout(() => dd.style.display = 'none', 150));
+}
+
+// ─── Stats panel ────────────────────────────────────────────────────────────
+
+function setupStatsMetricSelect() {
+  const sel = document.getElementById('stats-metric');
+
+  sel.innerHTML = `
+    <optgroup label="Average Frequency">
+      <option value="mon_morning">Monday Morning</option>
+      <option value="mon_daytime">Monday Daytime</option>
+      <option value="mon_evening">Monday Evening</option>
+
+      <option value="sat_morning">Saturday Morning</option>
+      <option value="sat_daytime">Saturday Daytime</option>
+      <option value="sat_evening">Saturday Evening</option>
+
+      <option value="sun_morning">Sunday Morning</option>
+      <option value="sun_daytime">Sunday Daytime</option>
+      <option value="sun_evening">Sunday Evening</option>
+    </optgroup>
+
+    <optgroup label="Peak Median Wait">
+      <option value="am_peak">AM Peak</option>
+      <option value="pm_peak">PM Peak</option>
+    </optgroup>
+
+    <optgroup label="Weekly Stats">
+      <option value="weekly_trips">Total Services</option>
+      <option value="weekly_dist">Total Distance</option>
+      <option value="weekly_time">Total Service Hours</option>
+      <option value="avg_speed">Average Speed</option>
+    </optgroup>
+  `;
+
+  sel.value = 'mon_daytime';
+}
+
+function computeStats(values) {
+  const n = values.length;
+  const mean = values.reduce((a, b) => a + b, 0) / n;
+  const sorted = [...values].sort((a, b) => a - b);
+  const median = n % 2 === 0 ? (sorted[n/2 - 1] + sorted[n/2]) / 2 : sorted[(n - 1) / 2];
+  const variance = values.reduce((a, b) => a + (b - mean) ** 2, 0) / n;
+  const sd = Math.sqrt(variance);
+  return { mean, median, sd, n };
+}
+
+// Median usually lands on an actual route's value (or straddles two, if n is
+// even) - return the real route(s), not just the number.
+function findMedianRoutes(withValues) {
+  const sorted = [...withValues].sort((a, b) => a.value - b.value);
+  const n = sorted.length;
+  return n % 2 === 1 ? [sorted[(n - 1) / 2]] : [sorted[n / 2 - 1], sorted[n / 2]];
+}
+
+// Mean is a computed average and generally won't match any single route's
+// value exactly - show the nearest one, framed as "closest to the mean"
+// rather than implying an exact match.
+function findClosestToMean(withValues, mean) {
+  return withValues.reduce((best, r) =>
+    Math.abs(r.value - mean) < Math.abs(best.value - mean) ? r : best
+  );
+}
+
+function renderStatsPanel() {
+  const statsRows = filterRows(Object.keys(summaryCache), 'stats-mode-filter', 'stats-corridor-filter');
+  const metricId = document.getElementById('stats-metric').value;
+  const col = COLUMNS.find(c => c.id === metricId);
+  const unit = col.unit ? ` ${col.unit}` : '';
+
+  const withValues = statsRows
+    .map(d => ({ d, value: col.get(d) }))
+    .filter(r => r.value != null);
+
+  if (!withValues.length) {
+    document.getElementById('stats-summary').innerHTML =
+      '<p style="color:#888780; font-size:13px;">No data for this metric under the current filters.</p>';
+    document.getElementById('stats-top10').innerHTML = '';
+    document.getElementById('stats-bottom10').innerHTML = '';
+    if (histChart) { histChart.destroy(); histChart = null; }
+    return;
+  }
+
+  const values = withValues.map(r => r.value);
+  const { mean, median, sd, n } = computeStats(values);
+  const medianRoutes = findMedianRoutes(withValues);
+  const meanRoute = findClosestToMean(withValues, mean);
+
+  const routeLabel = r => r.d.route_display ?? r.d.route_number;
+  const medianSub = medianRoutes.length === 1
+    ? routeLabel(medianRoutes[0])
+    : `${routeLabel(medianRoutes[0])} / ${routeLabel(medianRoutes[1])}`;
+
+  const lowerIsBetter = col.coloured;
+  const sortedAsc = [...withValues].sort((a, b) => a.value - b.value);
+  const best  = lowerIsBetter ? sortedAsc.slice(0, 10) : sortedAsc.slice(-10).reverse();
+  const worst = lowerIsBetter ? sortedAsc.slice(-10).reverse() : sortedAsc.slice(0, 10);
+
+  document.getElementById('stats-summary').innerHTML = `
+    <div class="stat-card"><div class="label">Routes</div><div class="value">${n}</div></div>
+    <div class="stat-card">
+      <div class="label">Mean</div>
+      <div class="value">${mean.toFixed(1)}${unit}</div>
+      <div class="sub">closest: ${routeLabel(meanRoute)}</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Median</div>
+      <div class="value">${median.toFixed(1)}${unit}</div>
+      <div class="sub">${medianSub}</div>
+    </div>
+    <div class="stat-card"><div class="label">Std. Dev.</div><div class="value">${sd.toFixed(1)}${unit}</div></div>
+  `;
+
+  const rankItem = (r, i) => `
+    <li><span class="rank-num">${i + 1}</span>
+        <span class="rank-route">${routeLabel(r)}</span>
+        <span class="rank-value">${r.value}${unit}</span></li>`;
+
+  document.getElementById('stats-top10').innerHTML = best.map(rankItem).join('');
+  document.getElementById('stats-bottom10').innerHTML = worst.map(rankItem).join('');
+
+  renderHistogram(values, unit);
+}
+
+// ─── "Nice number" binning (same idea as D3/matplotlib auto-ticks) ──────────
+// Rounds bin width to 1/2/5 x 10^n so bin edges land on clean values, then
+// derives bin count from that - rather than fixing bin count first and
+// letting edges fall wherever, which produces ugly widths like 3.7.
+function niceNumber(range, round) {
+  const exponent = Math.floor(Math.log10(range));
+  const fraction = range / Math.pow(10, exponent);
+  let niceFraction;
+  if (round) {
+    if (fraction < 1.5) niceFraction = 1;
+    else if (fraction < 3) niceFraction = 2;
+    else if (fraction < 7) niceFraction = 5;
+    else niceFraction = 10;
+  } else {
+    if (fraction <= 1) niceFraction = 1;
+    else if (fraction <= 2) niceFraction = 2;
+    else if (fraction <= 5) niceFraction = 5;
+    else niceFraction = 10;
+  }
+  return niceFraction * Math.pow(10, exponent);
+}
+
+function computeNiceBins(min, max, targetBins) {
+  if (min === max) { min -= 1; max += 1; } // guard against a zero-width range
+  const range = niceNumber(max - min, false);
+  const spacing = niceNumber(range / (targetBins - 1), true);
+  const niceMin = Math.floor(min / spacing) * spacing;
+  const niceMax = Math.ceil(max / spacing) * spacing;
+  const binCount = Math.round((niceMax - niceMin) / spacing);
+  return { niceMin, spacing, binCount };
+}
+
+function renderHistogram(values, unit) {
+  const min = Math.min(...values), max = Math.max(...values);
+  const { niceMin, spacing, binCount } = computeNiceBins(min, max, 20);
+
+  const bins = new Array(binCount).fill(0);
+  values.forEach(v => {
+    let idx = Math.floor((v - niceMin) / spacing);
+    if (idx < 0) idx = 0;
+    if (idx >= binCount) idx = binCount - 1;
+    bins[idx]++;
+  });
+
+  const decimals = spacing < 1 ? 1 : 0; // whole-number bin widths don't need decimal labels
+  const labels = bins.map((_, i) => (niceMin + i * spacing).toFixed(decimals));
+
+  if (histChart) histChart.destroy();
+  const ctx = document.getElementById('stats-histogram').getContext('2d');
+  histChart = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: bins, backgroundColor: '#185FA5' }] },
+    options: {
+      animation: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { title: c => `${c[0].label}${unit}` } } },
+      scales: {
+        x: { title: { display: true, text: `Value (${unit || 'count'})`, font: { size: 11 } }, ticks: { font: { size: 9 }, maxRotation: 90, minRotation: 90 } },
+        y: { title: { display: true, text: 'Routes', font: { size: 11 } }, ticks: { stepSize: 1, font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+function fmt(d) {
+  return new Date(d).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" });
+}
+
+function loadDateRange() {
+  fetch("date_range.json")
+    .then(r => r.json())
+    .then(([firstDate]) => {
+      document.getElementById('data-subtitle').innerHTML =
+        `DTP GTFS data from the week starting on ${fmt(firstDate)} - Metro Trains, Trams and Buses<br>Unofficial - by Adam Bain`;
+    });
+}
+
+// ─── Init ─────────────────────────────────────────────────────────────────
+
+document.getElementById('mode-filter').addEventListener('change', renderTable);
+document.getElementById('corridor-filter').addEventListener('change', renderTable);
+document.getElementById('stats-mode-filter').addEventListener('change', renderStatsPanel);
+document.getElementById('stats-corridor-filter').addEventListener('change', renderStatsPanel);
+document.getElementById('stats-metric').addEventListener('change', renderStatsPanel);
+
+loadData().then(() => {
+  setupStatsMetricSelect();
+  renderTable();
+  renderStatsPanel();
+  setupSearch();
+});
+
+loadDateRange();
+</script>
+</body>
+</html>
