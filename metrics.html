@@ -175,12 +175,7 @@ table.metrics .group-divider {
 
   <div class="filter-bar">
     <label>Mode
-      <select id="mode-filter">
-        <option value="all">All</option>
-        <option value="2">Train</option>
-        <option value="3">Tram</option>
-        <option value="4">Bus</option>
-      </select>
+        <select id="mode-filter"></select>
     </label>
     <label><input type="checkbox" id="corridor-filter"> Include combined corridors</label>
     <div style="position:relative; min-width:220px;">
@@ -212,12 +207,7 @@ table.metrics .group-divider {
       <select id="stats-metric"></select>
 
       <label style="font-size:13px; color:#5F5E5A; margin-left:16px;">Mode
-        <select id="stats-mode-filter">
-          <option value="all">All</option>
-          <option value="2">Train</option>
-          <option value="3">Tram</option>
-          <option value="4">Bus</option>
-        </select>
+          <select id="stats-mode-filter"></select>
       </label>
       <label style="font-size:13px; color:#5F5E5A;">
         <input type="checkbox" id="stats-corridor-filter"> Include combined corridors
@@ -733,10 +723,10 @@ document.getElementById('stats-mode-filter').addEventListener('change', renderSt
 document.getElementById('stats-corridor-filter').addEventListener('change', renderStatsPanel);
 document.getElementById('stats-metric').addEventListener('change', renderStatsPanel);
 
-loadData().then(() => {
+Promise.all([loadData(), loadModes()]).then(() => {
+  populateModeFilters();
   setupStatsMetricSelect();
   renderTable();
-  loadModes();
   renderStatsPanel();
   setupSearch();
 });
@@ -797,6 +787,17 @@ function loadModes() {
 function modeLabel(d) {
   const m = String(d.mode_type);
   return MODES[m]?.label ?? 'Route';
+}
+
+function populateModeFilters() {
+  const optionsHTML = Object.entries(MODES)
+    .map(([value, info]) => `<option value="${value}">${info.label}</option>`)
+    .join('');
+
+  ['mode-filter', 'stats-mode-filter'].forEach(id => {
+    const sel = document.getElementById(id);
+    sel.innerHTML = `<option value="all">All</option>${optionsHTML}`;
+  });
 }
 
 </script>
