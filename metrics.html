@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FrequencyFinder - Metrics Table</title>
@@ -17,71 +20,40 @@
 
   .table-scroll { max-height: 65vh; overflow: auto; border: 0.5px solid #e0ddd6; margin-bottom: 2rem; }
 
-  /* separate (not collapse) is required for sticky left-column headers/cells to work at all */
-  table.metrics { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+  /* separate (not collapse) is required for sticky left-column headers/cells to work */
+  table.metrics { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
 
   table.metrics th {
-    background: #f5f5f3; padding: 6px 10px; text-align: left;
-    font-weight: 500; color: #5F5E5A; border-bottom: 0.5px solid #e0ddd6;
-    white-space: nowrap; position: sticky; z-index: 4;
-  }
-/* Major metric-group dividers */
-#metrics-head-cols th:nth-child(10),
-#metrics-head-cols th:nth-child(12) {
-  border-left: 1px solid #d6d3cb;
+  background: #f5f5f3; padding: 6px 10px; text-align: left;
+  font-weight: 500; color: #5F5E5A; border-bottom: 0.5px solid #e0ddd6;
+  white-space: nowrap; position: sticky; top: 0; z-index: 4; text-align: center;
 }
+
 
 table.metrics td.group-divider {
   border-left: 1px solid #d6d3cb;
 }
-
-/* Frequency day dividers */
-#metrics-head-cols th:nth-child(4),
-#metrics-head-cols th:nth-child(7) {
-  border-left: 1px solid #e0ddd6;
-}
-
 table.metrics td.day-divider {
   border-left: 1px solid #e0ddd6;
-    text-align: center;
+
 }
 
 /* Day row */
+
+#metrics-head-days th:nth-child(1),
 #metrics-head-days th:nth-child(2),
-#metrics-head-days th:nth-child(3) {
+#metrics-head-days th:nth-child(3),
+#metrics-head-days th:nth-child(4),
+#metrics-head-days th:nth-child(5) {
   border-left: 1px solid #e0ddd6;
 }
 
   /* Major vertical dividers between metric groups */
 table.metrics th.group-label {
   text-align: center;
-  font-size: 11px;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   border-left: 1px solid #d6d3cb;
 }
-}
-
-/* Vertical divider at the start of each major metric group */
-  table.metrics th[data-col="mon_morning"],
-  table.metrics th[data-col="am_peak"],
-  table.metrics th[data-col="weekly_trips"] {
-    border-left: 1px solid #d6d3cb;
-  }
-  
-  /* Vertical divider between frequency days */
-  table.metrics th[data-col="sat_morning"],
-  table.metrics th[data-col="sun_morning"] {
-    border-left: 1px solid #e0ddd6;
-  }
-  
-  /* Matching dividers in the body */
-  table.metrics td:nth-child(3),
-  table.metrics td:nth-child(6),
-  table.metrics td:nth-child(9),
-  table.metrics td:nth-child(12) {
-    border-left: 1px solid #e6e3db;
-  } 
 
   table.metrics th.sortable { cursor: pointer; }
   table.metrics th.active-sort { color: #185FA5; }
@@ -96,23 +68,15 @@ table.metrics th.group-label {
   z-index: 20;
 
   background: #f5f5f3 !important;
-
-  box-shadow:
-    2px 0 4px -2px rgba(0,0,0,0.15);
 }
-
-
-/*
-   Frozen Mode header.
-*/
 
 #metrics-head-groups th.col-mode {
   position: sticky;
   left: 140px;
   top: 0;
-  z-index: 20;
-
-  background: #f5f5f3 !important;
+  z-index: 10;
+  background-color: #f5f5f3 !important;   /* still needed - table.metrics th also sets background */
+  box-shadow: 2px 0 4px -2px rgba(0,0,0,0.15);
 }
 
 
@@ -121,17 +85,19 @@ table.metrics th.group-label {
     position: sticky; left: 0; z-index: 2;
     background-color: inherit;
     width: 140px; min-width: 140px;
-    box-shadow: 2px 0 4px -2px rgba(0,0,0,0.12); /* divider - border-collapse:separate no longer draws one */
   }
-  /* Header route cell: sticky both top AND left, needs an explicit (non-inherited) background */
-th.col-route {
+  
+  
+/* Mode column: sticky left, offset by the route column's fixed width */
+.col-mode {
   position: sticky;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  background-color: #f5f5f3 !important;
-  box-shadow: 2px 0 4px -2px rgba(0,0,0,0.15);
+  left: 140px;         /* matches .col-route's width */
+  z-index: 2;
+  background-color: inherit;
+  min-width: 70px;
+  box-shadow: 2px 0 4px -2px rgba(0,0,0,0.12);
 }
+
 
   tbody tr { background-color: #fff; }
   tbody tr:nth-child(even) { background-color: #faf9f7; }
@@ -171,6 +137,7 @@ table.metrics .group-divider {
 }
 
 
+
   @media (max-width: 900px) {
     .stats-cols { grid-template-columns: 1fr; }
   }
@@ -207,7 +174,7 @@ table.metrics .group-divider {
         background:#fff; border:0.5px solid #c8c5be; border-radius:8px; max-height:240px; overflow-y:auto; z-index:999;"></div>
     </div>
   </div>
-
+<label style="font-size:13px; color:#5F5E5A;"> Click on column labels  to sort</label>
   <div class="table-scroll">
     <table class="metrics" id="metrics-table">
       <thead>
@@ -263,7 +230,7 @@ const FOLDER = 'route_jsons';
 // group: 'freq'|'peak'|'weekly' => sits under a shared super-heading, defined in GROUPS below
 const GROUPS = {
   freq:   'Average Frequency (min)',
-  peak:   'Peak Median Wait (min)',
+  peak:   'Peak Median gap (min)',
   weekly: 'Weekly Totals',
 };
 
@@ -273,23 +240,23 @@ const COLUMNS = [
   { id: 'mode',        label: 'Mode',  group: null, sortable: false, coloured: false,
     get: d => modeLabel(d) },
 
-  { id: 'mon_morning', label: 'Mon Morning',  group: 'freq', sortable: true, coloured: true, unit: 'min',
+  { id: 'mon_morning', label: 'Morning 7-8',  group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Monday')?.morning },
-  { id: 'mon_daytime', label: 'Mon Daytime', group: 'freq', sortable: true, coloured: true, unit: 'min',
+  { id: 'mon_daytime', label: 'Daytime 12-1', group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Monday')?.daytime },
   { id: 'mon_evening', label: 'Mon Evening', group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Monday')?.evening },
-  { id: 'sat_morning', label: 'Sat Morning',  group: 'freq', sortable: true, coloured: true, unit: 'min',
+  { id: 'sat_morning', label: 'Morning 7-8',  group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Saturday')?.morning },
-  { id: 'sat_daytime', label: 'Sat Daytime', group: 'freq', sortable: true, coloured: true, unit: 'min',
+  { id: 'sat_daytime', label: 'Daytime 12-1', group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Saturday')?.daytime },
-  { id: 'sat_evening', label: 'Sat Evening', group: 'freq', sortable: true, coloured: true, unit: 'min',
+  { id: 'sat_evening', label: 'Evening 9-10', group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Saturday')?.evening },
-  { id: 'sun_morning', label: 'Sun Morning',  group: 'freq', sortable: true, coloured: true, unit: 'min',
+  { id: 'sun_morning', label: 'Morning 7-8',  group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Sunday')?.morning },
-  { id: 'sun_daytime', label: 'Sun Daytime', group: 'freq', sortable: true, coloured: true, unit: 'min',
+  { id: 'sun_daytime', label: 'Daytime 12-1', group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Sunday')?.daytime },
-  { id: 'sun_evening', label: 'Sun Evening', group: 'freq', sortable: true, coloured: true, unit: 'min',
+  { id: 'sun_evening', label: 'Evening 9-10', group: 'freq', sortable: true, coloured: true, unit: 'min',
     get: d => d.frequency_summary?.find(r => r.day === 'Sunday')?.evening },
 
   { id: 'am_peak', label: 'AM Peak', group: 'peak', sortable: true, coloured: true, unit: 'min',
@@ -298,13 +265,16 @@ const COLUMNS = [
     get: d => d.peak_medians?.[0]?.['Median PM Peak Wait'] },
 
   { id: 'weekly_trips', label: 'Total Services', group: 'weekly', sortable: true, coloured: false, unit: '',
-    get: d => d.weekly_stats?.[0]?.['Weekly Trip Count'] },
-  { id: 'weekly_dist',  label: 'Distance (km)',   group: 'weekly', sortable: true, coloured: false, unit: 'km',
-    get: d => d.weekly_stats?.[0]?.['Weekly Distance (km)'] },
-  { id: 'weekly_time',  label: 'Service Hrs',     group: 'weekly', sortable: true, coloured: false, unit: 'hr',
-    get: d => d.weekly_stats?.[0]?.['Weekly Time (hr)'] },
+  get: d => d.weekly_stats?.[0]?.['Weekly Trip Count'],
+  format: v => v.toLocaleString('en-AU') },
+{ id: 'weekly_dist',  label: 'Distance (km)',   group: 'weekly', sortable: true, coloured: false, unit: 'km',
+  get: d => d.weekly_stats?.[0]?.['Weekly Distance (km)'],
+  format: v => v.toLocaleString('en-AU') },
+{ id: 'weekly_time',  label: 'Service Hrs',     group: 'weekly', sortable: true, coloured: false, unit: 'hr',
+  get: d => d.weekly_stats?.[0]?.['Weekly Time (hr)'],
+  format: v => v.toLocaleString('en-AU') },
   { id: 'avg_speed',    label: 'Avg Speed',       group: 'weekly', sortable: true, coloured: false, unit: 'km/h',
-    get: d => d.weekly_stats?.[0]?.['Average Speed (km/hr)'] },
+  get: d => d.weekly_stats?.[0]?.['Average Speed (km/hr)'] },
 ];
 
 function modeLabel(d) {
@@ -383,9 +353,9 @@ function renderHead() {
 
   groupRow.innerHTML = `
     <th rowspan="3" class="col-route">Route</th>
-    <th rowspan="3">Mode</th>
+    <th rowspan="3" class="col-mode">Mode</th>  
     <th colspan="9" class="group-label">Average Frequency (min)</th>
-    <th colspan="2" class="group-label">Peak Median Wait (min)</th>
+    <th colspan="2" class="group-label">Peak Median Gap (min)</th>
     <th colspan="4" class="group-label">Weekly Totals</th>
   `;
 
@@ -395,33 +365,53 @@ function renderHead() {
     <th colspan="3">Monday</th>
     <th colspan="3">Saturday</th>
     <th colspan="3">Sunday</th>
-    <th colspan="2">Peak Period</th>
-    <th colspan="4">Weekly Service</th>
+    <th colspan="2"></th>
+    <th colspan="4"></th>
   `;
 
   // ── Bottom row: individual metrics ────────────────────────────
 
-  const colCells = COLUMNS
-    .filter(c => c.group)
-    .map(c => {
-      const active = c.id === currentSort.col;
-      const arrow = active
-        ? (currentSort.dir === 'asc' ? '&#9650;' : '&#9660;')
-        : '';
-
-      return `
-        <th class="${c.sortable ? 'sortable' : ''} ${active ? 'active-sort' : ''}"
-            data-col="${c.id}">
-          ${c.label}<span class="arrow">${arrow}</span>
-        </th>
-      `;
-    });
+  const colCells = COLUMNS.filter(c => c.group).map(c => {
+  const active = c.id === currentSort.col;
+  const arrow = active ? (currentSort.dir === 'asc' ? '&#9650;' : '&#9660;') : '';
+  const dividerClass = ['route', 'mon_morning', 'sat_morning', 'sun_morning'].includes(c.id) ? 'day-divider'
+                      : ['am_peak', 'weekly_trips'].includes(c.id) ? 'group-divider' : '';
+  return `<th class="${c.sortable ? 'sortable' : ''} ${active ? 'active-sort' : ''} ${dividerClass}"
+              data-col="${c.id}">${c.label}<span class="arrow">${arrow}</span></th>`;
+});
 
   colRow.innerHTML = colCells.join('');
 
   colRow.querySelectorAll('th.sortable').forEach(th =>
     th.addEventListener('click', () => cycleSort(th.dataset.col))
   );
+    applyStickyHeaderOffsets();  
+}
+
+// Makes each header row stick directly below the one(s) above it, by
+// measuring actual rendered heights rather than assuming fixed pixel values —
+// robust to font-size/padding changes that would silently break a hardcoded offset.
+function applyStickyHeaderOffsets() {
+  const groupRow = document.getElementById('metrics-head-groups');
+  const dayRow   = document.getElementById('metrics-head-days');
+  const colRow   = document.getElementById('metrics-head-cols');
+
+  const groupHeight = groupRow.getBoundingClientRect().height;
+  const dayHeight   = dayRow.getBoundingClientRect().height;
+
+  // Row 1 (groups) sticks at top: 0 — already true via existing CSS, nothing to set.
+
+  // Row 2 (days) sticks directly below row 1
+  Array.from(dayRow.children).forEach(th => th.style.top = `${groupHeight}px`);
+
+  // Row 3 (individual columns) sticks below rows 1 + 2
+  Array.from(colRow.children).forEach(th => th.style.top = `${groupHeight + dayHeight}px`);
+
+  // Route/Mode header cells span all 3 rows and are also left-pinned —
+  // they must stay at top:0 regardless of the above, since they cover the
+  // full header height, not just one row
+  document.querySelectorAll('#metrics-head-groups th.col-route, #metrics-head-groups th.col-mode')
+    .forEach(th => th.style.top = '0px');
 }
 
 function renderBody(rows) {
@@ -430,19 +420,24 @@ function renderBody(rows) {
     const key = d.route_number;
     const cells = COLUMNS.map(c => {
       const v = c.get(d);
+      const display = (v != null && c.format) ? c.format(v) : v;
       const classes = [
-          c.id === 'route' ? 'col-route' : '',
-          c.group ? `group-${c.group}` : '',
-          c.id === 'sat_morning' || c.id === 'sun_morning' ? 'day-divider' : '',
-          c.id === 'am_peak' || c.id === 'weekly_trips' ? 'group-divider' : ''
-        ].filter(Boolean).join(' ');
-      if (!c.coloured) return `<td class="${classes}">${v ?? '—'}</td>`;
+    c.id === 'route' ? 'col-route' : '',
+    c.id === 'mode'  ? 'col-mode'  : '',
+    c.group ? `group-${c.group}` : '',
+    ['mon_morning', 'sat_morning', 'sun_morning'].includes(c.id) ? 'day-divider' : '',
+    ['am_peak', 'weekly_trips'].includes(c.id) ? 'group-divider' : ''
+  ].filter(Boolean).join(' ');
+            if (!c.coloured) return `<td class="${classes}">${display ?? '—'}</td>`;
       const bg = pillColour(v);
-      return `<td class="${classes}">${v != null ? `<span style="color:${bg}; font-weight:500">${v}</span>` : '—'}</td>`;
+      return `<td class="${classes}">${v != null ? `<span style="color:${bg}; font-weight:500">${display}</span>` : '—'}</td>`;
     }).join('');
     return `<tr data-key="${key}">${cells}</tr>`;
   }).join('');
 }
+
+
+
 
 function renderTable() {
   const filtered = filterRows(Object.keys(summaryCache), 'mode-filter', 'corridor-filter');
@@ -500,7 +495,7 @@ function setupStatsMetricSelect() {
       <option value="sun_evening">Sunday Evening</option>
     </optgroup>
 
-    <optgroup label="Peak Median Wait">
+    <optgroup label="Peak Median Gap">
       <option value="am_peak">AM Peak</option>
       <option value="pm_peak">PM Peak</option>
     </optgroup>
@@ -589,14 +584,14 @@ function renderStatsPanel() {
       <div class="value">${median.toFixed(1)}${unit}</div>
       <div class="sub">${medianSub}</div>
     </div>
-    <div class="stat-card"><div class="label">Std. Dev.</div><div class="value">${sd.toFixed(1)}${unit}</div></div>
+    <div class="stat-card"><div class="label">Standard Deviation</div><div class="value">${sd.toFixed(1)}${unit}</div></div>
   `;
 
   const rankItem = (r, i) => `
     <li><span class="rank-num">${i + 1}</span>
         <span class="rank-route">${routeLabel(r)}</span>
-        <span class="rank-value">${r.value}${unit}</span></li>`;
-
+        <span class="rank-value">${col.format ? col.format(r.value) : r.value}${unit}</span></li>`;
+        
   document.getElementById('stats-top10').innerHTML = best.map(rankItem).join('');
   document.getElementById('stats-bottom10').innerHTML = worst.map(rankItem).join('');
 

@@ -422,12 +422,12 @@ function render(data) {
 
   document.getElementById('peak-grid').innerHTML = `
     <div class="peak-card">
-      <div class="label">AM Peak Median Wait</div>
+      <div class="label">AM Peak Median Gap</div>
       <div class="value" style="color:${amStyle ? amStyle.bg : colour}">${amVal ?? '—'}<span class="unit">min</span></div>
       <div style="font-size:12px;color:#888780;margin-top:4px">7:00 – 9:00 am</div>
     </div>
     <div class="peak-card">
-      <div class="label">PM Peak Median Wait</div>
+      <div class="label">PM Peak Median Gap</div>
       <div class="value" style="color:${pmStyle ? pmStyle.bg : colour}">${pmVal ?? '—'}<span class="unit">min</span></div>
       <div style="font-size:12px;color:#888780;margin-top:4px">4:00 – 7:00 pm</div>
     </div>`;
