@@ -52,7 +52,7 @@ if(!exists("gtfs")){
 Challenge: inconsistent naming system
 
 ```{r}
-select_modes <- c(2,3,4) # Metro train, tram and bus
+select_modes <- c(1,2,3,4) # Metro train, tram and bus
 ```
 
 # Data processing 
@@ -910,9 +910,26 @@ route_bullet_changes <- c(
   "Upfield"              = "UPF",
   "Werribee"             = "WER",
   "Werribee/Williamstown"= "WER/WIL",
-  "Williamstown"         = "WIL"
+  "Williamstown"         = "WIL",
+  # V/Line
+  "Geelong"      = "GLG",
+  "Ballarat"     = "BAT",
+  "Bendigo"      = "BGO", 
+  "Seymour"      = "SER",
+  "Traralgon"    = "TRN",
+  "Warrnambool"  = "WBL",
+  "Ararat"       = "ART",
+  "Maryborough"  = "MYB",
+  "Swan Hill"    = "SWL",
+  "Echuca"       = "ECH",
+  "Sheppharton"  = "SNH",
+  "Albury"       = "ABY",
+  "Bairnsdale"   = "BDE",
+  "Wyndham Vale" = "WVL",
+  "Melton"       = "MEL"
+  
 )
-
+```
 
 summary[route_display %chin% names(route_bullet_changes),
         route_bullet_code := route_bullet_changes[route_display]]
@@ -921,16 +938,16 @@ rm(route_bullet_changes)
 
 # Add title name with route etc
 summary[, route_title_display := route_display]
-summary[!is_combined_corridor & mode_type %in% c(2), 
+summary[!is_combined_corridor & mode_type %in% c(1,2), 
         route_title_display := paste(route_title_display, "Line")]
 
-summary[is_combined_corridor & mode_type %in% c(2), 
+summary[is_combined_corridor & mode_type %in% c(1,2), 
         route_title_display := paste(route_title_display, "Lines")]
 
-summary[!is_combined_corridor & mode_type %in% c(3,4), 
+summary[!is_combined_corridor & mode_type %in% c(3,4,6), 
         route_title_display := paste("Route", route_title_display)]
 
-summary[is_combined_corridor & mode_type %in% c(3,4), 
+summary[is_combined_corridor & mode_type %in% c(3,4,6), 
         route_title_display := paste("Routes", route_title_display, "")]
 
 summary[grep("Corridor", route_display), 
@@ -1230,8 +1247,6 @@ for (r in unique(nested$route_short_name)) {
 date_range <- c(first_date, last_date)
 jsonlite::write_json(date_range, path = "date_range.json")
 ```
-
-
 
 
 

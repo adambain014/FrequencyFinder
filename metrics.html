@@ -98,7 +98,9 @@ table.metrics th.group-label {
     background-color: inherit;
     width: 140px; min-width: 140px;
   }
-  
+  .col-route a:hover { left: 0; z-index: 2;
+    background-color: inherit;
+    width: 140px; min-width: 140px;},
   
 /* Mode column: sticky left, offset by the route column's fixed width */
 .col-mode {
@@ -126,7 +128,7 @@ table.metrics th.group-label {
   .stat-card .sub { font-size: 11px; color: #888780; margin-top: 3px; }
 
   .stats-cols { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 1.5rem; }
-  .rank-list { list-style: none; }
+  .rank-list a:hover { text-decoration: underline; }
   .rank-list li {
     display: flex; justify-content: space-between; padding: 5px 0;
     border-bottom: 0.5px solid #f0ede6; font-size: 13px;
@@ -148,6 +150,8 @@ table.metrics .group-divider {
   border-left: 1px solid #d6d3cb;
 }
 
+.route-link { text-decoration: none; }
+.route-link:hover { text-decoration: underline; }
 
 
   @media (max-width: 900px) {
@@ -293,13 +297,6 @@ const COLUMNS = [
   get: d => d.weekly_stats?.[0]?.['Average Speed (km/hr)'] },
 ];
 
-function modeLabel(d) {
-  const m = d.mode_type;
-  if (m == '3' || m === 3) return 'Tram';
-  if (m == '4' || m === 4) return 'Bus';
-  if (m == '2' || m === 2) return 'Train';
-  return 'Route';
-}
 
 const FREQ_SCALE = [
   { max: 10, bg: '#671415' }, { max: 15, bg: '#a62624' }, { max: 20, bg: '#642d91' },
@@ -438,26 +435,25 @@ function renderBody(rows) {
       const v = c.get(d);
       const display = (v != null && c.format) ? c.format(v) : v;
       const classes = [
-    c.id === 'route' ? 'col-route' : '',
-    c.id === 'mode'  ? 'col-mode'  : '',
-    c.group ? `group-${c.group}` : '',
-    ['mon_morning', 'sat_morning', 'sun_morning'].includes(c.id) ? 'day-divider' : '',
-    ['am_peak', 'weekly_trips'].includes(c.id) ? 'group-divider' : ''
-  ].filter(Boolean).join(' ');
-            if (!c.coloured) return `<td class="${classes}">${display ?? '—'}</td>`;
+        c.id === 'route' ? 'col-route' : '',
+        c.id === 'mode'  ? 'col-mode'  : '',
+        c.group ? `group-${c.group}` : '',
+        ['mon_morning', 'sat_morning', 'sun_morning'].includes(c.id) ? 'day-divider' : '',
+        ['am_peak', 'weekly_trips'].includes(c.id) ? 'group-divider' : ''
+      ].filter(Boolean).join(' ');
+
+      // Route cell links back to the single-route page, preselected via ?route=
+      if (c.id === 'route') {
+        const url = `index.html?route=${encodeURIComponent(d.route_number)}`;
+        return `<td class="${classes}"><a href="${url}" style="color:inherit;" class="route-link">${display}</a></td>`;
+      }
+
+      if (!c.coloured) return `<td class="${classes}">${display ?? '—'}</td>`;
       const bg = pillColour(v);
       return `<td class="${classes}">${v != null ? `<span style="color:${bg}; font-weight:500">${display}</span>` : '—'}</td>`;
     }).join('');
-        return `<tr data-key="${key}">${cells}</tr>`;
+    return `<tr data-key="${key}">${cells}</tr>`;
   }).join('');
-
-    if (selectedRouteKey) {
-    const row = document.querySelector(`tr[data-key="${selectedRouteKey}"]`);
-    if (row) {
-      row.classList.add('highlight');
-      row.scrollIntoView({ behavior: 'auto', block: 'center' });
-    }
-  }
 }
 
 
@@ -640,11 +636,13 @@ function renderStatsPanel() {
     <div class="stat-card"><div class="label">Standard Deviation</div><div class="value">${sd.toFixed(1)}${unit}</div></div>
   `;
 
-  const rankItem = (r, i) => `
-    <li><span class="rank-num">${i + 1}</span>
-        <span class="rank-route">${routeLabel(r)}</span>
-        <span class="rank-value">${col.format ? col.format(r.value) : r.value}${unit}</span></li>`;
-        
+  const rankItem = (r, i) => {
+    const url = `index.html?route=${encodeURIComponent(r.d.route_number)}`;
+    return `
+      <li><span class="rank-num">${i + 1}</span>
+          <span class="rank-route"><a href="${url}" style="color:inherit;" class="route-link">${routeLabel(r)}</a></span>
+          <span class="rank-value">${col.format ? col.format(r.value) : r.value}${unit}</span></li>`;
+  };
   document.getElementById('stats-top10').innerHTML = best.map(rankItem).join('');
   document.getElementById('stats-bottom10').innerHTML = worst.map(rankItem).join('');
 
@@ -738,6 +736,7 @@ document.getElementById('stats-metric').addEventListener('change', renderStatsPa
 loadData().then(() => {
   setupStatsMetricSelect();
   renderTable();
+  loadModes();
   renderStatsPanel();
   setupSearch();
 });
@@ -786,6 +785,20 @@ function downloadCSV() {
 }
 
 document.getElementById('download-csv').addEventListener('click', downloadCSV);
+
+let MODES = {};
+
+function loadModes() {
+  return fetch('modes.json')
+    .then(r => r.json())
+    .then(data => { MODES = data; return data; });
+}
+
+function modeLabel(d) {
+  const m = String(d.mode_type);
+  return MODES[m]?.label ?? 'Route';
+}
+
 </script>
 </body>
 </html>

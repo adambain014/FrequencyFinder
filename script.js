@@ -401,18 +401,32 @@ function render(data) {
   badge.style.background = colour;
   badge.style.color = textCol;
 
-  const modeName = modeLabel(data.route_number);
+  const modeName = modeLabel(data);
   const shown = displayNumber(data);
   badge.textContent = data.route_bullet_code ?? data.route_display ?? data.route_number;
   document.getElementById('route-title').textContent = `${shown} (${modeName})`;
 
   const subtitleEl = document.getElementById('route-subtitle');
-  subtitleEl.textContent = data.is_combined_corridor
-    ? 'Frequency Summary (Combined Corridor)'
-    : 'Frequency Summary';
-
-  document.getElementById('corridor-note').style.display =
-    data.is_combined_corridor ? 'block' : 'none';
+  const corridorNoteEl = document.getElementById('route-corridor-note');
+  
+  const dest1 = data.route_destination_1;
+  const dest0 = data.route_destination_0;
+  
+  if (dest1 && dest0) {
+    subtitleEl.textContent = `${dest0} to ${dest1}`;
+  } else if (dest1 || dest0) {
+    subtitleEl.textContent = dest0 || dest1;
+  } else {
+    subtitleEl.textContent = 'Frequency Summary';
+  }
+  
+  if (data.is_combined_corridor) {
+    const shown = data.route_number;
+    corridorNoteEl.textContent = `Combined corridor: ${shown.split('-').join(', ')}`;
+    corridorNoteEl.style.display = 'block';
+  } else {
+    corridorNoteEl.style.display = 'none';
+  }
 
   const peak   = data.peak_medians?.[0] ?? {};
   const amVal  = peak['Median AM Peak Wait'];
@@ -514,23 +528,13 @@ function loadRoute(num) {
     });
 }
 
-// ─── Mode label helper ────────────────────────────────────────────────────────
-
-function modeLabel(routeNum) {
-  const mode = summaryCache?.[routeNum]?.mode_type;
-  if (mode == '3' || mode === 3) return 'Tram';
-  if (mode == '4' || mode === 4) return 'Bus';
-  if (mode == '2' || mode === 2) return 'Train';
-  return 'Route';
-}
-
 // ─── Search / dropdown ────────────────────────────────────────────────────────
 
 let allRoutes = [];
 
 function buildDropdownItem(r) {
   const shown = summaryCache?.[r]?.route_display ?? r;
-  const label = ` ${shown} (${modeLabel(r)})`;
+  const label = ` ${shown} (${modeLabel(summaryCache[r])})`; 
   const el = document.createElement('div');
   el.textContent = label;
   el.dataset.route = r;
@@ -547,10 +551,10 @@ function filterDropdown(query) {
   const dd = document.getElementById('route-dropdown');
   dd.innerHTML = '';
   const q = query.trim().toLowerCase();
-  const filtered = q
+    const filtered = q
     ? allRoutes.filter(r => {
         const display = (summaryCache?.[r]?.route_display ?? r).toLowerCase();
-        const label = `${modeLabel(r)} ${r}`.toLowerCase();
+        const label = `${modeLabel(summaryCache[r])} ${r}`.toLowerCase();
         return label.startsWith(q) || r.toLowerCase().startsWith(q) || display.includes(q);
       })
     : allRoutes;
@@ -613,7 +617,8 @@ function populateSelect(routes) {
 
 Promise.all([
   fetch(`${FOLDER}/manifest.json`).then(r => r.ok ? r.json() : Promise.reject('manifest')),
-  loadSummary()
+  loadSummary(),
+  loadModes()
 ])
   .then(([manifest]) => {
     populateSelect(manifest.routes);
@@ -621,7 +626,7 @@ Promise.all([
     const routeParam = urlParams.get('route');
     if (routeParam && manifest.routes.includes(routeParam)) {
       const shown = summaryCache?.[routeParam]?.route_display ?? routeParam;
-      const label = ` ${shown} (${modeLabel(routeParam)})`;
+       const label = ` ${shown} (${modeLabel(summaryCache[routeParam])})`;
       selectRoute(routeParam, label);
     }
   })
@@ -651,3 +656,16 @@ fetch("date_range.json")
       `DTP GTFS data from the week starting on ${fmt(firstDate)} - Metro Trains, Trams and Buses<br>Unofficial - by Adam Bain`;
 
   });
+  
+let MODES = {};
+
+function loadModes() {
+  return fetch('modes.json')
+    .then(r => r.json())
+    .then(data => { MODES = data; return data; });
+}
+
+function modeLabel(d) {
+  const m = String(d.mode_type);
+  return MODES[m]?.label ?? 'Route';
+}
