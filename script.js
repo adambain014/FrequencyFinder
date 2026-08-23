@@ -408,25 +408,28 @@ function render(data) {
 
   const subtitleEl = document.getElementById('route-subtitle');
   const corridorNoteEl = document.getElementById('route-corridor-note');
+  const mapCorridorNoteEl = document.getElementById('corridor-note');
   
   const dest1 = data.route_destination_1;
-  const dest0 = data.route_destination_0;
-  
-  if (dest1 && dest0) {
-    subtitleEl.textContent = `${dest0} to ${dest1}`;
-  } else if (dest1 || dest0) {
-    subtitleEl.textContent = dest0 || dest1;
-  } else {
-    subtitleEl.textContent = 'Frequency Summary';
-  }
-  
-  if (data.is_combined_corridor) {
-    const shown = data.route_number;
-    corridorNoteEl.textContent = `Combined corridor: ${shown.split('-').join(', ')}`;
-    corridorNoteEl.style.display = 'block';
-  } else {
-    corridorNoteEl.style.display = 'none';
-  }
+const dest0 = data.route_destination_0;
+
+if (dest1 && dest0) {
+  subtitleEl.textContent = `${dest0} to ${dest1}`;
+} else if (dest1 || dest0) {
+  subtitleEl.textContent = dest0 || dest1;
+} else {
+  subtitleEl.textContent = 'Frequency Summary';
+}
+
+if (data.is_combined_corridor) {
+  const shown = data.route_number;
+  corridorNoteEl.textContent = `Combined corridor: ${shown.split('-').join(', ')}`;
+  corridorNoteEl.style.display = 'block';
+  mapCorridorNoteEl.style.display = 'block';
+} else {
+  corridorNoteEl.style.display = 'none';
+  mapCorridorNoteEl.style.display = 'none';
+}
 
   const peak   = data.peak_medians?.[0] ?? {};
   const amVal  = peak['Median AM Peak Wait'];
