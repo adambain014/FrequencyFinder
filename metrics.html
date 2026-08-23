@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FrequencyFinder - Metrics Table</title>
@@ -173,6 +174,10 @@ table.metrics .group-divider {
       <div id="jump-dropdown" style="display:none; position:absolute; top:calc(100% + 4px); left:0; right:0;
         background:#fff; border:0.5px solid #c8c5be; border-radius:8px; max-height:240px; overflow-y:auto; z-index:999;"></div>
     </div>
+      <button id="download-csv" style="padding:8px 14px; border:0.5px solid #c8c5be; border-radius:8px;
+    background:#fff; font-size:13px; color:#1a1a18; cursor:pointer;">
+    Download full .csv file
+  </button>
   </div>
 <label style="font-size:13px; color:#5F5E5A;"> Click on column labels  to sort</label>
   <div class="table-scroll">
@@ -432,8 +437,16 @@ function renderBody(rows) {
       const bg = pillColour(v);
       return `<td class="${classes}">${v != null ? `<span style="color:${bg}; font-weight:500">${display}</span>` : '—'}</td>`;
     }).join('');
-    return `<tr data-key="${key}">${cells}</tr>`;
+        return `<tr data-key="${key}">${cells}</tr>`;
   }).join('');
+
+    if (selectedRouteKey) {
+    const row = document.querySelector(`tr[data-key="${selectedRouteKey}"]`);
+    if (row) {
+      row.classList.add('highlight');
+      row.scrollIntoView({ behavior: 'auto', block: 'center' });
+    }
+  }
 }
 
 
@@ -446,25 +459,50 @@ function renderTable() {
   renderBody(currentRows);
 }
 
+let selectedRouteKey = null; // track which row is currently pinned as "selected"
+
 function jumpToRoute(key) {
   const row = document.querySelector(`tr[data-key="${key}"]`);
   if (!row) return;
+
+  if (selectedRouteKey === key) {
+    // Clicking the already-selected route again clears the selection
+    row.classList.remove('highlight');
+    selectedRouteKey = null;
+    return;
+  }
+
+  if (selectedRouteKey) {
+    const prevRow = document.querySelector(`tr[data-key="${selectedRouteKey}"]`);
+    if (prevRow) prevRow.classList.remove('highlight');
+  }
+
   row.scrollIntoView({ behavior: 'smooth', block: 'center' });
   row.classList.add('highlight');
-  setTimeout(() => row.classList.remove('highlight'), 1200);
+  selectedRouteKey = key;
 }
 
 function setupSearch() {
   const input = document.getElementById('jump-search');
   const dd = document.getElementById('jump-dropdown');
+
   input.addEventListener('input', () => {
     const q = input.value.trim().toLowerCase();
-    const matches = currentRows.filter(d => (d.route_display ?? d.route_number).toLowerCase().startsWith(q)).slice(0, 15);
+
+    // Empty query — including just clicking into/clearing the box — deselects the current route
+    if (!q && selectedRouteKey) {
+      const row = document.querySelector(`tr[data-key="${selectedRouteKey}"]`);
+      if (row) row.classList.remove('highlight');
+      selectedRouteKey = null;
+    }
+
+    const matches = currentRows.filter(d => (d.route_display ?? d.route_number).toLowerCase().startsWith(q));
     dd.innerHTML = matches.map(d =>
       `<div data-key="${d.route_number}" style="padding:8px 12px; cursor:pointer;">${d.route_display ?? d.route_number} (${modeLabel(d)})</div>`
     ).join('');
     dd.style.display = matches.length ? 'block' : 'none';
   });
+
   dd.addEventListener('mousedown', e => {
     const el = e.target.closest('[data-key]');
     if (!el) return;
@@ -472,8 +510,12 @@ function setupSearch() {
     dd.style.display = 'none';
     input.value = '';
   });
+
   input.addEventListener('blur', () => setTimeout(() => dd.style.display = 'none', 150));
 }
+
+
+
 
 // ─── Stats panel ────────────────────────────────────────────────────────────
 
@@ -654,7 +696,7 @@ function renderHistogram(values, unit) {
       animation: false,
       plugins: { legend: { display: false }, tooltip: { callbacks: { title: c => `${c[0].label}${unit}` } } },
       scales: {
-        x: { title: { display: true, text: `Value (${unit || 'count'})`, font: { size: 11 } }, ticks: { font: { size: 9 }, maxRotation: 90, minRotation: 90 } },
+        x: { title: { display: true, text: `Value (${unit.trim() || 'count'})`, font: { size: 11 } }, ticks: { font: { size: 9 }, maxRotation: 90, minRotation: 90 } },
         y: { title: { display: true, text: 'Routes', font: { size: 11 } }, ticks: { stepSize: 1, font: { size: 10 } } }
       }
     }
@@ -690,6 +732,49 @@ loadData().then(() => {
 });
 
 loadDateRange();
+
+function downloadCSV() {
+  const exportCols = COLUMNS.filter(c => c.id !== 'route'); // handled separately below, plus route_number
+
+  const headers = ['Route', 'Route Key', 'Mode', ...exportCols.filter(c => c.id !== 'mode').map(c => {
+    const unitSuffix = c.unit ? ` (${c.unit})` : '';
+    return `${c.label}${unitSuffix}`;
+  })];
+
+  const rows = currentRows.map(d => {
+    const base = [
+      d.route_display ?? d.route_number,
+      d.route_number,
+      modeLabel(d),
+    ];
+    const metricVals = exportCols
+      .filter(c => c.id !== 'mode')
+      .map(c => {
+        const v = c.get(d);
+        return v == null ? '' : v; // raw value, no comma formatting, no unit suffix in the cell
+      });
+    return [...base, ...metricVals];
+  });
+
+  const escapeCSV = v => {
+    const s = String(v);
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+
+  const csv = [headers, ...rows]
+    .map(row => row.map(escapeCSV).join(','))
+    .join('\n');
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `frequencyfinder_metrics_${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('download-csv').addEventListener('click', downloadCSV);
 </script>
 </body>
 </html>
