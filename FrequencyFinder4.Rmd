@@ -371,6 +371,8 @@ test <- stops[, .(stop_id, stop_name)][
           departure_time_m > 7 * 60 & departure_time_m <= 8 * 60],
   on = "stop_id"
 ][order(trip_id, stop_sequence)]
+
+
 ```
 
 ```{r}
@@ -1226,6 +1228,9 @@ for (r in unique(nested$route_short_name)) {
 date_range <- c(first_date, last_date)
 jsonlite::write_json(date_range, path = "date_range.json")
 ```
+
+
+
 
 
 
