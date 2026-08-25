@@ -25,7 +25,7 @@ const NO_SERVICE_COLOUR = '#666666';
 let summaryCache = null;
 
 function loadSummary() {
-  return fetch(`${FOLDER}/summary.json`)
+  return fetch(`data/summary.json`)
     .then(r => { if (!r.ok) throw new Error('summary.json not found'); return r.json(); })
     .then(data => { summaryCache = data; return data; });
 }
@@ -635,7 +635,7 @@ Promise.all([
   })
   .catch(() => {
     document.getElementById('placeholder').innerHTML =
-      `<div class="error">Could not load <code>route_jsons/manifest.json</code> or <code>summary.json</code>.</div>`;
+      `<div class="error">Could not load <code>data/manifest.json</code> or <code>summary.json</code>.</div>`;
   });
 
 // Load date range
@@ -648,7 +648,7 @@ function fmt(d) {
   });
 }
 
-fetch("date_range.json")
+fetch("data/date_range.json")
   .then(r => r.json())
   .then(range => {
     const [firstDate, lastDate] = range;

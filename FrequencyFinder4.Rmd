@@ -42,9 +42,9 @@ if(!dir.exists("Temps/gtfs")){
   download_latest_vic_gtfs("Temps/gtfs")
 }
 
-# Open the tram GTFS
+# Open the GTFS
 if(!exists("gtfs")){
-  gtfs <- open_and_join_all_vic_gtfs("Temps/gtfs")
+  gtfs <- open_and_join_all_vic_gtfs("Temps/gtfs") |> tag_myki_bus()
 }
 ```
 
@@ -52,7 +52,7 @@ if(!exists("gtfs")){
 Challenge: inconsistent naming system
 
 ```{r}
-select_modes <- c(1,2,3,4) # Metro train, tram and bus
+select_modes <- c(1,2,3,4,10,11) # V/Line. Metro train, tram and bus
 ```
 
 # Data processing 
@@ -124,12 +124,43 @@ rm(calendar_first_full_week, calendar_first_full_week_long, calendar_refined)
 
 # Add route_short_name from routes
 routes <- gtfs$routes[mode_number %in% select_modes]
-# Pick off replacement buses and regional myki buses - maybe temporary
+
+# Pick off replacement buses and ANZAC day busrs
 routes_refined <- routes[
-  route_short_name != "Replacement Bus" & 
-  !(mode_number == 4 & !nchar(route_short_name) %in% c(3, 4)),
-  .(route_id, mode_number, route_short_name, route_color)
-]
+  !route_short_name %chin% c("Replacement Bus", "ANZAC_1", "ANZAC_2", "ANZAC_3")]
+
+# Fix Bacchus Marsh - will have to fix in vicgtfstools when I get round to a review
+routes_refined[route_short_name == "", route_short_name := tstrsplit(route_id, "-")[2]]
+routes_refined[mode_number == 4 , route_code := tstrsplit(route_id, "-", fill = NA)[2]]
+routes_refined[mode_number == 4 & grepl("^BM",route_code), region := "Bacchus Marsh"]
+
+# Add suffix for regional routes
+routes_refined[mode_number == 4 &
+                 region != "Melbourne", 
+               route_short_name := paste0(route_short_name, " (", region, ")")]
+
+# Fix route colour for the overland
+routes_refined[mode_number == 10, route_color := "#140075"]
+
+# For sky bus use official name
+sb_map <- data.table(
+  mode_number = c(11,11,11,11,11),
+  route_long_name = c("Box Hill - Melbourne Airport",
+                      "Frankston - Melbourne Airport",
+                      "Melbourne City - Avalon Airport",
+                      "City - Melbourne Airport",
+                      "Sunshine Railway Station - Melbourne Airport"),
+  route_short_name = c("Eastern Express",
+                       "Peninsula Express",
+                       "Avalon City Express",
+                       "Melbourne City Express",
+                       "Sunshine Express")
+)
+
+routes_refined[sb_map, on = .(mode_number, route_long_name), route_short_name := i.route_short_name]
+
+
+routes_refined <- routes_refined[,.(route_id, mode_number, route_short_name, route_color)]
 
 # Add to trips
 trips <- trips[route_id %chin% routes_refined$route_id]
@@ -139,7 +170,7 @@ trips <- routes_refined[trips, on = .(mode_number, route_id)]
 trips_refined <- trips[, .(trip_id, route_short_name, day_number, mode_number, direction_id)]
 
 # Clean up intermediaries
-rm(routes_refined)
+rm(routes_refined, sb_map)
 
 # Open stop_times
 stop_times <- gtfs$stop_times[mode_number %in% select_modes]
@@ -159,13 +190,19 @@ rm(cols_to_keep)
 stop_times <- stop_times[trip_id %chin% trips$trip_id]
 
 # Join onto stop_times
-stop_times <- trips[,.(trip_id, route_short_name, day_number, mode_number, direction_id)
+stop_times <- trips[,.(trip_id, route_short_name, day_number, mode_number, direction_id, route_color)
                     ][stop_times, on = .(trip_id, mode_number), allow.cartesian = TRUE]
 
 rm(trips_refined)
 # remove dupes
 stop_times <- unique(stop_times, by = 
-                           c("stop_id", "departure_time", "direction_id", "route_short_name", "shape_dist_traveled", "day_number", "mode_number"))
+                           c("stop_id",
+                             "departure_time",
+                             "direction_id",
+                             "route_short_name",
+                             "shape_dist_traveled",
+                             "day_number",
+                             "mode_number"))
 
 # Turn departure times into seconds
 stop_times[, c("h","m","s") := tstrsplit(departure_time, ":", type.convert = TRUE)]
@@ -195,7 +232,10 @@ stop_times[route_short_name == 790, direction_id := fifelse(direction_id == 0, 1
 stop_times[route_short_name == 426, direction_id := fifelse(direction_id == 0, 1, 0)]
 # and 283
 stop_times[route_short_name == 281, direction_id := fifelse(direction_id == 0, 1, 0)]
+
+stop_times[mode_number==10]
 ```
+
 
 ## Add combined corridors
 ```{r}
@@ -235,8 +275,6 @@ corridor_defs <- list(
 )
 
 
-
-
 combine_corridors <- function(st, corridor_defs){
   # corridor_defs: named list, e.g. list("1/6" = c("1","6"), "3/64/67" = c("3","64","67"))
   # name = new combined route_short_name, value = character vector of routes to merge
@@ -266,6 +304,89 @@ combine_corridors <- function(st, corridor_defs){
 
 
 stop_times <- combine_corridors(stop_times, corridor_defs)
+```
+
+# Subdivide corridors - for V/Line
+```{r}
+# Subdivide V/Line - Geelong into 3 - Warrnambool, Wyndham Vale, Geelong,
+# Long distance is easy as it an be inferred from trip_id
+# Short runs will have to be duplicated from the leftovers,
+# Then short run only trips must be deleted from the whole line
+# I might consider doing this with the Lilydale line because the Blackburn stoppers are leading to some dishonest results
+ld_map <- data.table(
+  pattern = c("WBL",
+              "ART",
+              "MYB",
+              "SWL",
+              "ECH",
+              "SNH",
+              "ABY",
+              "BDE"),
+  route_short_name = c("Warrnambool",
+                       "Ararat",
+                       "Maryborough",
+                       "Swan Hill",
+                       "Echuca",
+                       "Shepparton",
+                       "Albury",
+                       "Bairnsdale")
+)
+
+stop_times[mode_number == 1, prefix := tstrsplit(trip_id, "-", fixed = TRUE)[2]]
+stop_times[ld_map, on = .(prefix = pattern),
+           route_short_name := i.route_short_name]
+
+rm(ld_map)
+
+# Deal with the short suburban runs
+suburban_short_run <- function(st, stop_list, old_group_name, new_name){
+  stop_ids <- stops[stop_name %chin% stop_list]$stop_id |> unique()
+  short_run_st <- st[route_short_name == old_group_name & stop_id %chin% stop_ids]
+  short_run_st[, route_short_name := new_name]
+  rbind(st, short_run_st)
+}
+
+# List of stops for each
+wyndham_vale_stops <- c("Wyndham Vale Station",
+                        "Tarneit West Station",
+                        "Tarneit Station",
+                        "Truganina Station",
+                        "Deer Park Station",
+                        "Sunshine Station",
+                        "Footscray Station",
+                        "Southern Cross Station")
+
+melton_stops       <- c("Melton Station",
+                        "Cobblebank Station",
+                        "Thornhill Park Station",
+                        "Rockbank Station",
+                        "Mount Atkinson Station",
+                        "Caroline Springs Station",
+                        "Deer Park Station",
+                        "Ardeer Station",
+                        "Sunshine Station",
+                        "Footscray Station",
+                        "Southern Cross Station")
+
+stop_times <- suburban_short_run(stop_times, wyndham_vale_stops, "Geelong", "Wyndham Vale")
+stop_times <- suburban_short_run(stop_times, melton_stops,      "Ballarat", "Melton")
+
+# Clean up the overlap
+geelong_stop_id <- stops[stop_name == "Geelong Station"]$stop_id
+geelong_trips <- stop_times[stop_id == geelong_stop_id]$trip_id
+stop_times <- stop_times[!route_short_name == "Geelong" | trip_id %chin% geelong_trips]
+
+b_bm_stop_ids <- stops[stop_name == "Bacchus Marsh Station" | stop_name == "Ballarat Station"]$stop_id
+ballarat_trips <- stop_times[stop_id %chin% b_bm_stop_ids]$trip_id |> unique()
+stop_times <- stop_times[!route_short_name == "Ballarat" | trip_id %chin%  ballarat_trips]
+
+rm(suburban_short_run, 
+   wyndham_vale_stops, 
+   geelong_stop_id, 
+   melton_stops, 
+   geelong_trips, 
+   b_bm_stop_ids, 
+   ballarat_trips)
 ```
 
 # Function for inspection (in progress)
@@ -341,10 +462,6 @@ inspect_stop_times <- function(st, rsn, dn, did, plot = FALSE){
   setcolorder(out, c("label", as.character(trip_start$trip_id)))
   out
 }
-
-
-inspect_stop_times(stop_times[
-          departure_time_m > 7 * 60 & departure_time_m <= 8 * 60], "303/302/304/305/309/318/350/905/906/907/908", 0, 0, plot = T)
 ```
 
 # Summary Stats
@@ -386,6 +503,8 @@ test <- stops[, .(stop_id, stop_name)][
 # left-joined onto this so routes with no service in a window still appear
 # (with NA rather than being dropped from the output entirely)
 routes_list <- data.table(route_short_name = unique(waits$route_short_name))
+## Add the overland
+routes_list <- rbind(routes_list, data.table(route_short_name = "The Overland"))
 
 # Computes average headway (mean wait between consecutive services) for one
 # route, over one day_number, within one clock-time window.
@@ -601,6 +720,8 @@ rm(to_remove)
 # Left-join onto the full route list so every route appears in the final
 # output even if it had no service (and therefore no result row) in every window
 routes_list <- merge(routes_list, freq_wide, by = "route_short_name", all.x = TRUE)
+
+
 ```
 
 ## Span chart
@@ -663,7 +784,7 @@ setorder(span_summary, route_short_name, day_number)
 span_summary[, span_end_n := span_end - 24 * 60]
 
 span_summary[
-  , prior_span_end_n := span_end_n[c(.N, 1:(.N - 1))],
+  , prior_span_end_n := span_end_n[c(.N, seq_len(.N - 1))],
   by = route_short_name
 ]
 
@@ -671,7 +792,7 @@ span_summary[, span_diff            := prior_span_end_n - span_start]
 span_summary[, begins_night_network := span_diff >= 30]
 
 span_summary[
-  , ends_night_network := begins_night_network[c(2:.N, 1)],
+  , ends_night_network := begins_night_network[c(seq_len(.N)[-1], 1)],
   by = route_short_name
 ]
 
@@ -718,6 +839,15 @@ routes_list <- merge(routes_list, span_nested, by = "route_short_name", all.x = 
 
 # Clean up intermediaries
 rm(stop_counts, valid_stops, stop_times_valid, span_tbl, cov_by_stop, cov_tbl, all_combos)
+
+
+```
+```{r}
+
+group_sizes <- span_summary[, .N, by = route_short_name]
+setorder(group_sizes, route_short_name)
+group_sizes[416]        # this is your crashing group specifically
+group_sizes[N != 7]     # this shows you every problem route, not just #416
 ```
 
 ## Add route data - weekly km, hours, trips and avg speed
@@ -784,63 +914,47 @@ summary <- routes_list[,.(route_short_name,
 
 # Add mode number
 summary <- unique(waits[,.(route_short_name, mode_number)])[summary, on = "route_short_name"]
+summary[route_short_name == "The Overland", mode_number := 10]
 # Create fake reference route_short_name for the combined corridors
 summary[, route_number := route_short_name]
 summary[route_short_name %chin% combined_corridors, 
         route_short_name := sapply(route_number, function(x) corridor_defs[[x]][1])]
 
 # Add colour and mode
-summary <- unique(routes[,.(route_short_name, route_color, mode_number)
+summary <- unique(stop_times[,.(route_short_name, route_color, mode_number)
                    ])[summary, on = .(route_short_name, mode_number)]
 
-# Get destinations for directions
 get_destinations <- function(dir_id) {
-
-  # --- Singles: most common trip_headsign per route ---
   singles <- trips[
-    direction_id == dir_id,
-    .N,
-    by = .(route_short_name, trip_headsign)
-  ][
-    order(route_short_name, -N)
-  ][
-    , .(most_common_hs = trip_headsign[1]),
-    by = route_short_name
-  ]
+    direction_id == dir_id, .N, by = .(route_short_name, trip_headsign)
+  ][order(route_short_name, -N)][, .(most_common_hs = trip_headsign[1]), by = route_short_name]
 
-  # --- Combined corridors: final stop name per route ---
-  combined <- stops[
-    , .(stop_id, stop_name)
-  ][
-    stop_times[route_short_name %chin% combined_corridors],
-    on = "stop_id"
-  ][
-    direction_id == dir_id,
-    .(final = last(stop_name)),
-    by = .(route_short_name, trip_id)
-  ][
-    , .N,
-    by = .(route_short_name, final)
-  ][
-    order(route_short_name, -N)
-  ][
-    , .(most_common_hs = final[1]),
-    by = route_short_name
-  ]
+  combined <- stops[,.(stop_id, stop_name)][
+    stop_times[route_short_name %chin% combined_corridors], on = "stop_id"
+  ][order(trip_id, stop_sequence)
+  ][direction_id==dir_id, .(final=last(stop_name)), by=.(route_short_name, trip_id)
+  ][, .N, by=.(route_short_name, final)][order(route_short_name,-N)
+  ][, .(most_common_hs = final[1]), by = route_short_name]
 
-  # --- Combine and rename ---
   out <- rbind(singles, combined)
-  out[, most_common_hs := gsub("Railway Station", "Station", most_common_hs)]
-  
-  setnames(
-    out,
-    c("route_short_name", "most_common_hs"),
-    c("route_number", paste0("route_destination_", dir_id))
-  )
 
+  # Fallback for my artificial vline routes
+  missing_routes <- setdiff(unique(stop_times$route_short_name), out$route_short_name)
+  if (length(missing_routes) > 0) {
+    fallback <- stops[,.(stop_id, stop_name)][
+      stop_times[route_short_name %chin% missing_routes], on = "stop_id"
+    ][order(trip_id, stop_sequence)
+    ][direction_id == dir_id, .(final = last(stop_name)), by = .(route_short_name, trip_id)
+    ][, .N, by = .(route_short_name, final)][order(route_short_name, -N)
+    ][, .(most_common_hs = final[1]), by = route_short_name]
+    out <- rbind(out, fallback)
+  }
+
+  out[, most_common_hs := gsub("Railway Station", "Station", most_common_hs)]
+  setnames(out, c("route_short_name", "most_common_hs"),
+           c("route_number", paste0("route_destination_", dir_id)))
   out[]
 }
-
 
 
 # Add direction destinations
@@ -922,19 +1036,35 @@ route_bullet_changes <- c(
   "Maryborough"  = "MYB",
   "Swan Hill"    = "SWL",
   "Echuca"       = "ECH",
-  "Sheppharton"  = "SNH",
+  "Shepparton"   = "SNH",
   "Albury"       = "ABY",
   "Bairnsdale"   = "BDE",
   "Wyndham Vale" = "WVL",
-  "Melton"       = "MEL"
+  "Melton"       = "MEL",
+  # Skybus
+  "Eastern Express" = "SKY",
+  "Peninsula Express" = "SKY",
+  "Avalon City Express" = "AVV",
+  "Melbourne City Express" = "SKY",
+  "Sunshine Express" = "SKY",
+  # The Overland
+  "The Overland" = "OVL" 
   
 )
-```
 
 summary[route_display %chin% names(route_bullet_changes),
         route_bullet_code := route_bullet_changes[route_display]]
 
+# Remove brackets from route bullets
+summary[
+  !is.na(route_bullet_code),
+  route_bullet_code := gsub(" \\([^)]*\\)", "", route_bullet_code)
+]
+
+
 rm(route_bullet_changes)
+
+
 
 # Add title name with route etc
 summary[, route_title_display := route_display]
@@ -944,10 +1074,10 @@ summary[!is_combined_corridor & mode_type %in% c(1,2),
 summary[is_combined_corridor & mode_type %in% c(1,2), 
         route_title_display := paste(route_title_display, "Lines")]
 
-summary[!is_combined_corridor & mode_type %in% c(3,4,6), 
+summary[!is_combined_corridor & mode_type %in% c(3,4), 
         route_title_display := paste("Route", route_title_display)]
 
-summary[is_combined_corridor & mode_type %in% c(3,4,6), 
+summary[is_combined_corridor & mode_type %in% c(3,4), 
         route_title_display := paste("Routes", route_title_display, "")]
 
 summary[grep("Corridor", route_display), 
@@ -989,13 +1119,13 @@ summary_list <- lapply(
 
 
 if (!dir.exists("route_jsons")) dir.create("route_jsons")
-
+if (!dir.exists("data")) dir.create("data")
 # Write single combined summary JSON, keyed by route_number
 jsonlite::write_json(
   summary_list,
-  path       = "route_jsons/summary.json",
+  path       = "data/summary.json",
   auto_unbox = TRUE,
-  pretty     = FALSE,
+  pretty     = TRUE,
   na         = "null"
 )
 
@@ -1003,9 +1133,9 @@ jsonlite::write_json(
 manifest <- list(routes = names(summary_list))
 jsonlite::write_json(
   manifest,
-  "route_jsons/manifest.json",
+  "data/manifest.json",
   auto_unbox = TRUE,
-  pretty     = FALSE
+  pretty     = TRUE
 )
 ```
 
@@ -1245,7 +1375,60 @@ for (r in unique(nested$route_short_name)) {
 ## Export Date range
 ```{r}
 date_range <- c(first_date, last_date)
-jsonlite::write_json(date_range, path = "date_range.json")
+jsonlite::write_json(date_range, path = "data/date_range.json")
+```
+
+## Export .csv
+```{r}
+# CSV export for metrics.html "download full csv" button
+mode_labels_json <- jsonlite::fromJSON("modes.json")
+mode_label_lookup <- setNames(sapply(mode_labels_json, `[[`, "label"), names(mode_labels_json))
+
+build_csv_row <- function(l) {
+  freq_by_day <- if (!is.null(l$frequency_summary)) {
+    setNames(l$frequency_summary, sapply(l$frequency_summary, `[[`, "day"))
+  } else {
+    list()
+  }
+  get_freq <- function(day, field) {
+    v <- freq_by_day[[day]][[field]]
+    if (is.null(v)) NA_real_ else v
+  }
+
+  peak   <- if (!is.null(l$peak_medians)) l$peak_medians[[1]] else list()
+  weekly <- if (!is.null(l$weekly_stats)) l$weekly_stats[[1]] else list()
+  get_or_na <- function(lst, field) {
+    v <- lst[[field]]
+    if (is.null(v)) NA_real_ else v
+  }
+
+  data.table(
+    Route      = l$route_display,
+    Mode       = mode_label_lookup[[as.character(l$mode_type)]],
+    `Avg Frequency Mon 7-8`    = get_freq("Monday", "morning"),
+    `Avg Frequency Mon 12-1`   = get_freq("Monday", "daytime"),
+    `Avg Frequency Mon 12-1`        = get_freq("Monday", "evening"),
+    `Morning 7-8 (Saturday)`  = get_freq("Saturday", "morning"),
+    `Daytime 12-1 (Saturday)` = get_freq("Saturday", "daytime"),
+    `Evening (Saturday)`      = get_freq("Saturday", "evening"),
+    `Morning 7-8 (Sunday)`    = get_freq("Sunday", "morning"),
+    `Daytime 12-1 (Sunday)`   = get_freq("Sunday", "daytime"),
+    `Evening (Sunday)`        = get_freq("Sunday", "evening"),
+    `AM Peak Median Gap (min)` = get_or_na(peak, "Median AM Peak Wait"),
+    `PM Peak Median Gap (min)` = get_or_na(peak, "Median PM Peak Wait"),
+    `Weekly Total Services`    = get_or_na(weekly, "Weekly Trip Count"),
+    `Weekly Distance (km)`     = get_or_na(weekly, "Weekly Distance (km)"),
+    `Weekly Service Hours`     = get_or_na(weekly, "Weekly Time (hr)"),
+    `Average Speed (km/h)`     = get_or_na(weekly, "Average Speed (km/hr)")
+  )
+}
+
+csv_dt <- rbindlist(lapply(summary_list, build_csv_row), fill = TRUE)
+
+if (!dir.exists("Archive")) dir.create("Archive")
+archive_filename <- paste0("frequencyfinder_metrics_", format(first_date, "%Y-%m-%d"), ".csv")
+fwrite(csv_dt, file.path("Archive", archive_filename))       # local only, gitignored
+fwrite(csv_dt, file.path("data", "metrics_latest.csv"))  # deployed
 ```
 
 

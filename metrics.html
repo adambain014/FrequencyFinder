@@ -234,7 +234,7 @@ table.metrics .group-divider {
 </div>
 
 <script>
-const FOLDER = 'route_jsons';
+const FOLDER = 'data';
 
 // group: null => ungrouped, spans both header rows (Route, Mode)
 // group: 'freq'|'peak'|'weekly' => sits under a shared super-heading, defined in GROUPS below
@@ -245,9 +245,9 @@ const GROUPS = {
 };
 
 const COLUMNS = [
-  { id: 'route',       label: 'Route', group: null, sortable: false, coloured: false,
+  { id: 'route',       label: 'Route', group: null, sortable: true, coloured: false,
     get: d => d.route_display ?? d.route_number },
-  { id: 'mode',        label: 'Mode',  group: null, sortable: false, coloured: false,
+  { id: 'mode',        label: 'Mode',  group: null, sortable: true, coloured: false,
     get: d => modeLabel(d) },
 
   { id: 'mon_morning', label: 'Morning 7-8',  group: 'freq', sortable: true, coloured: true, unit: 'min',
@@ -352,15 +352,21 @@ function renderHead() {
   const dayRow   = document.getElementById('metrics-head-days');
   const colRow   = document.getElementById('metrics-head-cols');
 
-  // ── Top row: major metric groups ──────────────────────────────
+  const arrowFor = colId => colId === currentSort.col
+    ? `<span class="arrow">${currentSort.dir === 'asc' ? '&#9650;' : '&#9660;'}</span>` : '';
+  const activeFor = colId => colId === currentSort.col ? 'active-sort' : '';
 
   groupRow.innerHTML = `
-    <th rowspan="3" class="col-route">Route</th>
-    <th rowspan="3" class="col-mode">Mode</th>  
+    <th rowspan="3" class="col-route sortable ${activeFor('route')}" data-col="route">Route${arrowFor('route')}</th>
+    <th rowspan="3" class="col-mode sortable ${activeFor('mode')}" data-col="mode">Mode${arrowFor('mode')}</th>
     <th colspan="9" class="group-label">Average Frequency (min)</th>
     <th colspan="2" class="group-label">Peak Median Gap (min)</th>
     <th colspan="4" class="group-label">Weekly Totals</th>
   `;
+
+  groupRow.querySelectorAll('th.sortable').forEach(th =>
+    th.addEventListener('click', () => cycleSort(th.dataset.col))
+  );
 
   // ── Middle row: days / subgroups ──────────────────────────────
 
@@ -493,7 +499,7 @@ function setupSearch() {
       selectedRouteKey = null;
     }
 
-    const matches = currentRows.filter(d => (d.route_display ?? d.route_number).toLowerCase().startsWith(q));
+    const matches = currentRows.filter(d => (d.route_display ?? d.route_number).toLowerCase().includes(q));
     dd.innerHTML = matches.map(d =>
       `<div data-key="${d.route_number}" style="padding:8px 12px; cursor:pointer;">${d.route_display ?? d.route_number} (${modeLabel(d)})</div>`
     ).join('');
@@ -734,44 +740,16 @@ Promise.all([loadData(), loadModes()]).then(() => {
 loadDateRange();
 
 function downloadCSV() {
-  const exportCols = COLUMNS.filter(c => c.id !== 'route'); // handled separately below, plus route_number
-
-  const headers = ['Route', 'Route Key', 'Mode', ...exportCols.filter(c => c.id !== 'mode').map(c => {
-    const unitSuffix = c.unit ? ` (${c.unit})` : '';
-    return `${c.label}${unitSuffix}`;
-  })];
-
-  const rows = currentRows.map(d => {
-    const base = [
-      d.route_display ?? d.route_number,
-      d.route_number,
-      modeLabel(d),
-    ];
-    const metricVals = exportCols
-      .filter(c => c.id !== 'mode')
-      .map(c => {
-        const v = c.get(d);
-        return v == null ? '' : v; // raw value, no comma formatting, no unit suffix in the cell
-      });
-    return [...base, ...metricVals];
-  });
-
-  const escapeCSV = v => {
-    const s = String(v);
-    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-
-  const csv = [headers, ...rows]
-    .map(row => row.map(escapeCSV).join(','))
-    .join('\n');
-
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `frequencyfinder_metrics_${new Date().toISOString().slice(0, 10)}.csv`;
-  a.click();
-  URL.revokeObjectURL(url);
+  fetch(`${FOLDER}/metrics_latest.csv`)
+    .then(r => r.blob())
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `frequencyfinder_metrics_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
 }
 
 document.getElementById('download-csv').addEventListener('click', downloadCSV);

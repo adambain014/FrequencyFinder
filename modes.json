@@ -3,8 +3,7 @@
   "2":  { "label": "Train",           "colourFallback": "#185FA5" },
   "3":  { "label": "Tram",            "colourFallback": "#78BE20" },
   "4":  { "label": "Bus",             "colourFallback": "#F79B00" },
-  "5":  { "label": "Coach",           "colourFallback": "#A57FB2" },
-  "6":  { "label": "Regional Bus",    "colourFallback": "#F79B00" },
   "10": { "label": "Interstate Train","colourFallback": "#140075" },
   "11": { "label": "SkyBus",          "colourFallback": "#ED1C24" }
 }
+
