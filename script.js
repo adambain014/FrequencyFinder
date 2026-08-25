@@ -619,7 +619,7 @@ function populateSelect(routes) {
 // ─── Startup: load manifest + summary in parallel ────────────────────────────
 
 Promise.all([
-  fetch(`${FOLDER}/manifest.json`).then(r => r.ok ? r.json() : Promise.reject('manifest')),
+  fetch(`data/manifest.json`).then(r => r.ok ? r.json() : Promise.reject('manifest')),
   loadSummary(),
   loadModes()
 ])
@@ -635,7 +635,7 @@ Promise.all([
   })
   .catch(() => {
     document.getElementById('placeholder').innerHTML =
-      `<div class="error">Could not load <code>data/manifest.json</code> or <code>summary.json</code>.</div>`;
+      `<div class="error">Could not load <code>data/manifest.json</code> or <code>data/summary.json</code>.</div>`;
   });
 
 // Load date range
