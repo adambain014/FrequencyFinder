@@ -133,6 +133,7 @@ routes_refined <- routes[
 routes_refined[route_short_name == "", route_short_name := tstrsplit(route_id, "-")[2]]
 routes_refined[mode_number == 4 , route_code := tstrsplit(route_id, "-", fill = NA)[2]]
 routes_refined[mode_number == 4 & grepl("^BM",route_code), region := "Bacchus Marsh"]
+routes_refined[mode_number == 4 & grepl("^WN",route_code), region := "Wallan"]
 
 # Add suffix for regional routes
 routes_refined[mode_number == 4 &

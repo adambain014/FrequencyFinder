@@ -51781,12 +51781,12 @@
       }
     ]
   },
-  "WN1 (Warragul)": {
+  "WN1 (Wallan)": {
     "mode_type": "4",
-    "route_number": "WN1 (Warragul)",
-    "route_display": "WN1 (Warragul)",
+    "route_number": "WN1 (Wallan)",
+    "route_display": "WN1 (Wallan)",
     "route_bullet_code": "WN1",
-    "route_title_display": "Route WN1 (Warragul)",
+    "route_title_display": "Route WN1 (Wallan)",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
     "route_destination_1": "Wallan Station",
@@ -51877,12 +51877,12 @@
       }
     ]
   },
-  "WN2 (Warragul)": {
+  "WN2 (Wallan)": {
     "mode_type": "4",
-    "route_number": "WN2 (Warragul)",
-    "route_display": "WN2 (Warragul)",
+    "route_number": "WN2 (Wallan)",
+    "route_display": "WN2 (Wallan)",
     "route_bullet_code": "WN2",
-    "route_title_display": "Route WN2 (Warragul)",
+    "route_title_display": "Route WN2 (Wallan)",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
     "route_destination_1": "Wallan Station",
@@ -51973,12 +51973,12 @@
       }
     ]
   },
-  "WN3 (Warragul)": {
+  "WN3 (Wallan)": {
     "mode_type": "4",
-    "route_number": "WN3 (Warragul)",
-    "route_display": "WN3 (Warragul)",
+    "route_number": "WN3 (Wallan)",
+    "route_display": "WN3 (Wallan)",
     "route_bullet_code": "WN3",
-    "route_title_display": "Route WN3 (Warragul)",
+    "route_title_display": "Route WN3 (Wallan)",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
     "route_destination_1": "Wallan Station",
