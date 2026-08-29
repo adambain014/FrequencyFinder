@@ -1297,13 +1297,14 @@ get_30_minute_gap_snapshots <- function(stop_times_pairs){
   snapshots <- groups[, CJ(snapshot_week_time = seq(0, 7 * 1440 - 30, by = 30)), by = key_cols]
   
   # Carry through the speed/velocity 
-  result <- st[
-    snapshots,
-    on = c(key_cols, "week_time <= snapshot_week_time", "next_week_time > snapshot_week_time"),
-    .(route_short_name, stop_pair_id, direction_id, mode_number, gap,
-      avg_speed_kmh, avg_velocity_kmh,
-      snapshot_week_time = i.snapshot_week_time)
-  ]
+result <- st[
+  snapshots,
+  on = c(key_cols, "week_time <= snapshot_week_time", "next_week_time > snapshot_week_time"),
+  .(route_short_name, stop_pair_id, direction_id, mode_number, gap,
+    avg_speed_kmh, avg_velocity_kmh,
+    trip_week_time = week_time,             # departure time of the matched trip
+    snapshot_week_time = i.snapshot_week_time)
+]
   
   result[, `:=`(
     day_number = snapshot_week_time %/% 1440,
@@ -1315,14 +1316,19 @@ get_30_minute_gap_snapshots <- function(stop_times_pairs){
     gap <= 30, 30, gap <= 60, 60, default = NA_real_
   )]
   
-  result[, .(route_short_name, stop_pair_id, direction_id, mode_number,
-             day_number, snapshot_m, gap, gap_group, avg_speed_kmh, avg_velocity_kmh)]
+speed_buffer_min <- 30   # how close (mins) a snapshot must be to a real departure
+result[, mins_since_departure := snapshot_week_time - trip_week_time]
+result[mins_since_departure > speed_buffer_min,
+       `:=`(avg_speed_kmh = NA_real_, avg_velocity_kmh = NA_real_)]
+
+result[, .(route_short_name, stop_pair_id, direction_id, mode_number,
+           day_number, snapshot_m, gap, gap_group, avg_speed_kmh, avg_velocity_kmh)]
 }
 
 snapshots_waits <- get_30_minute_gap_snapshots(stop_times_pairs)
 snapshots_waits <- snapshots_waits[!is.na(direction_id)]
 
-test <- snapshots_waits[route_short_name == "Albury"]
+
 ```
 
 ```{r}

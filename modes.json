@@ -1,6 +1,6 @@
 {
-  "1":  { "label": "V/Line",          "colourFallback": "#8F1A95" },
-  "2":  { "label": "Train",           "colourFallback": "#185FA5" },
+  "1":  { "label": "V/Line Train",          "colourFallback": "#8F1A95" },
+  "2":  { "label": "Metro Train",           "colourFallback": "#185FA5" },
   "3":  { "label": "Tram",            "colourFallback": "#78BE20" },
   "4":  { "label": "Bus",             "colourFallback": "#F79B00" },
   "10": { "label": "Interstate Train","colourFallback": "#140075" },

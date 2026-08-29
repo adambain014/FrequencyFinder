@@ -159,26 +159,168 @@ function buildSpanChart(spanStats, routeColour) {
     }
   });
 }
+
 // ─── Interactive map ─────────────────────────────────────────────────────────
 
 let leafletMap      = null;
-let mapPolylines    = [];
 let currentMapData  = null;
 let currentDay      = 1;
-let currentMapMode = 'gap'; // 'gap' | 'speed' | 'velocity'
+let currentMapMode  = 'gap'; // 'gap' | 'speed' | 'velocity'
 let currentSpeedDomain    = { min: 0, max: 1 };
 let currentVelocityDomain = { min: 0, max: 1 };
 let currentSnapshot = 390;
 let currentDirection = 0;
+let mapLoaded       = false;
+let mapHoverPopup   = null;
 
-/**
- * Parse nested data structure into a lookup:
- *   pairLookup[stop_pair_id].byDaySnapshot[day][snapshot_m][direction] = { gg, gap }
- *
- * Input data shape per item:
- *   item.data[direction_id][day] = { gap: [...], gap_group: [...] }
- *   snapshot_m is reconstructed as (index + 1) * 30
- */
+const ROUTE_SOURCE_ID = 'route-pairs';
+const ROUTE_LAYER_ID  = 'route-pairs-layer';
+
+// buildPairLookup(), gapColour(), gapWeight(), getGG(), getGap(), hasDirection(),
+// styleForPair(), computeDomain(), continuousColour(), getSpeed(), getVelocity()
+// are unchanged — leave them exactly as they are.
+
+function initMap(centre) {
+  if (leafletMap) {
+    leafletMap.remove();
+    leafletMap = null;
+  }
+  mapLoaded = false;
+
+  leafletMap = new maplibregl.Map({
+    container: 'interactive-map',
+    style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json?cb1_2irh_1_a362f2c73f71bd4f1781ffb3',
+    center: centre ? [centre[1], centre[0]] : [144.9631, -37.8136], // lng, lat order!
+    zoom: 14
+  });
+
+  leafletMap.addControl(new maplibregl.NavigationControl());
+
+  mapHoverPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false });
+
+  leafletMap.on('load', () => {
+    leafletMap.addSource(ROUTE_SOURCE_ID, {
+      type: 'geojson',
+      data: { type: 'FeatureCollection', features: [] }
+    });
+
+    leafletMap.addLayer({
+      id: ROUTE_LAYER_ID,
+      type: 'line',
+      source: ROUTE_SOURCE_ID,
+      layout: { 'line-join': 'round', 'line-cap': 'round' },
+      paint: {
+        'line-color':   ['get', 'color'],
+        'line-width':   ['get', 'weight'],
+        'line-opacity': ['get', 'opacity']
+      }
+    });
+
+    leafletMap.on('mousemove', ROUTE_LAYER_ID, e => {
+      leafletMap.getCanvas().style.cursor = 'pointer';
+      const f = e.features[0];
+      mapHoverPopup.setLngLat(e.lngLat).setHTML(f.properties.tooltip).addTo(leafletMap);
+    });
+    leafletMap.on('mouseleave', ROUTE_LAYER_ID, () => {
+      leafletMap.getCanvas().style.cursor = '';
+      mapHoverPopup.remove();
+    });
+
+    mapLoaded = true;
+  });
+}
+
+// Builds the GeoJSON feature list for the current filter state.
+// entry.geometry.coordinates are already [lng, lat] (GeoJSON standard) —
+// no coordinate flip needed here, unlike the old Leaflet version.
+function buildFeatures(pairLookup, day, snapshot, direction) {
+  const features = [];
+  const bounds   = [];
+
+  for (const [id, entry] of Object.entries(pairLookup)) {
+    if (!hasDirection(entry, day, direction)) continue;
+
+    const s = styleForPair(entry, day, snapshot, direction);
+    bounds.push(...entry.geometry.coordinates);
+
+    features.push({
+      type: 'Feature',
+      geometry: entry.geometry,
+      properties: {
+        id,
+        color:   s.color,
+        weight:  s.weight,
+        opacity: s.opacity,
+        tooltip: s.tooltip
+      }
+    });
+  }
+
+  return { features, bounds };
+}
+
+// Used for BOTH full redraws (direction/day change) and colour-only updates
+// (time slider) — setData() on one source is cheap enough that the old
+// fullRedraw/colours-only distinction isn't needed for the map layer itself.
+function drawPairLookup(pairLookup, day, snapshot, direction) {
+  const { features, bounds } = buildFeatures(pairLookup, day, snapshot, direction);
+
+  if (mapLoaded && leafletMap.getSource(ROUTE_SOURCE_ID)) {
+    leafletMap.getSource(ROUTE_SOURCE_ID).setData({
+      type: 'FeatureCollection',
+      features
+    });
+  }
+
+  return bounds;
+}
+
+function updateMapColours(pairLookup, day, snapshot, direction) {
+  drawPairLookup(pairLookup, day, snapshot, direction);
+}
+
+// fullRedraw kept as a param for call-site compatibility; both branches
+// now do the same thing at the map layer.
+function refreshMap(fullRedraw = false) {
+  if (!currentMapData) return;
+  drawPairLookup(currentMapData, currentDay, currentSnapshot, currentDirection);
+}
+
+function buildMap(interactive) {
+  const pairLookup = buildPairLookup(interactive);
+  currentMapData = pairLookup;
+  currentSpeedDomain    = computeDomain(pairLookup, 'speed');
+  currentVelocityDomain = computeDomain(pairLookup, 'velocity');
+  updateLegend();
+
+  let centre = [-37.81, 144.96];
+  for (const entry of Object.values(pairLookup)) {
+    if (entry.geometry.coordinates.length > 0) {
+      const [lng, lat] = entry.geometry.coordinates[0];
+      if (!isNaN(lat) && !isNaN(lng)) { centre = [lat, lng]; break; }
+    }
+  }
+
+  initMap(centre);
+
+  const drawAndFit = () => {
+    const bounds = drawPairLookup(pairLookup, currentDay, currentSnapshot, currentDirection);
+    if (bounds.length > 0) {
+      const lngLatBounds = bounds.reduce(
+        (b, c) => b.extend(c),
+        new maplibregl.LngLatBounds(bounds[0], bounds[0])
+      );
+      try { leafletMap.fitBounds(lngLatBounds, { padding: 40, duration: 0 }); } catch (e) {}
+    }
+  };
+
+  if (mapLoaded) {
+    drawAndFit();
+  } else {
+    leafletMap.once('load', drawAndFit);
+  }
+}
+
 
 function buildPairLookup(interactive) {
   const lookup = {};
@@ -201,7 +343,7 @@ function buildPairLookup(interactive) {
           const sm  = (i + 1) * 30;
           const gg  = (gap_group[i] == null) ? null : Number(gap_group[i]);
           const g   = (gap[i]       == null) ? null : Number(gap[i]);
-          const sp  = (speed    && speed[i]    != null) ? Number(speed[i])    : null; // Now has speed and velocity
+          const sp  = (speed    && speed[i]    != null) ? Number(speed[i])    : null;
           const vel = (velocity && velocity[i] != null) ? Number(velocity[i]) : null;
 
           if (!lookup[id].byDaySnapshot[dayNum])      lookup[id].byDaySnapshot[dayNum] = {};
@@ -229,24 +371,6 @@ function gapWeight(gapGroup) {
   return 2.5;
 }
 
-function initMap(centre) {
-  if (leafletMap) {
-    leafletMap.remove();
-    leafletMap = null;
-    mapPolylines = [];
-  }
-
-  leafletMap = L.map('interactive-map', { zoomControl: true, scrollWheelZoom: true });
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(leafletMap);
-
-  if (centre) leafletMap.setView(centre, 14);
-}
-
 function getGG(entry, day, snapshot, direction) {
   return entry?.byDaySnapshot?.[day]?.[snapshot]?.[direction]?.gg ?? null;
 }
@@ -255,95 +379,62 @@ function getGap(entry, day, snapshot, direction) {
   return entry?.byDaySnapshot?.[day]?.[snapshot]?.[direction]?.gap ?? null;
 }
 
-// Returns true if this pair has any data for the given direction on the given day
 function hasDirection(entry, day, direction) {
   const dayData = entry?.byDaySnapshot?.[day];
   if (!dayData) return false;
   return Object.values(dayData).some(snap => direction in snap);
 }
 
-function drawPairLookup(pairLookup, day, snapshot, direction) {
-  for (const { layer } of mapPolylines) leafletMap.removeLayer(layer);
-  mapPolylines = [];
-  const bounds = [];
-
-  for (const [id, entry] of Object.entries(pairLookup)) {
-    if (!hasDirection(entry, day, direction)) continue;
-
-    const coords = entry.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
-    bounds.push(...coords);
-
-    const s = styleForPair(entry, day, snapshot, direction);
-
-    const layer = L.polyline(coords, {
-      color: s.color, weight: s.weight, opacity: s.opacity, dashArray: s.dash,
-      lineJoin: 'round', lineCap: 'round',
-    });
-
-    layer.bindTooltip(s.tooltip, { sticky: true, className: 'freq-tooltip' });
-    layer.addTo(leafletMap);
-    mapPolylines.push({ id, layer });
-  }
-
-  return bounds;
-}
-
-function updateMapColours(pairLookup, day, snapshot, direction) {
-  for (const { id, layer } of mapPolylines) {
-    const entry = pairLookup[id];
-    const s = styleForPair(entry, day, snapshot, direction);
-    layer.setStyle({ color: s.color, weight: s.weight, opacity: s.opacity, dashArray: s.dash });
-    layer.bindTooltip(s.tooltip, { sticky: true, className: 'freq-tooltip' });
-  }
-}
-
-// fullRedraw = true when the set of visible polylines may change (direction or day switch)
-// fullRedraw = false for time slider (only colours/weights change, same set of lines)
-function refreshMap(fullRedraw = false) {
-  if (!currentMapData) return;
-  if (fullRedraw) {
-    drawPairLookup(currentMapData, currentDay, currentSnapshot, currentDirection);
-  } else {
-    updateMapColours(currentMapData, currentDay, currentSnapshot, currentDirection);
-  }
-}
-
-function buildMap(interactive) {
-  const pairLookup = buildPairLookup(interactive);
-  currentMapData = pairLookup;
-  currentSpeedDomain    = computeDomain(pairLookup, 'speed');
-  currentVelocityDomain = computeDomain(pairLookup, 'velocity');
-  updateLegend();
-
-  let centre = [-37.81, 144.96];
+function computeDomain(pairLookup, field) {
+  const values = [];
   for (const entry of Object.values(pairLookup)) {
-    if (entry.geometry.coordinates.length > 0) {
-      const [lng, lat] = entry.geometry.coordinates[0];
-      if (!isNaN(lat) && !isNaN(lng)) { centre = [lat, lng]; break; }
+    for (const dayData of Object.values(entry.byDaySnapshot)) {
+      for (const snapData of Object.values(dayData)) {
+        for (const dirData of Object.values(snapData)) {
+          const v = dirData[field];
+          if (v != null && !isNaN(v)) values.push(v);
+        }
+      }
     }
   }
 
-  initMap(centre);
-  const bounds = drawPairLookup(pairLookup, currentDay, currentSnapshot, currentDirection);
-  if (bounds.length > 0) {
-    try { leafletMap.fitBounds(L.latLngBounds(bounds), { padding: [20, 20] }); } catch(e) {}
-  }
+  if (!values.length) return { min: 0, max: 1 };
+
+  const min = Math.min(...values);
+  const rawMax = Math.max(...values);
+  const mean = values.reduce((a, b) => a + b, 0) / values.length;
+  const variance = values.reduce((a, b) => a + (b - mean) ** 2, 0) / values.length;
+  const std = Math.sqrt(variance);
+
+  // Cap the display/colour-scale max at mean + σ, but never exceed the actual max
+  // (handles low-variance datasets where mean+σ would overshoot real data)
+  const cappedMax = Math.min(mean + 2 * std, rawMax);
+
+  return {
+    min: 0,
+    max: cappedMax === min ? rawMax : cappedMax, // guard against degenerate zero-range domain
+    rawMax // keep the true max around in case you want it elsewhere (e.g. a tooltip)
+  };
 }
 
 function updateLegend() {
   const discreteLegend = document.querySelector('.map-legend');
   const gradientLegend = document.getElementById('gradient-legend');
+  const svNote = document.getElementById('sv-note');
+
   if (currentMapMode === 'gap') {
     discreteLegend.style.display = 'flex';
     gradientLegend.style.display = 'none';
+    svNote.style.display = 'none';
   } else {
     discreteLegend.style.display = 'none';
     gradientLegend.style.display = 'block';
+    svNote.style.display = 'block';
     const domain = currentMapMode === 'speed' ? currentSpeedDomain : currentVelocityDomain;
     document.getElementById('gradient-title').textContent =
-      currentMapMode === 'speed' ? 'Average Speed' : 'Average Velocity (straight-line)';
+      currentMapMode === 'speed' ? 'Average Speed (moving-distance)' : 'Average Velocity (straight-line)';
     document.getElementById('gradient-min').textContent = `${domain.min.toFixed(0)} km/h`;
-    document.getElementById('gradient-max').textContent = `${domain.max.toFixed(0)} km/h`;
+    document.getElementById('gradient-max').textContent = `${domain.max.toFixed(0)} km/h +`;
   }
 }
 
@@ -414,6 +505,8 @@ function render(data) {
   const subtitleEl = document.getElementById('route-subtitle');
   const corridorNoteEl = document.getElementById('route-corridor-note');
   const mapCorridorNoteEl = document.getElementById('corridor-note');
+  const mapSVNoteEl = document.getElementById('sv-note');
+  
   
   const dest1 = data.route_destination_1;
 const dest0 = data.route_destination_0;
@@ -521,6 +614,7 @@ document.querySelectorAll('.mode-btn').forEach((b, i) => {
     setTimeout(() => buildMap(data.interactive), 50);
   }
 
+  document.getElementById('sv-note').style.display = 'none';
   document.getElementById('placeholder').style.display = 'none';
   document.getElementById('content').style.display     = 'block';
 }
@@ -693,24 +787,6 @@ function continuousColour(value, domain) {
   return d3.interpolateViridis(Math.max(0, Math.min(1, t)));
 }
 
-function computeDomain(pairLookup, field) {
-  let min = Infinity, max = -Infinity;
-  for (const entry of Object.values(pairLookup)) {
-    for (const dayData of Object.values(entry.byDaySnapshot)) {
-      for (const snapData of Object.values(dayData)) {
-        for (const dirData of Object.values(snapData)) {
-          const v = dirData[field];
-          if (v != null && !isNaN(v)) {
-            if (v < min) min = v;
-            if (v > max) max = v;
-          }
-        }
-      }
-    }
-  }
-  if (!isFinite(min) || !isFinite(max) || min === max) return { min: 0, max: max > 0 ? max : 1 };
-  return { min, max };
-}
 
 function getSpeed(entry, day, snapshot, direction) {
   return entry?.byDaySnapshot?.[day]?.[snapshot]?.[direction]?.speed ?? null;

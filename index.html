@@ -14,15 +14,16 @@
   <meta property="og:url" content="https://adambain014.github.io/FrequencyFinder/">
   <meta property="og:type" content="website">
 
+
   <link rel="icon" type="image/png" href="https://adambain014.github.io/FrequencyFinder/icon.png">
 
   <title>FrequencyFinder</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <!-- Colour scales-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -101,7 +102,7 @@
     </div>
 
     <!-- ── Interactive map ── -->
-    <p class="section-label" style="margin-top:2rem">Interactive Frequency Map</p>
+    <p class="section-label" style="margin-top:2rem">Interactive Frequency/Speed Map</p>
     <div class="map-controls">
       <div class="day-tabs" id="day-tabs">
         <button class="day-tab active" data-day="1">Mon</button>
@@ -156,12 +157,15 @@
     
         <div class="map-controls" id="map-mode-controls" style="margin-top:0.75rem;">
       <button class="mode-btn active" data-mode="gap">Wait Time</button>
-      <button class="mode-btn" data-mode="speed">Speed </button>
-      <button class="mode-btn" data-mode="velocity">Velocity (by straight line)</button>
+      <button class="mode-btn" data-mode="speed">Speed (by moving distance) </button>
+      <button class="mode-btn" data-mode="velocity">Velocity (by straight line distance)</button>
     </div>
 
     <p id="corridor-note" style="display:none; font-size:12px; color:#888780; margin-top:0.75rem;">
       This is a combined corridor. Unlike the other items, the map above also includes branches that diverge from the shared route.
+    </p>
+    <p id="sv-note" style="display:none; font-size:12px; color:#888780; margin-top:0.75rem;">
+      Speed/Velocity data is based on the GTFS schedule, and may be inaccurate due to timetabling quirks.
     </p>
 
 
