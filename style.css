@@ -261,3 +261,41 @@ input[type=range].time-slider {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 .freq-tooltip::before { display: none; }
+
+
+.mode-btn {
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 0.5px solid #c8c5be;
+  background: #fff;
+  color: #5F5E5A;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.mode-btn.active {
+  background: var(--route-colour, #185FA5);
+  color: #fff;
+  border-color: transparent;
+}
+
+.gradient-legend { margin-top: 0.75rem; }
+.gradient-legend-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #5F5E5A;
+  margin-bottom: 6px;
+}
+.gradient-bar {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(to right,
+    #440154, #482878, #3e4a89, #31688e, #26828e, #1f9e89, #6ece58, #fde725);
+}
+.gradient-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #5F5E5A;
+  margin-top: 4px;
+}

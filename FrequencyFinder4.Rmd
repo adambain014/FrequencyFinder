@@ -1172,22 +1172,41 @@ combine_corridors <- function(st, corridor_defs){
 stop_times <- combine_corridors(stop_times, corridor_defs)
 
 
-
 next_stop_id <- function(stop_times){
   stop_times <- copy(stop_times)
   setorder(stop_times, route_short_name, day_number, trip_id, stop_sequence)
-  stop_times <- stop_times[
-      , next_stop_id := shift(stop_id, 1L, type = "lead"), by = .(route_short_name, trip_id, day_number)
-    ][, next_shape_dist_traveled := shift(shape_dist_traveled, 1L, type = "lead"),
-        by = .(route_short_name, trip_id, day_number)
-    ][, stop_pair_id := paste0(stop_id, "-", next_stop_id, "-", direction_id)
-    ][!is.na(next_stop_id)]
+  
+  stop_times[, next_stop_id := shift(stop_id, 1L, type = "lead"), 
+             by = .(route_short_name, trip_id, day_number)]
+  stop_times[,next_departure_time_m := shift(departure_time_m, 1L, type = "lead"), 
+             by = .(route_short_name, trip_id, day_number)]
+  stop_times[, next_shape_dist_traveled := shift(shape_dist_traveled, 1L, type = "lead"),
+        by = .(route_short_name, trip_id, day_number)]
+  
+  stop_times[, stop_pair_id := paste0(stop_id, "-", next_stop_id, "-", direction_id)]
+  stop_times[, time_m := next_departure_time_m - departure_time_m] 
+  stop_times[, distance_m := next_shape_dist_traveled - shape_dist_traveled]
+
 
   unique(stop_times, by = c("route_short_name", "stop_pair_id", "day_number", "departure_time_m"))
 }
 
 stop_times_pairs  <- next_stop_id(stop_times)
 
+stop_times_pairs <- stop_times_pairs[!is.na(next_stop_id)]
+
+# Deal with timetables not having enough entries for each stop
+# Sort descending within each group - this achieves what rev() did, but as one vectorized sort
+setorder(stop_times_pairs, route_short_name, trip_id, mode_number, day_number, -stop_sequence)
+
+# cumsum is GForce-optimized - fast even across huge numbers of groups
+stop_times_pairs[, grp := cumsum(time_m != 0), by = .(route_short_name, trip_id, mode_number, day_number)]
+
+# restore original row order
+setorder(stop_times_pairs, route_short_name, trip_id, mode_number, day_number, stop_sequence)
+```
+
+```{r}
 build_stop_pair_shapes <- function(stop_times, stops) {
   
   # Get unique stop pairs with their two stop IDs
@@ -1196,15 +1215,17 @@ build_stop_pair_shapes <- function(stop_times, stops) {
   # Join coordinates for each stop - note averaging means to deal with multiple train stations
   stop_coords <-   stops[, .(stop_lat = mean(stop_lat), stop_lon = mean(stop_lon)), by = .(stop_id, mode_number)]
   
-  duplets <- duplets[stop_coords, on = "stop_id", nomatch = 0]
+  duplets <- duplets[stop_coords, on = c("stop_id", "mode_number"), nomatch = 0]
   setnames(duplets, c("stop_lat", "stop_lon"), c("lat1", "lon1"))
   
-  duplets <- duplets[stop_coords, on = c("next_stop_id" = "stop_id"), nomatch = 0]
+  duplets <- duplets[stop_coords, on = c("next_stop_id" = "stop_id", "mode_number"), nomatch = 0]
   setnames(duplets, c("stop_lat", "stop_lon"), c("lat2", "lon2"))
   
   # Build straight-line geometries
   duplets_sf <- st_sf(
     stop_pair_id = duplets$stop_pair_id,
+    displacement_m = geosphere::distHaversine(cbind(duplets$lon1, duplets$lat1), 
+                                              cbind(duplets$lon2, duplets$lat2)),
     geometry = st_sfc(
       mapply(function(lon1, lat1, lon2, lat2) {
         st_linestring(rbind(c(lon1, lat1), c(lon2, lat2)))
@@ -1217,8 +1238,7 @@ build_stop_pair_shapes <- function(stop_times, stops) {
   return(duplets_sf)
 }
 
-stop_pair_shapes <- build_stop_pair_shapes(stop_times_pairs, stops)
-
+stop_pair_shapes <- build_stop_pair_shapes(stop_times_pairs, stops) 
 # Diagnostic
 stop_pairs_plot <- function(rsn){
   select_stop_pairs <- stop_times_pairs[route_short_name == rsn]$stop_pair_id
@@ -1229,71 +1249,83 @@ stop_pairs_plot <- function(rsn){
 
 }
 
-#stop_pairs_plot("742")
-#stop_pairs_plot("Hurstbridge/Mernda")
+# stop_pairs_plot("742")
+# stop_pairs_plot("Hurstbridge/Mernda")
+```
 
+# Speed and velocity calculation
+```{r}
+# Add displacement
+stop_times_pairs <- as.data.table(st_drop_geometry(stop_pair_shapes))[stop_times_pairs, 
+                                                                      on = "stop_pair_id"]
+
+# Grouped metrics
+stop_times_pairs[, `:=`(
+  grp_time_m         = sum(time_m),
+  grp_distance_m      = sum(distance_m),
+  grp_displacement_m  = sum(displacement_m)
+), by = .(route_short_name, trip_id, mode_number, day_number, grp)]
+
+stop_times_pairs[, avg_speed_kmh    := fifelse(grp_time_m > 0,
+                                round((grp_distance_m / 1000) / (grp_time_m / 60), 2), NA_real_)]
+stop_times_pairs[, avg_velocity_kmh := fifelse(grp_time_m > 0,
+                                round((grp_displacement_m / 1000) / (grp_time_m / 60), 2), NA_real_)]
+
+```
+
+```{r}
 ## Function to get the gap value that :00 or :30 falls on, whole-network, per route+stop_pair
 get_30_minute_gap_snapshots <- function(stop_times_pairs){
   st <- copy(stop_times_pairs)
   
-  # explode into week minutes (day_number is already 0-6, Monday = 0 - no -1 offset needed)
   st[, week_time := departure_time_m + day_number * 24 * 60]
   
-  # Group key MUST include route_short_name: stop_pair_id alone can be shared
-  # by multiple routes (overlapping corridors, or a combined-corridor row sitting
-  # next to its source route's row) - pooling those would corrupt the gap calc
   key_cols <- c("route_short_name", "stop_pair_id")
   
-  # Fix the circular week problem by adding buffers, per route+stop_pair group.
-  # Explicit which.min/which.max on week_time - .SD[1]/.SD[.N] would silently
-  # grab the wrong row here since st is still ordered by trip_id/stop_sequence.
   first_buffer <- st[, .SD[which.min(week_time)], by = key_cols][, week_time := week_time - 7 * 1440]
   last_buffer  <- st[, .SD[which.max(week_time)], by = key_cols][, week_time := week_time + 7 * 1440]
   
-  st <- rbind(st, first_buffer, last_buffer)
+  st <- rbind(st, first_buffer, last_buffer, fill = TRUE)
   
   setorder(st, route_short_name, stop_pair_id, week_time)
   
-  # Next departure from same route+stop_pair
   st[, next_week_time := shift(week_time, type = "lead"), by = key_cols]
   st <- st[!is.na(next_week_time)]
   st[, gap := next_week_time - week_time]
   
-  # Snapshots every 30 min for the whole week, once per route+stop_pair group
   groups <- unique(st[, ..key_cols])
   snapshots <- groups[, CJ(snapshot_week_time = seq(0, 7 * 1440 - 30, by = 30)), by = key_cols]
   
-  # Non-equi join, now keyed by route_short_name + stop_pair_id + the time window
+  # Carry through the speed/velocity 
   result <- st[
     snapshots,
     on = c(key_cols, "week_time <= snapshot_week_time", "next_week_time > snapshot_week_time"),
     .(route_short_name, stop_pair_id, direction_id, mode_number, gap,
+      avg_speed_kmh, avg_velocity_kmh,
       snapshot_week_time = i.snapshot_week_time)
   ]
   
   result[, `:=`(
-    day_number = snapshot_week_time %/% 1440,   # 0-6, Monday = 0
+    day_number = snapshot_week_time %/% 1440,
     snapshot_m = snapshot_week_time %% 1440
   )]
   
   result[, gap_group := fcase(
-    gap <= 10, 10,
-    gap <= 15, 15,
-    gap <= 20, 20,
-    gap <= 30, 30,
-    gap <= 60, 60,
-    default = NA_real_
+    gap <= 10, 10, gap <= 15, 15, gap <= 20, 20,
+    gap <= 30, 30, gap <= 60, 60, default = NA_real_
   )]
   
   result[, .(route_short_name, stop_pair_id, direction_id, mode_number,
-             day_number, snapshot_m, gap, gap_group)]
+             day_number, snapshot_m, gap, gap_group, avg_speed_kmh, avg_velocity_kmh)]
 }
-
 
 snapshots_waits <- get_30_minute_gap_snapshots(stop_times_pairs)
 snapshots_waits <- snapshots_waits[!is.na(direction_id)]
 
+test <- snapshots_waits[route_short_name == "Albury"]
+```
 
+```{r}
 # Nest gap/gap_group into direction -> day structure, per route_short_name + stop_pair_id
 # Nest gap/gap_group into day -> direction structure,
 # per route_short_name + stop_pair_id
@@ -1323,7 +1355,9 @@ nested <- snapshots_waits[
 
         out[[direction]][[day]] <- list(
           gap = x$gap,
-          gap_group = x$gap_group
+          gap_group = x$gap_group,
+          speed = x$avg_speed_kmh,
+          velocity = x$avg_velocity_kmh
         )
       }
 

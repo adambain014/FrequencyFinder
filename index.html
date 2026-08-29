@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <!-- Colour scales-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -111,12 +113,14 @@
         <button class="day-tab" data-day="7">Sun</button>
       </div>
     </div>
-
+    
     <div class="map-controls" id="direction-controls">
       <button class="dir-btn active" id="dir-btn-0" data-dir="0">—</button>
       <button class="dir-btn" id="dir-btn-1" data-dir="1">—</button>
     </div>
+    
 
+    
     <div class="map-controls">
       <div class="time-slider-wrap">
         <div class="time-slider-label">
@@ -138,7 +142,22 @@
       <div class="map-legend-item"><div class="map-legend-line" style="background:#642d91"></div><span>≤ 20 min</span></div>
       <div class="map-legend-item"><div class="map-legend-line" style="background:#2c8ab8"></div><span>≤ 30 min</span></div>
       <div class="map-legend-item"><div class="map-legend-line" style="background:#5d9a9d"></div><span>≤ 60 min</span></div>
-      <div class="map-legend-item"><div class="map-legend-line" style="background:#666; border: 1px dashed #999"></div><span>No regular service</span></div>
+      <div class="map-legend-item"><div class="map-legend-line" style="background:#666;"></div><span>No regular service</span></div>
+    </div>
+    
+    <div class="gradient-legend" id="gradient-legend" style="display:none">
+      <div class="gradient-legend-title" id="gradient-title">Average Speed</div>
+      <div class="gradient-bar"></div>
+      <div class="gradient-labels">
+        <span id="gradient-min">0 km/h</span>
+        <span id="gradient-max">80 km/h </span>
+      </div>
+    </div>
+    
+        <div class="map-controls" id="map-mode-controls" style="margin-top:0.75rem;">
+      <button class="mode-btn active" data-mode="gap">Wait Time</button>
+      <button class="mode-btn" data-mode="speed">Speed </button>
+      <button class="mode-btn" data-mode="velocity">Velocity (by straight line)</button>
     </div>
 
     <p id="corridor-note" style="display:none; font-size:12px; color:#888780; margin-top:0.75rem;">

@@ -165,6 +165,9 @@ let leafletMap      = null;
 let mapPolylines    = [];
 let currentMapData  = null;
 let currentDay      = 1;
+let currentMapMode = 'gap'; // 'gap' | 'speed' | 'velocity'
+let currentSpeedDomain    = { min: 0, max: 1 };
+let currentVelocityDomain = { min: 0, max: 1 };
 let currentSnapshot = 390;
 let currentDirection = 0;
 
@@ -188,20 +191,22 @@ function buildPairLookup(interactive) {
 
     for (const [dir, dayObj] of Object.entries(item.data)) {
       const dirNum = parseInt(dir);
-      if (isNaN(dirNum)) continue; // skip NA direction keys
+      if (isNaN(dirNum)) continue;
 
       for (const [day, arrays] of Object.entries(dayObj)) {
         const dayNum = parseInt(day);
-        const { gap, gap_group } = arrays;
+        const { gap, gap_group, speed, velocity } = arrays;
 
         for (let i = 0; i < gap.length; i++) {
-          const sm  = (i + 1) * 30; // reconstruct snapshot_m from index
+          const sm  = (i + 1) * 30;
           const gg  = (gap_group[i] == null) ? null : Number(gap_group[i]);
           const g   = (gap[i]       == null) ? null : Number(gap[i]);
+          const sp  = (speed    && speed[i]    != null) ? Number(speed[i])    : null; // Now has speed and velocity
+          const vel = (velocity && velocity[i] != null) ? Number(velocity[i]) : null;
 
           if (!lookup[id].byDaySnapshot[dayNum])      lookup[id].byDaySnapshot[dayNum] = {};
           if (!lookup[id].byDaySnapshot[dayNum][sm])  lookup[id].byDaySnapshot[dayNum][sm] = {};
-          lookup[id].byDaySnapshot[dayNum][sm][dirNum] = { gg, gap: g };
+          lookup[id].byDaySnapshot[dayNum][sm][dirNum] = { gg, gap: g, speed: sp, velocity: vel };
         }
       }
     }
@@ -222,10 +227,6 @@ function gapWeight(gapGroup) {
   if (gapGroup <= 20)    return 4;
   if (gapGroup <= 30)    return 3;
   return 2.5;
-}
-
-function gapDash(gapGroup) {
-  return gapGroup == null ? '6, 6' : null;
 }
 
 function initMap(centre) {
@@ -267,27 +268,19 @@ function drawPairLookup(pairLookup, day, snapshot, direction) {
   const bounds = [];
 
   for (const [id, entry] of Object.entries(pairLookup)) {
-    // Skip pairs that don't belong to this direction on this day
     if (!hasDirection(entry, day, direction)) continue;
 
     const coords = entry.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
     bounds.push(...coords);
 
-    const gg  = getGG(entry, day, snapshot, direction);
-    const gap = getGap(entry, day, snapshot, direction);
+    const s = styleForPair(entry, day, snapshot, direction);
 
     const layer = L.polyline(coords, {
-      color:     gapColour(gg),
-      weight:    gapWeight(gg),
-      opacity:   gg == null ? 0.35 : 0.85,
-      lineJoin:  'round',
-      lineCap:   'round',
+      color: s.color, weight: s.weight, opacity: s.opacity, dashArray: s.dash,
+      lineJoin: 'round', lineCap: 'round',
     });
 
-    layer.bindTooltip(
-      gg == null ? 'No regular service' : `${gap} min wait`,
-      { sticky: true, className: 'freq-tooltip' }
-    );
+    layer.bindTooltip(s.tooltip, { sticky: true, className: 'freq-tooltip' });
     layer.addTo(leafletMap);
     mapPolylines.push({ id, layer });
   }
@@ -298,17 +291,9 @@ function drawPairLookup(pairLookup, day, snapshot, direction) {
 function updateMapColours(pairLookup, day, snapshot, direction) {
   for (const { id, layer } of mapPolylines) {
     const entry = pairLookup[id];
-    const gg    = getGG(entry, day, snapshot, direction);
-    const gap   = getGap(entry, day, snapshot, direction);
-    layer.setStyle({
-      color:     gapColour(gg),
-      weight:    gapWeight(gg),
-      opacity:   gg == null ? 0.35 : 0.85
-    });
-    layer.bindTooltip(
-      gg == null ? 'No regular service' : `${gap} min wait`,
-      { sticky: true, className: 'freq-tooltip' }
-    );
+    const s = styleForPair(entry, day, snapshot, direction);
+    layer.setStyle({ color: s.color, weight: s.weight, opacity: s.opacity, dashArray: s.dash });
+    layer.bindTooltip(s.tooltip, { sticky: true, className: 'freq-tooltip' });
   }
 }
 
@@ -326,6 +311,9 @@ function refreshMap(fullRedraw = false) {
 function buildMap(interactive) {
   const pairLookup = buildPairLookup(interactive);
   currentMapData = pairLookup;
+  currentSpeedDomain    = computeDomain(pairLookup, 'speed');
+  currentVelocityDomain = computeDomain(pairLookup, 'velocity');
+  updateLegend();
 
   let centre = [-37.81, 144.96];
   for (const entry of Object.values(pairLookup)) {
@@ -339,6 +327,23 @@ function buildMap(interactive) {
   const bounds = drawPairLookup(pairLookup, currentDay, currentSnapshot, currentDirection);
   if (bounds.length > 0) {
     try { leafletMap.fitBounds(L.latLngBounds(bounds), { padding: [20, 20] }); } catch(e) {}
+  }
+}
+
+function updateLegend() {
+  const discreteLegend = document.querySelector('.map-legend');
+  const gradientLegend = document.getElementById('gradient-legend');
+  if (currentMapMode === 'gap') {
+    discreteLegend.style.display = 'flex';
+    gradientLegend.style.display = 'none';
+  } else {
+    discreteLegend.style.display = 'none';
+    gradientLegend.style.display = 'block';
+    const domain = currentMapMode === 'speed' ? currentSpeedDomain : currentVelocityDomain;
+    document.getElementById('gradient-title').textContent =
+      currentMapMode === 'speed' ? 'Average Speed' : 'Average Velocity (straight-line)';
+    document.getElementById('gradient-min').textContent = `${domain.min.toFixed(0)} km/h`;
+    document.getElementById('gradient-max').textContent = `${domain.max.toFixed(0)} km/h`;
   }
 }
 
@@ -503,6 +508,13 @@ if (data.is_combined_corridor) {
     b.style.background = i === 0 ? colour : '';
     b.style.color      = i === 0 ? contrastText(colour) : '';
   });
+  
+  currentMapMode = 'gap';
+document.querySelectorAll('.mode-btn').forEach((b, i) => {
+  b.classList.toggle('active', i === 0);
+  b.style.background = i === 0 ? colour : '';
+  b.style.color      = i === 0 ? contrastText(colour) : '';
+});
 
   // Build interactive map
   if (data.interactive?.length) {
@@ -672,3 +684,83 @@ function modeLabel(d) {
   const m = String(d.mode_type);
   return MODES[m]?.label ?? 'Route';
 }
+
+// Speed/Velocity functions
+
+function continuousColour(value, domain) {
+  if (value == null || isNaN(value)) return NO_SERVICE_COLOUR;
+  const t = (value - domain.min) / ((domain.max - domain.min) || 1);
+  return d3.interpolateViridis(Math.max(0, Math.min(1, t)));
+}
+
+function computeDomain(pairLookup, field) {
+  let min = Infinity, max = -Infinity;
+  for (const entry of Object.values(pairLookup)) {
+    for (const dayData of Object.values(entry.byDaySnapshot)) {
+      for (const snapData of Object.values(dayData)) {
+        for (const dirData of Object.values(snapData)) {
+          const v = dirData[field];
+          if (v != null && !isNaN(v)) {
+            if (v < min) min = v;
+            if (v > max) max = v;
+          }
+        }
+      }
+    }
+  }
+  if (!isFinite(min) || !isFinite(max) || min === max) return { min: 0, max: max > 0 ? max : 1 };
+  return { min, max };
+}
+
+function getSpeed(entry, day, snapshot, direction) {
+  return entry?.byDaySnapshot?.[day]?.[snapshot]?.[direction]?.speed ?? null;
+}
+function getVelocity(entry, day, snapshot, direction) {
+  return entry?.byDaySnapshot?.[day]?.[snapshot]?.[direction]?.velocity ?? null;
+}
+
+function styleForPair(entry, day, snapshot, direction) {
+  if (currentMapMode === 'gap') {
+    const gg  = getGG(entry, day, snapshot, direction);
+    const gap = getGap(entry, day, snapshot, direction);
+    return {
+      color:   gapColour(gg),
+      weight:  gapWeight(gg),
+      opacity: gg == null ? 0.35 : 0.85,
+      tooltip: gg == null ? 'No regular service' : `${gap} min wait`,
+    };
+  }
+
+  const field  = currentMapMode; // 'speed' or 'velocity'
+  const domain = currentMapMode === 'speed' ? currentSpeedDomain : currentVelocityDomain;
+  const val    = currentMapMode === 'speed'
+    ? getSpeed(entry, day, snapshot, direction)
+    : getVelocity(entry, day, snapshot, direction);
+
+  return {
+    color:   continuousColour(val, domain),
+    weight:  val == null ? 2 : 4,
+    opacity: val == null ? 0.35 : 0.85,
+    tooltip: val == null
+      ? 'No data'
+      : `${val.toFixed(1)} km/h`,
+  };
+}
+
+
+document.getElementById('map-mode-controls')?.addEventListener('click', e => {
+  const btn = e.target.closest('.mode-btn');
+  if (!btn) return;
+  document.querySelectorAll('.mode-btn').forEach(b => {
+    b.classList.remove('active');
+    b.style.background = '';
+    b.style.color = '';
+  });
+  btn.classList.add('active');
+  const colour = getComputedStyle(document.documentElement).getPropertyValue('--route-colour').trim();
+  btn.style.background = colour;
+  btn.style.color = contrastText(colour);
+  currentMapMode = btn.dataset.mode;
+  updateLegend();
+  refreshMap(false); // same set of pairs shown per direction/day, only colours/weights change
+});
