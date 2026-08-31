@@ -317,7 +317,7 @@ stop_times <- combine_corridors(stop_times, corridor_defs)
 ld_map <- data.table(
   pattern = c("WBL",
               "ART",
-              "MYB",
+              "MBY",
               "SWL",
               "ECH",
               "SNH",

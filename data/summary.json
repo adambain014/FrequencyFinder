@@ -33303,96 +33303,6 @@
       }
     ]
   },
-  "695F": {
-    "mode_type": "4",
-    "route_number": "695F",
-    "route_display": "695F",
-    "route_bullet_code": "695F",
-    "route_title_display": "Route 695F",
-    "is_combined_corridor": false,
-    "route_colour": "FF8200",
-    "route_destination_1": "Belgrave Station",
-    "route_destination_0": "Fountain Gate SC",
-    "frequency_summary": [
-      {
-        "morning": null,
-        "daytime": null,
-        "evening": null,
-        "day": "Monday"
-      },
-      {
-        "morning": 102,
-        "daytime": 100,
-        "evening": null,
-        "day": "Saturday"
-      },
-      {
-        "morning": null,
-        "daytime": 96,
-        "evening": null,
-        "day": "Sunday"
-      }
-    ],
-    "span_stats": [
-      {
-        "day": "monday",
-        "span_start": [],
-        "span_end": [],
-        "full_coverage_start": [],
-        "full_coverage_end": []
-      },
-      {
-        "day": "tuesday",
-        "span_start": [],
-        "span_end": [],
-        "full_coverage_start": [],
-        "full_coverage_end": []
-      },
-      {
-        "day": "wednesday",
-        "span_start": [],
-        "span_end": [],
-        "full_coverage_start": [],
-        "full_coverage_end": []
-      },
-      {
-        "day": "thursday",
-        "span_start": [],
-        "span_end": [],
-        "full_coverage_start": [],
-        "full_coverage_end": []
-      },
-      {
-        "day": "friday",
-        "span_start": 965,
-        "span_end": 1369,
-        "full_coverage_start": 1060,
-        "full_coverage_end": 1259
-      },
-      {
-        "day": "saturday",
-        "span_start": 415,
-        "span_end": 1369,
-        "full_coverage_start": 581,
-        "full_coverage_end": 1177
-      },
-      {
-        "day": "sunday",
-        "span_start": 520,
-        "span_end": 1353,
-        "full_coverage_start": 710,
-        "full_coverage_end": 1177
-      }
-    ],
-    "weekly_stats": [
-      {
-        "Weekly Trip Count": 40,
-        "Weekly Distance (km)": 2146,
-        "Weekly Time (hr)": 48,
-        "Average Speed (km/hr)": 44.71
-      }
-    ]
-  },
   "696": {
     "mode_type": "4",
     "route_number": "696",
@@ -48651,21 +48561,21 @@
     "route_destination_0": "Wendouree",
     "frequency_summary": [
       {
-        "morning": 50,
+        "morning": 50.5,
         "daytime": 50.5,
         "evening": 41,
         "day": "Monday"
       },
       {
-        "morning": 59.5,
+        "morning": 43.5,
         "daytime": 60,
-        "evening": 43.5,
+        "evening": 45,
         "day": "Saturday"
       },
       {
-        "morning": 59.5,
+        "morning": 43.5,
         "daytime": 60,
-        "evening": 43.5,
+        "evening": 45,
         "day": "Sunday"
       }
     ],
@@ -48728,10 +48638,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 423,
-        "Weekly Distance (km)": 45668,
-        "Weekly Time (hr)": 616,
-        "Average Speed (km/hr)": 74.14
+        "Weekly Trip Count": 395,
+        "Weekly Distance (km)": 42733,
+        "Weekly Time (hr)": 575,
+        "Average Speed (km/hr)": 74.32
       }
     ]
   },
@@ -50175,6 +50085,102 @@
       }
     ]
   },
+  "Maryborough": {
+    "mode_type": "1",
+    "route_number": "Maryborough",
+    "route_display": "Maryborough",
+    "route_bullet_code": "MYB",
+    "route_title_display": "Maryborough Line",
+    "is_combined_corridor": false,
+    "route_colour": "8F1A95",
+    "route_destination_1": "Southern Cross Station",
+    "route_destination_0": "Maryborough Station",
+    "frequency_summary": [
+      {
+        "morning": null,
+        "daytime": null,
+        "evening": null,
+        "day": "Monday"
+      },
+      {
+        "morning": null,
+        "daytime": null,
+        "evening": null,
+        "day": "Saturday"
+      },
+      {
+        "morning": null,
+        "daytime": null,
+        "evening": null,
+        "day": "Sunday"
+      }
+    ],
+    "peak_medians": [
+      {
+        "Median AM Peak Wait": null,
+        "Median PM Peak Wait": null
+      }
+    ],
+    "span_stats": [
+      {
+        "day": "monday",
+        "span_start": 427,
+        "span_end": 1137,
+        "full_coverage_start": 592,
+        "full_coverage_end": 517
+      },
+      {
+        "day": "tuesday",
+        "span_start": 427,
+        "span_end": 1137,
+        "full_coverage_start": 592,
+        "full_coverage_end": 517
+      },
+      {
+        "day": "wednesday",
+        "span_start": 427,
+        "span_end": 1137,
+        "full_coverage_start": 592,
+        "full_coverage_end": 517
+      },
+      {
+        "day": "thursday",
+        "span_start": 427,
+        "span_end": 1137,
+        "full_coverage_start": 592,
+        "full_coverage_end": 517
+      },
+      {
+        "day": "friday",
+        "span_start": 427,
+        "span_end": 1137,
+        "full_coverage_start": 592,
+        "full_coverage_end": 517
+      },
+      {
+        "day": "saturday",
+        "span_start": 456,
+        "span_end": 1261,
+        "full_coverage_start": 560,
+        "full_coverage_end": 561
+      },
+      {
+        "day": "sunday",
+        "span_start": 456,
+        "span_end": 1261,
+        "full_coverage_start": 560,
+        "full_coverage_end": 561
+      }
+    ],
+    "weekly_stats": [
+      {
+        "Weekly Trip Count": 28,
+        "Weekly Distance (km)": 2935,
+        "Weekly Time (hr)": 41,
+        "Average Speed (km/hr)": 71.59
+      }
+    ]
+  },
   "Melbourne City Express": {
     "mode_type": "11",
     "route_number": "Melbourne City Express",
@@ -50289,13 +50295,13 @@
         "day": "Monday"
       },
       {
-        "morning": 60,
+        "morning": 40,
         "daytime": 65.5,
         "evening": 40,
         "day": "Saturday"
       },
       {
-        "morning": 60,
+        "morning": 40,
         "daytime": 65.5,
         "evening": 40,
         "day": "Sunday"
@@ -50360,10 +50366,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 560,
-        "Weekly Distance (km)": 20387,
-        "Weekly Time (hr)": 358,
-        "Average Speed (km/hr)": 56.95
+        "Weekly Trip Count": 551,
+        "Weekly Distance (km)": 20053,
+        "Weekly Time (hr)": 352,
+        "Average Speed (km/hr)": 56.97
       }
     ]
   },
@@ -51589,12 +51595,12 @@
       }
     ]
   },
-  "W12 (Warragul)": {
+  "W12 (Wallan)": {
     "mode_type": "4",
-    "route_number": "W12 (Warragul)",
-    "route_display": "W12 (Warragul)",
+    "route_number": "W12 (Wallan)",
+    "route_display": "W12 (Wallan)",
     "route_bullet_code": "W12",
-    "route_title_display": "Route W12 (Warragul)",
+    "route_title_display": "Route W12 (Wallan)",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
     "route_destination_1": null,
