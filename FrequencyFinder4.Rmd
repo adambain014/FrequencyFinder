@@ -25,6 +25,7 @@ library(sf)
 library(jsonlite)
 library(gtfstools)
 library(vicgtfstools) # My own repo https://github.com/adambain014/vicgtfstools 
+library(vicgtfstoolsextra)
 library(tictoc) # For my own benchmarking enjoyment
 library(ggplot2) # For diagnostics
 ```
@@ -44,7 +45,10 @@ if(!dir.exists("Temps/gtfs")){
 
 # Open the GTFS
 if(!exists("gtfs")){
-  gtfs <- open_and_join_all_vic_gtfs("Temps/gtfs") |> tag_myki_bus()
+  gtfs <- open_and_join_all_vic_gtfs("Temps/gtfs") |>
+    tag_myki_bus() |>
+    add_skybus_names() |>
+    split_vline_names()
 }
 ```
 
@@ -57,7 +61,8 @@ select_modes <- c(1,2,3,4,10,11) # V/Line. Metro train, tram and bus
 
 # Data processing 
 
-## Create a representative stop times of a 1 week period - this will be unforuntatley large 
+## Create a representative stop times of a 1 week period - this will be unforuntatley large
+
 ```{r}
 # Open the calendar file
 calendar <- gtfs$calendar[mode_number %in% select_modes]
@@ -112,6 +117,8 @@ calendar_first_full_week_long[!is.na(exception_type)
            fifelse(exception_type == 1, 1, bool))
 ]
 
+
+
 # Simplify the calendar, remove service_ids from days that are not needed.
 calendar_refined <- calendar_first_full_week_long[bool == 1, .(service_id, day_number, mode_number)]
 
@@ -119,46 +126,25 @@ calendar_refined <- calendar_first_full_week_long[bool == 1, .(service_id, day_n
 trips <- gtfs$trips[mode_number %in% select_modes]
 trips <- trips[calendar_refined, on = .(mode_number, service_id), nomatch = 0L, allow.cartesian = TRUE]
 
+
+test <- calendar_first_full_week_long[like(service_id, 194)]
 # Clean up calendar intermediaries
 rm(calendar_first_full_week, calendar_first_full_week_long, calendar_refined)
 
 # Add route_short_name from routes
 routes <- gtfs$routes[mode_number %in% select_modes]
 
-# Pick off replacement buses and ANZAC day busrs
-routes_refined <- routes[
-  !route_short_name %chin% c("Replacement Bus", "ANZAC_1", "ANZAC_2", "ANZAC_3")]
-
-# Fix Bacchus Marsh - will have to fix in vicgtfstools when I get round to a review
-routes_refined[route_short_name == "", route_short_name := tstrsplit(route_id, "-")[2]]
-routes_refined[mode_number == 4 , route_code := tstrsplit(route_id, "-", fill = NA)[2]]
-routes_refined[mode_number == 4 & grepl("^BM",route_code), region := "Bacchus Marsh"]
-routes_refined[mode_number == 4 & grepl("^WN",route_code), region := "Wallan"]
-
-# Add suffix for regional routes
+# Remove replacement buses and anzac day specials
+routes_refined <- routes[!grepl("Replacement\\sBus|ANZAC_", route_short_name)]
+# Ensure a valid route name, if none exists take from the 2nd part of the id
+routes_refined[route_short_name == "", 
+                           route_short_name := tstrsplit(route_id, "-")[2]]
 routes_refined[mode_number == 4 &
                  region != "Melbourne", 
                route_short_name := paste0(route_short_name, " (", region, ")")]
 
 # Fix route colour for the overland
 routes_refined[mode_number == 10, route_color := "#140075"]
-
-# For sky bus use official name
-sb_map <- data.table(
-  mode_number = c(11,11,11,11,11),
-  route_long_name = c("Box Hill - Melbourne Airport",
-                      "Frankston - Melbourne Airport",
-                      "Melbourne City - Avalon Airport",
-                      "City - Melbourne Airport",
-                      "Sunshine Railway Station - Melbourne Airport"),
-  route_short_name = c("Eastern Express",
-                       "Peninsula Express",
-                       "Avalon City Express",
-                       "Melbourne City Express",
-                       "Sunshine Express")
-)
-
-routes_refined[sb_map, on = .(mode_number, route_long_name), route_short_name := i.route_short_name]
 
 
 routes_refined <- routes_refined[,.(route_id, mode_number, route_short_name, route_color)]
@@ -233,8 +219,6 @@ stop_times[route_short_name == 790, direction_id := fifelse(direction_id == 0, 1
 stop_times[route_short_name == 426, direction_id := fifelse(direction_id == 0, 1, 0)]
 # and 283
 stop_times[route_short_name == 281, direction_id := fifelse(direction_id == 0, 1, 0)]
-
-stop_times[mode_number==10]
 ```
 
 
@@ -309,35 +293,7 @@ stop_times <- combine_corridors(stop_times, corridor_defs)
 
 # Subdivide corridors - for V/Line
 ```{r}
-# Subdivide V/Line - Geelong into 3 - Warrnambool, Wyndham Vale, Geelong,
-# Long distance is easy as it an be inferred from trip_id
-# Short runs will have to be duplicated from the leftovers,
-# Then short run only trips must be deleted from the whole line
-# I might consider doing this with the Lilydale line because the Blackburn stoppers are leading to some dishonest results
-ld_map <- data.table(
-  pattern = c("WBL",
-              "ART",
-              "MBY",
-              "SWL",
-              "ECH",
-              "SNH",
-              "ABY",
-              "BDE"),
-  route_short_name = c("Warrnambool",
-                       "Ararat",
-                       "Maryborough",
-                       "Swan Hill",
-                       "Echuca",
-                       "Shepparton",
-                       "Albury",
-                       "Bairnsdale")
-)
 
-stop_times[mode_number == 1, prefix := tstrsplit(trip_id, "-", fixed = TRUE)[2]]
-stop_times[ld_map, on = .(prefix = pattern),
-           route_short_name := i.route_short_name]
-
-rm(ld_map)
 
 # Deal with the short suburban runs
 suburban_short_run <- function(st, stop_list, old_group_name, new_name){
@@ -349,7 +305,7 @@ suburban_short_run <- function(st, stop_list, old_group_name, new_name){
 
 # List of stops for each
 wyndham_vale_stops <- c("Wyndham Vale Station",
-                        "Tarneit West Station",
+                        "West Tarneit Station",
                         "Tarneit Station",
                         "Truganina Station",
                         "Deer Park Station",
@@ -1471,6 +1427,8 @@ archive_filename <- paste0("frequencyfinder_metrics_", format(first_date, "%Y-%m
 fwrite(csv_dt, file.path("Archive", archive_filename))       # local only, gitignored
 fwrite(csv_dt, file.path("data", "metrics_latest.csv"))  # deployed
 ```
+
+
 
 
 

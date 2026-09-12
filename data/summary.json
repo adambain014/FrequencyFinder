@@ -11,8 +11,8 @@
     "route_destination_0": "East Coburg",
     "frequency_summary": [
       {
-        "morning": 10.5,
-        "daytime": 10,
+        "morning": 9.5,
+        "daytime": 11,
         "evening": 11,
         "day": "Monday"
       },
@@ -31,28 +31,28 @@
     ],
     "peak_medians": [
       {
-        "Median AM Peak Wait": 10,
-        "Median PM Peak Wait": 10
+        "Median AM Peak Wait": 8,
+        "Median PM Peak Wait": 8
       }
     ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 288,
+        "span_start": 282,
         "span_end": 1524,
         "full_coverage_start": 379,
         "full_coverage_end": 1424
       },
       {
         "day": "tuesday",
-        "span_start": 288,
+        "span_start": 282,
         "span_end": 1524,
         "full_coverage_start": 379,
         "full_coverage_end": 1424
       },
       {
         "day": "wednesday",
-        "span_start": 288,
+        "span_start": 282,
         "span_end": 1524,
         "full_coverage_start": 379,
         "full_coverage_end": 1424
@@ -88,10 +88,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1612,
-        "Weekly Distance (km)": 21881,
-        "Weekly Time (hr)": 1228,
-        "Average Speed (km/hr)": 17.82
+        "Weekly Trip Count": 1468,
+        "Weekly Distance (km)": 22525,
+        "Weekly Time (hr)": 1275,
+        "Average Speed (km/hr)": 17.67
       }
     ]
   },
@@ -297,54 +297,74 @@
     "route_colour": "FF8200",
     "route_destination_1": null,
     "route_destination_0": null,
+    "frequency_summary": [
+      {
+        "morning": null,
+        "daytime": 29.5,
+        "evening": null,
+        "day": "Monday"
+      },
+      {
+        "morning": null,
+        "daytime": 29,
+        "evening": null,
+        "day": "Saturday"
+      },
+      {
+        "morning": null,
+        "daytime": null,
+        "evening": null,
+        "day": "Sunday"
+      }
+    ],
     "peak_medians": [
       {
-        "Median AM Peak Wait": null,
+        "Median AM Peak Wait": 33,
         "Median PM Peak Wait": 25
       }
     ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 1012,
+        "span_start": 507,
         "span_end": 1058,
-        "full_coverage_start": 1035,
-        "full_coverage_end": 1035
+        "full_coverage_start": 533,
+        "full_coverage_end": 999
       },
       {
         "day": "tuesday",
-        "span_start": 1012,
+        "span_start": 507,
         "span_end": 1058,
-        "full_coverage_start": 1035,
-        "full_coverage_end": 1035
+        "full_coverage_start": 533,
+        "full_coverage_end": 999
       },
       {
         "day": "wednesday",
-        "span_start": 1012,
+        "span_start": 507,
         "span_end": 1058,
-        "full_coverage_start": 1035,
-        "full_coverage_end": 1035
+        "full_coverage_start": 533,
+        "full_coverage_end": 999
       },
       {
         "day": "thursday",
-        "span_start": 1012,
+        "span_start": 507,
         "span_end": 1058,
-        "full_coverage_start": 1035,
-        "full_coverage_end": 1035
+        "full_coverage_start": 533,
+        "full_coverage_end": 999
       },
       {
         "day": "friday",
-        "span_start": 1012,
+        "span_start": 507,
         "span_end": 1058,
-        "full_coverage_start": 1035,
-        "full_coverage_end": 1035
+        "full_coverage_start": 533,
+        "full_coverage_end": 999
       },
       {
         "day": "saturday",
-        "span_start": 846,
+        "span_start": 518,
         "span_end": 867,
-        "full_coverage_start": 867,
-        "full_coverage_end": 846
+        "full_coverage_start": 544,
+        "full_coverage_end": 841
       },
       {
         "day": "sunday",
@@ -356,10 +376,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 11,
-        "Weekly Distance (km)": 92,
-        "Weekly Time (hr)": 4,
-        "Average Speed (km/hr)": 23
+        "Weekly Trip Count": 97,
+        "Weekly Distance (km)": 923,
+        "Weekly Time (hr)": 43,
+        "Average Speed (km/hr)": 21.47
       }
     ]
   },
@@ -402,21 +422,21 @@
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 304,
+        "span_start": 298,
         "span_end": 1509,
         "full_coverage_start": 348,
         "full_coverage_end": 1471
       },
       {
         "day": "tuesday",
-        "span_start": 304,
+        "span_start": 298,
         "span_end": 1509,
         "full_coverage_start": 348,
         "full_coverage_end": 1471
       },
       {
         "day": "wednesday",
-        "span_start": 304,
+        "span_start": 298,
         "span_end": 1509,
         "full_coverage_start": 348,
         "full_coverage_end": 1471
@@ -452,10 +472,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 9267,
-        "Weekly Distance (km)": 24353,
-        "Weekly Time (hr)": 2222,
-        "Average Speed (km/hr)": 10.96
+        "Weekly Trip Count": 9381,
+        "Weekly Distance (km)": 24654,
+        "Weekly Time (hr)": 2251,
+        "Average Speed (km/hr)": 10.95
       }
     ]
   },
@@ -471,9 +491,9 @@
     "route_destination_0": "Moreland Rd/Holmes St #129",
     "frequency_summary": [
       {
-        "morning": 5.5,
-        "daytime": 5.5,
-        "evening": 6,
+        "morning": 4.5,
+        "daytime": 6,
+        "evening": 5.5,
         "day": "Monday"
       },
       {
@@ -491,28 +511,28 @@
     ],
     "peak_medians": [
       {
-        "Median AM Peak Wait": 5,
-        "Median PM Peak Wait": 5
+        "Median AM Peak Wait": 4,
+        "Median PM Peak Wait": 4
       }
     ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 292,
+        "span_start": 286,
         "span_end": 1521,
         "full_coverage_start": 363,
         "full_coverage_end": 1459
       },
       {
         "day": "tuesday",
-        "span_start": 292,
+        "span_start": 286,
         "span_end": 1521,
         "full_coverage_start": 363,
         "full_coverage_end": 1459
       },
       {
         "day": "wednesday",
-        "span_start": 292,
+        "span_start": 286,
         "span_end": 1521,
         "full_coverage_start": 363,
         "full_coverage_end": 1459
@@ -548,10 +568,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 2684,
-        "Weekly Distance (km)": 26644,
-        "Weekly Time (hr)": 1469,
-        "Average Speed (km/hr)": 18.14
+        "Weekly Trip Count": 2798,
+        "Weekly Distance (km)": 27776,
+        "Weekly Time (hr)": 1537,
+        "Average Speed (km/hr)": 18.07
       }
     ]
   },
@@ -645,9 +665,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 198,
-        "Weekly Distance (km)": 3098,
+        "Weekly Distance (km)": 3103,
         "Weekly Time (hr)": 136,
-        "Average Speed (km/hr)": 22.78
+        "Average Speed (km/hr)": 22.82
       }
     ]
   },
@@ -1029,9 +1049,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 368,
-        "Weekly Distance (km)": 3925,
+        "Weekly Distance (km)": 3946,
         "Weekly Time (hr)": 183,
-        "Average Speed (km/hr)": 21.45
+        "Average Speed (km/hr)": 21.56
       }
     ]
   },
@@ -1317,9 +1337,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 353,
-        "Weekly Distance (km)": 4117,
+        "Weekly Distance (km)": 4113,
         "Weekly Time (hr)": 186,
-        "Average Speed (km/hr)": 22.13
+        "Average Speed (km/hr)": 22.11
       }
     ]
   },
@@ -1701,9 +1721,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 207,
-        "Weekly Distance (km)": 1496,
+        "Weekly Distance (km)": 1508,
         "Weekly Time (hr)": 72,
-        "Average Speed (km/hr)": 20.78
+        "Average Speed (km/hr)": 20.94
       }
     ]
   },
@@ -1893,9 +1913,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 373,
-        "Weekly Distance (km)": 2762,
+        "Weekly Distance (km)": 2783,
         "Weekly Time (hr)": 139,
-        "Average Speed (km/hr)": 19.87
+        "Average Speed (km/hr)": 20.02
       }
     ]
   },
@@ -2181,9 +2201,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 362,
-        "Weekly Distance (km)": 3087,
+        "Weekly Distance (km)": 3015,
         "Weekly Time (hr)": 150,
-        "Average Speed (km/hr)": 20.58
+        "Average Speed (km/hr)": 20.1
       }
     ]
   },
@@ -3639,87 +3659,183 @@
     "route_destination_0": "Werribee Station",
     "frequency_summary": [
       {
-        "morning": 20.5,
-        "daytime": 40,
-        "evening": 34,
+        "morning": 15.5,
+        "daytime": 20,
+        "evening": 16,
         "day": "Monday"
       },
       {
-        "morning": 50,
-        "daytime": 40,
-        "evening": 40,
+        "morning": 32,
+        "daytime": 20,
+        "evening": 19.5,
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 40,
+        "morning": 30,
+        "daytime": 20,
+        "evening": 20,
         "day": "Sunday"
       }
     ],
     "peak_medians": [
       {
-        "Median AM Peak Wait": 21,
-        "Median PM Peak Wait": 20
+        "Median AM Peak Wait": 15,
+        "Median PM Peak Wait": 16
       }
     ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 341,
-        "span_end": 1297,
-        "full_coverage_start": 399,
-        "full_coverage_end": 1223
+        "span_start": 327,
+        "span_end": 1475,
+        "full_coverage_start": 363,
+        "full_coverage_end": 1438
       },
       {
         "day": "tuesday",
-        "span_start": 341,
-        "span_end": 1297,
-        "full_coverage_start": 399,
-        "full_coverage_end": 1223
+        "span_start": 327,
+        "span_end": 1475,
+        "full_coverage_start": 363,
+        "full_coverage_end": 1438
       },
       {
         "day": "wednesday",
-        "span_start": 341,
-        "span_end": 1297,
-        "full_coverage_start": 399,
-        "full_coverage_end": 1223
+        "span_start": 327,
+        "span_end": 1475,
+        "full_coverage_start": 363,
+        "full_coverage_end": 1438
       },
       {
         "day": "thursday",
-        "span_start": 341,
-        "span_end": 1297,
-        "full_coverage_start": 399,
-        "full_coverage_end": 1223
+        "span_start": 327,
+        "span_end": 1475,
+        "full_coverage_start": 363,
+        "full_coverage_end": 1438
       },
       {
         "day": "friday",
-        "span_start": 341,
-        "span_end": 1297,
-        "full_coverage_start": 399,
-        "full_coverage_end": 1223
+        "span_start": 327,
+        "span_end": 1475,
+        "full_coverage_start": 363,
+        "full_coverage_end": 1438
       },
       {
         "day": "saturday",
-        "span_start": 394,
-        "span_end": 1295,
-        "full_coverage_start": 447,
-        "full_coverage_end": 1221
+        "span_start": 392,
+        "span_end": 1473,
+        "full_coverage_start": 428,
+        "full_coverage_end": 1383
       },
       {
         "day": "sunday",
-        "span_start": 449,
-        "span_end": 1295,
-        "full_coverage_start": 510,
-        "full_coverage_end": 1221
+        "span_start": 415,
+        "span_end": 1392,
+        "full_coverage_start": 445,
+        "full_coverage_end": 1339
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 409,
-        "Weekly Distance (km)": 5690,
-        "Weekly Time (hr)": 198,
-        "Average Speed (km/hr)": 28.74
+        "Weekly Trip Count": 771,
+        "Weekly Distance (km)": 11437,
+        "Weekly Time (hr)": 469,
+        "Average Speed (km/hr)": 24.39
+      }
+    ]
+  },
+  "186": {
+    "mode_type": "4",
+    "route_number": "186",
+    "route_display": "186",
+    "route_bullet_code": "186",
+    "route_title_display": "Route 186",
+    "is_combined_corridor": false,
+    "route_colour": "FF8200",
+    "route_destination_1": "Tarneit Station",
+    "route_destination_0": "West Tarneit Station",
+    "frequency_summary": [
+      {
+        "morning": 17,
+        "daytime": 20,
+        "evening": 18.5,
+        "day": "Monday"
+      },
+      {
+        "morning": 24.5,
+        "daytime": 20,
+        "evening": 20,
+        "day": "Saturday"
+      },
+      {
+        "morning": 27.5,
+        "daytime": 20,
+        "evening": 20,
+        "day": "Sunday"
+      }
+    ],
+    "peak_medians": [
+      {
+        "Median AM Peak Wait": 17,
+        "Median PM Peak Wait": 14
+      }
+    ],
+    "span_stats": [
+      {
+        "day": "monday",
+        "span_start": 325,
+        "span_end": 1472,
+        "full_coverage_start": 367,
+        "full_coverage_end": 1430
+      },
+      {
+        "day": "tuesday",
+        "span_start": 325,
+        "span_end": 1472,
+        "full_coverage_start": 367,
+        "full_coverage_end": 1430
+      },
+      {
+        "day": "wednesday",
+        "span_start": 325,
+        "span_end": 1472,
+        "full_coverage_start": 367,
+        "full_coverage_end": 1430
+      },
+      {
+        "day": "thursday",
+        "span_start": 325,
+        "span_end": 1472,
+        "full_coverage_start": 367,
+        "full_coverage_end": 1430
+      },
+      {
+        "day": "friday",
+        "span_start": 325,
+        "span_end": 1472,
+        "full_coverage_start": 367,
+        "full_coverage_end": 1430
+      },
+      {
+        "day": "saturday",
+        "span_start": 392,
+        "span_end": 1467,
+        "full_coverage_start": 432,
+        "full_coverage_end": 1424
+      },
+      {
+        "day": "sunday",
+        "span_start": 417,
+        "span_end": 1389,
+        "full_coverage_start": 459,
+        "full_coverage_end": 1342
+      }
+    ],
+    "weekly_stats": [
+      {
+        "Weekly Trip Count": 770,
+        "Weekly Distance (km)": 6811,
+        "Weekly Time (hr)": 303,
+        "Average Speed (km/hr)": 22.48
       }
     ]
   },
@@ -3736,7 +3852,7 @@
     "frequency_summary": [
       {
         "morning": 7,
-        "daytime": 8,
+        "daytime": 6,
         "evening": 12,
         "day": "Monday"
       },
@@ -3756,30 +3872,30 @@
     "peak_medians": [
       {
         "Median AM Peak Wait": 6,
-        "Median PM Peak Wait": 6
+        "Median PM Peak Wait": 5
       }
     ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 332,
-        "span_end": 1486,
-        "full_coverage_start": 374,
-        "full_coverage_end": 1446
+        "span_start": 305,
+        "span_end": 1508,
+        "full_coverage_start": 377,
+        "full_coverage_end": 1436
       },
       {
         "day": "tuesday",
-        "span_start": 332,
-        "span_end": 1486,
-        "full_coverage_start": 374,
-        "full_coverage_end": 1446
+        "span_start": 305,
+        "span_end": 1508,
+        "full_coverage_start": 377,
+        "full_coverage_end": 1436
       },
       {
         "day": "wednesday",
-        "span_start": 332,
-        "span_end": 1486,
-        "full_coverage_start": 374,
-        "full_coverage_end": 1446
+        "span_start": 305,
+        "span_end": 1508,
+        "full_coverage_start": 377,
+        "full_coverage_end": 1436
       },
       {
         "day": "thursday",
@@ -3812,10 +3928,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1873,
-        "Weekly Distance (km)": 14582,
-        "Weekly Time (hr)": 1063,
-        "Average Speed (km/hr)": 13.72
+        "Weekly Trip Count": 2044,
+        "Weekly Distance (km)": 20447,
+        "Weekly Time (hr)": 1456,
+        "Average Speed (km/hr)": 14.04
       }
     ]
   },
@@ -4115,91 +4231,85 @@
     "route_title_display": "Route 194",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
-    "route_destination_1": "Wyndham Vale Station (via Mambourin)",
-    "route_destination_0": "Harpley (via Mambourin)",
+    "route_destination_1": "Wyndham Vale Station",
+    "route_destination_0": "Werribee Station",
     "frequency_summary": [
       {
-        "morning": 20,
-        "daytime": 40,
-        "evening": 19.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Monday"
       },
       {
-        "morning": 38.5,
-        "daytime": 40,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Saturday"
       },
       {
-        "morning": 38.5,
+        "morning": 39,
         "daytime": 40,
-        "evening": 40,
+        "evening": 39.5,
         "day": "Sunday"
-      }
-    ],
-    "peak_medians": [
-      {
-        "Median AM Peak Wait": 20,
-        "Median PM Peak Wait": 20
       }
     ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 335,
-        "span_end": 1351,
-        "full_coverage_start": 403,
-        "full_coverage_end": 1287
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "tuesday",
-        "span_start": 335,
-        "span_end": 1351,
-        "full_coverage_start": 403,
-        "full_coverage_end": 1287
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "wednesday",
-        "span_start": 335,
-        "span_end": 1351,
-        "full_coverage_start": 403,
-        "full_coverage_end": 1287
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "thursday",
-        "span_start": 335,
-        "span_end": 1351,
-        "full_coverage_start": 403,
-        "full_coverage_end": 1287
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "friday",
-        "span_start": 335,
-        "span_end": 1351,
-        "full_coverage_start": 403,
-        "full_coverage_end": 1287
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "saturday",
-        "span_start": 440,
-        "span_end": 1339,
-        "full_coverage_start": 503,
-        "full_coverage_end": 1267
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "sunday",
-        "span_start": 440,
-        "span_end": 1339,
-        "full_coverage_start": 503,
-        "full_coverage_end": 1267
+        "span_start": 429,
+        "span_end": 1417,
+        "full_coverage_start": 501,
+        "full_coverage_end": 1337
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 463,
-        "Weekly Distance (km)": 4107,
-        "Weekly Time (hr)": 263,
-        "Average Speed (km/hr)": 15.62
+        "Weekly Trip Count": 48,
+        "Weekly Distance (km)": 795,
+        "Weekly Time (hr)": 36,
+        "Average Speed (km/hr)": 22.08
       }
     ]
   },
@@ -4485,9 +4595,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 214,
-        "Weekly Distance (km)": 1496,
+        "Weekly Distance (km)": 1479,
         "Weekly Time (hr)": 86,
-        "Average Speed (km/hr)": 17.4
+        "Average Speed (km/hr)": 17.2
       }
     ]
   },
@@ -4767,9 +4877,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 649,
-        "Weekly Distance (km)": 11084,
+        "Weekly Distance (km)": 13997,
         "Weekly Time (hr)": 590,
-        "Average Speed (km/hr)": 18.79
+        "Average Speed (km/hr)": 23.72
       }
     ]
   },
@@ -5151,9 +5261,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 428,
-        "Weekly Distance (km)": 7173,
+        "Weekly Distance (km)": 6984,
         "Weekly Time (hr)": 273,
-        "Average Speed (km/hr)": 26.27
+        "Average Speed (km/hr)": 25.58
       }
     ]
   },
@@ -5343,9 +5453,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 293,
-        "Weekly Distance (km)": 5194,
+        "Weekly Distance (km)": 5192,
         "Weekly Time (hr)": 202,
-        "Average Speed (km/hr)": 25.71
+        "Average Speed (km/hr)": 25.7
       }
     ]
   },
@@ -5535,9 +5645,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 410,
-        "Weekly Distance (km)": 4611,
+        "Weekly Distance (km)": 4664,
         "Weekly Time (hr)": 211,
-        "Average Speed (km/hr)": 21.85
+        "Average Speed (km/hr)": 22.1
       }
     ]
   },
@@ -6207,9 +6317,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 538,
-        "Weekly Distance (km)": 8036,
+        "Weekly Distance (km)": 8031,
         "Weekly Time (hr)": 340,
-        "Average Speed (km/hr)": 23.64
+        "Average Speed (km/hr)": 23.62
       }
     ]
   },
@@ -6687,9 +6797,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 279,
-        "Weekly Distance (km)": 3193,
+        "Weekly Distance (km)": 3240,
         "Weekly Time (hr)": 162,
-        "Average Speed (km/hr)": 19.71
+        "Average Speed (km/hr)": 20
       }
     ]
   },
@@ -6879,9 +6989,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 922,
-        "Weekly Distance (km)": 6729,
+        "Weekly Distance (km)": 6766,
         "Weekly Time (hr)": 548,
-        "Average Speed (km/hr)": 12.28
+        "Average Speed (km/hr)": 12.35
       }
     ]
   },
@@ -7071,9 +7181,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 356,
-        "Weekly Distance (km)": 4695,
+        "Weekly Distance (km)": 4577,
         "Weekly Time (hr)": 211,
-        "Average Speed (km/hr)": 22.25
+        "Average Speed (km/hr)": 21.69
       }
     ]
   },
@@ -7198,8 +7308,8 @@
       },
       {
         "morning": 39,
-        "daytime": 39.5,
-        "evening": 29.5,
+        "daytime": 41,
+        "evening": 30,
         "day": "Sunday"
       }
     ],
@@ -7257,7 +7367,7 @@
         "span_start": 210,
         "span_end": 1431,
         "full_coverage_start": 261,
-        "full_coverage_end": 1351
+        "full_coverage_end": 1356
       }
     ],
     "weekly_stats": [
@@ -7294,8 +7404,8 @@
       },
       {
         "morning": 39.5,
-        "daytime": 20,
-        "evening": 30,
+        "daytime": 20.5,
+        "evening": 31,
         "day": "Sunday"
       }
     ],
@@ -7353,7 +7463,7 @@
         "span_start": 210,
         "span_end": 1411,
         "full_coverage_start": 261,
-        "full_coverage_end": 1368
+        "full_coverage_end": 1373
       }
     ],
     "weekly_stats": [
@@ -7390,7 +7500,7 @@
       },
       {
         "morning": null,
-        "daytime": 41,
+        "daytime": 41.5,
         "evening": null,
         "day": "Sunday"
       }
@@ -7551,9 +7661,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 350,
-        "Weekly Distance (km)": 3167,
+        "Weekly Distance (km)": 3222,
         "Weekly Time (hr)": 162,
-        "Average Speed (km/hr)": 19.55
+        "Average Speed (km/hr)": 19.89
       }
     ]
   },
@@ -7839,9 +7949,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 298,
-        "Weekly Distance (km)": 3336,
+        "Weekly Distance (km)": 3355,
         "Weekly Time (hr)": 124,
-        "Average Speed (km/hr)": 26.9
+        "Average Speed (km/hr)": 27.06
       }
     ]
   },
@@ -8913,7 +9023,7 @@
     "route_destination_0": null,
     "frequency_summary": [
       {
-        "morning": 39,
+        "morning": 21,
         "daytime": null,
         "evening": null,
         "day": "Monday"
@@ -8933,8 +9043,8 @@
     ],
     "peak_medians": [
       {
-        "Median AM Peak Wait": 47,
-        "Median PM Peak Wait": null
+        "Median AM Peak Wait": 37,
+        "Median PM Peak Wait": 42
       }
     ],
     "span_stats": [
@@ -8990,10 +9100,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 42,
-        "Weekly Distance (km)": 957,
-        "Weekly Time (hr)": 25,
-        "Average Speed (km/hr)": 38.28
+        "Weekly Trip Count": 52,
+        "Weekly Distance (km)": 1227,
+        "Weekly Time (hr)": 31,
+        "Average Speed (km/hr)": 39.58
       }
     ]
   },
@@ -9183,9 +9293,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 203,
-        "Weekly Distance (km)": 4633,
+        "Weekly Distance (km)": 4634,
         "Weekly Time (hr)": 132,
-        "Average Speed (km/hr)": 35.1
+        "Average Speed (km/hr)": 35.11
       }
     ]
   },
@@ -9471,9 +9581,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 730,
-        "Weekly Distance (km)": 3433,
+        "Weekly Distance (km)": 5983,
         "Weekly Time (hr)": 152,
-        "Average Speed (km/hr)": 22.59
+        "Average Speed (km/hr)": 39.36
       }
     ]
   },
@@ -10047,9 +10157,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 743,
-        "Weekly Distance (km)": 8233,
+        "Weekly Distance (km)": 8508,
         "Weekly Time (hr)": 354,
-        "Average Speed (km/hr)": 23.26
+        "Average Speed (km/hr)": 24.03
       }
     ]
   },
@@ -10143,9 +10253,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 90,
-        "Weekly Distance (km)": 2154,
+        "Weekly Distance (km)": 2292,
         "Weekly Time (hr)": 93,
-        "Average Speed (km/hr)": 23.16
+        "Average Speed (km/hr)": 24.65
       }
     ]
   },
@@ -10239,9 +10349,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 187,
-        "Weekly Distance (km)": 1835,
+        "Weekly Distance (km)": 1834,
         "Weekly Time (hr)": 64,
-        "Average Speed (km/hr)": 28.67
+        "Average Speed (km/hr)": 28.66
       }
     ]
   },
@@ -10527,9 +10637,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 248,
-        "Weekly Distance (km)": 5350,
+        "Weekly Distance (km)": 5351,
         "Weekly Time (hr)": 186,
-        "Average Speed (km/hr)": 28.76
+        "Average Speed (km/hr)": 28.77
       }
     ]
   },
@@ -10845,9 +10955,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40.5,
-        "daytime": 40,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -10902,18 +11012,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 447,
-        "span_end": 1301,
-        "full_coverage_start": 486,
-        "full_coverage_end": 1246
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 468,
-        "Weekly Distance (km)": 3131,
-        "Weekly Time (hr)": 141,
-        "Average Speed (km/hr)": 22.21
+        "Weekly Trip Count": 426,
+        "Weekly Distance (km)": 2850,
+        "Weekly Time (hr)": 129,
+        "Average Speed (km/hr)": 22.09
       }
     ]
   },
@@ -10941,9 +11051,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 41.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -10956,9 +11066,9 @@
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 310,
+        "span_start": 180,
         "span_end": 1338,
-        "full_coverage_start": 391,
+        "full_coverage_start": 180,
         "full_coverage_end": 1277
       },
       {
@@ -10998,18 +11108,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 180,
-        "span_end": 1310,
-        "full_coverage_start": 180,
-        "full_coverage_end": 1245
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 493,
-        "Weekly Distance (km)": 7499,
-        "Weekly Time (hr)": 363,
-        "Average Speed (km/hr)": 20.66
+        "Weekly Trip Count": 452,
+        "Weekly Distance (km)": 6868,
+        "Weekly Time (hr)": 330,
+        "Average Speed (km/hr)": 20.81
       }
     ]
   },
@@ -11037,9 +11147,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40.5,
-        "daytime": 40.5,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -11094,18 +11204,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 447,
-        "span_end": 1306,
-        "full_coverage_start": 484,
-        "full_coverage_end": 1248
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 468,
-        "Weekly Distance (km)": 3773,
-        "Weekly Time (hr)": 163,
-        "Average Speed (km/hr)": 23.15
+        "Weekly Trip Count": 426,
+        "Weekly Distance (km)": 3434,
+        "Weekly Time (hr)": 148,
+        "Average Speed (km/hr)": 23.2
       }
     ]
   },
@@ -11325,9 +11435,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 41.5,
-        "daytime": 40,
-        "evening": 42,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -11382,18 +11492,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 410,
-        "span_end": 1305,
-        "full_coverage_start": 482,
-        "full_coverage_end": 1248
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 413,
-        "Weekly Distance (km)": 7772,
-        "Weekly Time (hr)": 302,
-        "Average Speed (km/hr)": 25.74
+        "Weekly Trip Count": 370,
+        "Weekly Distance (km)": 6895,
+        "Weekly Time (hr)": 271,
+        "Average Speed (km/hr)": 25.44
       }
     ]
   },
@@ -11421,9 +11531,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 37.5,
-        "daytime": 40.5,
-        "evening": 41.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -11478,18 +11588,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 445,
-        "span_end": 1326,
-        "full_coverage_start": 535,
-        "full_coverage_end": 1238
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 444,
-        "Weekly Distance (km)": 13524,
-        "Weekly Time (hr)": 491,
-        "Average Speed (km/hr)": 27.54
+        "Weekly Trip Count": 401,
+        "Weekly Distance (km)": 11968,
+        "Weekly Time (hr)": 443,
+        "Average Speed (km/hr)": 27.02
       }
     ]
   },
@@ -11517,9 +11627,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 41,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -11574,18 +11684,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 448,
-        "span_end": 1344,
-        "full_coverage_start": 489,
-        "full_coverage_end": 1264
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 373,
-        "Weekly Distance (km)": 6488,
-        "Weekly Time (hr)": 261,
-        "Average Speed (km/hr)": 24.86
+        "Weekly Trip Count": 330,
+        "Weekly Distance (km)": 5742,
+        "Weekly Time (hr)": 232,
+        "Average Speed (km/hr)": 24.75
       }
     ]
   },
@@ -11614,8 +11724,8 @@
       },
       {
         "morning": null,
-        "daytime": 40,
-        "evening": 37,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -11670,18 +11780,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 502,
-        "span_end": 1292,
-        "full_coverage_start": 564,
-        "full_coverage_end": 1287
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 237,
-        "Weekly Distance (km)": 2475,
-        "Weekly Time (hr)": 62,
-        "Average Speed (km/hr)": 39.92
+        "Weekly Trip Count": 201,
+        "Weekly Distance (km)": 2299,
+        "Weekly Time (hr)": 57,
+        "Average Speed (km/hr)": 40.33
       }
     ]
   },
@@ -11709,9 +11819,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 39.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -11766,18 +11876,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 423,
-        "span_end": 1299,
-        "full_coverage_start": 458,
-        "full_coverage_end": 1265
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 455,
-        "Weekly Distance (km)": 10341,
-        "Weekly Time (hr)": 331,
-        "Average Speed (km/hr)": 31.24
+        "Weekly Trip Count": 411,
+        "Weekly Distance (km)": 9532,
+        "Weekly Time (hr)": 306,
+        "Average Speed (km/hr)": 31.15
       }
     ]
   },
@@ -11789,7 +11899,7 @@
     "route_title_display": "Route 386",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
-    "route_destination_1": "Cravens Rd, South Morang",
+    "route_destination_1": "Cravens Rd, South Morang Station",
     "route_destination_0": "Mernda Station (via South Morang)",
     "frequency_summary": [
       {
@@ -11805,9 +11915,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 38.5,
-        "daytime": 40,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -11820,9 +11930,9 @@
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 304,
+        "span_start": 180,
         "span_end": 1380,
-        "full_coverage_start": 372,
+        "full_coverage_start": 180,
         "full_coverage_end": 1251
       },
       {
@@ -11856,24 +11966,24 @@
       {
         "day": "saturday",
         "span_start": 388,
-        "span_end": 1867,
+        "span_end": 1620,
         "full_coverage_start": 467,
-        "full_coverage_end": 1283
+        "full_coverage_end": 1620
       },
       {
         "day": "sunday",
-        "span_start": 416,
-        "span_end": 1318,
-        "full_coverage_start": 467,
-        "full_coverage_end": 1269
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 497,
-        "Weekly Distance (km)": 9908,
-        "Weekly Time (hr)": 439,
-        "Average Speed (km/hr)": 22.57
+        "Weekly Trip Count": 451,
+        "Weekly Distance (km)": 8997,
+        "Weekly Time (hr)": 401,
+        "Average Speed (km/hr)": 22.44
       }
     ]
   },
@@ -11901,9 +12011,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 20,
-        "daytime": 20.5,
-        "evening": 20.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -11916,9 +12026,9 @@
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 304,
+        "span_start": 180,
         "span_end": 1380,
-        "full_coverage_start": 372,
+        "full_coverage_start": 180,
         "full_coverage_end": 1265
       },
       {
@@ -11952,24 +12062,24 @@
       {
         "day": "saturday",
         "span_start": 368,
-        "span_end": 1865,
+        "span_end": 1620,
         "full_coverage_start": 467,
-        "full_coverage_end": 1310
+        "full_coverage_end": 1620
       },
       {
         "day": "sunday",
-        "span_start": 411,
-        "span_end": 1342,
-        "full_coverage_start": 467,
-        "full_coverage_end": 1269
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 956,
-        "Weekly Distance (km)": 18145,
-        "Weekly Time (hr)": 798,
-        "Average Speed (km/hr)": 22.74
+        "Weekly Trip Count": 866,
+        "Weekly Distance (km)": 16437,
+        "Weekly Time (hr)": 726,
+        "Average Speed (km/hr)": 22.64
       }
     ]
   },
@@ -11997,9 +12107,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 39,
-        "daytime": 40,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -12054,18 +12164,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 411,
-        "span_end": 1342,
-        "full_coverage_start": 487,
-        "full_coverage_end": 1249
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 459,
-        "Weekly Distance (km)": 8862,
-        "Weekly Time (hr)": 376,
-        "Average Speed (km/hr)": 23.57
+        "Weekly Trip Count": 415,
+        "Weekly Distance (km)": 8006,
+        "Weekly Time (hr)": 340,
+        "Average Speed (km/hr)": 23.55
       }
     ]
   },
@@ -12093,9 +12203,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 39,
-        "daytime": 39,
-        "evening": 39,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -12150,18 +12260,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 419,
-        "span_end": 1343,
-        "full_coverage_start": 449,
-        "full_coverage_end": 1307
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 237,
-        "Weekly Distance (km)": 2893,
-        "Weekly Time (hr)": 145,
-        "Average Speed (km/hr)": 19.95
+        "Weekly Trip Count": 214,
+        "Weekly Distance (km)": 2612,
+        "Weekly Time (hr)": 131,
+        "Average Speed (km/hr)": 19.94
       }
     ]
   },
@@ -12285,9 +12395,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 41,
-        "daytime": 40,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -12342,18 +12452,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 455,
-        "span_end": 1364,
-        "full_coverage_start": 532,
-        "full_coverage_end": 1336
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 604,
-        "Weekly Distance (km)": 10668,
-        "Weekly Time (hr)": 357,
-        "Average Speed (km/hr)": 29.88
+        "Weekly Trip Count": 559,
+        "Weekly Distance (km)": 9874,
+        "Weekly Time (hr)": 332,
+        "Average Speed (km/hr)": 29.74
       }
     ]
   },
@@ -12727,8 +12837,8 @@
     "route_destination_0": "Laverton Station",
     "frequency_summary": [
       {
-        "morning": 28.5,
-        "daytime": 39.5,
+        "morning": 27.5,
+        "daytime": 39,
         "evening": 30,
         "day": "Monday"
       },
@@ -12740,7 +12850,7 @@
       },
       {
         "morning": null,
-        "daytime": 41.5,
+        "daytime": 40.5,
         "evening": 52,
         "day": "Sunday"
       }
@@ -12798,14 +12908,14 @@
         "day": "sunday",
         "span_start": 482,
         "span_end": 1273,
-        "full_coverage_start": 564,
-        "full_coverage_end": 1094
+        "full_coverage_start": 534,
+        "full_coverage_end": 1118
       }
     ],
     "weekly_stats": [
       {
         "Weekly Trip Count": 390,
-        "Weekly Distance (km)": 9055,
+        "Weekly Distance (km)": 9056,
         "Weekly Time (hr)": 353,
         "Average Speed (km/hr)": 25.65
       }
@@ -13027,9 +13137,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 39.5,
-        "daytime": 40,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -13084,18 +13194,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 398,
-        "span_end": 1372,
-        "full_coverage_start": 463,
-        "full_coverage_end": 1322
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 571,
-        "Weekly Distance (km)": 3396,
-        "Weekly Time (hr)": 187,
-        "Average Speed (km/hr)": 18.16
+        "Weekly Trip Count": 522,
+        "Weekly Distance (km)": 3105,
+        "Weekly Time (hr)": 173,
+        "Average Speed (km/hr)": 17.95
       }
     ]
   },
@@ -13189,9 +13299,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 718,
-        "Weekly Distance (km)": 9263,
+        "Weekly Distance (km)": 9276,
         "Weekly Time (hr)": 460,
-        "Average Speed (km/hr)": 20.14
+        "Average Speed (km/hr)": 20.17
       }
     ]
   },
@@ -13779,13 +13889,13 @@
     "route_title_display": "Route 411",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
-    "route_destination_1": "Footscray",
+    "route_destination_1": "Footscray Station",
     "route_destination_0": "Laverton Station",
     "frequency_summary": [
       {
         "morning": 28.5,
         "daytime": 40,
-        "evening": 51,
+        "evening": 50.5,
         "day": "Monday"
       },
       {
@@ -13804,7 +13914,7 @@
     "peak_medians": [
       {
         "Median AM Peak Wait": 30,
-        "Median PM Peak Wait": 33.5
+        "Median PM Peak Wait": 35
       }
     ],
     "span_stats": [
@@ -13971,7 +14081,7 @@
     "route_title_display": "Route 412",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
-    "route_destination_1": "Footscray",
+    "route_destination_1": "Footscray Station",
     "route_destination_0": "Laverton Station",
     "frequency_summary": [
       {
@@ -14372,8 +14482,8 @@
       },
       {
         "morning": null,
-        "daytime": 40.5,
-        "evening": 52.5,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -14428,18 +14538,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 486,
-        "span_end": 1276,
-        "full_coverage_start": 526,
-        "full_coverage_end": 1222
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 378,
-        "Weekly Distance (km)": 4195,
-        "Weekly Time (hr)": 192,
-        "Average Speed (km/hr)": 21.85
+        "Weekly Trip Count": 340,
+        "Weekly Distance (km)": 3772,
+        "Weekly Time (hr)": 174,
+        "Average Speed (km/hr)": 21.68
       }
     ]
   },
@@ -14468,8 +14578,8 @@
       },
       {
         "morning": null,
-        "daytime": 60,
-        "evening": 73,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -14524,18 +14634,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 499,
-        "span_end": 1296,
-        "full_coverage_start": 577,
-        "full_coverage_end": 1232
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 385,
-        "Weekly Distance (km)": 4510,
-        "Weekly Time (hr)": 202,
-        "Average Speed (km/hr)": 22.33
+        "Weekly Trip Count": 359,
+        "Weekly Distance (km)": 4332,
+        "Weekly Time (hr)": 188,
+        "Average Speed (km/hr)": 23.04
       }
     ]
   },
@@ -14821,7 +14931,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 650,
-        "Weekly Distance (km)": 11041,
+        "Weekly Distance (km)": 11042,
         "Weekly Time (hr)": 483,
         "Average Speed (km/hr)": 22.86
       }
@@ -14852,8 +14962,8 @@
       },
       {
         "morning": null,
-        "daytime": 60,
-        "evening": 62,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -14908,18 +15018,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 503,
-        "span_end": 1311,
-        "full_coverage_start": 570,
-        "full_coverage_end": 1247
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 287,
-        "Weekly Distance (km)": 5461,
-        "Weekly Time (hr)": 252,
-        "Average Speed (km/hr)": 21.67
+        "Weekly Trip Count": 260,
+        "Weekly Distance (km)": 5010,
+        "Weekly Time (hr)": 230,
+        "Average Speed (km/hr)": 21.78
       }
     ]
   },
@@ -15044,7 +15154,7 @@
       },
       {
         "morning": null,
-        "daytime": 40,
+        "daytime": null,
         "evening": null,
         "day": "Sunday"
       }
@@ -15100,18 +15210,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 482,
-        "span_end": 1161,
-        "full_coverage_start": 523,
-        "full_coverage_end": 1087
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 321,
-        "Weekly Distance (km)": 2730,
-        "Weekly Time (hr)": 108,
-        "Average Speed (km/hr)": 25.28
+        "Weekly Trip Count": 289,
+        "Weekly Distance (km)": 2456,
+        "Weekly Time (hr)": 98,
+        "Average Speed (km/hr)": 25.06
       }
     ]
   },
@@ -15140,8 +15250,8 @@
       },
       {
         "morning": null,
-        "daytime": 40,
-        "evening": 58,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -15196,18 +15306,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 524,
-        "span_end": 1203,
-        "full_coverage_start": 563,
-        "full_coverage_end": 1146
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 303,
-        "Weekly Distance (km)": 1861,
-        "Weekly Time (hr)": 74,
-        "Average Speed (km/hr)": 25.15
+        "Weekly Trip Count": 271,
+        "Weekly Distance (km)": 1662,
+        "Weekly Time (hr)": 67,
+        "Average Speed (km/hr)": 24.81
       }
     ]
   },
@@ -15235,9 +15345,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 55,
-        "daytime": 59.5,
-        "evening": 60.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -15292,18 +15402,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 468,
-        "span_end": 1293,
-        "full_coverage_start": 562,
-        "full_coverage_end": 1264
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 325,
-        "Weekly Distance (km)": 3510,
-        "Weekly Time (hr)": 168,
-        "Average Speed (km/hr)": 20.89
+        "Weekly Trip Count": 297,
+        "Weekly Distance (km)": 3205,
+        "Weekly Time (hr)": 155,
+        "Average Speed (km/hr)": 20.68
       }
     ]
   },
@@ -16357,9 +16467,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 332,
-        "Weekly Distance (km)": 2639,
+        "Weekly Distance (km)": 2638,
         "Weekly Time (hr)": 96,
-        "Average Speed (km/hr)": 27.49
+        "Average Speed (km/hr)": 27.48
       }
     ]
   },
@@ -16549,9 +16659,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 95,
-        "Weekly Distance (km)": 989,
+        "Weekly Distance (km)": 990,
         "Weekly Time (hr)": 33,
-        "Average Speed (km/hr)": 29.97
+        "Average Speed (km/hr)": 30
       }
     ]
   },
@@ -16563,7 +16673,7 @@
     "route_title_display": "Route 441",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
-    "route_destination_1": "Werribee Station (via Westleigh Gardens)",
+    "route_destination_1": "Westleigh Gardens",
     "route_destination_0": "Riverwalk Estate",
     "frequency_summary": [
       {
@@ -17029,9 +17139,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 95,
-        "Weekly Distance (km)": 907,
+        "Weekly Distance (km)": 912,
         "Weekly Time (hr)": 35,
-        "Average Speed (km/hr)": 25.91
+        "Average Speed (km/hr)": 26.06
       }
     ]
   },
@@ -17059,9 +17169,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -17116,18 +17226,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 381,
-        "span_end": 1397,
-        "full_coverage_start": 419,
-        "full_coverage_end": 1343
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 672,
-        "Weekly Distance (km)": 4707,
-        "Weekly Time (hr)": 228,
-        "Average Speed (km/hr)": 20.64
+        "Weekly Trip Count": 622,
+        "Weekly Distance (km)": 4357,
+        "Weekly Time (hr)": 212,
+        "Average Speed (km/hr)": 20.55
       }
     ]
   },
@@ -17509,9 +17619,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 247,
-        "Weekly Distance (km)": 2934,
+        "Weekly Distance (km)": 2935,
         "Weekly Time (hr)": 113,
-        "Average Speed (km/hr)": 25.96
+        "Average Speed (km/hr)": 25.97
       }
     ]
   },
@@ -17605,9 +17715,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 354,
-        "Weekly Distance (km)": 11859,
+        "Weekly Distance (km)": 11848,
         "Weekly Time (hr)": 369,
-        "Average Speed (km/hr)": 32.14
+        "Average Speed (km/hr)": 32.11
       }
     ]
   },
@@ -17923,9 +18033,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 46,
-        "daytime": 30,
-        "evening": 48,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -17980,18 +18090,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 384,
-        "span_end": 1295,
-        "full_coverage_start": 451,
-        "full_coverage_end": 1246
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 572,
-        "Weekly Distance (km)": 6963,
-        "Weekly Time (hr)": 271,
-        "Average Speed (km/hr)": 25.69
+        "Weekly Trip Count": 520,
+        "Weekly Distance (km)": 6321,
+        "Weekly Time (hr)": 248,
+        "Average Speed (km/hr)": 25.49
       }
     ]
   },
@@ -18019,9 +18129,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 64,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -18076,18 +18186,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 454,
-        "span_end": 1289,
-        "full_coverage_start": 490,
-        "full_coverage_end": 1234
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 331,
-        "Weekly Distance (km)": 3235,
-        "Weekly Time (hr)": 118,
-        "Average Speed (km/hr)": 27.42
+        "Weekly Trip Count": 292,
+        "Weekly Distance (km)": 2922,
+        "Weekly Time (hr)": 106,
+        "Average Speed (km/hr)": 27.57
       }
     ]
   },
@@ -18115,9 +18225,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 60,
-        "daytime": 60,
-        "evening": 63,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -18172,18 +18282,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 455,
-        "span_end": 1267,
-        "full_coverage_start": 534,
-        "full_coverage_end": 1178
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 428,
-        "Weekly Distance (km)": 6708,
-        "Weekly Time (hr)": 292,
-        "Average Speed (km/hr)": 22.97
+        "Weekly Trip Count": 402,
+        "Weekly Distance (km)": 6303,
+        "Weekly Time (hr)": 275,
+        "Average Speed (km/hr)": 22.92
       }
     ]
   },
@@ -18196,7 +18306,7 @@
     "is_combined_corridor": false,
     "route_colour": "FF8200",
     "route_destination_1": "Watergardens Station",
-    "route_destination_0": "Sanctuary Hills",
+    "route_destination_0": "Watergardens Station",
     "frequency_summary": [
       {
         "morning": 20,
@@ -18211,9 +18321,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 39,
-        "daytime": 39.5,
-        "evening": 37.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -18268,18 +18378,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 475,
-        "span_end": 1326,
-        "full_coverage_start": 512,
-        "full_coverage_end": 1271
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 445,
-        "Weekly Distance (km)": 3246,
-        "Weekly Time (hr)": 150,
-        "Average Speed (km/hr)": 21.64
+        "Weekly Trip Count": 404,
+        "Weekly Distance (km)": 2947,
+        "Weekly Time (hr)": 137,
+        "Average Speed (km/hr)": 21.51
       }
     ]
   },
@@ -18308,8 +18418,8 @@
       },
       {
         "morning": null,
-        "daytime": 40,
-        "evening": 46,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -18364,18 +18474,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 531,
-        "span_end": 1288,
-        "full_coverage_start": 569,
-        "full_coverage_end": 1234
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 885,
-        "Weekly Distance (km)": 7887,
-        "Weekly Time (hr)": 314,
-        "Average Speed (km/hr)": 25.12
+        "Weekly Trip Count": 848,
+        "Weekly Distance (km)": 7528,
+        "Weekly Time (hr)": 302,
+        "Average Speed (km/hr)": 24.93
       }
     ]
   },
@@ -18404,8 +18514,8 @@
       },
       {
         "morning": null,
-        "daytime": 29.5,
-        "evening": 33.5,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -18460,18 +18570,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 542,
-        "span_end": 1275,
-        "full_coverage_start": 565,
-        "full_coverage_end": 1252
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 675,
-        "Weekly Distance (km)": 2431,
-        "Weekly Time (hr)": 116,
-        "Average Speed (km/hr)": 20.96
+        "Weekly Trip Count": 625,
+        "Weekly Distance (km)": 2251,
+        "Weekly Time (hr)": 107,
+        "Average Speed (km/hr)": 21.04
       }
     ]
   },
@@ -18595,9 +18705,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 51,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -18652,18 +18762,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 459,
-        "span_end": 1323,
-        "full_coverage_start": 575,
-        "full_coverage_end": 1200
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 420,
-        "Weekly Distance (km)": 9622,
-        "Weekly Time (hr)": 429,
-        "Average Speed (km/hr)": 22.43
+        "Weekly Trip Count": 382,
+        "Weekly Distance (km)": 8756,
+        "Weekly Time (hr)": 391,
+        "Average Speed (km/hr)": 22.39
       }
     ]
   },
@@ -18979,9 +19089,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40.5,
-        "evening": 40.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -19036,18 +19146,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 447,
-        "span_end": 1347,
-        "full_coverage_start": 537,
-        "full_coverage_end": 1266
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 453,
-        "Weekly Distance (km)": 11158,
-        "Weekly Time (hr)": 503,
-        "Average Speed (km/hr)": 22.18
+        "Weekly Trip Count": 411,
+        "Weekly Distance (km)": 10151,
+        "Weekly Time (hr)": 456,
+        "Average Speed (km/hr)": 22.26
       }
     ]
   },
@@ -20843,9 +20953,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 254,
-        "Weekly Distance (km)": 2543,
+        "Weekly Distance (km)": 2542,
         "Weekly Time (hr)": 114,
-        "Average Speed (km/hr)": 22.31
+        "Average Speed (km/hr)": 22.3
       }
     ]
   },
@@ -21035,9 +21145,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 330,
-        "Weekly Distance (km)": 4726,
+        "Weekly Distance (km)": 4724,
         "Weekly Time (hr)": 204,
-        "Average Speed (km/hr)": 23.17
+        "Average Speed (km/hr)": 23.16
       }
     ]
   },
@@ -21227,7 +21337,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 350,
-        "Weekly Distance (km)": 8347,
+        "Weekly Distance (km)": 8346,
         "Weekly Time (hr)": 324,
         "Average Speed (km/hr)": 25.76
       }
@@ -21930,8 +22040,8 @@
       },
       {
         "morning": 40,
-        "daytime": 39.5,
-        "evening": 41,
+        "daytime": 40,
+        "evening": 42.5,
         "day": "Sunday"
       }
     ],
@@ -21987,9 +22097,9 @@
       {
         "day": "sunday",
         "span_start": 432,
-        "span_end": 1313,
+        "span_end": 1328,
         "full_coverage_start": 495,
-        "full_coverage_end": 1273
+        "full_coverage_end": 1276
       }
     ],
     "weekly_stats": [
@@ -22410,8 +22520,8 @@
       },
       {
         "morning": null,
-        "daytime": 40.5,
-        "evening": 43,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -22466,18 +22576,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 489,
-        "span_end": 1296,
-        "full_coverage_start": 537,
-        "full_coverage_end": 1254
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 545,
-        "Weekly Distance (km)": 6957,
-        "Weekly Time (hr)": 371,
-        "Average Speed (km/hr)": 18.75
+        "Weekly Trip Count": 503,
+        "Weekly Distance (km)": 6434,
+        "Weekly Time (hr)": 347,
+        "Average Speed (km/hr)": 18.54
       }
     ]
   },
@@ -22697,9 +22807,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 47,
-        "daytime": 40,
-        "evening": 48,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -22754,18 +22864,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 355,
-        "span_end": 1397,
-        "full_coverage_start": 395,
-        "full_coverage_end": 1350
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 428,
-        "Weekly Distance (km)": 9941,
-        "Weekly Time (hr)": 468,
-        "Average Speed (km/hr)": 21.24
+        "Weekly Trip Count": 380,
+        "Weekly Distance (km)": 9324,
+        "Weekly Time (hr)": 444,
+        "Average Speed (km/hr)": 21
       }
     ]
   },
@@ -22789,13 +22899,13 @@
       {
         "morning": 36.5,
         "daytime": 37.5,
-        "evening": 41.5,
+        "evening": 42,
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 37,
-        "evening": 41.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -22844,24 +22954,24 @@
       {
         "day": "saturday",
         "span_start": 357,
-        "span_end": 1454,
+        "span_end": 1451,
         "full_coverage_start": 432,
         "full_coverage_end": 1323
       },
       {
         "day": "sunday",
-        "span_start": 356,
-        "span_end": 1396,
-        "full_coverage_start": 490,
-        "full_coverage_end": 1327
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 806,
-        "Weekly Distance (km)": 22254,
-        "Weekly Time (hr)": 1074,
-        "Average Speed (km/hr)": 20.72
+        "Weekly Trip Count": 713,
+        "Weekly Distance (km)": 20111,
+        "Weekly Time (hr)": 978,
+        "Average Speed (km/hr)": 20.56
       }
     ]
   },
@@ -22878,7 +22988,7 @@
     "frequency_summary": [
       {
         "morning": 31.5,
-        "daytime": 40.5,
+        "daytime": 40,
         "evening": 37.5,
         "day": "Monday"
       },
@@ -22889,9 +22999,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 42.5,
-        "daytime": 40,
-        "evening": 47,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -22906,58 +23016,58 @@
         "day": "monday",
         "span_start": 325,
         "span_end": 1377,
-        "full_coverage_start": 449,
+        "full_coverage_start": 446,
         "full_coverage_end": 1282
       },
       {
         "day": "tuesday",
         "span_start": 325,
         "span_end": 1377,
-        "full_coverage_start": 449,
+        "full_coverage_start": 446,
         "full_coverage_end": 1282
       },
       {
         "day": "wednesday",
         "span_start": 325,
         "span_end": 1377,
-        "full_coverage_start": 449,
+        "full_coverage_start": 446,
         "full_coverage_end": 1282
       },
       {
         "day": "thursday",
         "span_start": 325,
         "span_end": 1377,
-        "full_coverage_start": 449,
+        "full_coverage_start": 446,
         "full_coverage_end": 1282
       },
       {
         "day": "friday",
         "span_start": 325,
         "span_end": 1377,
-        "full_coverage_start": 449,
+        "full_coverage_start": 446,
         "full_coverage_end": 1282
       },
       {
         "day": "saturday",
         "span_start": 378,
-        "span_end": 1454,
-        "full_coverage_start": 462,
+        "span_end": 1451,
+        "full_coverage_start": 460,
         "full_coverage_end": 1323
       },
       {
         "day": "sunday",
-        "span_start": 428,
-        "span_end": 1394,
-        "full_coverage_start": 513,
-        "full_coverage_end": 1258
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 378,
-        "Weekly Distance (km)": 12592,
-        "Weekly Time (hr)": 621,
-        "Average Speed (km/hr)": 20.28
+        "Weekly Trip Count": 333,
+        "Weekly Distance (km)": 11012,
+        "Weekly Time (hr)": 546,
+        "Average Speed (km/hr)": 20.17
       }
     ]
   },
@@ -22985,9 +23095,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 39,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -23042,18 +23152,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 416,
-        "span_end": 1359,
-        "full_coverage_start": 492,
-        "full_coverage_end": 1241
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 586,
-        "Weekly Distance (km)": 11198,
-        "Weekly Time (hr)": 488,
-        "Average Speed (km/hr)": 22.95
+        "Weekly Trip Count": 539,
+        "Weekly Distance (km)": 10303,
+        "Weekly Time (hr)": 452,
+        "Average Speed (km/hr)": 22.79
       }
     ]
   },
@@ -23081,9 +23191,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 40,
-        "daytime": 40,
-        "evening": 56.5,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -23138,18 +23248,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 434,
-        "span_end": 1226,
-        "full_coverage_start": 463,
-        "full_coverage_end": 1185
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 323,
-        "Weekly Distance (km)": 1838,
-        "Weekly Time (hr)": 86,
-        "Average Speed (km/hr)": 21.37
+        "Weekly Trip Count": 284,
+        "Weekly Distance (km)": 1616,
+        "Weekly Time (hr)": 76,
+        "Average Speed (km/hr)": 21.26
       }
     ]
   },
@@ -23723,9 +23833,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 585,
-        "Weekly Distance (km)": 7757,
+        "Weekly Distance (km)": 8211,
         "Weekly Time (hr)": 437,
-        "Average Speed (km/hr)": 17.75
+        "Average Speed (km/hr)": 18.79
       }
     ]
   },
@@ -24107,9 +24217,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 396,
-        "Weekly Distance (km)": 9501,
+        "Weekly Distance (km)": 9502,
         "Weekly Time (hr)": 319,
-        "Average Speed (km/hr)": 29.78
+        "Average Speed (km/hr)": 29.79
       }
     ]
   },
@@ -24986,7 +25096,7 @@
     "is_combined_corridor": false,
     "route_colour": "FF8200",
     "route_destination_1": "Marshall Station",
-    "route_destination_0": "Torquay",
+    "route_destination_0": "Marshall Station",
     "frequency_summary": [
       {
         "morning": 58.5,
@@ -24995,7 +25105,7 @@
         "day": "Monday"
       },
       {
-        "morning": 66,
+        "morning": 66.5,
         "daytime": 58.5,
         "evening": 78.5,
         "day": "Saturday"
@@ -25018,35 +25128,35 @@
         "day": "monday",
         "span_start": 376,
         "span_end": 1365,
-        "full_coverage_start": 472,
+        "full_coverage_start": 500,
         "full_coverage_end": 1270
       },
       {
         "day": "tuesday",
         "span_start": 376,
         "span_end": 1365,
-        "full_coverage_start": 472,
+        "full_coverage_start": 500,
         "full_coverage_end": 1270
       },
       {
         "day": "wednesday",
         "span_start": 376,
         "span_end": 1365,
-        "full_coverage_start": 472,
+        "full_coverage_start": 500,
         "full_coverage_end": 1270
       },
       {
         "day": "thursday",
         "span_start": 376,
         "span_end": 1365,
-        "full_coverage_start": 472,
+        "full_coverage_start": 500,
         "full_coverage_end": 1270
       },
       {
         "day": "friday",
         "span_start": 376,
         "span_end": 1365,
-        "full_coverage_start": 472,
+        "full_coverage_start": 500,
         "full_coverage_end": 1270
       },
       {
@@ -25259,9 +25369,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 534,
-        "Weekly Distance (km)": 11830,
+        "Weekly Distance (km)": 11383,
         "Weekly Time (hr)": 469,
-        "Average Speed (km/hr)": 25.22
+        "Average Speed (km/hr)": 24.27
       }
     ]
   },
@@ -25578,7 +25688,7 @@
       },
       {
         "morning": 40,
-        "daytime": 39.5,
+        "daytime": 40,
         "evening": 43,
         "day": "Sunday"
       }
@@ -25637,7 +25747,7 @@
         "span_start": 420,
         "span_end": 1340,
         "full_coverage_start": 494,
-        "full_coverage_end": 1241
+        "full_coverage_end": 1262
       }
     ],
     "weekly_stats": [
@@ -26027,7 +26137,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 176,
-        "Weekly Distance (km)": 7037,
+        "Weekly Distance (km)": 7038,
         "Weekly Time (hr)": 201,
         "Average Speed (km/hr)": 35.01
       }
@@ -26442,8 +26552,8 @@
       },
       {
         "morning": null,
-        "daytime": 29.5,
-        "evening": 30,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -26498,18 +26608,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 534,
-        "span_end": 1302,
-        "full_coverage_start": 559,
-        "full_coverage_end": 1277
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 253,
-        "Weekly Distance (km)": 2144,
-        "Weekly Time (hr)": 104,
-        "Average Speed (km/hr)": 20.62
+        "Weekly Trip Count": 228,
+        "Weekly Distance (km)": 1920,
+        "Weekly Time (hr)": 92,
+        "Average Speed (km/hr)": 20.87
       }
     ]
   },
@@ -26538,8 +26648,8 @@
       },
       {
         "morning": null,
-        "daytime": 45,
-        "evening": 45,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -26594,18 +26704,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 537,
-        "span_end": 1303,
-        "full_coverage_start": 582,
-        "full_coverage_end": 1261
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 502,
-        "Weekly Distance (km)": 6799,
-        "Weekly Time (hr)": 356,
-        "Average Speed (km/hr)": 19.1
+        "Weekly Trip Count": 468,
+        "Weekly Distance (km)": 6328,
+        "Weekly Time (hr)": 332,
+        "Average Speed (km/hr)": 19.06
       }
     ]
   },
@@ -26634,8 +26744,8 @@
       },
       {
         "morning": null,
-        "daytime": 45,
-        "evening": 45,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -26690,18 +26800,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 533,
-        "span_end": 1308,
-        "full_coverage_start": 580,
-        "full_coverage_end": 1262
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 497,
-        "Weekly Distance (km)": 9669,
-        "Weekly Time (hr)": 462,
-        "Average Speed (km/hr)": 20.93
+        "Weekly Trip Count": 463,
+        "Weekly Distance (km)": 9001,
+        "Weekly Time (hr)": 435,
+        "Average Speed (km/hr)": 20.69
       }
     ]
   },
@@ -26730,8 +26840,8 @@
       },
       {
         "morning": null,
-        "daytime": 29.5,
-        "evening": 29.5,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -26786,18 +26896,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 524,
-        "span_end": 1300,
-        "full_coverage_start": 552,
-        "full_coverage_end": 1277
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 244,
-        "Weekly Distance (km)": 2002,
-        "Weekly Time (hr)": 96,
-        "Average Speed (km/hr)": 20.85
+        "Weekly Trip Count": 218,
+        "Weekly Distance (km)": 1771,
+        "Weekly Time (hr)": 83,
+        "Average Speed (km/hr)": 21.34
       }
     ]
   },
@@ -27114,8 +27224,8 @@
       },
       {
         "morning": null,
-        "daytime": 41.5,
-        "evening": 40,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -27170,18 +27280,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 495,
-        "span_end": 1339,
-        "full_coverage_start": 583,
-        "full_coverage_end": 1276
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 608,
-        "Weekly Distance (km)": 11573,
-        "Weekly Time (hr)": 581,
-        "Average Speed (km/hr)": 19.92
+        "Weekly Trip Count": 567,
+        "Weekly Distance (km)": 10827,
+        "Weekly Time (hr)": 543,
+        "Average Speed (km/hr)": 19.94
       }
     ]
   },
@@ -27210,8 +27320,8 @@
       },
       {
         "morning": null,
-        "daytime": 40,
-        "evening": 40,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -27266,18 +27376,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 481,
-        "span_end": 1315,
-        "full_coverage_start": 554,
-        "full_coverage_end": 1281
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 412,
-        "Weekly Distance (km)": 3414,
-        "Weekly Time (hr)": 152,
-        "Average Speed (km/hr)": 22.46
+        "Weekly Trip Count": 371,
+        "Weekly Distance (km)": 3074,
+        "Weekly Time (hr)": 134,
+        "Average Speed (km/hr)": 22.94
       }
     ]
   },
@@ -27305,9 +27415,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 39.5,
-        "daytime": 40,
-        "evening": 39,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -27362,18 +27472,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 349,
-        "span_end": 1340,
-        "full_coverage_start": 473,
-        "full_coverage_end": 1084
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 512,
-        "Weekly Distance (km)": 15208,
-        "Weekly Time (hr)": 677,
-        "Average Speed (km/hr)": 22.46
+        "Weekly Trip Count": 464,
+        "Weekly Distance (km)": 13786,
+        "Weekly Time (hr)": 617,
+        "Average Speed (km/hr)": 22.34
       }
     ]
   },
@@ -27498,8 +27608,8 @@
       },
       {
         "morning": null,
-        "daytime": 40,
-        "evening": 40,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -27554,18 +27664,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 500,
-        "span_end": 1297,
-        "full_coverage_start": 534,
-        "full_coverage_end": 1263
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 404,
-        "Weekly Distance (km)": 3398,
-        "Weekly Time (hr)": 174,
-        "Average Speed (km/hr)": 19.53
+        "Weekly Trip Count": 364,
+        "Weekly Distance (km)": 3061,
+        "Weekly Time (hr)": 156,
+        "Average Speed (km/hr)": 19.62
       }
     ]
   },
@@ -27689,9 +27799,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 39.5,
-        "daytime": 40,
-        "evening": 40,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -27746,18 +27856,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 455,
-        "span_end": 1276,
-        "full_coverage_start": 492,
-        "full_coverage_end": 1246
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 541,
-        "Weekly Distance (km)": 3139,
-        "Weekly Time (hr)": 144,
-        "Average Speed (km/hr)": 21.8
+        "Weekly Trip Count": 499,
+        "Weekly Distance (km)": 2883,
+        "Weekly Time (hr)": 133,
+        "Average Speed (km/hr)": 21.68
       }
     ]
   },
@@ -27786,8 +27896,8 @@
       },
       {
         "morning": null,
-        "daytime": 56.5,
-        "evening": 44,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -27842,18 +27952,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 534,
-        "span_end": 1296,
-        "full_coverage_start": 574,
-        "full_coverage_end": 1244
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 482,
-        "Weekly Distance (km)": 3916,
-        "Weekly Time (hr)": 165,
-        "Average Speed (km/hr)": 23.73
+        "Weekly Trip Count": 448,
+        "Weekly Distance (km)": 3640,
+        "Weekly Time (hr)": 154,
+        "Average Speed (km/hr)": 23.64
       }
     ]
   },
@@ -27881,9 +27991,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 60,
-        "daytime": 60,
-        "evening": 60,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -27938,18 +28048,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 472,
-        "span_end": 1276,
-        "full_coverage_start": 567,
-        "full_coverage_end": 1192
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 295,
-        "Weekly Distance (km)": 4516,
-        "Weekly Time (hr)": 123,
-        "Average Speed (km/hr)": 36.72
+        "Weekly Trip Count": 269,
+        "Weekly Distance (km)": 4118,
+        "Weekly Time (hr)": 113,
+        "Average Speed (km/hr)": 36.44
       }
     ]
   },
@@ -27978,8 +28088,8 @@
       },
       {
         "morning": null,
-        "daytime": 60,
-        "evening": 59,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -28034,18 +28144,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 512,
-        "span_end": 1262,
-        "full_coverage_start": 586,
-        "full_coverage_end": 1169
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 294,
-        "Weekly Distance (km)": 3921,
-        "Weekly Time (hr)": 118,
-        "Average Speed (km/hr)": 33.23
+        "Weekly Trip Count": 269,
+        "Weekly Distance (km)": 3593,
+        "Weekly Time (hr)": 109,
+        "Average Speed (km/hr)": 32.96
       }
     ]
   },
@@ -28061,7 +28171,7 @@
     "route_destination_0": "West Coburg",
     "frequency_summary": [
       {
-        "morning": 7.5,
+        "morning": 7,
         "daytime": 10,
         "evening": 9.5,
         "day": "Monday"
@@ -28091,21 +28201,21 @@
         "span_start": 286,
         "span_end": 1514,
         "full_coverage_start": 353,
-        "full_coverage_end": 1452
+        "full_coverage_end": 1449
       },
       {
         "day": "tuesday",
         "span_start": 286,
         "span_end": 1514,
         "full_coverage_start": 353,
-        "full_coverage_end": 1452
+        "full_coverage_end": 1449
       },
       {
         "day": "wednesday",
         "span_start": 286,
         "span_end": 1514,
         "full_coverage_start": 353,
-        "full_coverage_end": 1452
+        "full_coverage_end": 1449
       },
       {
         "day": "thursday",
@@ -28138,10 +28248,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1752,
-        "Weekly Distance (km)": 23157,
-        "Weekly Time (hr)": 1570,
-        "Average Speed (km/hr)": 14.75
+        "Weekly Trip Count": 1776,
+        "Weekly Distance (km)": 29149,
+        "Weekly Time (hr)": 1885,
+        "Average Speed (km/hr)": 15.46
       }
     ]
   },
@@ -28170,8 +28280,8 @@
       },
       {
         "morning": null,
-        "daytime": 59,
-        "evening": 62,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -28226,18 +28336,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 516,
-        "span_end": 1295,
-        "full_coverage_start": 557,
-        "full_coverage_end": 1235
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 408,
-        "Weekly Distance (km)": 3562,
-        "Weekly Time (hr)": 140,
-        "Average Speed (km/hr)": 25.44
+        "Weekly Trip Count": 382,
+        "Weekly Distance (km)": 3330,
+        "Weekly Time (hr)": 131,
+        "Average Speed (km/hr)": 25.42
       }
     ]
   },
@@ -28265,9 +28375,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 19.5,
-        "daytime": 20,
-        "evening": 20,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Sunday"
       }
     ],
@@ -28322,18 +28432,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 423,
-        "span_end": 1176,
-        "full_coverage_start": 436,
-        "full_coverage_end": 1160
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 326,
-        "Weekly Distance (km)": 2599,
-        "Weekly Time (hr)": 89,
-        "Average Speed (km/hr)": 29.2
+        "Weekly Trip Count": 288,
+        "Weekly Distance (km)": 2299,
+        "Weekly Time (hr)": 79,
+        "Average Speed (km/hr)": 29.1
       }
     ]
   },
@@ -28376,24 +28486,24 @@
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 292,
-        "span_end": 1522,
-        "full_coverage_start": 360,
-        "full_coverage_end": 1432
+        "span_start": 293,
+        "span_end": 1523,
+        "full_coverage_start": 361,
+        "full_coverage_end": 1433
       },
       {
         "day": "tuesday",
-        "span_start": 292,
-        "span_end": 1522,
-        "full_coverage_start": 360,
-        "full_coverage_end": 1432
+        "span_start": 293,
+        "span_end": 1523,
+        "full_coverage_start": 361,
+        "full_coverage_end": 1433
       },
       {
         "day": "wednesday",
-        "span_start": 292,
-        "span_end": 1522,
-        "full_coverage_start": 360,
-        "full_coverage_end": 1432
+        "span_start": 293,
+        "span_end": 1523,
+        "full_coverage_start": 361,
+        "full_coverage_end": 1433
       },
       {
         "day": "thursday",
@@ -28427,7 +28537,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 1695,
-        "Weekly Distance (km)": 32417,
+        "Weekly Distance (km)": 32418,
         "Weekly Time (hr)": 1399,
         "Average Speed (km/hr)": 23.17
       }
@@ -28445,7 +28555,7 @@
     "route_destination_0": "Moreland",
     "frequency_summary": [
       {
-        "morning": 11.5,
+        "morning": 9,
         "daytime": 11.5,
         "evening": 12,
         "day": "Monday"
@@ -28465,8 +28575,8 @@
     ],
     "peak_medians": [
       {
-        "Median AM Peak Wait": 11,
-        "Median PM Peak Wait": 10
+        "Median AM Peak Wait": 9,
+        "Median PM Peak Wait": 8
       }
     ],
     "span_stats": [
@@ -28475,21 +28585,21 @@
         "span_start": 302,
         "span_end": 1514,
         "full_coverage_start": 374,
-        "full_coverage_end": 1458
+        "full_coverage_end": 1455
       },
       {
         "day": "tuesday",
         "span_start": 302,
         "span_end": 1514,
         "full_coverage_start": 374,
-        "full_coverage_end": 1458
+        "full_coverage_end": 1455
       },
       {
         "day": "wednesday",
         "span_start": 302,
         "span_end": 1514,
         "full_coverage_start": 374,
-        "full_coverage_end": 1458
+        "full_coverage_end": 1455
       },
       {
         "day": "thursday",
@@ -28522,10 +28632,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1380,
-        "Weekly Distance (km)": 27335,
-        "Weekly Time (hr)": 1503,
-        "Average Speed (km/hr)": 18.19
+        "Weekly Trip Count": 1428,
+        "Weekly Distance (km)": 28977,
+        "Weekly Time (hr)": 1601,
+        "Average Speed (km/hr)": 18.1
       }
     ]
   },
@@ -28715,9 +28825,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 158,
-        "Weekly Distance (km)": 1483,
+        "Weekly Distance (km)": 1507,
         "Weekly Time (hr)": 59,
-        "Average Speed (km/hr)": 25.14
+        "Average Speed (km/hr)": 25.54
       }
     ]
   },
@@ -28811,7 +28921,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 246,
-        "Weekly Distance (km)": 10528,
+        "Weekly Distance (km)": 10529,
         "Weekly Time (hr)": 261,
         "Average Speed (km/hr)": 40.34
       }
@@ -29771,9 +29881,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 211,
-        "Weekly Distance (km)": 7118,
+        "Weekly Distance (km)": 7119,
         "Weekly Time (hr)": 211,
-        "Average Speed (km/hr)": 33.73
+        "Average Speed (km/hr)": 33.74
       }
     ]
   },
@@ -30731,7 +30841,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 457,
-        "Weekly Distance (km)": 10575,
+        "Weekly Distance (km)": 10576,
         "Weekly Time (hr)": 471,
         "Average Speed (km/hr)": 22.45
       }
@@ -31115,9 +31225,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 316,
-        "Weekly Distance (km)": 9875,
-        "Weekly Time (hr)": 252,
-        "Average Speed (km/hr)": 39.19
+        "Weekly Distance (km)": 9843,
+        "Weekly Time (hr)": 251,
+        "Average Speed (km/hr)": 39.22
       }
     ]
   },
@@ -31146,7 +31256,7 @@
       },
       {
         "morning": 51,
-        "daytime": 65,
+        "daytime": 60.5,
         "evening": 55.5,
         "day": "Sunday"
       }
@@ -31204,16 +31314,16 @@
         "day": "sunday",
         "span_start": 472,
         "span_end": 1298,
-        "full_coverage_start": 574,
+        "full_coverage_start": 634,
         "full_coverage_end": 1022
       }
     ],
     "weekly_stats": [
       {
         "Weekly Trip Count": 484,
-        "Weekly Distance (km)": 9775,
+        "Weekly Distance (km)": 9769,
         "Weekly Time (hr)": 412,
-        "Average Speed (km/hr)": 23.73
+        "Average Speed (km/hr)": 23.71
       }
     ]
   },
@@ -31594,10 +31704,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 675,
-        "Weekly Distance (km)": 11182,
+        "Weekly Trip Count": 674,
+        "Weekly Distance (km)": 11160,
         "Weekly Time (hr)": 464,
-        "Average Speed (km/hr)": 24.1
+        "Average Speed (km/hr)": 24.05
       }
     ]
   },
@@ -32075,9 +32185,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 448,
-        "Weekly Distance (km)": 13030,
+        "Weekly Distance (km)": 13027,
         "Weekly Time (hr)": 421,
-        "Average Speed (km/hr)": 30.95
+        "Average Speed (km/hr)": 30.94
       }
     ]
   },
@@ -32259,17 +32369,17 @@
       {
         "day": "sunday",
         "span_start": 554,
-        "span_end": 1081,
+        "span_end": 1000,
         "full_coverage_start": 750,
-        "full_coverage_end": 955
+        "full_coverage_end": 925
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 92,
-        "Weekly Distance (km)": 2134,
+        "Weekly Trip Count": 91,
+        "Weekly Distance (km)": 2120,
         "Weekly Time (hr)": 79,
-        "Average Speed (km/hr)": 27.01
+        "Average Speed (km/hr)": 26.84
       }
     ]
   },
@@ -32662,7 +32772,7 @@
       },
       {
         "morning": null,
-        "daytime": 60,
+        "daytime": 60.5,
         "evening": 63,
         "day": "Sunday"
       }
@@ -32718,7 +32828,7 @@
       },
       {
         "day": "sunday",
-        "span_start": 506,
+        "span_start": 552,
         "span_end": 1348,
         "full_coverage_start": 654,
         "full_coverage_end": 1189
@@ -32726,10 +32836,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 376,
-        "Weekly Distance (km)": 10574,
-        "Weekly Time (hr)": 331,
-        "Average Speed (km/hr)": 31.95
+        "Weekly Trip Count": 370,
+        "Weekly Distance (km)": 10399,
+        "Weekly Time (hr)": 325,
+        "Average Speed (km/hr)": 32
       }
     ]
   },
@@ -32854,8 +32964,8 @@
       },
       {
         "morning": null,
-        "daytime": 60.5,
-        "evening": 59,
+        "daytime": null,
+        "evening": 60,
         "day": "Sunday"
       }
     ],
@@ -32913,15 +33023,15 @@
         "span_start": 535,
         "span_end": 1301,
         "full_coverage_start": 578,
-        "full_coverage_end": 1243
+        "full_coverage_end": 1187
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 320,
-        "Weekly Distance (km)": 4968,
-        "Weekly Time (hr)": 194,
-        "Average Speed (km/hr)": 25.61
+        "Weekly Trip Count": 314,
+        "Weekly Distance (km)": 4875,
+        "Weekly Time (hr)": 191,
+        "Average Speed (km/hr)": 25.52
       }
     ]
   },
@@ -33014,10 +33124,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 424,
-        "Weekly Distance (km)": 10294,
-        "Weekly Time (hr)": 375,
-        "Average Speed (km/hr)": 27.45
+        "Weekly Trip Count": 426,
+        "Weekly Distance (km)": 10332,
+        "Weekly Time (hr)": 376,
+        "Average Speed (km/hr)": 27.48
       }
     ]
   },
@@ -33046,7 +33156,7 @@
       },
       {
         "morning": null,
-        "daytime": 60,
+        "daytime": 61,
         "evening": 66.5,
         "day": "Sunday"
       }
@@ -33104,16 +33214,16 @@
         "day": "sunday",
         "span_start": 517,
         "span_end": 1337,
-        "full_coverage_start": 573,
+        "full_coverage_start": 629,
         "full_coverage_end": 1256
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 468,
-        "Weekly Distance (km)": 12784,
-        "Weekly Time (hr)": 432,
-        "Average Speed (km/hr)": 29.59
+        "Weekly Trip Count": 474,
+        "Weekly Distance (km)": 12795,
+        "Weekly Time (hr)": 433,
+        "Average Speed (km/hr)": 29.55
       }
     ]
   },
@@ -33232,7 +33342,7 @@
       },
       {
         "morning": null,
-        "daytime": 104,
+        "daytime": null,
         "evening": 84,
         "day": "Sunday"
       }
@@ -33296,10 +33406,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 337,
-        "Weekly Distance (km)": 8364,
-        "Weekly Time (hr)": 209,
-        "Average Speed (km/hr)": 40.02
+        "Weekly Trip Count": 338,
+        "Weekly Distance (km)": 8315,
+        "Weekly Time (hr)": 207,
+        "Average Speed (km/hr)": 40.17
       }
     ]
   },
@@ -34341,7 +34451,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 415,
-        "Weekly Distance (km)": 11221,
+        "Weekly Distance (km)": 11220,
         "Weekly Time (hr)": 531,
         "Average Speed (km/hr)": 21.13
       }
@@ -34533,9 +34643,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 36,
-        "Weekly Distance (km)": 539,
+        "Weekly Distance (km)": 546,
         "Weekly Time (hr)": 14,
-        "Average Speed (km/hr)": 38.5
+        "Average Speed (km/hr)": 39
       }
     ]
   },
@@ -34659,9 +34769,9 @@
         "day": "Saturday"
       },
       {
-        "morning": 54,
+        "morning": 64,
         "daytime": 50.5,
-        "evening": 47.5,
+        "evening": 30.5,
         "day": "Sunday"
       }
     ],
@@ -34724,10 +34834,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1808,
-        "Weekly Distance (km)": 19935,
-        "Weekly Time (hr)": 657,
-        "Average Speed (km/hr)": 30.34
+        "Weekly Trip Count": 1790,
+        "Weekly Distance (km)": 19788,
+        "Weekly Time (hr)": 653,
+        "Average Speed (km/hr)": 30.3
       }
     ]
   },
@@ -34908,18 +35018,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 506,
+        "span_start": 636,
         "span_end": 1323,
-        "full_coverage_start": 558,
+        "full_coverage_start": 690,
         "full_coverage_end": 1269
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 426,
-        "Weekly Distance (km)": 4384,
-        "Weekly Time (hr)": 191,
-        "Average Speed (km/hr)": 22.95
+        "Weekly Trip Count": 422,
+        "Weekly Distance (km)": 4342,
+        "Weekly Time (hr)": 190,
+        "Average Speed (km/hr)": 22.85
       }
     ]
   },
@@ -34948,7 +35058,7 @@
       },
       {
         "morning": null,
-        "daytime": 59.5,
+        "daytime": null,
         "evening": 60,
         "day": "Sunday"
       }
@@ -35012,10 +35122,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 334,
-        "Weekly Distance (km)": 5428,
-        "Weekly Time (hr)": 237,
-        "Average Speed (km/hr)": 22.9
+        "Weekly Trip Count": 330,
+        "Weekly Distance (km)": 5363,
+        "Weekly Time (hr)": 235,
+        "Average Speed (km/hr)": 22.82
       }
     ]
   },
@@ -35044,7 +35154,7 @@
       },
       {
         "morning": null,
-        "daytime": 53,
+        "daytime": 40.5,
         "evening": 67,
         "day": "Sunday"
       }
@@ -35102,16 +35212,16 @@
         "day": "sunday",
         "span_start": 530,
         "span_end": 1283,
-        "full_coverage_start": 595,
+        "full_coverage_start": 668,
         "full_coverage_end": 1222
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 363,
-        "Weekly Distance (km)": 9615,
-        "Weekly Time (hr)": 372,
-        "Average Speed (km/hr)": 25.85
+        "Weekly Trip Count": 354,
+        "Weekly Distance (km)": 9317,
+        "Weekly Time (hr)": 361,
+        "Average Speed (km/hr)": 25.81
       }
     ]
   },
@@ -35140,8 +35250,8 @@
       },
       {
         "morning": 40,
-        "daytime": 43,
-        "evening": 42,
+        "daytime": 36.5,
+        "evening": 58.5,
         "day": "Sunday"
       }
     ],
@@ -35199,15 +35309,15 @@
         "span_start": 475,
         "span_end": 1334,
         "full_coverage_start": 586,
-        "full_coverage_end": 1233
+        "full_coverage_end": 1215
       }
     ],
     "weekly_stats": [
       {
         "Weekly Trip Count": 515,
-        "Weekly Distance (km)": 15973,
-        "Weekly Time (hr)": 620,
-        "Average Speed (km/hr)": 25.76
+        "Weekly Distance (km)": 15834,
+        "Weekly Time (hr)": 616,
+        "Average Speed (km/hr)": 25.7
       }
     ]
   },
@@ -35301,9 +35411,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 289,
-        "Weekly Distance (km)": 3207,
+        "Weekly Distance (km)": 3206,
         "Weekly Time (hr)": 135,
-        "Average Speed (km/hr)": 23.76
+        "Average Speed (km/hr)": 23.75
       }
     ]
   },
@@ -35397,9 +35507,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 50,
-        "Weekly Distance (km)": 266,
+        "Weekly Distance (km)": 253,
         "Weekly Time (hr)": 14,
-        "Average Speed (km/hr)": 19
+        "Average Speed (km/hr)": 18.07
       }
     ]
   },
@@ -35492,10 +35602,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 471,
-        "Weekly Distance (km)": 11154,
-        "Weekly Time (hr)": 522,
-        "Average Speed (km/hr)": 21.37
+        "Weekly Trip Count": 469,
+        "Weekly Distance (km)": 11099,
+        "Weekly Time (hr)": 520,
+        "Average Speed (km/hr)": 21.34
       }
     ]
   },
@@ -35760,10 +35870,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 448,
-        "Weekly Distance (km)": 8745,
+        "Weekly Trip Count": 447,
+        "Weekly Distance (km)": 8726,
         "Weekly Time (hr)": 326,
-        "Average Speed (km/hr)": 26.83
+        "Average Speed (km/hr)": 26.77
       }
     ]
   },
@@ -35856,10 +35966,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 379,
-        "Weekly Distance (km)": 5286,
-        "Weekly Time (hr)": 202,
-        "Average Speed (km/hr)": 26.17
+        "Weekly Trip Count": 375,
+        "Weekly Distance (km)": 5226,
+        "Weekly Time (hr)": 200,
+        "Average Speed (km/hr)": 26.13
       }
     ]
   },
@@ -35944,18 +36054,18 @@
       },
       {
         "day": "sunday",
-        "span_start": 527,
+        "span_start": 655,
         "span_end": 1280,
-        "full_coverage_start": 585,
+        "full_coverage_start": 714,
         "full_coverage_end": 1219
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 359,
-        "Weekly Distance (km)": 7643,
-        "Weekly Time (hr)": 292,
-        "Average Speed (km/hr)": 26.17
+        "Weekly Trip Count": 355,
+        "Weekly Distance (km)": 7542,
+        "Weekly Time (hr)": 288,
+        "Average Speed (km/hr)": 26.19
       }
     ]
   },
@@ -36272,8 +36382,8 @@
       },
       {
         "morning": null,
-        "daytime": 61.5,
-        "evening": 58.5,
+        "daytime": 0,
+        "evening": 57,
         "day": "Sunday"
       }
     ],
@@ -36336,10 +36446,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 434,
-        "Weekly Distance (km)": 6840,
-        "Weekly Time (hr)": 324,
-        "Average Speed (km/hr)": 21.11
+        "Weekly Trip Count": 430,
+        "Weekly Distance (km)": 6649,
+        "Weekly Time (hr)": 321,
+        "Average Speed (km/hr)": 20.71
       }
     ]
   },
@@ -37766,24 +37876,24 @@
     "is_combined_corridor": true,
     "route_colour": "FF8200",
     "route_destination_1": "Frankston Station/Young St",
-    "route_destination_0": "Peninsula Home SC/Nepean Hwy",
+    "route_destination_0": "Barkly Street Bus Interchange/Barkly St",
     "frequency_summary": [
       {
-        "morning": 23,
-        "daytime": 20.5,
-        "evening": 19.5,
+        "morning": 25,
+        "daytime": 22.5,
+        "evening": 21,
         "day": "Monday"
       },
       {
-        "morning": 20,
-        "daytime": 20,
-        "evening": 19.5,
+        "morning": 22,
+        "daytime": 22,
+        "evening": 21.5,
         "day": "Saturday"
       },
       {
-        "morning": 20.5,
-        "daytime": 20,
-        "evening": 20,
+        "morning": 22.5,
+        "daytime": 22,
+        "evening": 22,
         "day": "Sunday"
       }
     ],
@@ -37796,50 +37906,50 @@
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 314,
-        "span_end": 1405,
+        "span_start": 298,
+        "span_end": 1408,
         "full_coverage_start": 339,
         "full_coverage_end": 1357
       },
       {
         "day": "tuesday",
-        "span_start": 314,
-        "span_end": 1405,
+        "span_start": 298,
+        "span_end": 1408,
         "full_coverage_start": 339,
         "full_coverage_end": 1357
       },
       {
         "day": "wednesday",
-        "span_start": 314,
-        "span_end": 1405,
+        "span_start": 298,
+        "span_end": 1408,
         "full_coverage_start": 339,
         "full_coverage_end": 1357
       },
       {
         "day": "thursday",
-        "span_start": 314,
-        "span_end": 1405,
+        "span_start": 298,
+        "span_end": 1408,
         "full_coverage_start": 339,
         "full_coverage_end": 1357
       },
       {
         "day": "friday",
-        "span_start": 314,
-        "span_end": 1405,
+        "span_start": 298,
+        "span_end": 1408,
         "full_coverage_start": 339,
         "full_coverage_end": 1357
       },
       {
         "day": "saturday",
-        "span_start": 344,
-        "span_end": 1380,
+        "span_start": 322,
+        "span_end": 1383,
         "full_coverage_start": 398,
         "full_coverage_end": 1347
       },
       {
         "day": "sunday",
-        "span_start": 343,
-        "span_end": 1365,
+        "span_start": 320,
+        "span_end": 1382,
         "full_coverage_start": 391,
         "full_coverage_end": 1340
       }
@@ -37847,9 +37957,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 731,
-        "Weekly Distance (km)": 8772,
-        "Weekly Time (hr)": 276,
-        "Average Speed (km/hr)": 31.78
+        "Weekly Distance (km)": 12912,
+        "Weekly Time (hr)": 429,
+        "Average Speed (km/hr)": 30.1
       }
     ]
   },
@@ -37861,8 +37971,8 @@
     "route_title_display": "Route 782",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
-    "route_destination_1": "Hastings",
-    "route_destination_0": "Hastings",
+    "route_destination_1": "Frankston Station",
+    "route_destination_0": "Balnarring Village SC",
     "frequency_summary": [
       {
         "morning": 69.5,
@@ -38053,8 +38163,8 @@
     "route_title_display": "Route 783",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
-    "route_destination_1": "Somerville",
-    "route_destination_0": "Somerville",
+    "route_destination_1": "Frankston Station",
+    "route_destination_0": "Hastings SC",
     "frequency_summary": [
       {
         "morning": 95,
@@ -38231,9 +38341,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 243,
-        "Weekly Distance (km)": 5625,
+        "Weekly Distance (km)": 5623,
         "Weekly Time (hr)": 199,
-        "Average Speed (km/hr)": 28.27
+        "Average Speed (km/hr)": 28.26
       }
     ]
   },
@@ -38249,7 +38359,7 @@
     "route_destination_0": "Mornington East",
     "frequency_summary": [
       {
-        "morning": 64,
+        "morning": 63.5,
         "daytime": 60.5,
         "evening": 65.5,
         "day": "Monday"
@@ -38327,9 +38437,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 242,
-        "Weekly Distance (km)": 5095,
+        "Weekly Distance (km)": 5101,
         "Weekly Time (hr)": 174,
-        "Average Speed (km/hr)": 29.28
+        "Average Speed (km/hr)": 29.32
       }
     ]
   },
@@ -40649,7 +40759,7 @@
     "route_destination_0": "Footscray",
     "frequency_summary": [
       {
-        "morning": 15,
+        "morning": 15.5,
         "daytime": 15,
         "evening": 13.5,
         "day": "Monday"
@@ -41207,9 +41317,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 502,
-        "Weekly Distance (km)": 6998,
+        "Weekly Distance (km)": 6996,
         "Weekly Time (hr)": 323,
-        "Average Speed (km/hr)": 21.67
+        "Average Speed (km/hr)": 21.66
       }
     ]
   },
@@ -41303,7 +41413,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 559,
-        "Weekly Distance (km)": 20577,
+        "Weekly Distance (km)": 20578,
         "Weekly Time (hr)": 931,
         "Average Speed (km/hr)": 22.1
       }
@@ -44273,9 +44383,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 334,
-        "Weekly Distance (km)": 3650,
+        "Weekly Distance (km)": 3646,
         "Weekly Time (hr)": 143,
-        "Average Speed (km/hr)": 25.52
+        "Average Speed (km/hr)": 25.5
       }
     ]
   },
@@ -44657,9 +44767,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 220,
-        "Weekly Distance (km)": 2344,
+        "Weekly Distance (km)": 2342,
         "Weekly Time (hr)": 91,
-        "Average Speed (km/hr)": 25.76
+        "Average Speed (km/hr)": 25.74
       }
     ]
   },
@@ -46097,9 +46207,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 989,
-        "Weekly Distance (km)": 25106,
+        "Weekly Distance (km)": 26589,
         "Weekly Time (hr)": 904,
-        "Average Speed (km/hr)": 27.77
+        "Average Speed (km/hr)": 29.41
       }
     ]
   },
@@ -46193,7 +46303,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 915,
-        "Weekly Distance (km)": 30308,
+        "Weekly Distance (km)": 30309,
         "Weekly Time (hr)": 910,
         "Average Speed (km/hr)": 33.31
       }
@@ -46289,7 +46399,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 1052,
-        "Weekly Distance (km)": 27237,
+        "Weekly Distance (km)": 27238,
         "Weekly Time (hr)": 1022,
         "Average Speed (km/hr)": 26.65
       }
@@ -46385,7 +46495,7 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 874,
-        "Weekly Distance (km)": 10946,
+        "Weekly Distance (km)": 10947,
         "Weekly Time (hr)": 376,
         "Average Speed (km/hr)": 29.11
       }
@@ -46961,9 +47071,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 347,
-        "Weekly Distance (km)": 7570,
+        "Weekly Distance (km)": 7494,
         "Weekly Time (hr)": 304,
-        "Average Speed (km/hr)": 24.9
+        "Average Speed (km/hr)": 24.65
       }
     ]
   },
@@ -47197,9 +47307,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 19,
-        "Weekly Distance (km)": 580,
+        "Weekly Distance (km)": 599,
         "Weekly Time (hr)": 16,
-        "Average Speed (km/hr)": 36.25
+        "Average Speed (km/hr)": 37.44
       }
     ]
   },
@@ -47421,8 +47531,8 @@
     "route_title_display": "Route 953",
     "is_combined_corridor": false,
     "route_colour": "FF8200",
-    "route_destination_1": "Broadmeadows Station",
-    "route_destination_0": "Our Ladys Catholic Primary School",
+    "route_destination_1": "Meadow Heights",
+    "route_destination_0": "Meadow Heights",
     "span_stats": [
       {
         "day": "monday",
@@ -47477,9 +47587,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 16,
-        "Weekly Distance (km)": 266,
+        "Weekly Distance (km)": 260,
         "Weekly Time (hr)": 8,
-        "Average Speed (km/hr)": 33.25
+        "Average Speed (km/hr)": 32.5
       }
     ]
   },
@@ -48173,8 +48283,8 @@
     "route_title_display": "Albury Line",
     "is_combined_corridor": false,
     "route_colour": "8F1A95",
-    "route_destination_1": "Southern Cross Station",
-    "route_destination_0": "Albury Station",
+    "route_destination_1": "Southern Cross",
+    "route_destination_0": "Albury",
     "frequency_summary": [
       {
         "morning": null,
@@ -48195,26 +48305,20 @@
         "day": "Sunday"
       }
     ],
-    "peak_medians": [
-      {
-        "Median AM Peak Wait": null,
-        "Median PM Peak Wait": null
-      }
-    ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 405,
-        "span_end": 1298,
-        "full_coverage_start": 517,
-        "full_coverage_end": 1082
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "tuesday",
-        "span_start": 405,
-        "span_end": 1298,
-        "full_coverage_start": 517,
-        "full_coverage_end": 1082
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "wednesday",
@@ -48254,10 +48358,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 39,
-        "Weekly Distance (km)": 13345,
-        "Weekly Time (hr)": 144,
-        "Average Speed (km/hr)": 92.67
+        "Weekly Trip Count": 29,
+        "Weekly Distance (km)": 9924,
+        "Weekly Time (hr)": 107,
+        "Average Speed (km/hr)": 92.75
       }
     ]
   },
@@ -48269,8 +48373,8 @@
     "route_title_display": "Ararat Line",
     "is_combined_corridor": false,
     "route_colour": "8F1A95",
-    "route_destination_1": "Southern Cross Station",
-    "route_destination_0": "Ararat Station",
+    "route_destination_1": "Southern Cross",
+    "route_destination_0": "Ararat",
     "frequency_summary": [
       {
         "morning": 43,
@@ -48279,7 +48383,7 @@
         "day": "Monday"
       },
       {
-        "morning": 86,
+        "morning": 84.5,
         "daytime": null,
         "evening": null,
         "day": "Saturday"
@@ -48314,22 +48418,22 @@
       },
       {
         "day": "wednesday",
-        "span_start": 370,
-        "span_end": 1240,
+        "span_start": 373,
+        "span_end": 1237,
         "full_coverage_start": 510,
         "full_coverage_end": 1140
       },
       {
         "day": "thursday",
-        "span_start": 370,
-        "span_end": 1240,
+        "span_start": 373,
+        "span_end": 1237,
         "full_coverage_start": 510,
         "full_coverage_end": 1140
       },
       {
         "day": "friday",
-        "span_start": 370,
-        "span_end": 1240,
+        "span_start": 373,
+        "span_end": 1237,
         "full_coverage_start": 510,
         "full_coverage_end": 1140
       },
@@ -48342,8 +48446,8 @@
       },
       {
         "day": "sunday",
-        "span_start": 416,
-        "span_end": 1425,
+        "span_start": 419,
+        "span_end": 1422,
         "full_coverage_start": 520,
         "full_coverage_end": 1275
       }
@@ -48352,8 +48456,8 @@
       {
         "Weekly Trip Count": 70,
         "Weekly Distance (km)": 13811,
-        "Weekly Time (hr)": 168,
-        "Average Speed (km/hr)": 82.21
+        "Weekly Time (hr)": 166,
+        "Average Speed (km/hr)": 83.2
       }
     ]
   },
@@ -48461,8 +48565,8 @@
     "route_title_display": "Bairnsdale Line",
     "is_combined_corridor": false,
     "route_colour": "8F1A95",
-    "route_destination_1": "Southern Cross Station",
-    "route_destination_0": "Bairnsdale Station",
+    "route_destination_1": "Southern Cross",
+    "route_destination_0": "Bairnsdale",
     "frequency_summary": [
       {
         "morning": null,
@@ -48495,21 +48599,21 @@
         "span_start": 380,
         "span_end": 1346,
         "full_coverage_start": 535,
-        "full_coverage_end": 1100
+        "full_coverage_end": 1221
       },
       {
         "day": "tuesday",
         "span_start": 380,
         "span_end": 1346,
         "full_coverage_start": 535,
-        "full_coverage_end": 1100
+        "full_coverage_end": 1221
       },
       {
         "day": "wednesday",
         "span_start": 380,
         "span_end": 1346,
         "full_coverage_start": 535,
-        "full_coverage_end": 1100
+        "full_coverage_end": 1221
       },
       {
         "day": "thursday",
@@ -48543,9 +48647,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 42,
-        "Weekly Distance (km)": 11401,
-        "Weekly Time (hr)": 165,
-        "Average Speed (km/hr)": 69.1
+        "Weekly Distance (km)": 11582,
+        "Weekly Time (hr)": 168,
+        "Average Speed (km/hr)": 68.94
       }
     ]
   },
@@ -48563,7 +48667,7 @@
       {
         "morning": 50.5,
         "daytime": 50.5,
-        "evening": 41,
+        "evening": 40.5,
         "day": "Monday"
       },
       {
@@ -48582,23 +48686,23 @@
     "peak_medians": [
       {
         "Median AM Peak Wait": 40,
-        "Median PM Peak Wait": 27
+        "Median PM Peak Wait": 26.5
       }
     ],
     "span_stats": [
       {
         "day": "monday",
         "span_start": 263,
-        "span_end": 1521,
+        "span_end": 1265,
         "full_coverage_start": 326,
-        "full_coverage_end": 1465
+        "full_coverage_end": 1195
       },
       {
         "day": "tuesday",
         "span_start": 263,
-        "span_end": 1521,
+        "span_end": 1265,
         "full_coverage_start": 326,
-        "full_coverage_end": 1465
+        "full_coverage_end": 1195
       },
       {
         "day": "wednesday",
@@ -48638,10 +48742,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 395,
-        "Weekly Distance (km)": 42733,
-        "Weekly Time (hr)": 575,
-        "Average Speed (km/hr)": 74.32
+        "Weekly Trip Count": 369,
+        "Weekly Distance (km)": 39666,
+        "Weekly Time (hr)": 534,
+        "Average Speed (km/hr)": 74.28
       }
     ]
   },
@@ -48830,10 +48934,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1999,
-        "Weekly Distance (km)": 43567,
-        "Weekly Time (hr)": 1184,
-        "Average Speed (km/hr)": 36.8
+        "Weekly Trip Count": 1997,
+        "Weekly Distance (km)": 43513,
+        "Weekly Time (hr)": 1183,
+        "Average Speed (km/hr)": 36.78
       }
     ]
   },
@@ -48851,7 +48955,7 @@
       {
         "morning": 31,
         "daytime": 89.5,
-        "evening": 56.5,
+        "evening": 58.5,
         "day": "Monday"
       },
       {
@@ -48870,30 +48974,30 @@
     "peak_medians": [
       {
         "Median AM Peak Wait": 29,
-        "Median PM Peak Wait": 37
+        "Median PM Peak Wait": 37.5
       }
     ],
     "span_stats": [
       {
         "day": "monday",
         "span_start": 306,
-        "span_end": 1304,
+        "span_end": 1543,
         "full_coverage_start": 378,
-        "full_coverage_end": 1229
+        "full_coverage_end": 1462
       },
       {
         "day": "tuesday",
         "span_start": 306,
-        "span_end": 1304,
+        "span_end": 1543,
         "full_coverage_start": 378,
-        "full_coverage_end": 1229
+        "full_coverage_end": 1462
       },
       {
         "day": "wednesday",
         "span_start": 306,
-        "span_end": 1304,
+        "span_end": 1543,
         "full_coverage_start": 378,
-        "full_coverage_end": 1229
+        "full_coverage_end": 1462
       },
       {
         "day": "thursday",
@@ -48926,10 +49030,80 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 228,
-        "Weekly Distance (km)": 35375,
-        "Weekly Time (hr)": 429,
-        "Average Speed (km/hr)": 82.46
+        "Weekly Trip Count": 252,
+        "Weekly Distance (km)": 39409,
+        "Weekly Time (hr)": 478,
+        "Average Speed (km/hr)": 82.45
+      }
+    ]
+  },
+  "City Circle": {
+    "mode_type": "2",
+    "route_number": "City Circle",
+    "route_display": "City Circle",
+    "route_bullet_code": "City Circle",
+    "route_title_display": "City Circle Line",
+    "is_combined_corridor": false,
+    "route_colour": "0072CE",
+    "route_destination_1": null,
+    "route_destination_0": "Flinders Street via City Loop",
+    "span_stats": [
+      {
+        "day": "monday",
+        "span_start": 1215,
+        "span_end": 1472,
+        "full_coverage_start": 1224,
+        "full_coverage_end": 1463
+      },
+      {
+        "day": "tuesday",
+        "span_start": 1215,
+        "span_end": 1472,
+        "full_coverage_start": 1224,
+        "full_coverage_end": 1463
+      },
+      {
+        "day": "wednesday",
+        "span_start": 1215,
+        "span_end": 1472,
+        "full_coverage_start": 1224,
+        "full_coverage_end": 1463
+      },
+      {
+        "day": "thursday",
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
+      },
+      {
+        "day": "friday",
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
+      },
+      {
+        "day": "saturday",
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
+      },
+      {
+        "day": "sunday",
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
+      }
+    ],
+    "weekly_stats": [
+      {
+        "Weekly Trip Count": 51,
+        "Weekly Distance (km)": 286,
+        "Weekly Time (hr)": 10,
+        "Average Speed (km/hr)": 28.6
       }
     ]
   },
@@ -49022,10 +49196,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1148,
-        "Weekly Distance (km)": 32355,
-        "Weekly Time (hr)": 848,
-        "Average Speed (km/hr)": 38.15
+        "Weekly Trip Count": 1146,
+        "Weekly Distance (km)": 32303,
+        "Weekly Time (hr)": 846,
+        "Average Speed (km/hr)": 38.18
       }
     ]
   },
@@ -49069,23 +49243,23 @@
       {
         "day": "monday",
         "span_start": 238,
-        "span_end": 1541,
+        "span_end": 1501,
         "full_coverage_start": 294,
-        "full_coverage_end": 1223
+        "full_coverage_end": 1449
       },
       {
         "day": "tuesday",
         "span_start": 238,
-        "span_end": 1541,
+        "span_end": 1501,
         "full_coverage_start": 294,
-        "full_coverage_end": 1223
+        "full_coverage_end": 1449
       },
       {
         "day": "wednesday",
         "span_start": 238,
-        "span_end": 1541,
+        "span_end": 1501,
         "full_coverage_start": 294,
-        "full_coverage_end": 1223
+        "full_coverage_end": 1449
       },
       {
         "day": "thursday",
@@ -49118,10 +49292,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 975,
-        "Weekly Distance (km)": 40379,
-        "Weekly Time (hr)": 880,
-        "Average Speed (km/hr)": 45.89
+        "Weekly Trip Count": 969,
+        "Weekly Distance (km)": 40881,
+        "Weekly Time (hr)": 891,
+        "Average Speed (km/hr)": 45.88
       }
     ]
   },
@@ -49165,23 +49339,23 @@
       {
         "day": "monday",
         "span_start": 252,
-        "span_end": 1537,
+        "span_end": 1497,
         "full_coverage_start": 291,
-        "full_coverage_end": 1223
+        "full_coverage_end": 1459
       },
       {
         "day": "tuesday",
         "span_start": 252,
-        "span_end": 1537,
+        "span_end": 1497,
         "full_coverage_start": 291,
-        "full_coverage_end": 1223
+        "full_coverage_end": 1459
       },
       {
         "day": "wednesday",
         "span_start": 252,
-        "span_end": 1537,
+        "span_end": 1497,
         "full_coverage_start": 291,
-        "full_coverage_end": 1223
+        "full_coverage_end": 1459
       },
       {
         "day": "thursday",
@@ -49214,10 +49388,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 2133,
-        "Weekly Distance (km)": 58846,
-        "Weekly Time (hr)": 1430,
-        "Average Speed (km/hr)": 41.15
+        "Weekly Trip Count": 2121,
+        "Weekly Distance (km)": 60077,
+        "Weekly Time (hr)": 1457,
+        "Average Speed (km/hr)": 41.23
       }
     ]
   },
@@ -49325,8 +49499,8 @@
     "route_title_display": "Echuca Line",
     "is_combined_corridor": false,
     "route_colour": "8F1A95",
-    "route_destination_1": "Southern Cross Station",
-    "route_destination_0": "Echuca Station",
+    "route_destination_1": "Southern Cross",
+    "route_destination_0": "Echuca",
     "frequency_summary": [
       {
         "morning": null,
@@ -49357,21 +49531,21 @@
       {
         "day": "monday",
         "span_start": 389,
-        "span_end": 1202,
+        "span_end": 1112,
         "full_coverage_start": 530,
         "full_coverage_end": 1009
       },
       {
         "day": "tuesday",
         "span_start": 389,
-        "span_end": 1202,
+        "span_end": 1112,
         "full_coverage_start": 530,
         "full_coverage_end": 1009
       },
       {
         "day": "wednesday",
         "span_start": 389,
-        "span_end": 1202,
+        "span_end": 1112,
         "full_coverage_start": 530,
         "full_coverage_end": 1009
       },
@@ -49406,10 +49580,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 50,
-        "Weekly Distance (km)": 10243,
-        "Weekly Time (hr)": 134,
-        "Average Speed (km/hr)": 76.44
+        "Weekly Trip Count": 47,
+        "Weekly Distance (km)": 10220,
+        "Weekly Time (hr)": 133,
+        "Average Speed (km/hr)": 76.84
       }
     ]
   },
@@ -49455,21 +49629,21 @@
         "span_start": 253,
         "span_end": 1549,
         "full_coverage_start": 322,
-        "full_coverage_end": 1449
+        "full_coverage_end": 1249
       },
       {
         "day": "tuesday",
         "span_start": 253,
         "span_end": 1549,
         "full_coverage_start": 322,
-        "full_coverage_end": 1449
+        "full_coverage_end": 1249
       },
       {
         "day": "wednesday",
         "span_start": 253,
         "span_end": 1549,
         "full_coverage_start": 322,
-        "full_coverage_end": 1449
+        "full_coverage_end": 1249
       },
       {
         "day": "thursday",
@@ -49502,10 +49676,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1737,
-        "Weekly Distance (km)": 74966,
-        "Weekly Time (hr)": 1864,
-        "Average Speed (km/hr)": 40.22
+        "Weekly Trip Count": 1654,
+        "Weekly Distance (km)": 72809,
+        "Weekly Time (hr)": 1809,
+        "Average Speed (km/hr)": 40.25
       }
     ]
   },
@@ -49522,20 +49696,20 @@
     "frequency_summary": [
       {
         "morning": 20,
-        "daytime": 25.5,
+        "daytime": 25,
         "evening": 36.5,
         "day": "Monday"
       },
       {
-        "morning": 37,
+        "morning": 38,
         "daytime": 22.5,
-        "evening": 26,
+        "evening": 25.5,
         "day": "Saturday"
       },
       {
-        "morning": 33,
+        "morning": 33.5,
         "daytime": 22.5,
-        "evening": 26,
+        "evening": 25.5,
         "day": "Sunday"
       }
     ],
@@ -49570,38 +49744,38 @@
       {
         "day": "thursday",
         "span_start": 273,
-        "span_end": 1492,
+        "span_end": 1597,
         "full_coverage_start": 316,
-        "full_coverage_end": 1432
+        "full_coverage_end": 1515
       },
       {
         "day": "friday",
         "span_start": 273,
-        "span_end": 1492,
+        "span_end": 1597,
         "full_coverage_start": 316,
-        "full_coverage_end": 1432
+        "full_coverage_end": 1515
       },
       {
         "day": "saturday",
         "span_start": 318,
-        "span_end": 1486,
+        "span_end": 1591,
         "full_coverage_start": 400,
-        "full_coverage_end": 1423
+        "full_coverage_end": 1510
       },
       {
         "day": "sunday",
         "span_start": 398,
-        "span_end": 1330,
+        "span_end": 1531,
         "full_coverage_start": 449,
-        "full_coverage_end": 1274
+        "full_coverage_end": 1450
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 709,
-        "Weekly Distance (km)": 64543,
-        "Weekly Time (hr)": 931,
-        "Average Speed (km/hr)": 69.33
+        "Weekly Trip Count": 722,
+        "Weekly Distance (km)": 65751,
+        "Weekly Time (hr)": 949,
+        "Average Speed (km/hr)": 69.28
       }
     ]
   },
@@ -49694,10 +49868,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 983,
-        "Weekly Distance (km)": 21661,
-        "Weekly Time (hr)": 620,
-        "Average Speed (km/hr)": 34.94
+        "Weekly Trip Count": 981,
+        "Weekly Distance (km)": 21614,
+        "Weekly Time (hr)": 619,
+        "Average Speed (km/hr)": 34.92
       }
     ]
   },
@@ -49790,10 +49964,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1047,
-        "Weekly Distance (km)": 33588,
-        "Weekly Time (hr)": 982,
-        "Average Speed (km/hr)": 34.2
+        "Weekly Trip Count": 1046,
+        "Weekly Distance (km)": 33564,
+        "Weekly Time (hr)": 981,
+        "Average Speed (km/hr)": 34.21
       }
     ]
   },
@@ -49886,10 +50060,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 2123,
-        "Weekly Distance (km)": 15549,
-        "Weekly Time (hr)": 557,
-        "Average Speed (km/hr)": 27.92
+        "Weekly Trip Count": 2121,
+        "Weekly Distance (km)": 15534,
+        "Weekly Time (hr)": 556,
+        "Average Speed (km/hr)": 27.94
       }
     ]
   },
@@ -50078,10 +50252,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1236,
-        "Weekly Distance (km)": 36846,
-        "Weekly Time (hr)": 955,
-        "Average Speed (km/hr)": 38.58
+        "Weekly Trip Count": 1234,
+        "Weekly Distance (km)": 36792,
+        "Weekly Time (hr)": 953,
+        "Average Speed (km/hr)": 38.61
       }
     ]
   },
@@ -50093,8 +50267,8 @@
     "route_title_display": "Maryborough Line",
     "is_combined_corridor": false,
     "route_colour": "8F1A95",
-    "route_destination_1": "Southern Cross Station",
-    "route_destination_0": "Maryborough Station",
+    "route_destination_1": "Southern Cross",
+    "route_destination_0": "Maryborough",
     "frequency_summary": [
       {
         "morning": null,
@@ -50291,7 +50465,7 @@
       {
         "morning": 39.5,
         "daytime": 20,
-        "evening": 41.5,
+        "evening": 42,
         "day": "Monday"
       },
       {
@@ -50310,23 +50484,23 @@
     "peak_medians": [
       {
         "Median AM Peak Wait": 20,
-        "Median PM Peak Wait": 21
+        "Median PM Peak Wait": 20
       }
     ],
     "span_stats": [
       {
         "day": "monday",
         "span_start": 307,
-        "span_end": 1503,
+        "span_end": 1265,
         "full_coverage_start": 326,
-        "full_coverage_end": 1465
+        "full_coverage_end": 1222
       },
       {
         "day": "tuesday",
         "span_start": 307,
-        "span_end": 1503,
+        "span_end": 1265,
         "full_coverage_start": 326,
-        "full_coverage_end": 1465
+        "full_coverage_end": 1222
       },
       {
         "day": "wednesday",
@@ -50366,10 +50540,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 551,
-        "Weekly Distance (km)": 20053,
-        "Weekly Time (hr)": 352,
-        "Average Speed (km/hr)": 56.97
+        "Weekly Trip Count": 525,
+        "Weekly Distance (km)": 19089,
+        "Weekly Time (hr)": 335,
+        "Average Speed (km/hr)": 56.98
       }
     ]
   },
@@ -50462,9 +50636,9 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1081,
-        "Weekly Distance (km)": 35961,
-        "Weekly Time (hr)": 1013,
+        "Weekly Trip Count": 1080,
+        "Weekly Distance (km)": 35927,
+        "Weekly Time (hr)": 1012,
         "Average Speed (km/hr)": 35.5
       }
     ]
@@ -50509,23 +50683,23 @@
       {
         "day": "monday",
         "span_start": 232,
-        "span_end": 1566,
+        "span_end": 1526,
         "full_coverage_start": 294,
-        "full_coverage_end": 1213
+        "full_coverage_end": 1459
       },
       {
         "day": "tuesday",
         "span_start": 232,
-        "span_end": 1566,
+        "span_end": 1526,
         "full_coverage_start": 294,
-        "full_coverage_end": 1213
+        "full_coverage_end": 1459
       },
       {
         "day": "wednesday",
         "span_start": 232,
-        "span_end": 1566,
+        "span_end": 1526,
         "full_coverage_start": 294,
-        "full_coverage_end": 1213
+        "full_coverage_end": 1459
       },
       {
         "day": "thursday",
@@ -50558,10 +50732,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1158,
-        "Weekly Distance (km)": 60193,
-        "Weekly Time (hr)": 1256,
-        "Average Speed (km/hr)": 47.92
+        "Weekly Trip Count": 1152,
+        "Weekly Distance (km)": 60666,
+        "Weekly Time (hr)": 1267,
+        "Average Speed (km/hr)": 47.88
       }
     ]
   },
@@ -50750,10 +50924,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1296,
-        "Weekly Distance (km)": 22983,
+        "Weekly Trip Count": 1295,
+        "Weekly Distance (km)": 22965,
         "Weekly Time (hr)": 650,
-        "Average Speed (km/hr)": 35.36
+        "Average Speed (km/hr)": 35.33
       }
     ]
   },
@@ -50769,51 +50943,45 @@
     "route_destination_0": "Seymour",
     "frequency_summary": [
       {
-        "morning": 71.5,
-        "daytime": 115,
-        "evening": 54,
+        "morning": null,
+        "daytime": null,
+        "evening": null,
         "day": "Monday"
       },
       {
-        "morning": null,
-        "daytime": null,
-        "evening": null,
+        "morning": 60,
+        "daytime": 60,
+        "evening": 60,
         "day": "Saturday"
       },
       {
-        "morning": null,
-        "daytime": null,
-        "evening": null,
+        "morning": 61.5,
+        "daytime": 60,
+        "evening": 60,
         "day": "Sunday"
-      }
-    ],
-    "peak_medians": [
-      {
-        "Median AM Peak Wait": 78,
-        "Median PM Peak Wait": 34
       }
     ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 303,
-        "span_end": 1282,
-        "full_coverage_start": 533,
-        "full_coverage_end": 1123
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "tuesday",
-        "span_start": 303,
-        "span_end": 1282,
-        "full_coverage_start": 533,
-        "full_coverage_end": 1123
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "wednesday",
-        "span_start": 303,
-        "span_end": 1282,
-        "full_coverage_start": 533,
-        "full_coverage_end": 1123
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "thursday",
@@ -50831,25 +50999,25 @@
       },
       {
         "day": "saturday",
-        "span_start": [],
-        "span_end": [],
-        "full_coverage_start": [],
-        "full_coverage_end": []
+        "span_start": 375,
+        "span_end": 1419,
+        "full_coverage_start": 423,
+        "full_coverage_end": 1335
       },
       {
         "day": "sunday",
-        "span_start": [],
-        "span_end": [],
-        "full_coverage_start": [],
-        "full_coverage_end": []
+        "span_start": 375,
+        "span_end": 1321,
+        "full_coverage_start": 423,
+        "full_coverage_end": 1269
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 99,
-        "Weekly Distance (km)": 9771,
-        "Weekly Time (hr)": 152,
-        "Average Speed (km/hr)": 64.28
+        "Weekly Trip Count": 84,
+        "Weekly Distance (km)": 8290,
+        "Weekly Time (hr)": 123,
+        "Average Speed (km/hr)": 67.4
       }
     ]
   },
@@ -50861,13 +51029,13 @@
     "route_title_display": "Shepparton Line",
     "is_combined_corridor": false,
     "route_colour": "8F1A95",
-    "route_destination_1": "Southern Cross Station",
-    "route_destination_0": "Shepparton Station",
+    "route_destination_1": "Southern Cross",
+    "route_destination_0": "Shepparton",
     "frequency_summary": [
       {
-        "morning": 77,
+        "morning": null,
         "daytime": null,
-        "evening": 118,
+        "evening": null,
         "day": "Monday"
       },
       {
@@ -50883,33 +51051,27 @@
         "day": "Sunday"
       }
     ],
-    "peak_medians": [
-      {
-        "Median AM Peak Wait": 79,
-        "Median PM Peak Wait": 109
-      }
-    ],
     "span_stats": [
       {
         "day": "monday",
-        "span_start": 322,
-        "span_end": 1446,
-        "full_coverage_start": 472,
-        "full_coverage_end": 1301
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "tuesday",
-        "span_start": 322,
-        "span_end": 1446,
-        "full_coverage_start": 472,
-        "full_coverage_end": 1301
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "wednesday",
-        "span_start": 322,
-        "span_end": 1446,
-        "full_coverage_start": 472,
-        "full_coverage_end": 1301
+        "span_start": [],
+        "span_end": [],
+        "full_coverage_start": [],
+        "full_coverage_end": []
       },
       {
         "day": "thursday",
@@ -50921,31 +51083,31 @@
       {
         "day": "friday",
         "span_start": 322,
-        "span_end": 1302,
+        "span_end": 1446,
         "full_coverage_start": 472,
-        "full_coverage_end": 1108
+        "full_coverage_end": 1301
       },
       {
         "day": "saturday",
-        "span_start": [],
-        "span_end": [],
-        "full_coverage_start": [],
-        "full_coverage_end": []
+        "span_start": 433,
+        "span_end": 1445,
+        "full_coverage_start": 623,
+        "full_coverage_end": 1297
       },
       {
         "day": "sunday",
-        "span_start": [],
-        "span_end": [],
-        "full_coverage_start": [],
-        "full_coverage_end": []
+        "span_start": 433,
+        "span_end": 1264,
+        "full_coverage_start": 623,
+        "full_coverage_end": 1128
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 88,
-        "Weekly Distance (km)": 16014,
-        "Weekly Time (hr)": 231,
-        "Average Speed (km/hr)": 69.32
+        "Weekly Trip Count": 55,
+        "Weekly Distance (km)": 10009,
+        "Weekly Time (hr)": 142,
+        "Average Speed (km/hr)": 70.49
       }
     ]
   },
@@ -51085,23 +51247,23 @@
       {
         "day": "monday",
         "span_start": 254,
-        "span_end": 1252,
+        "span_end": 1512,
         "full_coverage_start": 291,
-        "full_coverage_end": 1218
+        "full_coverage_end": 1463
       },
       {
         "day": "tuesday",
         "span_start": 254,
-        "span_end": 1252,
+        "span_end": 1512,
         "full_coverage_start": 291,
-        "full_coverage_end": 1218
+        "full_coverage_end": 1463
       },
       {
         "day": "wednesday",
         "span_start": 254,
-        "span_end": 1252,
+        "span_end": 1512,
         "full_coverage_start": 291,
-        "full_coverage_end": 1218
+        "full_coverage_end": 1463
       },
       {
         "day": "thursday",
@@ -51134,10 +51296,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1930,
-        "Weekly Distance (km)": 55545,
-        "Weekly Time (hr)": 1240,
-        "Average Speed (km/hr)": 44.79
+        "Weekly Trip Count": 2074,
+        "Weekly Distance (km)": 59322,
+        "Weekly Time (hr)": 1322,
+        "Average Speed (km/hr)": 44.87
       }
     ]
   },
@@ -51245,8 +51407,8 @@
     "route_title_display": "Swan Hill Line",
     "is_combined_corridor": false,
     "route_colour": "8F1A95",
-    "route_destination_1": "Southern Cross Station",
-    "route_destination_0": "Swan Hill Station",
+    "route_destination_1": "Southern Cross",
+    "route_destination_0": "Swan Hill",
     "frequency_summary": [
       {
         "morning": null,
@@ -51443,23 +51605,23 @@
       {
         "day": "monday",
         "span_start": 274,
-        "span_end": 1606,
+        "span_end": 1585,
         "full_coverage_start": 371,
-        "full_coverage_end": 1219
+        "full_coverage_end": 1439
       },
       {
         "day": "tuesday",
         "span_start": 274,
-        "span_end": 1606,
+        "span_end": 1585,
         "full_coverage_start": 371,
-        "full_coverage_end": 1219
+        "full_coverage_end": 1439
       },
       {
         "day": "wednesday",
         "span_start": 274,
-        "span_end": 1606,
+        "span_end": 1585,
         "full_coverage_start": 371,
-        "full_coverage_end": 1219
+        "full_coverage_end": 1439
       },
       {
         "day": "thursday",
@@ -51493,9 +51655,9 @@
     "weekly_stats": [
       {
         "Weekly Trip Count": 318,
-        "Weekly Distance (km)": 49208,
-        "Weekly Time (hr)": 746,
-        "Average Speed (km/hr)": 65.96
+        "Weekly Distance (km)": 50654,
+        "Weekly Time (hr)": 773,
+        "Average Speed (km/hr)": 65.53
       }
     ]
   },
@@ -51588,10 +51750,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 863,
-        "Weekly Distance (km)": 18060,
-        "Weekly Time (hr)": 524,
-        "Average Speed (km/hr)": 34.47
+        "Weekly Trip Count": 862,
+        "Weekly Distance (km)": 18041,
+        "Weekly Time (hr)": 523,
+        "Average Speed (km/hr)": 34.5
       }
     ]
   },
@@ -52083,8 +52245,8 @@
     "route_title_display": "Warrnambool Line",
     "is_combined_corridor": false,
     "route_colour": "8F1A95",
-    "route_destination_1": "Southern Cross Station",
-    "route_destination_0": "Warrnambool Station",
+    "route_destination_1": "Southern Cross",
+    "route_destination_0": "Warrnambool",
     "frequency_summary": [
       {
         "morning": null,
@@ -52211,23 +52373,23 @@
       {
         "day": "monday",
         "span_start": 279,
-        "span_end": 1491,
+        "span_end": 1450,
         "full_coverage_start": 301,
-        "full_coverage_end": 1428
+        "full_coverage_end": 1234
       },
       {
         "day": "tuesday",
         "span_start": 279,
-        "span_end": 1491,
+        "span_end": 1450,
         "full_coverage_start": 301,
-        "full_coverage_end": 1428
+        "full_coverage_end": 1234
       },
       {
         "day": "wednesday",
         "span_start": 279,
-        "span_end": 1491,
+        "span_end": 1450,
         "full_coverage_start": 301,
-        "full_coverage_end": 1428
+        "full_coverage_end": 1234
       },
       {
         "day": "thursday",
@@ -52260,10 +52422,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 1473,
-        "Weekly Distance (km)": 44370,
-        "Weekly Time (hr)": 1014,
-        "Average Speed (km/hr)": 43.76
+        "Weekly Trip Count": 1465,
+        "Weekly Distance (km)": 43556,
+        "Weekly Time (hr)": 991,
+        "Average Speed (km/hr)": 43.95
       }
     ]
   },
@@ -52307,23 +52469,23 @@
       {
         "day": "monday",
         "span_start": 280,
-        "span_end": 1491,
+        "span_end": 1426,
         "full_coverage_start": 298,
-        "full_coverage_end": 1474
+        "full_coverage_end": 1240
       },
       {
         "day": "tuesday",
         "span_start": 280,
-        "span_end": 1491,
+        "span_end": 1426,
         "full_coverage_start": 298,
-        "full_coverage_end": 1474
+        "full_coverage_end": 1240
       },
       {
         "day": "wednesday",
         "span_start": 280,
-        "span_end": 1491,
+        "span_end": 1426,
         "full_coverage_start": 298,
-        "full_coverage_end": 1474
+        "full_coverage_end": 1240
       },
       {
         "day": "thursday",
@@ -52356,10 +52518,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 2402,
-        "Weekly Distance (km)": 25424,
-        "Weekly Time (hr)": 725,
-        "Average Speed (km/hr)": 35.07
+        "Weekly Trip Count": 2250,
+        "Weekly Distance (km)": 23722,
+        "Weekly Time (hr)": 675,
+        "Average Speed (km/hr)": 35.14
       }
     ]
   },
@@ -52403,23 +52565,23 @@
       {
         "day": "monday",
         "span_start": 290,
-        "span_end": 1489,
+        "span_end": 1261,
         "full_coverage_start": 303,
-        "full_coverage_end": 1470
+        "full_coverage_end": 1236
       },
       {
         "day": "tuesday",
         "span_start": 290,
-        "span_end": 1489,
+        "span_end": 1261,
         "full_coverage_start": 303,
-        "full_coverage_end": 1470
+        "full_coverage_end": 1236
       },
       {
         "day": "wednesday",
         "span_start": 290,
-        "span_end": 1489,
+        "span_end": 1261,
         "full_coverage_start": 303,
-        "full_coverage_end": 1470
+        "full_coverage_end": 1236
       },
       {
         "day": "thursday",
@@ -52452,10 +52614,10 @@
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 929,
-        "Weekly Distance (km)": 10928,
-        "Weekly Time (hr)": 322,
-        "Average Speed (km/hr)": 33.94
+        "Weekly Trip Count": 785,
+        "Weekly Distance (km)": 9759,
+        "Weekly Time (hr)": 288,
+        "Average Speed (km/hr)": 33.89
       }
     ]
   },
@@ -52471,13 +52633,13 @@
     "route_destination_0": "Wyndham Vale Station",
     "frequency_summary": [
       {
-        "morning": 16,
+        "morning": 16.5,
         "daytime": 20,
-        "evening": 25.5,
+        "evening": 26.5,
         "day": "Monday"
       },
       {
-        "morning": 47.5,
+        "morning": 48,
         "daytime": 20,
         "evening": 20,
         "day": "Saturday"
@@ -52491,8 +52653,8 @@
     ],
     "peak_medians": [
       {
-        "Median AM Peak Wait": 17,
-        "Median PM Peak Wait": 17
+        "Median AM Peak Wait": 18,
+        "Median PM Peak Wait": 18
       }
     ],
     "span_stats": [
@@ -52520,38 +52682,38 @@
       {
         "day": "thursday",
         "span_start": 286,
-        "span_end": 1455,
+        "span_end": 1551,
         "full_coverage_start": 316,
-        "full_coverage_end": 1432
+        "full_coverage_end": 1515
       },
       {
         "day": "friday",
         "span_start": 286,
-        "span_end": 1455,
+        "span_end": 1551,
         "full_coverage_start": 316,
-        "full_coverage_end": 1432
+        "full_coverage_end": 1515
       },
       {
         "day": "saturday",
         "span_start": 360,
-        "span_end": 1444,
+        "span_end": 1545,
         "full_coverage_start": 400,
-        "full_coverage_end": 1423
+        "full_coverage_end": 1510
       },
       {
         "day": "sunday",
         "span_start": 424,
-        "span_end": 1322,
+        "span_end": 1485,
         "full_coverage_start": 449,
-        "full_coverage_end": 1286
+        "full_coverage_end": 1450
       }
     ],
     "weekly_stats": [
       {
-        "Weekly Trip Count": 789,
-        "Weekly Distance (km)": 30378,
-        "Weekly Time (hr)": 478,
-        "Average Speed (km/hr)": 63.55
+        "Weekly Trip Count": 802,
+        "Weekly Distance (km)": 30901,
+        "Weekly Time (hr)": 486,
+        "Average Speed (km/hr)": 63.58
       }
     ]
   }
