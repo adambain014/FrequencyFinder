@@ -50,6 +50,12 @@ if(!exists("gtfs")){
     add_skybus_names() |>
     split_vline_names()
 }
+
+gtfs$routes[route_id == "11-box-vpt-1", route_short_name := "Eastern Express"]
+gtfs$routes[route_id == "11-SK4-vpt-1", route_short_name := "Peninsula Express"]
+gtfs$routes[route_id == "11-Ska-vpt-1", route_short_name := "Avalon City Express"]
+gtfs$routes[route_id == "11-SKY-vpt-1", route_short_name := "Melbourne City Express"]
+gtfs$routes[route_id == "11-SUN-vpt-1", route_short_name := "Sunshine Express"]
 ```
 
 ## Select the modes I will be working on - it will be expanded
@@ -157,7 +163,7 @@ trips <- routes_refined[trips, on = .(mode_number, route_id)]
 trips_refined <- trips[, .(trip_id, route_short_name, day_number, mode_number, direction_id)]
 
 # Clean up intermediaries
-rm(routes_refined, sb_map)
+rm(routes_refined)
 
 # Open stop_times
 stop_times <- gtfs$stop_times[mode_number %in% select_modes]
